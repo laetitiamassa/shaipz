@@ -7,8 +7,51 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <section id="top-bar">
+    <div class="wrap">
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      <% else %>
+        <div id="sign-in">
+          <%= form_for("user", :url => user_session_path) do |f| %>
+            <%= f.email_field :email %>
+            <%= f.password_field :password %>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+            <%= f.submit 'Sign in' %>
+            <%= link_to "Forgot your password?", new_password_path('user') %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </section>
 
-<%= yield %>
+  <section id="flash">
+    <% if notice %>
+      <div class="notice"><%= notice %></div>
+    <% end %>
 
+    <% if alert %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
+  </section>
+
+  <header>
+    <div class="wrap">
+      <h1 class="logo">Shaipz</h1>
+      <p class="tagline">Collaborative home buying</p>
+    </div>
+  </header>
+
+  <section id="content">
+    <%= yield %>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <h1 class="logo">Shaipz</h1>
+      <p class="tagline">Collaborative home buying</p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -2,4 +2,13 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  home:
+    better: "Better"
+    place: "place, made affordable"
+    chosen: "Chosen"
+    terms_of_living: "terms of living"
+    neighbours: "neighbours"
+    sign_up: "Sign up"
+    sign_up_for_shaipz: "Sign up for Shaipz"
+    whats_shaipz: "Shaipz is a platform enabling people to gather around a building for sale, in order to buy it, shape it and organize it themselves. On their own terms."
+    ready_soon: "We’ll be ready to launch very soon!"

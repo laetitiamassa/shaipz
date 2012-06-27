@@ -1,0 +1,42 @@
+<section id="sign-up">
+  <div id="shaipz-info">
+    <h2><%= t("home.sign_up_for_shaipz") %></h2>
+    <p class="description"><%= t("home.whats_shaipz") %></p>
+    <p class="soon"><%= t("home.ready_soon") %></p>
+  </div>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <ul class="fields">
+      <li class="string">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </li>
+      <li class="string">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </li>
+      <li class="checkbox">
+        <%= f.check_box :cohousing %>
+        <%= f.label :cohousing %>
+      </li>
+    </ul>
+    <ul class="fields">
+      <li class="string">
+        <%= f.label :favorite_areas %>
+        <%= f.text_field :favorite_areas %>
+      </li>
+      <li class="string">
+        <%= f.label :minimum_space %>
+        <%= f.text_field :minimum_space %>
+      </li>
+      <li class="string">
+        <%= f.label :maximum_budget %>
+        <%= f.text_field :maximum_budget %>
+      </li>
+    </ul>
+    <div class="form-actions clear">
+      <span class="button"><%= f.submit t('home.sign_up') %></span>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</section>

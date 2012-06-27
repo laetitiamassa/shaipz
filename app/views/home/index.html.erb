@@ -1,0 +1,55 @@
+<section id="why-shaipz">
+  <div class="why-box">
+    <h3><strong><%= t("home.better") %></strong> <%= t("home.place") %></h3>
+    <div class="video"></div>
+  </div>
+  <div class="why-box">
+    <h3><strong><%= t("home.chosen") %></strong> <%= t("home.neighbours") %></h3>
+    <div class="video"></div>
+  </div>
+  <div class="why-box">
+    <h3><strong><%= t("home.chosen") %></strong> <%= t("home.terms_of_living") %></h3>
+    <div class="video"></div>
+  </div>
+</section>
+
+<section id="sign-up">
+  <div id="shaipz-info">
+    <h2><%= t("home.sign_up_for_shaipz") %></h2>
+    <p class="description"><%= t("home.whats_shaipz") %></p>
+    <p class="soon"><%= t("home.ready_soon") %></p>
+  </div>
+  <%= form_for("user", :url => user_registration_path) do |f| %>
+    <ul class="fields">
+      <li class="string">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </li>
+      <li class="string">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </li>
+      <li class="checkbox">
+        <%= f.check_box :cohousing %>
+        <%= f.label :cohousing %>
+      </li>
+    </ul>
+    <ul class="fields">
+      <li class="string">
+        <%= f.label :favorite_areas %>
+        <%= f.text_field :favorite_areas %>
+      </li>
+      <li class="string">
+        <%= f.label :minimum_space %>
+        <%= f.text_field :minimum_space %>
+      </li>
+      <li class="string">
+        <%= f.label :maximum_budget %>
+        <%= f.text_field :maximum_budget %>
+      </li>
+    </ul>
+    <div class="form-actions clear">
+      <span class="button"><%= f.submit t('home.sign_up') %></span>
+    </div>
+  <% end %>
+</section>
