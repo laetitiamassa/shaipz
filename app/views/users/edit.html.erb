@@ -1,0 +1,41 @@
+<section id="edit-profile">
+  <%= form_for(@user, :url => user_path, :html => { :multipart => true }) do |f| %>
+    <ul class="picture">
+      <li>
+        <%= image_tag @user.picture.url(:medium) if @user.has_picture? %>
+        <%= f.file_field :picture %>
+      </li>
+    </ul>
+    <ul class="fields">
+      <li class="string">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </li>
+      <li class="string">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </li>
+      <li class="checkbox">
+        <%= f.check_box :cohousing %>
+        <%= f.label :cohousing %>
+      </li>
+    </ul>
+    <ul class="fields">
+      <li class="string">
+        <%= f.label :favorite_areas %>
+        <%= f.text_field :favorite_areas %>
+      </li>
+      <li class="string">
+        <%= f.label :minimum_space %>
+        <%= f.text_field :minimum_space %>
+      </li>
+      <li class="string">
+        <%= f.label :maximum_budget %>
+        <%= f.text_field :maximum_budget %>
+      </li>
+    </ul>
+    <div class="form-actions clear">
+      <span class="button"><%= f.submit t('profile.save_changes') %></span>
+    </div>
+  <% end %>
+</section>

@@ -1,9 +1,17 @@
+/* Fonts */
+
+@import url(http://fonts.googleapis.com/css?family=Amaranth);
+
 /* Generic */
 
 body {
-  background: #fafafa;
+  background: #fafafa url("bg.png") repeat-x center 50px;
   font-size: 0.7em;
   font-family: "Lucida Grande", arial, sans-serif;
+}
+
+form ul li {
+  list-style: none;
 }
 
 .clear {
@@ -15,15 +23,59 @@ body {
   margin: 0 auto;
 }
 
+.logo {
+  font-family: 'Amaranth', sans-serif;
+}
+
 /* Top bar */
 
 #top-bar {
   background: #000;
   color: #fff;
+  height: 50px;
 }
 
 #sign-in {
   padding: 20px 0;
+}
+
+/* Header */
+
+header .wrap {
+  position: relative;
+}
+
+header .logo {
+  display: inline-block;
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 0 1px 2px #555;
+  margin: 10px 10px 10px 0;
+}
+
+header .tagline {
+  display: inline-block;
+  font-style: italic;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+header #flash {
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+
+header #flash .message {
+  background: #fff;
+  font-weight: bold;
+  padding: 10px;
+  -moz-box-shadow: 0 1px 2px #ccc;
+  -webkit-box-shadow: 0 1px 2px #ccc;
+  box-shadow: 0 1px 2px #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 /* Content */
@@ -37,6 +89,104 @@ body {
   -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
   color: #777;
+}
+
+#content form .fields {
+  margin: 0;
+  padding: 0;
+}
+
+#content form .fields li {
+  margin: 10px 0;
+  height: 41px;
+}
+
+#content form .fields li.checkbox {
+  line-height: 41px;
+}
+
+#content form .fields li label {
+  font-weight: bold;
+  color: #aaa;
+}
+
+#content form .fields .string label {
+  display: block;
+  margin: 0 0 5px 0;
+}
+
+#content form .fields .string input {
+  color: #555;
+  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 1px 2px #b0b0b0;
+  -webkit-box-shadow: inset 0 1px 2px #b0b0b0;
+  box-shadow: inset 0 1px 2px #b0b0b0;
+  padding: 5px;
+  width: 200px;
+}
+
+#content form .form-actions {
+  text-align: right;
+}
+
+#content form .form-actions .button {
+  display: inline-block;
+  background: url("back-button-bg.png") repeat-x center top;
+  padding: 4px;
+  -moz-box-shadow: inset 0 1px 2px #ccc;
+  -webkit-box-shadow: inset 0 1px 2px #ccc;
+  box-shadow: inset 0 1px 2px #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#content form .form-actions .button input {
+  padding: 6px 40px;
+  font-weight: bold;
+  color: #aaa;
+  border: none;
+  text-shadow: 0 1px 0 #fff;
+  background: #fff url("button-bg.png") repeat-x center bottom;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 2px #ccc;
+  -webkit-box-shadow: 0 1px 2px #ccc;
+  box-shadow: 0 1px 2px #ccc;
+}
+
+#content form .form-actions .button input:active {
+  -moz-box-shadow: 0 0 2px #ccc;
+  -webkit-box-shadow: 0 0 2px #ccc;
+  box-shadow: 0 0 2px #ccc;
+}
+
+/* Homepage */
+
+#why-shaipz .why-box {
+  width: 300px;
+  float: left;
+  margin: 0 0 20px 0;
+}
+
+#why-shaipz .why-box + .why-box {
+  margin: 0 0 20px 20px;
+}
+
+#why-shaipz h3 {
+  font-weight: normal;
+  text-shadow: 0 1px 0 #fff;
+  margin: 0;
+}
+
+#why-shaipz h3 strong {
+  color: #c6f7f7;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #sign-up {
@@ -82,8 +232,6 @@ body {
 }
 
 #sign-up form .fields {
-  margin: 0;
-  padding: 0;
   float: left;
 }
 
@@ -91,74 +239,25 @@ body {
   margin: 0 0 0 20px;
 }
 
-#sign-up form .fields li {
-  margin: 10px 0;
-  list-style: none;
-  height: 41px;
+/* Edit profile */
+
+#edit-profile {
+  position: relative;
 }
 
-#sign-up form .fields li.checkbox {
-  line-height: 41px;
+#edit-profile form .picture {
+  margin: 0;
+  padding: 0;
+  position: absolute;
 }
 
-#sign-up form .fields li label {
-  font-weight: bold;
-  color: #aaa;
-}
-
-#sign-up form .fields .string label {
+#edit-profile form .picture img {
   display: block;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
 }
 
-#sign-up form .fields .string input {
-  color: #555;
-  border: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -moz-box-shadow: inset 0 1px 2px #b0b0b0;
-  -webkit-box-shadow: inset 0 1px 2px #b0b0b0;
-  box-shadow: inset 0 1px 2px #b0b0b0;
-  padding: 5px;
-  width: 200px;
-}
-
-#sign-up form .form-actions {
-  text-align: right;
-}
-
-#sign-up form .form-actions .button {
-  display: inline-block;
-  background: url("back-button-bg.png") repeat-x center top;
-  padding: 4px;
-  -moz-box-shadow: inset 0 1px 2px #ccc;
-  -webkit-box-shadow: inset 0 1px 2px #ccc;
-  box-shadow: inset 0 1px 2px #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-#sign-up form .form-actions .button input {
-  padding: 6px 40px;
-  font-weight: bold;
-  color: #aaa;
-  border: none;
-  text-shadow: 0 1px 0 #fff;
-  background: #fff url("button-bg.png") repeat-x center bottom;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
-  box-shadow: 0 1px 2px #ccc;
-}
-
-#sign-up form .form-actions .button input:active {
-  -moz-box-shadow: 0 0 2px #ccc;
-  -webkit-box-shadow: 0 0 2px #ccc;
-  box-shadow: 0 0 2px #ccc;
+#edit-profile form .fields {
+  margin: 0 0 0 320px;
 }
 
 /* Footer */
@@ -166,7 +265,21 @@ body {
 footer {
   background: #fdfdfd;
   border-top: 1px solid #e1e1e1;
+  padding: 20px 0;
+  color: #777;
 }
+
+footer .logo {
+  display: inline-block;
+  margin: 0 7px 0 0;
+}
+
+footer .tagline {
+  display: inline-block;
+  font-style: italic;
+}
+
+/* Devise */
 
 #error_explanation h2 {
   color: #d63f00;

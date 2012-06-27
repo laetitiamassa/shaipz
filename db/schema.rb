@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120627101657) do
+ActiveRecord::Schema.define(:version => 20120627151422) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(:version => 20120627101657) do
     t.integer  "maximum_budget"
     t.integer  "minimum_space",          :default => 0,     :null => false
     t.boolean  "cohousing",              :default => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -12,3 +12,8 @@ en:
     sign_up_for_shaipz: "Sign up for Shaipz"
     whats_shaipz: "Shaipz is a platform enabling people to gather around a building for sale, in order to buy it, shape it and organize it themselves. On their own terms."
     ready_soon: "We’ll be ready to launch very soon!"
+  profile:
+    edit: "Edit"
+    save_changes: "Save changes"
+    update_success: "Profile updated"
+    update_errors: "Oops, something went wrong with your profile."

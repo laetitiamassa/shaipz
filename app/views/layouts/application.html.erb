@@ -10,6 +10,7 @@
   <section id="top-bar">
     <div class="wrap">
       <% if user_signed_in? %>
+        <%= link_to(t("menu.profile"), edit_user_path(current_user)) %>
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
       <% else %>
         <div id="sign-in">
@@ -26,20 +27,21 @@
     </div>
   </section>
 
-  <section id="flash">
-    <% if notice %>
-      <div class="notice"><%= notice %></div>
-    <% end %>
-
-    <% if alert %>
-      <div class="alert"><%= alert %></div>
-    <% end %>
-  </section>
 
   <header>
     <div class="wrap">
       <h1 class="logo">Shaipz</h1>
       <p class="tagline">Collaborative home buying</p>
+
+      <section id="flash">
+        <% if notice %>
+          <div class="message notice"><%= notice %></div>
+        <% end %>
+
+        <% if alert %>
+          <div class="message alert"><%= alert %></div>
+        <% end %>
+      </section>
     </div>
   </header>
 

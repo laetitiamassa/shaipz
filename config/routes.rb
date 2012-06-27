@@ -1,5 +1,5 @@
 Shaipz::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions"}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,6 +52,14 @@ Shaipz::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
   #
+  #
+  authenticated :user do
+    root :to => "streams#show"
+  end
+
+  resources :users
+  resource :stream
+
   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
