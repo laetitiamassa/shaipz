@@ -16,6 +16,9 @@
               <%= link_to(t("menu.profile"), edit_user_path(current_user)) %>
             </li>
             <li>
+              <%= link_to(t("menu.stream"), stream_url) %>
+            </li>
+            <li>
               <%= link_to(t("menu.sign_out"), destroy_user_session_path, :method => :delete) %>
             </li>
           </ul>
@@ -41,7 +44,7 @@
 
   <header>
     <div class="wrap">
-      <h1 class="logo">Shaipz</h1>
+      <h1 class="logo"><%= link_to "Shaipz", root_url %></h1>
       <p class="tagline">Collaborative home buying</p>
 
       <section id="flash">

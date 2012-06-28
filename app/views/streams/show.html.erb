@@ -1,0 +1,13 @@
+<section id="stream">
+  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
+
+  <div id="stream-wrap">
+    <section id="start-project">
+      <div class="action-call">
+        <span class="button"><span class="icon"></span><%= link_to t("stream.start_project"), new_project_path %></span>
+      </div>
+    </section>
+
+    <section id="projects"></section>
+  </div>
+</section>

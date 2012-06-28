@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628131938) do
+ActiveRecord::Schema.define(:version => 20120628172708) do
+
+  create_table "projects", :force => true do |t|
+    t.integer  "owner_id",                                :null => false
+    t.string   "name",                                    :null => false
+    t.string   "address"
+    t.integer  "total_amount",                            :null => false
+    t.integer  "total_space",                             :null => false
+    t.integer  "maximum_shaipz",                          :null => false
+    t.string   "source_link"
+    t.boolean  "cohousing",            :default => false
+    t.text     "event"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false

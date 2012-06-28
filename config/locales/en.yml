@@ -22,6 +22,9 @@ en:
     save_changes: "Save changes"
     update_success: "Profile updated"
     update_errors: "Oops, something went wrong with your profile."
+    favorite_areas: "Favorite areas"
+    maximum_budget: "Maximum budget"
+    minimum_space: "Minimum space"
   statuses:
     not_buying: "I'm not buying yet."
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity."
@@ -31,3 +34,16 @@ en:
   menu:
     profile: "Profile"
     sign_out: "Sign out"
+  stream:
+    start_project: "Start a project"
+  project:
+    define_new_project: "Define your project"
+    create_project: "Create your project"
+    what_name: "What's the name of your project?"
+    where: "Where is it located?"
+    how_much: "How much does it cost?"
+    how_big: "How big is it?"
+    source_link: "What's your source?"
+    cohousing: "Is it for cohousing?"
+    event: "What's the next step?"
+    how_many: "How many shaipz?"

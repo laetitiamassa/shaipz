@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :projects, :foreign_key => "owner_id"
+
   PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying"]
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -15,6 +17,10 @@ class User < ActiveRecord::Base
 
   def has_picture?
     picture.present?
+  end
+
+  def has_personal_status?
+    personal_status.present?
   end
 
   def self.personal_statuses

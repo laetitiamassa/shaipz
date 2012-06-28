@@ -1,0 +1,32 @@
+<section id="profile-wrap">
+  <div id="profile-box">
+    <div class="picture">
+      <%= image_tag user.picture.url(:medium) if user.has_picture? %>
+    </div>
+
+    <h2><%= user.name %></h2>
+
+    <div class="personal-status">
+      <div class="progress <%= user.personal_status.dasherize if user.has_personal_status? %>"></div>
+    </div>
+    <p class="status"><%= t("statuses.#{user.personal_status}") %></p>
+  </div>
+
+  <div id="profile-info">
+    <ul>
+      <li>
+        <span class="label"><%= t("profile.favorite_areas") %></span>
+        <%= user.favorite_areas %>
+      </li>
+      <li>
+        <span class="label"><%= t("profile.maximum_budget") %></span>
+        <%= user.maximum_budget %> €
+      </li>
+      <li>
+        <span class="label"><%= t("profile.minimum_space") %></span>
+        <%= user.minimum_space %> m&sup2;
+      </li>
+    </ul>
+  </div>
+</section>
+

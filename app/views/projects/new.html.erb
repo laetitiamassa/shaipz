@@ -1,0 +1,49 @@
+<section id="new-project">
+  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
+
+  <div id="project-wrap">
+    <h2><%= t("project.define_new_project") %></h2>
+    <%= form_for @project, :html => { :multipart => true } do |f| %>
+      <div class="picture">
+        <%= f.file_field :picture %>
+      </div>
+      <ul class="fields">
+        <li class="string">
+          <%= f.label :name, t("project.what_name") %>
+          <%= f.text_field :name %>
+        </li>
+        <li class="string">
+          <%= f.label :address, t("project.where") %>
+          <%= f.text_field :address %>
+        </li>
+        <li class="string">
+          <%= f.label :total_amount, t("project.how_much") %>
+          <%= f.text_field :total_amount %>
+        </li>
+        <li class="string">
+          <%= f.label :total_space, t("project.how_big") %>
+          <%= f.text_field :total_space %>
+        </li>
+        <li class="string">
+          <%= f.label :maximum_shaipz, t("project.how_many") %>
+          <%= f.text_field :maximum_shaipz %>
+        </li>
+        <li class="string">
+          <%= f.label :source_link, t("project.source_link") %>
+          <%= f.text_field :source_link %>
+        </li>
+        <li class="checkbox">
+          <%= f.check_box :cohousing %>
+          <%= f.label :cohousing, t("project.cohousing") %>
+        </li>
+        <li class="text">
+          <%= f.label :event, t("project.event") %>
+          <%= f.text_area :event, :rows => 5 %>
+        </li>
+      </ul>
+      <div class="form-actions clear">
+        <span class="button"><%= f.submit t('project.create_project') %></span>
+      </div>
+    <% end %>
+  </div>
+</section>

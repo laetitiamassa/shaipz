@@ -121,6 +121,11 @@ header .logo {
   margin: 10px 10px 10px 0;
 }
 
+header .logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
 header .tagline {
   display: inline-block;
   font-style: italic;
@@ -173,12 +178,28 @@ header #flash .message {
   line-height: 41px;
 }
 
+#content form .fields li.text {
+  height: auto;
+}
+
+#content form .fields li.text textarea {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 1px 2px #b0b0b0;
+  -webkit-box-shadow: inset 0 1px 2px #b0b0b0;
+  box-shadow: inset 0 1px 2px #b0b0b0;
+  border: none;
+  width: 200px;
+  padding: 5px;
+}
+
 #content form .fields li label {
   font-weight: bold;
   color: #aaa;
 }
 
-#content form .fields .string label {
+#content form .fields .string label, #content form .fields .text label {
   display: block;
   margin: 0 0 5px 0;
 }
@@ -308,6 +329,91 @@ header #flash .message {
   margin: 0 0 0 20px;
 }
 
+/* Stream */
+
+#stream {
+  position: relative;
+}
+
+#profile-wrap {
+  width: 200px;
+  position: absolute;
+}
+
+#profile-wrap #profile-box h2 {
+  margin: 10px 0;
+}
+
+#profile-wrap #profile-info ul {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+#profile-wrap #profile-info ul li {
+  list-style: none;
+  margin: 0 0 10px;
+}
+
+#profile-wrap #profile-info ul li .label {
+  font-weight: bold;
+  display: inline-block;
+  width: 105px;
+}
+
+#stream #stream-wrap {
+  min-height: 377px;
+  margin: 0 0 0 220px;
+}
+
+#stream #start-project .action-call {
+  text-align: center;
+}
+
+#stream #start-project .action-call .button .icon {
+  background: url("project.png") no-repeat;
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+}
+
+#stream #start-project .action-call .button {
+  position: relative;
+  display: inline-block;
+  background: url("back-button-bg.png") repeat-x center top;
+  padding: 4px;
+  -moz-box-shadow: inset 0 1px 2px #ccc;
+  -webkit-box-shadow: inset 0 1px 2px #ccc;
+  box-shadow: inset 0 1px 2px #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#stream #start-project .action-call .button a {
+  display: inline-block;
+  padding: 6px 10px 6px 32px;
+  font-weight: bold;
+  color: #777;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  background: #fff url("button-bg.png") repeat-x center bottom;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 2px #ccc;
+  -webkit-box-shadow: 0 1px 2px #ccc;
+  box-shadow: 0 1px 2px #ccc;
+}
+
+#stream #start-project .action-call .button a:active {
+  -moz-box-shadow: 0 0 2px #ccc;
+  -webkit-box-shadow: 0 0 2px #ccc;
+  box-shadow: 0 0 2px #ccc;
+}
+
 /* Edit profile */
 
 #edit-profile {
@@ -341,7 +447,14 @@ header #flash .message {
   position: absolute;
 }
 
-#show-profile #profile-box .personal-status {
+#profile-box .status {
+  margin: 0;
+  padding: 5px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.personal-status {
   margin: 20px 0 0 0;
   height: 14px;
   padding: 3px;
@@ -355,7 +468,7 @@ header #flash .message {
   border-radius: 10px;
 }
 
-#show-profile #profile-box .personal-status .progress {
+.personal-status .progress {
   background: url("progress.png") repeat-x;
   height: 14px;
   -moz-box-shadow: 0 1px 2px #ccc;
@@ -367,23 +480,23 @@ header #flash .message {
   width: 0;
 }
 
-#show-profile #profile-box .personal-status .progress.not-buying {
+.personal-status .progress.not-buying {
   width: 10%;
 }
 
-#show-profile #profile-box .personal-status .progress.looking-for-opportunity {
+.personal-status .progress.looking-for-opportunity {
   width: 50%;
 }
 
-#show-profile #profile-box .personal-status .progress.ready-but-bank {
+.personal-status .progress.ready-but-bank {
   width: 70%;
 }
 
-#show-profile #profile-box .personal-status .progress.ready-with-bank {
+.personal-status .progress.ready-with-bank {
   width: 85%;
 }
 
-#show-profile #profile-box .personal-status .progress.buying {
+.personal-status .progress.buying {
   width: 100%;
 }
 
@@ -411,6 +524,24 @@ header #flash .message {
   margin: 0 0 10px;
   color: #aaa;
 }
+
+/* Projects */
+
+/* New project */
+
+#project-wrap {
+  margin: 0 0 0 220px;
+}
+
+#project-wrap h2 {
+  margin: 0 0 20px 0;
+}
+
+#project-wrap form .picture {
+  margin: 0 0 10px 0;
+}
+
+
 /* Footer */
 
 footer {

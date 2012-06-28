@@ -58,6 +58,7 @@ Shaipz::Application.routes.draw do
   end
 
   resources :users
+  resources :projects
   resource :stream
 
   root :to => 'home#index'
