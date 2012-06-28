@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   def edit
     @user = current_user
+    @personal_statuses = User.personal_statuses
   end
 
   def update

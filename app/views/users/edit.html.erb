@@ -15,6 +15,10 @@
         <%= f.label :email %>
         <%= f.email_field :email %>
       </li>
+      <li class="string">
+        <%= f.label :personal_status %>
+        <%= f.select :personal_status, @personal_statuses, {:include_blank => true} %>
+      </li>
       <li class="checkbox">
         <%= f.check_box :cohousing %>
         <%= f.label :cohousing %>

@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  sign_in:
+    email: "email"
+    password: "password"
+    sign_in: "Sign in"
+    forgot_your_password: "Forgot your password?"
   home:
     better: "Better"
     place: "place, made affordable"
@@ -17,3 +22,12 @@ en:
     save_changes: "Save changes"
     update_success: "Profile updated"
     update_errors: "Oops, something went wrong with your profile."
+  statuses:
+    not_buying: "I'm not buying yet."
+    looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity."
+    ready_but_bank: "I want to buy now, but I should see with the bank first."
+    ready_with_bank: "I'm ready to buy and I've already seen the bank."
+    buying: "I'm so totally ready to buy now."
+  menu:
+    profile: "Profile"
+    sign_out: "Sign out"
