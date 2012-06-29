@@ -254,6 +254,33 @@ header #flash .message {
   box-shadow: 0 0 2px #ccc;
 }
 
+/* Profile on the side */
+
+#profile-wrap {
+  width: 200px;
+  position: absolute;
+}
+
+#profile-wrap #profile-box h2 {
+  margin: 10px 0;
+}
+
+#profile-wrap #profile-info ul {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+#profile-wrap #profile-info ul li {
+  list-style: none;
+  margin: 0 0 10px;
+}
+
+#profile-wrap #profile-info ul li .label {
+  font-weight: bold;
+  display: inline-block;
+  width: 105px;
+}
+
 /* Homepage */
 
 #why-shaipz .why-box {
@@ -335,31 +362,6 @@ header #flash .message {
   position: relative;
 }
 
-#profile-wrap {
-  width: 200px;
-  position: absolute;
-}
-
-#profile-wrap #profile-box h2 {
-  margin: 10px 0;
-}
-
-#profile-wrap #profile-info ul {
-  margin: 10px 0 0 0;
-  padding: 0;
-}
-
-#profile-wrap #profile-info ul li {
-  list-style: none;
-  margin: 0 0 10px;
-}
-
-#profile-wrap #profile-info ul li .label {
-  font-weight: bold;
-  display: inline-block;
-  width: 105px;
-}
-
 #stream #stream-wrap {
   min-height: 377px;
   margin: 0 0 0 220px;
@@ -412,6 +414,132 @@ header #flash .message {
   -moz-box-shadow: 0 0 2px #ccc;
   -webkit-box-shadow: 0 0 2px #ccc;
   box-shadow: 0 0 2px #ccc;
+}
+
+#stream #projects h2 {
+  background: url("stream-header-bg.png") repeat-x center center;
+  text-transform: uppercase;
+  margin: 15px 0 5px;
+  padding: 0;
+  font-size: 1em;
+  color: #99bec1;
+}
+
+#stream #projects h2 span {
+  display: inline-block;
+  padding: 0 5px 0 0;
+  background: #fff;
+}
+
+#stream #projects ol {
+  margin: 0;
+  padding: 0;
+}
+
+#stream #projects ol li {
+  list-style: none;
+  padding: 10px 0;
+  position: relative;
+  width: 500px;
+}
+
+#stream #projects ol li + li {
+  border-top: 1px solid #f2f2f2;
+}
+
+#stream #projects ol li .picture {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+#stream #projects ol li .picture img {
+  border: 1px solid #dbdbdb;
+  vertical-align: middle;
+  padding: 3px;
+  -moz-box-shadow: 0 1px 1px #efefef;
+  -webkit-box-shadow: 0 1px 1px #efefef;
+  box-shadow: 0 1px 1px #efefef;
+}
+
+#stream #projects ol li h3 {
+  margin: 0 0 15px 0;
+  padding: 0;
+  color: #777;
+  font-size: 1.1em;
+}
+
+#stream #projects ol li .criteria {
+  margin: 0 0 10px;
+}
+
+#stream #projects ol li .details {
+  clear: left;
+}
+
+#stream #projects ol li .links {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+
+#stream #projects ol li .links span + span {
+  margin: 0 0 0 5px;
+}
+
+#stream #projects ol li .criteria span, #stream #projects ol li .details span {
+  display: inline-block;
+  line-height: 1.5;
+  padding: 0 20px 0 26px;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
+#stream #projects ol li .amount {
+  background-image: url("tag.png");
+}
+
+#stream #projects ol li .space {
+  background-image: url("home.png");
+}
+
+#stream #projects ol li .shaipz {
+  background-image: url("person.png");
+}
+
+#stream #projects ol li .address {
+  background-image: url("location.png");
+}
+
+#stream #projects ol li .event {
+  background-image: url("clock.png");
+}
+
+#stream #projects ol li .join-action {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+
+#stream #projects ol li .join-action a {
+  display: block;
+  background: url("button-b-bg.png") repeat-x center center;
+  color: #fff;
+  padding: 6px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 2px #ddd;
+  -webkit-box-shadow: 0 1px 2px #ddd;
+  box-shadow: 0 1px 2px #ddd;
+}
+
+#stream #projects ol li .join-action a:active {
+  -moz-box-shadow: 0 0 1px #ccc;
+  -webkit-box-shadow: 0 0 1px #ccc;
+  box-shadow: 0 0 1px #ccc;
 }
 
 /* Edit profile */

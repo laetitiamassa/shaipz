@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :require_owner, :only => :edit
+  before_filter :require_owner, :only => [:edit, :update]
 
   def new
     @user = current_user
@@ -20,9 +20,25 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def show
+    @project = Project.find(params[:id])
+  end
+
   def edit
     @project = Project.find(params[:id])
     @user = current_user
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project])
+      flash[:notice] = t("project.update_success")
+      redirect_to stream_path
+    else
+      @user = current_user
+      flash[:alert] = t("project.update_error")
+      render :edit
+    end
   end
 
   private

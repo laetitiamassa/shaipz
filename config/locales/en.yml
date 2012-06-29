@@ -36,6 +36,7 @@ en:
     sign_out: "Sign out"
   stream:
     start_project: "Start a project"
+    all_projects: "All projects"
   project:
     define_new_project: "Define your project"
     create_project: "Create your project"
