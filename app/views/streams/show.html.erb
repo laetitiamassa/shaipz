@@ -14,23 +14,38 @@
         <% @projects.each do |project| %>
           <li>
             <div class="picture"><%= link_to image_tag(project.picture.url(:thumb)), project_url(project) %></div>
+
             <h3><%= project.name %></h3>
+
             <div class="criteria">
               <span class="amount"><%= project.total_amount %> €</span>
               <span class="space"><%= project.total_space %> m&sup2;</span>
               <span class="shaipz"><%= project.maximum_shaipz %></span>
             </div>
+
             <div class="links">
               <span class="external"><%= link_to(image_tag("arrow.png"), project.source_link) if project.has_source_link? %></span>
               <span class="internal"><%= link_to(image_tag("screen.png"), project_url(project)) %></span>
             </div>
+
             <div class="details">
               <span class="address"><%= project.address %></span>
               <span class="event"><%= project.event %></span>
             </div>
-            <div class="join-action">
-              <a href="#"><%= t("project.join") %></a>
-            </div>
+
+            <% if project.has_participant?(@user) %>
+              <div class="position">
+                <span>#<%= project.priority_order_for_participant(@user) %></span>
+                <%= t("project.in_project") %>
+              </div>
+            <% else %>
+              <%= form_for "participation", :url => participations_path do |f| %>
+                <%= f.hidden_field :project_id, :value => project.id %>
+                <div class="join-action">
+                  <%= f.submit t("project.join") %>
+                </div>
+              <% end %>
+            <% end %>
           </li>
         <% end %>
       </ol>

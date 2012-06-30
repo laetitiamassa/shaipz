@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
   belongs_to :owner, :class_name => "User"
+  has_many :participations
+  has_many :participants, :through => :participations
 
   has_attached_file :picture, :styles => { :medium => "680x200#", :thumb => "100x50#" }
 
@@ -15,5 +17,13 @@ class Project < ActiveRecord::Base
 
   def has_source_link?
     source_link.present?
+  end
+
+  def has_participant?(participant)
+    participants.include?(participant)
+  end
+
+  def priority_order_for_participant(participant)
+    participants.index(participant) + 1
   end
 end
