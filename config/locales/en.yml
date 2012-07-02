@@ -53,6 +53,8 @@ en:
     how_many: "How many shaipz?"
     join: "Join"
     in_project: "in project"
+    create_success: "Your project has been created."
+    create_error: "We cannot create your project, please check the details."
     update_project: "Change project"
     update_success: "Your project has been updated successfully."
     update_error: "Your project cannot be updated for some reasons."
