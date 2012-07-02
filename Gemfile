@@ -29,7 +29,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :production do
-  gem "aws-s3"
+  gem "aws-sdk"
 end
 
 group :test do
