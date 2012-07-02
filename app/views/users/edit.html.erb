@@ -2,7 +2,7 @@
   <%= form_for(@user, :url => user_path, :html => { :multipart => true }) do |f| %>
     <ul class="picture">
       <li>
-        <%= image_tag @user.picture.url(:medium) if @user.has_picture? %>
+        <%= image_tag @user.picture.url(:medium) %>
         <%= f.file_field :picture %>
       </li>
     </ul>

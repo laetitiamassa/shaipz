@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_attached_file :picture, { :styles => { :medium => "200x200#", :thumb => "50x50#" } }.merge!(PAPERCLIP_STORAGE_OPTIONS)
+  has_attached_file :picture, { :styles => { :medium => "200x200#", :thumb => "50x50#" }, :default_url => "/assets/profile_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status
@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
     picture.present?
   end
 
+  def has_name?
+    name.present?
+  end
+
   def has_personal_status?
     personal_status.present?
   end
@@ -27,5 +31,9 @@ class User < ActiveRecord::Base
     PERSONAL_STATUSES.map do |status|
       [I18n.t("statuses.#{status}"), status]
     end
+  end
+
+  def name_placeholder
+    email.split("@")[0]
   end
 end

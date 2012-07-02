@@ -1,7 +1,7 @@
 <section id="show-profile">
   <div id="profile-box">
     <div class="picture">
-      <%= image_tag @user.picture.url(:medium) if @user.has_picture? %>
+      <%= image_tag @user.picture.url(:medium) %>
     </div>
 
     <div class="personal-status">
@@ -11,7 +11,7 @@
   </div>
 
   <div id="profile-info">
-    <h2><%= @user.name %></h2>
+    <h2><%= @user.has_name? ? @user.name : @user.name_placeholder %></h2>
     <ul>
       <li>
         <span class="label"><%= t("profile.email") %></span>

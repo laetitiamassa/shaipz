@@ -142,13 +142,23 @@ header #flash {
 header #flash .message {
   background: #fff;
   font-weight: bold;
-  padding: 10px;
+  padding: 10px 10px 10px 36px;
   -moz-box-shadow: 0 1px 2px #ccc;
   -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+
+header #flash .alert {
+  color: #7f0c2c;
+  background: #fff url("error.png") no-repeat 10px center;
+}
+
+header #flash .notice {
+  color: #9fbd5a;
+  background: #fff url("tick.png") no-repeat 10px center;
 }
 
 /* Content */
@@ -162,6 +172,7 @@ header #flash .message {
   -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
   color: #777;
+  min-height: 387px;
 }
 
 #content form .fields {
@@ -461,6 +472,8 @@ header #flash .message {
 
 #stream #projects ol li .picture img {
   border: 1px solid #dbdbdb;
+  width: 100px;
+  height: 50px;
   vertical-align: middle;
   padding: 3px;
   -moz-box-shadow: 0 1px 1px #efefef;

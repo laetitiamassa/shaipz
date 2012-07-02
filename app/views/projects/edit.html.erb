@@ -5,7 +5,7 @@
     <h2><%= t("project.define_new_project") %></h2>
     <%= form_for @project, :html => { :multipart => true } do |f| %>
       <div class="picture">
-        <%= image_tag @project.picture.url(:medium) if @project.has_picture? %>
+        <%= image_tag @project.picture.url(:medium) %>
         <%= f.file_field :picture %>
       </div>
       <ul class="fields">
