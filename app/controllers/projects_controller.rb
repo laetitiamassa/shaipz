@@ -46,7 +46,7 @@ class ProjectsController < ApplicationController
   def require_owner
     project = Project.find(params[:id])
     unless project.owner == current_user
-      flash[:alert] = t("must_be_owner")
+      flash[:alert] = t("project.must_be_owner")
       redirect_to stream_path
     end
   end

@@ -54,3 +54,4 @@ en:
     update_project: "Change project"
     update_success: "Your project has been updated successfully."
     update_error: "Your project cannot be updated for some reasons."
+    must_be_owner: "You must be the owner of this project in order to edit it."
