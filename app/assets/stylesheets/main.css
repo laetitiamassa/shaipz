@@ -356,6 +356,13 @@ header #flash .message {
   margin: 0 0 0 20px;
 }
 
+#sign-up form .form-actions small {
+  font-style: italic;
+  margin: 0 10px 0 0;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
 /* Stream */
 
 #stream {
