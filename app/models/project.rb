@@ -11,6 +11,10 @@ class Project < ActiveRecord::Base
 
   default_scope :order => 'updated_at DESC'
 
+  def owner_name
+    owner.has_name? ? owner.name : owner.name_placeholder
+  end
+
   def has_picture?
     picture.present?
   end

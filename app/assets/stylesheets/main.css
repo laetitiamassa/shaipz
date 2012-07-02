@@ -488,6 +488,19 @@ header #flash .notice {
   font-size: 1.1em;
 }
 
+#stream #projects ol li h3 small {
+  color: #aaa;
+}
+
+#stream #projects ol li h3 small a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+#stream #projects ol li h3 small a:hover {
+  text-decoration: underline;
+}
+
 #stream #projects ol li .criteria {
   margin: 0 0 10px;
 }
