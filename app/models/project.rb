@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
   has_many :participations
   has_many :participants, :through => :participations
 
-  has_attached_file :picture, :styles => { :medium => "680x200#", :thumb => "100x50#" }
+  has_attached_file :picture, { :styles => { :medium => "680x200#", :thumb => "100x50#" } }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
   validates :owner_id, :name, :total_amount, :maximum_shaipz, :total_space, :presence => true
 
