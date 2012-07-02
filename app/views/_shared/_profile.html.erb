@@ -9,7 +9,7 @@
     <div class="personal-status">
       <div class="progress <%= user.personal_status.dasherize if user.has_personal_status? %>"></div>
     </div>
-    <p class="status"><%= t("statuses.#{user.personal_status}") %></p>
+    <p class="status"><%= t("statuses.#{user.personal_status}") if user.has_personal_status? %></p>
   </div>
 
   <div id="profile-info">
