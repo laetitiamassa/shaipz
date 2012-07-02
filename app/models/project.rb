@@ -19,11 +19,15 @@ class Project < ActiveRecord::Base
     source_link.present?
   end
 
-  def has_participant?(participant)
-    participants.include?(participant)
+  def has_participant_or_owner?(participant)
+    owner_and_participants.include?(participant)
   end
 
   def priority_order_for_participant(participant)
-    participants.index(participant) + 1
+    owner_and_participants.index(participant) + 1
+  end
+
+  def owner_and_participants
+    [owner] + participants
   end
 end

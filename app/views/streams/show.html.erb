@@ -33,7 +33,7 @@
               <span class="event"><%= project.event %></span>
             </div>
 
-            <% if project.has_participant?(@user) %>
+            <% if project.has_participant_or_owner?(@user) %>
               <div class="position">
                 <span>#<%= project.priority_order_for_participant(@user) %></span>
                 <%= t("project.in_project") %>
