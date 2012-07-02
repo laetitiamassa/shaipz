@@ -1,0 +1,18 @@
+<section>
+  <h2><%= t("profile.change_your_password") %></h2>
+  <%= form_for(@user, :url => change_password_path, :html => { :multipart => true }) do |f| %>
+    <ul class="fields">
+      <li class="string">
+        <%= f.label :email %>
+        <%= @user.email %>
+      </li>
+      <li class="string">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </li>
+    </ul>
+    <div class="form-actions clear">
+      <span class="button"><%= f.submit t('profile.save_changes') %></span>
+    </div>
+  <% end %>
+</section>

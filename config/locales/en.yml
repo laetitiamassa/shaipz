@@ -26,6 +26,8 @@ en:
     maximum_budget: "Maximum budget"
     minimum_space: "Minimum space"
     how_ready_you_are: "How ready are you to buy your flat?"
+    change_your_password: "Change your password"
+    change_password: "Change password"
   statuses:
     not_buying: "I'm not buying yet."
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity."

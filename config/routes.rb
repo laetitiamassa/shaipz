@@ -1,5 +1,5 @@
 Shaipz::Application.routes.draw do
-  devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions"}
+  devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions", :confirmations => "confirmations" }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -61,6 +61,7 @@ Shaipz::Application.routes.draw do
   resources :projects
   resources :participations
   resource :stream
+  resource :change_password
 
   root :to => 'home#index'
 

@@ -5,6 +5,9 @@
         <%= image_tag @user.picture.url(:medium) %>
         <%= f.file_field :picture %>
       </li>
+      <li class="profile-actions">
+        <%= link_to t("profile.change_password"), edit_change_password_path %>
+      </li>
     </ul>
     <ul class="fields">
       <li class="string">

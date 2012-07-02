@@ -615,6 +615,19 @@ header #flash .notice {
   margin: 0 0 10px 0;
 }
 
+#edit-profile form .profile-actions {
+  margin: 10px 0 0 0;
+}
+
+#edit-profile form .profile-actions a {
+  color: #777;
+  text-decoration: none;
+}
+
+#edit-profile form .profile-actions a:hover {
+  text-decoration: underline;
+}
+
 #edit-profile form .fields {
   margin: 0 0 0 220px;
 }
