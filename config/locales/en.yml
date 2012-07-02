@@ -5,7 +5,7 @@ en:
   sign_in:
     email: "email"
     password: "password"
-    sign_in: "Sign in"
+    sign_in: "Log in"
     forgot_your_password: "Forgot your password?"
   home:
     better: "Better"
