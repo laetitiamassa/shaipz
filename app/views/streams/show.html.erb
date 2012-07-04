@@ -16,7 +16,7 @@
             <div class="picture"><%= link_to image_tag(project.picture.url(:thumb)), project_url(project) %></div>
 
             <h3>
-              <%= project.name %>
+              <%= link_to project.name, project_path(project) %>
               <small>by <%= link_to project.owner_name, user_path(project.owner) %></small>
             </h3>
 

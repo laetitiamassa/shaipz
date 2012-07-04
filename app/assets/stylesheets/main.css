@@ -488,6 +488,11 @@ header #flash .notice {
   font-size: 1.1em;
 }
 
+#stream #projects ol li h3 a {
+  text-decoration: none;
+  color: #777;
+}
+
 #stream #projects ol li h3 small {
   color: #aaa;
 }

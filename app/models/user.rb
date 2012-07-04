@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
 
   has_attached_file :picture, { :styles => { :medium => "200x200#", :thumb => "50x50#" }, :default_url => "/assets/profile_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
+  validates_attachment :picture,
+    :content_type => { :content_type => /image/ },
+    :size => { :less_than => 2.megabytes }
+
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status
   # attr_accessible :title, :body

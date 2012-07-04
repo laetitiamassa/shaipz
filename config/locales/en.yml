@@ -35,8 +35,9 @@ en:
     ready_with_bank: "I'm ready to buy and I've already seen the bank."
     buying: "I'm so totally ready to buy now."
   menu:
+    home: "Home"
     profile: "Profile"
-    sign_out: "Sign out"
+    sign_out: "Log out"
   stream:
     start_project: "Start a project"
     all_projects: "All projects"
