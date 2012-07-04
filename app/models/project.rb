@@ -5,13 +5,14 @@ class Project < ActiveRecord::Base
 
   has_attached_file :picture, { :styles => { :medium => "680x200#", :thumb => "100x50#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
-  validates :owner_id, :name, :total_amount, :maximum_shaipz, :total_space, :presence => true
+  validates :owner_id, :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event, :presence => true
+  validates :zipcode, :length => { :is => 4 }
 
   validates_attachment :picture,
     :content_type => { :content_type => /image/ },
     :size => { :less_than => 2.megabytes }
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :cohousing, :event
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :cohousing, :event, :city, :zipcode
 
   default_scope :order => 'updated_at DESC'
 
@@ -37,5 +38,9 @@ class Project < ActiveRecord::Base
 
   def owner_and_participants
     [owner] + participants
+  end
+
+  def total_amount=(amount)
+    write_attribute(:total_amount, amount.gsub(/[\.,]/, ""))
   end
 end

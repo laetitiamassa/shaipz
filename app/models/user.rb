@@ -40,4 +40,8 @@ class User < ActiveRecord::Base
   def name_placeholder
     email.split("@")[0]
   end
+
+  def maximum_budget=(budget)
+    write_attribute(:maximum_budget, budget.gsub(/[\.,]/, ""))
+  end
 end

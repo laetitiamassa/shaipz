@@ -601,8 +601,6 @@ header #flash .notice {
   margin: 0 5px 0 0;
 }
 
-#stream
-
 /* Edit profile */
 
 #edit-profile {
@@ -743,6 +741,23 @@ header #flash .notice {
   margin: 0 0 10px 0;
 }
 
+#new-project form ul .two-fields .field {
+  display: inline-block;
+  width: 70px;
+}
+
+#new-project form ul .two-fields .field input {
+  width: 60px !important;
+}
+
+#new-project form ul .two-fields .field + .field {
+  margin: 0 0 0 7px;
+  width: 90px;
+}
+
+#new-project form ul .two-fields .field + .field input {
+  width: 120px !important;
+}
 
 /* Footer */
 
