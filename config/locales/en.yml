@@ -60,3 +60,8 @@ en:
     update_success: "Your project has been updated successfully."
     update_error: "Your project cannot be updated for some reasons."
     must_be_owner: "You must be the owner of this project in order to edit it."
+  participation:
+    create_success: "Now, you participate on the project."
+    create_error: "You can't participate to that project."
+  footer:
+    terms_of_use: "Terms of use"

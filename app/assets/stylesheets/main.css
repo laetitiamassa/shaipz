@@ -778,6 +778,27 @@ footer .tagline {
   font-style: italic;
 }
 
+footer .wrap {
+  position: relative;
+}
+
+footer nav ul {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+footer nav ul li {
+  display: inline-block;
+}
+
+footer nav ul li a {
+  color: #999;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /* Devise */
 
 #error_explanation h2 {
