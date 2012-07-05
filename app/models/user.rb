@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   has_attached_file :picture, { :styles => { :medium => "200x200#", :thumb => "50x50#" }, :default_url => "/assets/profile_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
+  validates :favorite_areas, :minimum_space, :maximum_budget, :presence => true
+  validates :favorite_areas, :format => { :with => /^\d{4}(?:\s?,\s?\d{4}){0,4}$/ }
 
   validates_attachment :picture,
     :content_type => { :content_type => /image/ },
