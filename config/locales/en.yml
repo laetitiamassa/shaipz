@@ -51,6 +51,8 @@ en:
     source_link: "What's your source?"
     cohousing: "Is it for cohousing?"
     event: "What's the next step?"
+    next_event: "Next event"
+    address: "Address"
     how_many: "How many shaipz?"
     join: "Join"
     in_project: "in project"
@@ -60,6 +62,8 @@ en:
     update_success: "Your project has been updated successfully."
     update_error: "Your project cannot be updated for some reasons."
     must_be_owner: "You must be the owner of this project in order to edit it."
+    about_owner: "About the project's owner"
+    participants: "Participants"
   participation:
     create_success: "Now, you participate on the project."
     create_error: "You can't participate to that project."

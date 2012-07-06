@@ -23,7 +23,10 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @project = Project.find(params[:id])
+    @owner = @project.owner
+    @participants = @project.owner_and_participants
   end
 
   def edit

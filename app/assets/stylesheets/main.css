@@ -759,6 +759,116 @@ header #flash .notice {
   width: 120px !important;
 }
 
+/* Project details */
+
+#show-project {
+}
+
+#show-project #project-wrap {
+  position: relative;
+}
+
+#show-project #project-wrap .cover {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+#show-project #project-wrap h2 {
+  position: relative;
+  padding: 0 36px 0 0;
+}
+
+#show-project #project-wrap h2 .external {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#show-project #owner {
+  width: 280px;
+  border: 1px dotted #1e5270;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  top: 250px;
+}
+
+#show-project #owner .picture {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+#show-project h3 {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #1e5270;
+  margin: 0 0 10px 0;
+}
+
+#show-project #owner h4 {
+  margin: 0 0 10px 0;
+}
+
+#show-project #owner h4 a {
+  color: #999;
+  text-decoration: none;
+}
+
+#show-project #owner .status {
+  font-style: italic;
+}
+
+#show-project #details {
+  margin: 0 322px 0 0;
+}
+
+#show-project .criteria {
+  margin: 0 0 20px 0;
+}
+
+#show-project .criteria span {
+  display: inline-block;
+  line-height: 1.5;
+  padding: 0 20px 0 26px;
+  background-position: center left;
+  background-repeat: no-repeat;
+}
+
+#show-project .criteria .amount {
+  background-image: url("tag.png");
+}
+
+#show-project .criteria .space {
+  background-image: url("home.png");
+}
+
+#show-project .criteria .shaipz {
+  background-image: url("person.png");
+}
+
+#show-project #participants ol {
+  margin: 0;
+  padding: 0;
+}
+
+#show-project #participants ol li {
+  list-style: none;
+}
+
+#show-project #participants ol li + li {
+  margin: 10px 0 0 0;
+}
+
+#show-project #participants ol li a {
+  color: #999;
+  text-decoration: none;
+}
+
+#show-project #participants ol li img {
+  vertical-align: middle;
+  margin: 0 10px 0 0;
+}
+
 /* Footer */
 
 footer {

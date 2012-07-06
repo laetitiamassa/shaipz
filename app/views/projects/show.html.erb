@@ -1,0 +1,53 @@
+<section id="show-project">
+  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
+  <div id="project-wrap">
+    <div class="cover">
+      <%= image_tag @project.picture.url(:medium) %>
+    </div>
+    <h2>
+      <%= @project.name %>
+      <span class="external"><%= link_to(image_tag("arrow.png"), @project.source_link, :target => "_blank") if @project.has_source_link? %></span>
+    </h2>
+
+    <section id="owner">
+      <h3><%= t("project.about_owner") %></h3>
+      <div class="owner-profile">
+        <div class="picture">
+          <%= image_tag @owner.picture.url(:thumb) %>
+        </div>
+        <h4><%= link_to @owner.name, user_path(@owner) %></h4>
+        <div class="status"><%= t("statuses.#{@owner.personal_status}") if @owner.has_personal_status? %></div>
+      </div>
+    </section>
+
+    <section id="details">
+      <div class="criteria">
+        <span class="amount"><%= @project.total_amount %> €</span>
+        <span class="space"><%= @project.total_space %> m&sup2;</span>
+        <span class="shaipz"><%= @project.maximum_shaipz %></span>
+      </div>
+
+      <div class="event">
+        <h3><%= t("project.next_event") %></h3>
+        <p><%= @project.event %></p>
+      </div>
+
+      <div class="address">
+        <h3><%= t("project.address") %></h3>
+        <p><%= @project.full_address %></p>
+      </div>
+    </section>
+
+    <section id="participants">
+      <h3><%= t("project.participants") %></h3>
+      <ol>
+        <% @participants.each do |p| %>
+          <li>
+            <%= image_tag p.picture.url(:thumb) %>
+            <%= link_to p.name, user_path(p) %>
+          </li>
+        <% end %>
+      </ol>
+    </section>
+  </div>
+</section>
