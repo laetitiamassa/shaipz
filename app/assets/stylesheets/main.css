@@ -771,6 +771,22 @@ header #flash .notice {
 #show-project #project-wrap .cover {
   text-align: center;
   margin: 0 0 10px 0;
+  position: relative;
+}
+
+#show-project #project-wrap .cover .edit {
+  background: #fff url("file.png") no-repeat 5px center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-transform: uppercase;
+  padding: 5px 5px 5px 25px;
+}
+
+#show-project #project-wrap .cover .edit a {
+  color: #1e5270;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 #show-project #project-wrap h2 {

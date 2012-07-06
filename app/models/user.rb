@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def owner_of_project?(project)
+    projects.include?(project)
+  end
+
   def name_placeholder
     email.split("@")[0]
   end
