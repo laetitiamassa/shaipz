@@ -55,6 +55,7 @@ en:
     address: "Address"
     how_many: "How many shaipz?"
     join: "Join"
+    join_project: "Join the project"
     in_project: "in project"
     create_success: "Your project has been created."
     create_error: "We cannot create your project, please check the details."
