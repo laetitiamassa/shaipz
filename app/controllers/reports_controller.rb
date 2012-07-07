@@ -5,7 +5,6 @@ class ReportsController < ApplicationController
     @reports = @reportable.reports
   end
 
-
   def new
     @report = @reportable.reports.new
   end
