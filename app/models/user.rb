@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :projects, :foreign_key => "owner_id"
-  has_many :reports, :as => :repotable
+  has_many :reports, :as => :reportable
   PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying"]
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

@@ -1,5 +1,5 @@
 Shaipz::Application.routes.draw do
-  resources :reports
+
 
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions", :confirmations => "confirmations" }
 
@@ -59,8 +59,14 @@ Shaipz::Application.routes.draw do
     root :to => "streams#show"
   end
 
-  resources :users
-  resources :projects
+  resources :users do
+    resources :reports
+  end
+
+  resources :projects do
+    resources :reports
+  end
+  resources :reports
   resources :participations
   resource :stream
   resource :change_password

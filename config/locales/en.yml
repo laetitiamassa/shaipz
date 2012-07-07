@@ -90,3 +90,9 @@ en:
       leave_participant:
         subject: "%{name} left %{project} !"
         content: "You can have more details"
+  report:
+    reason: "What do you report ?"
+    submit: "Submit"
+    create_success: "Your report has been created"
+    create_error: "We cannot create your report, please check the details."
+

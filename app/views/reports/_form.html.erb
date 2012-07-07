@@ -1,0 +1,17 @@
+<%= form_for [@reportable, @report] do |f| %>
+  <% if @report.errors.any? %>
+    <div class="error_messages">
+      <% @report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= t('report.reason') %>
+  <div class="field">
+    <%= f.text_area :content, rows: 8 %>
+  </div>
+  <div class="actions">
+    <%= f.submit t('report.submit') %>
+  </div>
+<% end %>

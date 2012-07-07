@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120704214456) do
+ActiveRecord::Schema.define(:version => 20120707164718) do
 
   create_table "participations", :force => true do |t|
     t.integer  "participant_id", :null => false
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(:version => 20120704214456) do
     t.integer  "zipcode",              :default => 0,     :null => false
     t.string   "city"
   end
+
+  create_table "reports", :force => true do |t|
+    t.integer  "reportable_id",   :null => false
+    t.string   "reportable_type", :null => false
+    t.text     "content",         :null => false
+    t.integer  "reporter_id",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "reports", ["reportable_id", "reportable_type"], :name => "index_reports_on_reportable_id_and_reportable_type"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
