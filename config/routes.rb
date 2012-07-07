@@ -1,4 +1,6 @@
 Shaipz::Application.routes.draw do
+  resources :reports
+
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions", :confirmations => "confirmations" }
 
   # The priority is based upon order of creation:

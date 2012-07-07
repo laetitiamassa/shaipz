@@ -7,7 +7,7 @@ gem 'rails', '3.2.6'
 
 gem 'pg'
 gem 'devise'
-
+gem 'nifty-generators'
 gem "paperclip", "~> 3.0"
 
 
@@ -50,3 +50,5 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem "mocha", :group => :test

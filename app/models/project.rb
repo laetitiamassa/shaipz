@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
   belongs_to :owner, :class_name => "User"
   has_many :participations
   has_many :participants, :through => :participations
-
+  has_many :reports, :as => :reportable
   has_attached_file :picture, { :styles => { :medium => "720x200#", :thumb => "100x50#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
   validates :owner_id, :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event, :presence => true
