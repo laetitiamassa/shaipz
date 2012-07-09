@@ -38,6 +38,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
       flash[:notice] = t("project.update_success")
+      NotificationMailer.update_project(current_user, @project).deliver
       redirect_to stream_path
     else
       @user = current_user

@@ -2,6 +2,12 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  generals:
+    hello: "Hello"
+    goodbye: "Good bye"
+    have_nice_day: "Have a nice day !"
+    thank_you: "Thank you"
+    have_fun: "Have fun !"
   sign_in:
     email: "email"
     password: "password"
