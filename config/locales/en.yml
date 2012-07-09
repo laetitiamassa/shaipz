@@ -70,3 +70,10 @@ en:
     create_error: "You can't participate to that project."
   footer:
     terms_of_use: "Terms of use"
+  notification:
+    mail:
+      new_participant:
+        subject: "%{name} has joined %{project} !"
+        details: "You can have more details"
+      remove_project:
+        subject: "%{name} has removed %{project} !"
