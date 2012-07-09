@@ -75,7 +75,7 @@ en:
       new_participant:
         subject: "%{name} has joined %{project} !"
         content: "You can have more details"
-      remove_project:
+      destroy_project:
         subject: "%{name} has removed %{project} !"
         content: "You can have more details"
       update_project:
