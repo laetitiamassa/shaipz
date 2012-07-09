@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1><%= t(:"notification.mail.new_participant.subject", :name => @user.name, :project => @project.name) %></h1>
+    <p>
+      <%= t("notification.mail.new_participant.content") %> <%= link_to 'here' , project_url(@project) %>.
+	  <%= %>
+    </p>
+    <p>Have a great day!</p>
+  </body>
+</html>

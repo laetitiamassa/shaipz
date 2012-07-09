@@ -74,6 +74,13 @@ en:
     mail:
       new_participant:
         subject: "%{name} has joined %{project} !"
-        details: "You can have more details"
+        content: "You can have more details"
       remove_project:
         subject: "%{name} has removed %{project} !"
+        content: "You can have more details"
+      update_project:
+        subject: "%{name} updated %{project} !"
+        content: "You can have more details"
+      leave_participant:
+        subject: "%{name} left %{project} !"
+        content: "You can have more details"

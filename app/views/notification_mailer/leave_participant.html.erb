@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1><%= @user.name %> left the project <%= @project.name %></h1>
+    <p>
+      Learn more on <%= @user.name %>  <%= link_to 'here' , project_url(@project) %>.
+    </p>
+    <p>Have a great day!</p>
+  </body>
+</html>
