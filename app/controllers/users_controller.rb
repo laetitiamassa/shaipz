@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       flash[:notice] = t("profile.update_success")
       redirect_to user_path(@user)
     else
+      @personal_statuses = User.personal_statuses
       flash[:alert] = t("profile.update_errors")
       render :edit
     end
