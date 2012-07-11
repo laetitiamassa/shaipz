@@ -100,3 +100,4 @@ en:
       leave_participant:
         subject: "%{name} left %{project} !"
         content: "You can have more details"
+

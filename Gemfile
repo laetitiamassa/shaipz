@@ -7,7 +7,11 @@ gem 'rails', '3.2.6'
 
 gem 'pg'
 gem 'devise'
+
 gem 'nifty-generators'
+gem 'omniauth-facebook'
+
+
 gem "paperclip", "~> 3.0"
 
 # Gems used only for assets and not required
@@ -51,3 +55,4 @@ end
 # gem 'debugger'
 
 gem "mocha", :group => :test
+

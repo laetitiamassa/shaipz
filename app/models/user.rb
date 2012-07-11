@@ -1,12 +1,14 @@
 class User < ActiveRecord::Base
   has_many :projects, :foreign_key => "owner_id"
   has_many :reports, :as => :reportable
+
   PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying"]
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
+         :omniauthable
 
   has_attached_file :picture, { :styles => { :medium => "200x200#", :thumb => "50x50#" }, :default_url => "/assets/profile_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
   validates :favorite_areas, :minimum_space, :maximum_budget, :presence => true
@@ -18,8 +20,36 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status
-  # attr_accessible :title, :body
   #
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+
+    user= User.find_by_email(auth.info.email)
+
+    user
+  end
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
+
+  def self.user_from_facebook(params, session)
+    facebook_user = User.new
+    if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+      facebook_user.name = data["name"]
+      facebook_user.email = data["email"]
+      facebook_user.password =  facebook_user.name+rand(1...5000).to_s+facebook_user.email+rand(1...5000).to_s
+      facebook_user.favorite_areas = '1000'
+      facebook_user.minimum_space = '0'
+      facebook_user.maximum_budget = '0'
+      facebook_user.confirmed_at = Time.now
+    end
+    facebook_user
+  end
 
   def has_picture?
     picture.present?

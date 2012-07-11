@@ -7,11 +7,13 @@ class ParticipationsController < ApplicationController
 
       NotificationMailer.new_participant(current_user, @participation.project).deliver
       redirect_to @participation.project
+
     else
       flash[:alert] = t("participation.create_error")
       redirect_to @participation.project
     end
   end
+
 
   def destroy
     project = Project.find(params[:id])

@@ -1,0 +1,5 @@
+<%= @oauth.url_for_oauth_code(:permissions => "publish_stream") %>
+
+<%= @oauth.url_for_access_token(params[:code])%>
+
+<%= @oauth.get_access_token(params[:code]) %>
