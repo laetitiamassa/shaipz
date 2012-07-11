@@ -71,11 +71,21 @@ en:
     must_be_owner: "You must be the owner of this project in order to edit it."
     about_owner: "About the project's owner"
     participants: "Participants"
+    destroy: "Delete"
+    destroy_confirmation: "Are your sure you want to erase definitely the project ?"
   participation:
     create_success: "Now, you participate on the project."
     create_error: "You can't participate to that project."
+    destroy_success: "You successfully left the project."
+    destroy: "Leave"
+    destroy_confirmation: "Are your sure you want to leave and loose your priority on the project ?"
   footer:
     terms_of_use: "Terms of use"
+  report:
+    reason: "What do you report ?"
+    submit: "Submit"
+    create_success: "Your report has been created"
+    create_error: "We cannot create your report, please check the details."
   notification:
     mail:
       new_participant:
@@ -90,9 +100,3 @@ en:
       leave_participant:
         subject: "%{name} left %{project} !"
         content: "You can have more details"
-  report:
-    reason: "What do you report ?"
-    submit: "Submit"
-    create_success: "Your report has been created"
-    create_error: "We cannot create your report, please check the details."
-

@@ -51,6 +51,18 @@ ActiveRecord::Schema.define(:version => 20120707164718) do
 
   add_index "reports", ["reportable_id", "reportable_type"], :name => "index_reports_on_reportable_id_and_reportable_type"
 
+    t.integer  "owner_id",            :default => 0, :null => false
+    t.integer  "project_reported_id", :default => 0, :null => false
+    t.integer  "user_reported_id",    :default => 0, :null => false
+    t.text     "comment",                            :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "reports", ["owner_id"], :name => "index_reports_on_owner_id"
+  add_index "reports", ["project_reported_id"], :name => "index_reports_on_project_reported_id"
+
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
     t.string   "encrypted_password",     :default => "",    :null => false

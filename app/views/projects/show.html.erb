@@ -52,6 +52,17 @@
             </div>
           <% end %>
         </div>
+		<% else %>
+		  <% if current_user.id == @project.owner.id%>
+	        <div class="leave-button">
+	          <%= button_to t("project.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm('"+ t("project.destroy_confirmation") +"')" %>
+
+	         </div>
+	       <%else %>
+	         <div class="leave-button">
+	            <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm('"+ t("participation.destroy_confirmation") +"')" %>
+	         </div>
+	       <%end%>
       <% end %>
       <ol>
         <% @participants.each do |p| %>
@@ -61,6 +72,7 @@
           </li>
         <% end %>
       </ol>
+
     </section>
 	<div class= "report">
 	  <%= link_to 'Report', new_project_report_path(@project) %>
