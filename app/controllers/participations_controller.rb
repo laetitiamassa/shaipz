@@ -26,7 +26,7 @@ class ParticipationsController < ApplicationController
       the_project.destroy
     else
       participation = Participation.find_by_participant_id_and_project_id(current_user.id, the_project.id)
-      NotificationMailer.leave_project(current_user, the_project).deliver
+      NotificationMailer.leave_participant(current_user, the_project).deliver
       participation.destroy
     end
 

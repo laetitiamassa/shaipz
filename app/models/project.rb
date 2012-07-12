@@ -20,6 +20,7 @@ class Project < ActiveRecord::Base
 
   default_scope :order => 'updated_at DESC'
 
+
   def self.project_statuses
     PROJECT_STATUSES.map do |status|
       [I18n.t("project.statuses.#{status}"), status]

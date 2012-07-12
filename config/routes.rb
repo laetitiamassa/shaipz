@@ -57,6 +57,9 @@ Shaipz::Application.routes.draw do
   # root :to => 'welcome#index'
   #
   #
+
+
+
   authenticated :user do
     root :to => "streams#show"
   end
@@ -71,6 +74,7 @@ Shaipz::Application.routes.draw do
   resources :reports
   resources :participations
   resource :stream
+  resource :shaipz
   resource :change_password
 
   root :to => 'home#index'

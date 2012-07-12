@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   has_many :projects, :foreign_key => "owner_id"
   has_many :reports, :as => :reportable
-
+  has_many :participations, :foreign_key => "participant_id"
+  has_many :project_participations, :through => :participations, :source => :project
   PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying"]
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -21,6 +22,11 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status
   #
+
+  def find_all_projects
+    @projects_of_user = self.project_participations | self.projects
+
+  end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
 

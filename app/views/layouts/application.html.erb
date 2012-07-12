@@ -18,6 +18,9 @@
             <li>
               <%= link_to(t("menu.profile"), edit_user_path(current_user)) %>
             </li>
+						<li>
+              <%= link_to(t("menu.shaipz"), shaipz_path) %>
+            </li>
             <li>
               <%= link_to(t("menu.sign_out"), destroy_user_session_path, :method => :delete) %>
             </li>
@@ -36,7 +39,7 @@
             <div class="form-actions">
               <span class="button"><%= f.submit t("sign_in.sign_in") %></span>
               <%= link_to t("sign_in.forgot_your_password"), new_password_path('user') %>
-            <%= link_to  image_tag("facebook_login_logo.gif", :size => "140x20"), user_omniauth_authorize_path(:facebook) %>
+            <%= link_to  image_tag("facebook_login_logo.gif", :size => "150x20"), user_omniauth_authorize_path(:facebook) %>
 						</div>
 
           <% end %>

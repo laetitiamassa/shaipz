@@ -1,0 +1,55 @@
+<section id="stream">
+  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
+
+  <div id="stream-wrap">
+    <section id="start-project">
+      <div class="action-call">
+        <span class="button"><span class="icon"></span><%= link_to t("stream.start_project"), new_project_path %></span>
+      </div>
+    </section>
+    <section id="projects">
+      <h2><span><%= t("stream.all_projects") %><span></h2>
+      <ol>
+        <% @projects.each do |project| %>
+          <li>
+            <div class="picture"><%= link_to image_tag(project.picture.url(:thumb)), project_url(project) %></div>
+            <h3>
+              <%= link_to truncate(project.name, :length => 30), project_path(project) %>
+              <small>by <%= link_to project.owner_name, user_path(project.owner) %></small>
+            </h3>
+
+            <div class="criteria">
+              <span class="amount"><%= project.total_amount %> €</span>
+              <span class="space"><%= project.total_space %> m&sup2;</span>
+              <span class="shaipz"><%= project.maximum_shaipz %></span>
+            </div>
+
+            <div class="links">
+              <span class="external"><%= link_to(image_tag("arrow.png"), project.source_link, :target => "_blank") if project.has_source_link? %></span>
+              <span class="internal"><%= link_to(image_tag("screen.png"), project_url(project)) %></span>
+            </div>
+
+            <div class="details">
+              <span class="address"><%= project.zipcode %></span>
+              <span class="event"><%= truncate(project.event, :length => 40) %></span>
+            </div>
+
+            <% if project.has_participant_or_owner?(@user) %>
+              <div class="position">
+                <span>#<%= project.priority_order_for_participant(@user) %></span>
+                <%= t("project.in_project") %>
+              </div>
+            <% else %>
+              <%= form_for "participation", :url => participations_path do |f| %>
+                <%= f.hidden_field :project_id, :value => project.id %>
+                <div class="join-action">
+                  <%= f.submit t("project.join") %>
+                </div>
+              <% end %>
+            <% end %>
+          </li>
+        <% end %>
+      </ol>
+    </section>
+  </div>
+</section>
