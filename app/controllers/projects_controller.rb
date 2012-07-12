@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 
   def new
     @user = current_user
+    @project_statuses = Project.project_statuses
     @project = Project.new
   end
 
