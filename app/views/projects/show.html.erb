@@ -24,18 +24,17 @@
     </section>
 
     <section id="details">
-      <div class="criteria">
-        <span class="amount"><%= @project.total_amount %> €</span>
-        <span class="space"><%= @project.total_space %> m&sup2;</span>
-        <span class="shaipz"><%= @project.maximum_shaipz %></span>
-      </div>
-
 			<div class="project-status">
 		    <div class="progress <%= @project.project_status.dasherize if @project.has_project_status? %>"></div>
 		  </div>
 
 			<p class="status"><%= t("project.statuses.#{@project.project_status}") if @project.has_project_status? %></p>
 
+      <div class="criteria">
+        <span class="amount"><%= @project.total_amount %> €</span>
+        <span class="space"><%= @project.total_space %> m&sup2;</span>
+        <span class="shaipz"><%= @project.maximum_shaipz %></span>
+      </div>
 
       <div class="event">
         <h3><%= t("project.next_event") %></h3>
@@ -60,11 +59,16 @@
           <% end %>
         </div>
 		<% else %>
+		<div class="position">
+      <span>#<%= @project.priority_order_for_participant(@user) %></span>
+      <%= t("project.in_project") %>
+    </div>
 		  <% if current_user.id == @project.owner.id%>
+
 	        <div class="leave-button">
 	          <%= button_to t("project.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm('"+ t("project.destroy_confirmation") +"')" %>
-
 	         </div>
+
 	       <%else %>
 	         <div class="leave-button">
 	            <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm('"+ t("participation.destroy_confirmation") +"')" %>
@@ -83,8 +87,6 @@
     </section>
 	<div class= "report">
 	  <%= link_to 'Report', new_project_report_path(@project) %>
-
-
 	</div>
   </div>
 </section>

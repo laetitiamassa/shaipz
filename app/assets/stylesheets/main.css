@@ -5,7 +5,7 @@
 /* Generic */
 
 body {
-  background: #fafafa url("bg.png") repeat-x center 50px;
+  background: #fafafa url("bg4.png") repeat-x center 50px;
   font-size: 0.7em;
   font-family: "Lucida Grande", arial, sans-serif;
 }
@@ -69,6 +69,11 @@ form ul li {
   display: inline;
 }
 
+#sign-in .facebook-button {
+	 display: inline-block;
+	 margin: 0 0 0 140px;
+}
+
 #sign-in .fields input {
   border: none;
   padding: 3px 5px;
@@ -92,6 +97,7 @@ form ul li {
   padding: 1px;
   display: inline-block;
   margin: 0 5px;
+
 }
 
 #sign-in .form-actions .button input {
@@ -311,7 +317,7 @@ header #flash .notice {
 }
 
 #why-shaipz h3 strong {
-  color: #c6f7f7;
+  color: #99bec1;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -435,7 +441,7 @@ header #flash .notice {
 }
 
 #stream #projects h2 {
-  background: url("stream-header-bg.png") repeat-x center center;
+  background: url("stream-header-bg2.png") repeat-x center center;
   text-transform: uppercase;
   margin: 15px 0 5px;
   padding: 0;
@@ -654,6 +660,14 @@ header #flash .notice {
   font-style: italic;
 }
 
+#show-profile  .report a {
+	position: absolute;
+	right:    0;
+	bottom:   0;
+	color: #999;
+  text-decoration: none;
+}
+
 .personal-status {
   margin: 20px 0 0 0;
   height: 14px;
@@ -700,75 +714,6 @@ header #flash .notice {
   width: 100%;
 }
 
-.project-status {
-  margin: 20px 0 0 0;
-  height: 14px;
-  padding: 3px;
-  width: 300px;
-  background: url("back-button-bg.png") repeat-x bottom center;
-  -moz-box-shadow: inset 0 1px 2px #ccc;
-  -webkit-box-shadow: inset 0 1px 2px #ccc;
-  box-shadow: inset 0 1px 2px #ccc;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-
-.project-status .progress {
-  background: url("progress.png") repeat-x;
-  height: 14px;
-  -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
-  box-shadow: 0 1px 2px #ccc;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  width: 0;
-}
-
-.project-status .progress.building-discovery {
-  width: 5%;
-}
-
-.project-status .progress.people-discovery {
-  width: 10%;
-}
-
-.project-status .progress.interest-confirmation {
-  width: 15%;
-}
-
-.project-status .progress.feasibility-stamp {
-  width: 25%;
-}
-
-.project-status .progress.internal-agreement {
-  width: 40%;
-}
-
-.project-status .progress.global-offer-making {
-  width: 50%;
-}
-
-.project-status .progress.global-offer-acceptance {
-  width: 65%;
-}
-
-.project-status .progress.sales-agreement {
-  width: 75%;
-}
-
-.project-status .progress.challenges-fixing {
-  width: 90%;
-}
-
-.project-status .progress.notarial-deed {
-  width: 95%;
-}
-
-.project-status .progress.move-in {
-  width: 100%;
-}
 
 #show-profile #profile-info {
   margin: 0 0 0 220px;
@@ -870,6 +815,7 @@ header #flash .notice {
   top: 0;
 }
 
+
 #show-project #owner {
   width: 280px;
   border: 1px dotted #1e5270;
@@ -932,6 +878,64 @@ header #flash .notice {
   background-image: url("person.png");
 }
 
+#show-project  .report a {
+	position: absolute;
+	right:    0;
+	bottom:   150;
+	color: #999;
+  text-decoration: none;
+}
+
+#show-project #participants .position {
+  position: relative;
+  width: 100px;
+	bottom : 2px;
+  background: #dedede;
+  padding: 6px 5px 6px 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #eee;
+}
+
+#show-project #participants .position span {
+  background: #fff;
+  padding: 6px 5px;
+  margin: 0 5px 0 0;
+}
+
+#show-project #participants .leave-button  {
+	position: absolute;
+	right:    0;
+	bottom:   4px;
+	display: inline-block;
+  background: url("back-button-bg.png") repeat-x center top;
+  padding: 4px;
+  -moz-box-shadow: inset 0 1px 2px #ccc;
+  -webkit-box-shadow: inset 0 1px 2px #ccc;
+  box-shadow: inset 0 1px 2px #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#show-project #participants .leave-button  input {
+  padding: 6px 40px;
+  font-weight: bold;
+  color: #777;
+  border: none;
+  text-shadow: 0 1px 0 #fff;
+  background: #fff url("button-bg.png") repeat-x center bottom;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 2px #ccc;
+  -webkit-box-shadow: 0 1px 2px #ccc;
+  box-shadow: 0 1px 2px #ccc;
+}
+
 #show-project #participants .join-action {
   margin: 0 0 10px 0;
 }
@@ -981,6 +985,77 @@ header #flash .notice {
   vertical-align: middle;
   margin: 0 10px 0 0;
 }
+
+.project-status {
+  margin: 20px 0 0 0;
+  height: 14px;
+  padding: 3px;
+  width: 300px;
+  background: url("back-button-bg.png") repeat-x bottom center;
+  -moz-box-shadow: inset 0 1px 2px #ccc;
+  -webkit-box-shadow: inset 0 1px 2px #ccc;
+  box-shadow: inset 0 1px 2px #ccc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.project-status .progress {
+  background: url("progress.png") repeat-x;
+  height: 14px;
+  -moz-box-shadow: 0 1px 2px #ccc;
+  -webkit-box-shadow: 0 1px 2px #ccc;
+  box-shadow: 0 1px 2px #ccc;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  width: 0;
+}
+
+.project-status .progress.building-discovery {
+  width: 5%;
+}
+
+.project-status .progress.people-discovery {
+  width: 10%;
+}
+
+.project-status .progress.interest-confirmation {
+  width: 15%;
+}
+
+.project-status .progress.feasibility-stamp {
+  width: 25%;
+}
+
+.project-status .progress.internal-agreement {
+  width: 40%;
+}
+
+.project-status .progress.global-offer-making {
+  width: 50%;
+}
+
+.project-status .progress.global-offer-acceptance {
+  width: 65%;
+}
+
+.project-status .progress.sales-agreement {
+  width: 75%;
+}
+
+.project-status .progress.challenges-fixing {
+  width: 90%;
+}
+
+.project-status .progress.notarial-deed {
+  width: 95%;
+}
+
+.project-status .progress.move-in {
+  width: 100%;
+}
+
 
 /* Footer */
 

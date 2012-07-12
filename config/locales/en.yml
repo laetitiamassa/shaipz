@@ -71,7 +71,7 @@ en:
     must_be_owner: "You must be the owner of this project in order to edit it."
     about_owner: "About the project's owner"
     participants: "Participants"
-    destroy: "Delete"
+    destroy: "Delete the project"
     destroy_confirmation: "Are your sure you want to erase definitely the project ?"
     statuses:
       building_discovery: "We are discovering the building"
@@ -89,7 +89,7 @@ en:
     create_success: "Now, you participate on the project."
     create_error: "You can't participate to that project."
     destroy_success: "You successfully left the project."
-    destroy: "Leave"
+    destroy: "Leave the project"
     destroy_confirmation: "Are your sure you want to leave and loose your priority on the project ?"
   footer:
     terms_of_use: "Terms of use"
