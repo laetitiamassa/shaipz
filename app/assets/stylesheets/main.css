@@ -700,6 +700,76 @@ header #flash .notice {
   width: 100%;
 }
 
+.project-status {
+  margin: 20px 0 0 0;
+  height: 14px;
+  padding: 3px;
+  width: 300px;
+  background: url("back-button-bg.png") repeat-x bottom center;
+  -moz-box-shadow: inset 0 1px 2px #ccc;
+  -webkit-box-shadow: inset 0 1px 2px #ccc;
+  box-shadow: inset 0 1px 2px #ccc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.project-status .progress {
+  background: url("progress.png") repeat-x;
+  height: 14px;
+  -moz-box-shadow: 0 1px 2px #ccc;
+  -webkit-box-shadow: 0 1px 2px #ccc;
+  box-shadow: 0 1px 2px #ccc;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  width: 0;
+}
+
+.project-status .progress.building-discovery {
+  width: 5%;
+}
+
+.project-status .progress.people-discovery {
+  width: 10%;
+}
+
+.project-status .progress.interest-confirmation {
+  width: 15%;
+}
+
+.project-status .progress.feasibility-stamp {
+  width: 25%;
+}
+
+.project-status .progress.internal-agreement {
+  width: 40%;
+}
+
+.project-status .progress.global-offer-making {
+  width: 50%;
+}
+
+.project-status .progress.global-offer-acceptance {
+  width: 65%;
+}
+
+.project-status .progress.sales-agreement {
+  width: 75%;
+}
+
+.project-status .progress.challenges-fixing {
+  width: 90%;
+}
+
+.project-status .progress.notarial-deed {
+  width: 95%;
+}
+
+.project-status .progress.move-in {
+  width: 100%;
+}
+
 #show-profile #profile-info {
   margin: 0 0 0 220px;
 }

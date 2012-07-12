@@ -32,6 +32,7 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     @user = current_user
+    @project_statuses = Project.project_statuses
   end
 
   def update
@@ -39,10 +40,11 @@ class ProjectsController < ApplicationController
     if @project.update_attributes(params[:project])
       flash[:notice] = t("project.update_success")
       NotificationMailer.update_project(current_user, @project).deliver
-      redirect_to stream_path
+      redirect_to @project
     else
       @user = current_user
       flash[:alert] = t("project.update_error")
+      @project_statuses = Project.project_statuses
       render :edit
     end
   end

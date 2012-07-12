@@ -12,9 +12,23 @@ class Project < ActiveRecord::Base
     :content_type => { :content_type => /image/ },
     :size => { :less_than => 2.megabytes }
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :cohousing, :event, :city, :zipcode
+  PROJECT_STATUSES = ["building_discovery", "people_discovery", "interest_confirmation", "feasibility_stamp", "internal_agreement",
+                      "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]
+
+
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :cohousing, :event, :city, :zipcode, :project_status
 
   default_scope :order => 'updated_at DESC'
+
+  def self.project_statuses
+    PROJECT_STATUSES.map do |status|
+      [I18n.t("project.statuses.#{status}"), status]
+    end
+  end
+
+  def has_project_status?
+    project_status.present?
+  end
 
   def owner_name
     owner.has_name? ? owner.name : owner.name_placeholder

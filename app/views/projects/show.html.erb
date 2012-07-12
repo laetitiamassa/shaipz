@@ -30,6 +30,13 @@
         <span class="shaipz"><%= @project.maximum_shaipz %></span>
       </div>
 
+			<div class="project-status">
+		    <div class="progress <%= @project.project_status.dasherize if @project.has_project_status? %>"></div>
+		  </div>
+
+			<p class="status"><%= t("project.statuses.#{@project.project_status}") if @project.has_project_status? %></p>
+
+
       <div class="event">
         <h3><%= t("project.next_event") %></h3>
         <p><%= @project.event %></p>
