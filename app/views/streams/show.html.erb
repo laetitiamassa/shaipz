@@ -41,8 +41,6 @@
                 <span>#<%= project.priority_order_for_participant(@user) %></span>
                 <%= t("project.in_project") %>
               </div>
-
-
             <% else %>
               <%= form_for "participation", :url => participations_path do |f| %>
                 <%= f.hidden_field :project_id, :value => project.id %>

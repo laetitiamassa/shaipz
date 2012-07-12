@@ -31,11 +31,14 @@
               <%= f.password_field :password, :placeholder => t("sign_in.password") %>
               <%= f.check_box :remember_me %>
               <%= f.label :remember_me %>
+
             </div>
             <div class="form-actions">
               <span class="button"><%= f.submit t("sign_in.sign_in") %></span>
               <%= link_to t("sign_in.forgot_your_password"), new_password_path('user') %>
-            </div>
+            <%= link_to  image_tag("facebook_login_logo.gif", :size => "140x20"), user_omniauth_authorize_path(:facebook) %>
+						</div>
+
           <% end %>
         </div>
       <% end %>

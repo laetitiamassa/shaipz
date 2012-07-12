@@ -212,7 +212,6 @@ DEPENDENCIES
   mocha
   nifty-generators
   omniauth-facebook
-
   paperclip (~> 3.0)
   pg
   rails (= 3.2.6)
