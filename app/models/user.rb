@@ -29,9 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-
     user= User.find_by_email(auth.info.email)
-
     user
   end
 
@@ -48,7 +46,7 @@ class User < ActiveRecord::Base
     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
       facebook_user.name = data["name"]
       facebook_user.email = data["email"]
-      facebook_user.password =  facebook_user.name+rand(1...5000).to_s+facebook_user.email+rand(1...5000).to_s
+      facebook_user.password =  facebook_user.name+rand(5000).to_s+facebook_user.email+rand(5000).to_s
       facebook_user.favorite_areas = '1000'
       facebook_user.minimum_space = '0'
       facebook_user.maximum_budget = '0'
