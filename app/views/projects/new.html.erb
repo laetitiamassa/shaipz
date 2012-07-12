@@ -50,10 +50,10 @@
           <%= f.label :event, t("project.event") %>
           <%= f.text_area :event, :rows => 5 %>
         </li>
-	<!--			<li class="string">
+			<li class="string">
 	        <%= f.label :project_status, t("profile.how_ready_you_are") %>
 	        <%= f.select :project_status, @project_statuses, {:include_blank => true} %>
-	      </li>-->
+	      </li>
       </ul>
       <div class="form-actions clear">
         <span class="button"><%= f.submit t('project.create_project') %></span>
