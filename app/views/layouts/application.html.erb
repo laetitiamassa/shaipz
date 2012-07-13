@@ -26,24 +26,41 @@
             </li>
           </ul>
         </nav>
+				<nav id="social-logo">
+					<nav class="wrap">
+					<ul>
+            <li>
+	            <%= link_to image_tag("twitter-logo-white.png", :size => "40x40"), "http://twitter.com/shaipzit", :target => "_blank" %>
+	          </li>
+						<li>
+	            <%= link_to image_tag("facebook-logo-white.png", :size => "40x40"), "http://facebook.com/shaipz", :target => "_blank" %>
+	          </li>
+						<li>
+	            <%= link_to image_tag("contact-logo-white.png", :size => "40x40"), "mailto:hello@shaipz.com", :target => "_blank" %>
+	          </li>
+					</ul>
+					</nav>
+				</nav>
       <% else %>
         <div id="sign-in">
-          <%= form_for("user", :url => user_session_path) do |f| %>
-            <div class="fields">
-              <%= f.email_field :email, :placeholder => t("sign_in.email") %>
-              <%= f.password_field :password, :placeholder => t("sign_in.password") %>
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
+					<div class="wrap">
+          	<%= form_for("user", :url => user_session_path) do |f| %>
+            	<div class="fields">
+              	<%= f.email_field :email, :placeholder => t("sign_in.email") %>
+              	<%= f.password_field :password, :placeholder => t("sign_in.password") %>
+              	<%= f.check_box :remember_me %>
+              	<%= f.label :remember_me %>
+            	</div>
 
-            </div>
-            <div class="form-actions">
-              <span class="button"><%= f.submit t("sign_in.sign_in") %></span>
-              <%= link_to t("sign_in.forgot_your_password"), new_password_path('user') %>
-						</div>
-						<div class="facebook-button">
-							<%= link_to  image_tag("facebook_login_logo.png", :size => "150x20"), user_omniauth_authorize_path(:facebook) %>
-						</div>
+            	<div class="form-actions">
+              	<span class="button"><%= f.submit t("sign_in.sign_in") %></span>
+              	<%= link_to t("sign_in.forgot_your_password"), new_password_path('user') %>
+							</div>
 
+							<div class="facebook-button">
+								<%= link_to  image_tag("facebook_login_logo.png", :size => "150x20"), user_omniauth_authorize_path(:facebook) %>
+							</div>
+						</div>
           <% end %>
         </div>
       <% end %>
@@ -77,8 +94,17 @@
       <p class="tagline">Collaborative home buying</p>
       <nav>
         <ul>
-          <li>
-            <%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf") %>
+					<li>
+            <%= link_to image_tag("twitter-logo.png", :size => "40x40"), "http://twitter.com/shaipzit", :target => "_blank" %>
+          </li>
+					<li>
+            <%= link_to image_tag("facebook-logo.png", :size => "40x40"), "http://facebook.com/shaipz", :target => "_blank" %>
+          </li>
+					<li>
+            <%= link_to image_tag("contact-logo.png", :size => "40x40"), "mailto:hello@shaipz.com", :target => "_blank" %>
+          </li>
+					<li>
+            <%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf"), :target => "_blank" %>
           </li>
         </ul>
       </nav>

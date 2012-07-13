@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :picture, { :styles => { :medium => "200x200#", :thumb => "50x50#" }, :default_url => "/assets/profile_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
   validates :favorite_areas, :minimum_space, :maximum_budget, :presence => true
+  validates_numericality_of :minimum_space, :maximum_budget, :greater_than => 0
   validates :favorite_areas, :format => { :with => /^\d{4}(?:\s?,\s?\d{4}){0,4}$/ }
 
   validates_attachment :picture,
@@ -48,8 +49,8 @@ class User < ActiveRecord::Base
       facebook_user.email = data["email"]
       facebook_user.password =  facebook_user.name+rand(5000).to_s+facebook_user.email+rand(5000).to_s
       facebook_user.favorite_areas = '1000'
-      facebook_user.minimum_space = '0'
-      facebook_user.maximum_budget = '0'
+      facebook_user.minimum_space = '1'
+      facebook_user.maximum_budget = '1'
       facebook_user.confirmed_at = Time.now
     end
     facebook_user

@@ -6,6 +6,7 @@ class Project < ActiveRecord::Base
   has_attached_file :picture, { :styles => { :medium => "720x200#", :thumb => "100x50#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
   validates :owner_id, :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event, :presence => true
+  validates_numericality_of :total_amount, :maximum_shaipz, :total_space
   validates :zipcode, :length => { :is => 4 }
 
   validates_attachment :picture,

@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
     else
       @user = current_user
       flash[:alert] = t("project.create_error")
+      @project_statuses = Project.project_statuses
       render :new
     end
   end

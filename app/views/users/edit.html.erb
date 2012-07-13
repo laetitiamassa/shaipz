@@ -1,7 +1,6 @@
 <section id="edit-profile">
   <%= form_for(@user, :url => user_path, :html => { :multipart => true }) do |f| %>
     <ul class="picture">
-
       <li>
         <%= image_tag @user.picture.url(:medium) %>
         <%= f.file_field :picture %>
@@ -11,6 +10,10 @@
       </li>
     </ul>
     <ul class="fields">
+			<h2><%= t("profile.fill_your_profile") %></h2>
+			<% @user.errors.full_messages.each do |msg| %>
+				<p><b><%= msg %></b></p>
+			<% end %>
       <li class="string">
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -41,9 +44,6 @@
         <%= f.label :maximum_budget %>
         <%= f.text_field :maximum_budget %>
       </li>
-			<% @user.errors.full_messages.each do |msg| %>
-				<p><%= msg %></p>
-			<% end %>
     </ul>
     <div class="form-actions clear">
       <span class="button"><%= f.submit t('profile.save_changes') %></span>

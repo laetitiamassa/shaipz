@@ -53,6 +53,21 @@ form ul li {
   margin: 0 0 0 20px;
 }
 
+#social-logo ul {
+  position : absolute;
+	top: -58px;
+  right: 0;
+}
+
+#social-logo ul li{
+	display: inline-block;
+}
+
+#social-logo .wrap{
+	position: relative;
+}
+
+
 #sign-in {
   padding: 20px 0;
 }
@@ -69,9 +84,17 @@ form ul li {
   display: inline;
 }
 
-#sign-in .facebook-button {
-	 display: inline-block;
-	 margin: 0 0 0 140px;
+#sign-in .wrap{
+	position: relative;
+}
+
+
+#sign-in  .facebook-button {
+	display: inline-block;
+	padding: 0;
+  position: absolute;
+  top: 0px;
+  right: 0;
 }
 
 #sign-in .fields input {
@@ -100,17 +123,23 @@ form ul li {
 
 }
 
+
+
 #sign-in .form-actions .button input {
-  display: inline-block;
+  display: block;
   border: none;
-  background: url("sign-in-button-bg.png") repeat-x center center;
+  background: url("button-b-bg.png") repeat-x center center;
   color: #fff;
+  padding: 6px 20px;
   font-weight: bold;
-  text-shadow: 0 -1px 0 #000;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  padding: 3px 10px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 2px #ddd;
+  -webkit-box-shadow: 0 1px 2px #ddd;
+  box-shadow: 0 1px 2px #ddd;
 }
 
 /* Header */
@@ -250,6 +279,7 @@ header #flash .notice {
   border-radius: 3px;
 }
 
+
 #content form .form-actions .button input {
   padding: 6px 40px;
   font-weight: bold;
@@ -270,6 +300,32 @@ header #flash .notice {
   -webkit-box-shadow: 0 0 2px #ccc;
   box-shadow: 0 0 2px #ccc;
 }
+
+#content form .form-actions .green-button {
+	position: absolute;
+  bottom: 15px;
+  right: 175px;
+}
+
+#content form .form-actions .green-button input{
+	display: block;
+  border: none;
+  background: url("button-b-bg.png") repeat-x center center;
+  color: #fff;
+  padding: 6px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 2px #ddd;
+  -webkit-box-shadow: 0 1px 2px #ddd;
+  box-shadow: 0 1px 2px #ddd;
+}
+
+
+
 
 /* Profile on the side */
 
@@ -334,6 +390,8 @@ header #flash .notice {
   width: 260px;
 }
 
+
+
 #sign-up h2 {
   color: #666;
   font-size: 1.8em;
@@ -380,6 +438,27 @@ header #flash .notice {
   font-weight: bold;
 }
 
+#sign-up form .form-actions span{
+
+}
+
+#sign-up form .form-actions input{
+	display: block;
+  border: none;
+  background: url("button-b-bg.png") repeat-x center center;
+  color: #fff;
+  padding: 6px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0 1px 2px #ddd;
+  -webkit-box-shadow: 0 1px 2px #ddd;
+  box-shadow: 0 1px 2px #ddd;
+}
+
 /* Stream */
 
 #stream {
@@ -405,33 +484,28 @@ header #flash .notice {
   left: 12px;
 }
 
+
 #stream #start-project .action-call .button {
   position: relative;
   display: inline-block;
-  background: url("back-button-bg.png") repeat-x center top;
   padding: 4px;
-  -moz-box-shadow: inset 0 1px 2px #ccc;
-  -webkit-box-shadow: inset 0 1px 2px #ccc;
-  box-shadow: inset 0 1px 2px #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
 
 #stream #start-project .action-call .button a {
-  display: inline-block;
-  padding: 6px 10px 6px 32px;
+  display: block;
+  border: none;
+  background: url("button-b-bg.png") repeat-x center center;
+  color: #fff;
+  padding: 6px 30px;
   font-weight: bold;
-  color: #777;
   text-decoration: none;
-  text-shadow: 0 1px 0 #fff;
-  background: #fff url("button-bg.png") repeat-x center bottom;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
-  box-shadow: 0 1px 2px #ccc;
+  -moz-box-shadow: 0 1px 2px #ddd;
+  -webkit-box-shadow: 0 1px 2px #ddd;
+  box-shadow: 0 1px 2px #ddd;
 }
 
 #stream #start-project .action-call .button a:active {
@@ -1083,7 +1157,7 @@ footer .wrap {
 footer nav ul {
   padding: 0;
   position: absolute;
-  top: 0;
+  top: 0px;
   right: 0;
 }
 
