@@ -2,9 +2,9 @@ class ParticipationsController < ApplicationController
   def create
     @participation = Participation.new(params[:participation])
     @participation.participant = current_user
+    NotificationMailer.new_participant(current_user, @participation.project).deliver
     if @participation.save
       flash[:notice] = t("participation.create_success")
-      NotificationMailer.new_participant(current_user, @participation.project).deliver
       redirect_to @participation.project
     else
       flash[:alert] = t("participation.create_error")
@@ -26,8 +26,8 @@ class ParticipationsController < ApplicationController
       the_project.destroy
     else
       participation = Participation.find_by_participant_id_and_project_id(current_user.id, the_project.id)
-      NotificationMailer.leave_participant(current_user, the_project).deliver
       participation.destroy
+      NotificationMailer.leave_participant(current_user, the_project).deliver
     end
 
     t("participation.destroy_success")

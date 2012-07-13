@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-  </head>
-  <body>
-	<h1> <%= t("generals.hello") %> </h1>
-	<h2><%= t(:"notification.mail.update_project.subject", :name => @user.name, :project => @project.name) %></h2>
+
+	<h3> <%= t("notification.mail.salutation") %> </h3>
+	<h3><%= t(:"notification.mail.update_project.subject", :name => @user.name, :project => @project.name) %></h3>
 	<p>
 		<%= t('notification.mail.update_project.content')%> <%= link_to 'here' , project_url(@project) %>.
 	</p>
-    <p>Have a great day!</p>
-  </body>
-</html>
+    <p><%= t('notification.mail.signature')%></p>
+		<p><%= t('notification.mail.team')%></p>
+

@@ -5,9 +5,9 @@ en:
   generals:
     hello: "Hello"
     goodbye: "Good bye"
-    have_nice_day: "Have a nice day !"
+    have_nice_day: "Have a nice day!"
     thank_you: "Thank you"
-    have_fun: "Have fun !"
+    have_fun: "Have fun!"
   sign_in:
     email: "email"
     password: "password"
@@ -72,25 +72,25 @@ en:
     about_owner: "About the project's owner"
     participants: "Participants"
     destroy: "Delete the project"
-    destroy_confirmation: "Are your sure you want to erase definitely the project ?"
+    destroy_confirmation: "Are your sure you want to erase definitely the project?"
     statuses:
       building_discovery: "We are discovering the building"
       people_discovery: "We are discovering each other"
-      interest_confirmation: "We have confirmed our interest for the project !"
-      feasibility_stamp: "This project has been stamped 'feasible' by a pro! "
+      interest_confirmation: "We have confirmed our interest for the project!"
+      feasibility_stamp: "This project has been stamped 'feasible' by a pro!"
       internal_agreement: "We have executed our internal agreement!"
-      global_offer_making: "We have made a global offer to the seller !"
-      global_offer_acceptance: "Our global offer has been accepted by the seller !"
-      sales_agreement: "The sales agreement has been executed !"
-      challenges_fixing: "We have arranged all internal and/or administrative challenges !"
-      notarial_deed: "The notarial deed has been executed !"
+      global_offer_making: "We have made a global offer to the seller!"
+      global_offer_acceptance: "Our global offer has been accepted by the seller!"
+      sales_agreement: "The sales agreement has been executed!"
+      challenges_fixing: "We have arranged all internal and/or administrative challenges!"
+      notarial_deed: "The notarial deed has been executed!"
       move_in : "We are happily moving in!  :-D"
   participation:
     create_success: "Now, you participate on the project."
     create_error: "You can't participate to that project."
     destroy_success: "You successfully left the project."
     destroy: "Leave the project"
-    destroy_confirmation: "Are your sure you want to leave and loose your priority on the project ?"
+    destroy_confirmation: "Are your sure you want to leave and loose your priority on the project?"
   footer:
     terms_of_use: "Terms of use"
   report:
@@ -100,16 +100,19 @@ en:
     create_error: "We cannot create your report, please check the details."
   notification:
     mail:
+      salutation: "Hi there!"
+      signature: "Have a great day!"
+      team: "Shaipz team"
       new_participant:
-        subject: "%{name} has joined %{project} !"
+        subject: "%{name} has joined %{project}!"
         content: "You can have more details"
       destroy_project:
-        subject: "%{name} has removed %{project} !"
+        subject: "%{name} has removed %{project}!"
         content: "You can have more details"
       update_project:
-        subject: "%{name} updated %{project} !"
+        subject: "%{name} updated %{project}!"
         content: "You can have more details"
       leave_participant:
-        subject: "%{name} left %{project} !"
+        subject: "%{name} left %{project}!"
         content: "You can have more details"
 
