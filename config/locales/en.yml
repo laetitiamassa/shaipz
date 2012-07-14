@@ -122,4 +122,6 @@ en:
       leave_participant:
         subject: "%{name} left %{project}!"
         content: "You can have more details"
+  shaipz:
+    i_am_in: "Shaipz I'm in"
 
