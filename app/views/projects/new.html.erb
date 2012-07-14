@@ -54,7 +54,7 @@
           <%= f.text_area :event, :rows => 5 %>
         </li>
 			<li class="string">
-	        <%= f.label :project_status, t("profile.how_ready_you_are") %>
+	        <%= f.label :project_status, t("project.how_far_is_the_project") %>
 	        <%= f.select :project_status, @project_statuses, {:include_blank => true} %>
 	      </li>
       </ul>
