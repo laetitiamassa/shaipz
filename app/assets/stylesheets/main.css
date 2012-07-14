@@ -63,6 +63,11 @@ form ul li {
 	display: inline-block;
 }
 
+#social-logo ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+
 #social-logo .wrap{
 	position: relative;
 }
@@ -402,6 +407,11 @@ header #flash .notice {
 #sign-up .description {
   color: #aaa;
   line-height: 1.7;
+}
+
+#sign-up .soon a{
+	text-decoration: underline;
+  color: #fff;
 }
 
 #sign-up .soon {
@@ -1175,4 +1185,7 @@ footer nav ul li a {
 
 #error_explanation h2 {
   color: #d63f00;
+}
+a {
+	color: #999;
 }

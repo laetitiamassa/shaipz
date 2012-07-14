@@ -23,6 +23,7 @@ en:
     sign_up_for_shaipz: "Sign up for Shaipz"
     whats_shaipz: "Shaipz is a platform enabling people to gather around a building for sale, in order to buy it, shape it and organize it themselves. On their own terms."
     ready_soon: "We’ll be ready to launch very soon!"
+    how_it_works: "Discover what Shaipz is all about!"
   profile:
     edit: "Edit"
     save_changes: "Save changes"
@@ -98,6 +99,7 @@ en:
     destroy_confirmation: "Are your sure you want to leave and loose your priority on the project?"
   footer:
     terms_of_use: "Terms of services"
+    how_it_works: "How it works"
   report:
     reason: "What do you report ?"
     submit: "Submit"

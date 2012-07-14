@@ -17,7 +17,7 @@
   <div id="shaipz-info">
     <h2><%= t("home.sign_up_for_shaipz") %></h2>
     <p class="description"><%= t("home.whats_shaipz") %></p>
-    <p class="soon"><%= t("home.ready_soon") %></p>
+    <p class="soon"><%= link_to t('home.how_it_works'), how_it_works_path %></p>
   </div>
   <%= form_for("user", :url => user_registration_path) do |f| %>
     <ul class="fields">

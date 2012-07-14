@@ -76,6 +76,7 @@ Shaipz::Application.routes.draw do
   resource :stream
   resource :shaipz
   resource :change_password
+  resource :how_it_works
 
   root :to => 'home#index'
 

@@ -38,6 +38,9 @@
 						<li>
 	            <%= link_to image_tag("contact-logo-white.png", :size => "25x25"), "mailto:hello@shaipz.com", :target => "_blank" %>
 	          </li>
+						<li>
+							<%= link_to t('footer.how_it_works'), how_it_works_path %>
+						</li>
 					</ul>
 					</nav>
 				</nav>
@@ -105,6 +108,9 @@
           </li>
 					<li>
             <%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf"), :target => "_blank" %>
+          </li>
+					<li>
+            <%= link_to t('footer.how_it_works'), how_it_works_path %>
           </li>
         </ul>
       </nav>
