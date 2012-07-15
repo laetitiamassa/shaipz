@@ -27,6 +27,8 @@ form ul li {
   font-family: 'Amaranth', sans-serif;
 }
 
+
+
 /* Top bar */
 
 #top-bar {
@@ -165,6 +167,11 @@ header .logo a {
   text-decoration: none;
   color: #fff;
 }
+
+header .logo strong a{
+	color: #d2f9f9;
+}
+
 
 header .tagline {
   display: inline-block;
@@ -378,7 +385,7 @@ header #flash .notice {
 }
 
 #why-shaipz h3 strong {
-  color: #99bec1;
+  color: #1b8e8a;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -530,7 +537,7 @@ header #flash .notice {
   margin: 15px 0 5px;
   padding: 0;
   font-size: 1em;
-  color: #99bec1;
+  color: #1b8e8a;
 }
 
 #stream #projects h2 span {
@@ -1153,6 +1160,10 @@ footer {
 footer .logo {
   display: inline-block;
   margin: 0 7px 0 0;
+}
+
+footer .logo 	 {
+	color: #d2f9f9;
 }
 
 footer .tagline {
