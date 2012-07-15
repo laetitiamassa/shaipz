@@ -22,7 +22,9 @@ class ParticipationsController < ApplicationController
   private
   def leave_project(the_project)
     if the_project.owner == current_user
-      NotificationMailer.destroy_project(current_user, the_project).deliver
+      if @project.participants.all.map(&:email) != []
+        NotificationMailer.destroy_project(current_user, the_project).deliver
+      end
       the_project.destroy
     else
       participation = Participation.find_by_participant_id_and_project_id(current_user.id, the_project.id)
