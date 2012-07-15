@@ -17,16 +17,16 @@
           <%= f.text_field :name %>
         </li>
         <li class="string">
-          <%= f.label :address, t("project.where") %>
+          <%= f.label :address, t("project.address") %>
           <%= f.text_field :address %>
         </li>
         <li class="string two-fields">
           <div class="field">
-            <%= f.label :zipcode %>
+            <%= f.label :zipcode, t("project.zipcode") %>
             <%= f.text_field :zipcode %>
           </div>
           <div class="field">
-            <%= f.label :city %>
+            <%= f.label :city, t("project.city")%>
             <%= f.text_field :city %>
           </div>
         </li>
