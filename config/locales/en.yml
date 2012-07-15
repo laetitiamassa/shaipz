@@ -30,7 +30,7 @@ en:
     update_success: "Your profile is updated"
     update_errors: "Oops, something went wrong with your profile."
     favorite_areas: "Favorite areas"
-    favorite_areas_form: "Favorite areas (please enter zip codes)"
+    favorite_areas_form: "Favorite areas (enter zip codes)"
     maximum_budget: "Maximum budget"
     maximum_budget_form: "Maximum budget (in euros)"
     minimum_space: "Minimum space"
