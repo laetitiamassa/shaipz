@@ -41,15 +41,15 @@
       </li>
       <li class="string">
         <%= f.label :minimum_space, t("profile.minimum_space_form") %>
-        <%= f.text_field :minimum_space %>
+        <%= f.text_field :minimum_space %> m&sup2;
       </li>
       <li class="string">
         <%= f.label :maximum_budget, t("profile.maximum_budget_form") %>
-        <%= f.text_field :maximum_budget %>
+        <%= f.text_field :maximum_budget %> €
       </li>
     </ul>
     <div class="form-actions clear">
-      <small>It's free</small><span class="green-button"><%= f.submit t('home.sign_up') %></span>
+      <span class="green-button"><%= f.submit t('home.sign_up') %></span><small> It's free !</small>
     </div>
   <% end %>
 </section>
