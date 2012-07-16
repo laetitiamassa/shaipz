@@ -50,14 +50,14 @@
           <%= f.check_box :cohousing %>
           <%= f.label :cohousing, t("project.cohousing") %>
         </li>
+				<li class="string">
+	        <strong><%= f.label :project_status, t("project.how_far_is_the_project") %><strong>
+	        <%= f.select :project_status, @project_statuses, {:include_blank => true} %>
+	      </li>
         <li class="text">
           <%= f.label :event, t("project.event") %>
           <%= f.text_area :event, :rows => 5 %>
         </li>
-				<li class="string">
-	        <%= f.label :project_status, t("project.how_far_is_the_project") %>
-	        <%= f.select :project_status, @project_statuses, {:include_blank => true} %>
-	      </li>
       </ul>
       <div class="form-actions clear">
         <span class="green-button"><%= f.submit t('project.update_project') %></span>

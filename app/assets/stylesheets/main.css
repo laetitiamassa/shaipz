@@ -269,6 +269,10 @@ header #flash .notice {
   margin: 0 0 5px 0;
 }
 
+#content form .fields .string strong label{
+  color: #1b8e8a ;
+}
+
 
 #content form .fields .string input {
   color: #555;
@@ -925,6 +929,13 @@ header #flash .notice {
 #show-project #owner .picture {
   float: left;
   margin: 0 10px 0 0;
+}
+
+#show-project  .status {
+  margin: 2px;
+  padding: 5px;
+  font-weight: bold;
+  font-style: italic;
 }
 
 #show-project h3 {

@@ -15,7 +15,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         I18n.t "devise.omniauth_callbacks.error", :kind => "Facebook"
         redirect_to root_path(new_user)
       end
-
     end
   end
 end
