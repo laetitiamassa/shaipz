@@ -1196,3 +1196,28 @@ footer nav ul li a {
 a {
 	color: #999;
 }
+
+#how-it-works .youtube{
+	text-align: center;
+}
+
+#how-it-works h1{
+	font-size : xx-large;
+	text-align: center;
+	color: #1b8e8a
+}
+
+#how-it-works h2{
+	font-size : x-large;
+}
+
+#how-it-works p{
+	font-size : medium;
+}
+
+#how-it-works a{
+	font-size : medium;
+	color: #1b8e8a
+}
+
+
