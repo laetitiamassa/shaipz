@@ -66,6 +66,8 @@ form ul li {
 	font-weight: bold;
 }
 
+
+
 #social-logo ul li a{
 	color: #fff;
 	text-decoration: none;
@@ -74,7 +76,10 @@ form ul li {
 #social-logo .wrap{
 	position: relative;
 }
-
+#social-logo .wrap ul li .links a{
+	position: relative;
+	top: -5px;
+}
 
 #sign-in {
   padding: 20px 0;
@@ -1175,9 +1180,11 @@ footer .wrap {
 footer nav ul {
   padding: 0;
   position: absolute;
-  top: 0px;
+  top: -10px;
   right: 0;
 }
+
+
 
 footer nav ul li {
   display: inline-block;
@@ -1188,6 +1195,15 @@ footer nav ul li a {
   text-decoration: none;
   font-weight: bold;
 }
+
+footer nav ul li .links {
+	color: #231;
+}
+footer nav ul li .links a {
+	position:relative;
+	top:-5px;
+}
+
 
 /* Devise */
 
