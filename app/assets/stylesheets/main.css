@@ -323,13 +323,13 @@ header #flash .notice {
 }
 
 #content form .form-actions .green-button {
-	position: relative;
+	display: inline-block;
   bottom: 15px;
   right: -280px;
 }
 
 #content form .form-actions .green-button input{
-	display: block;
+
   border: none;
   background: url("button-b-bg.png") repeat-x center center;
   color: #fff;
