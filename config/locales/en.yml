@@ -44,7 +44,7 @@ en:
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity."
     ready_but_bank: "I want to buy now, but I should see with the bank first."
     ready_with_bank: "I'm ready to buy and I've already seen the bank."
-    buying: "I'm super ready to buy now, as I've already seen the bank and made my tour of the market."
+    buying: "I'm over ready to buy now (bank and tour of market: done!)."
   menu:
     home: "Home"
     profile: "Profile"
@@ -74,14 +74,14 @@ en:
     create_success: "Congratulations! Your project has been created!"
     create_error: "We cannot create your project, please verify the fields."
     update_project: "Update the project"
-    update_success: "Your project has been updated successfully."
-    update_error: "Your project cannot be updated for some reasons, please verify the fields."
+    update_success: "Your project has been successfully updated."
+    update_error: "Your project cannot be updated for some reason, please verify the fields."
     must_be_owner: "You must be the author of this project in order to edit it."
     about_owner: "About the project's author"
     participants: "Participants"
     destroy: "Delete the project"
-    destroy_confirmation: "Are your sure you want to erase definitely the project?"
-    how_far_is_the_project: "How far is the project (what has been achieved so far)?"
+    destroy_confirmation: "Are your sure you want to definitively erase this project?"
+    how_far_is_the_project: "How far is the project?"
     statuses:
       building_discovery: "We are discovering the building"
       people_discovery: "We are discovering each other"
@@ -93,26 +93,26 @@ en:
       sales_agreement: "The sales agreement has been executed!"
       challenges_fixing: "We have arranged all internal and/or administrative challenges!"
       notarial_deed: "The notarial deed has been executed!"
-      move_in : "We are happily moving in!  :-D"
+      move_in : "We are happily moving in! :-D"
   participation:
-    create_success: "Congratulations! Now, you participate on the project."
-    create_error: "You can't participate to that project."
+    create_success: "Congratulations! Now, you participate to the project."
+    create_error: "You can't participate to this project."
     destroy_success: "You successfully left the project."
     destroy: "Leave the project"
     destroy_confirmation: "Are your sure you want to leave and loose your priority on the project?"
   footer:
     terms_of_use: "Terms of services"
-    how_it_works: "How it works"
+    how_it_works: "How it works?"
   report:
-    reason: "What do you report ?"
+    reason: "What do you report?"
     submit: "Submit"
-    create_success: "Your report has been created"
-    create_error: "We cannot create your report, please check the details."
+    create_success: "Your report has been successfully sent"
+    create_error: "We cannot create your report, please verify the details."
   notification:
     mail:
-      salutation: "Hi there!"
+      salutation: "Hi there,"
       signature: "Have a great day!"
-      team: "Shaipz team"
+      team: "The Shaipz Team"
       new_participant:
         subject: "%{name} has joined %{project}!"
         content: "You can have more details"
@@ -120,10 +120,10 @@ en:
         subject: "%{name} has removed %{project}!"
         content: "You can have more details"
       update_project:
-        subject: "%{name} updated %{project}!"
+        subject: "%{name} has updated %{project}!"
         content: "You can have more details"
       leave_participant:
-        subject: "%{name} left %{project}!"
+        subject: "%{name} has left %{project}!"
         content: "You can have more details"
   shaipz:
     i_am_in: "Shaipz I'm in"
