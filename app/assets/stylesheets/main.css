@@ -285,6 +285,7 @@ header #flash .notice {
 
 #content form .form-actions {
   text-align: right;
+	padding: 5px;
 }
 
 #content form .form-actions .button {
@@ -322,9 +323,9 @@ header #flash .notice {
 }
 
 #content form .form-actions .green-button {
-	position: absolute;
+	position: relative;
   bottom: 15px;
-  right: 175px;
+  right: -280px;
 }
 
 #content form .form-actions .green-button input{
@@ -463,9 +464,6 @@ header #flash .notice {
   font-weight: bold;
 }
 
-#sign-up form .form-actions span{
-
-}
 
 #sign-up form .form-actions input{
 	display: block;
