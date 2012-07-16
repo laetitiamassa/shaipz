@@ -7,6 +7,7 @@ class ReportsController < ApplicationController
 
   def new
     @report = @reportable.reports.new
+    @user = current_user
   end
 
   def create

@@ -1,1 +1,6 @@
-<%= render 'form' %>
+<section id="stream">
+  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
+	<div id="stream-wrap">
+		<%= render 'form' %>
+	</div>
+</section>
