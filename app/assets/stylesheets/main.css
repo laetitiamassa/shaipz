@@ -1225,15 +1225,20 @@ a {
 }
 
 #how-it-works h2{
-	font-size : x-large;
+	font-size : large;
 }
 
 #how-it-works p{
-	font-size : medium;
+	font-size : 110%;
+}
+
+#how-it-works p a{
+	font-size : 100%;
+	color: #1b8e8a
 }
 
 #how-it-works a{
-	font-size : medium;
+	font-size : 110%;
 	color: #1b8e8a
 }
 
