@@ -63,6 +63,7 @@ form ul li {
 
 #social-logo ul li{
 	display: inline-block;
+	font-weight: bold;
 }
 
 #social-logo ul li a{
