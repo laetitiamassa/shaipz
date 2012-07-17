@@ -77,6 +77,7 @@ class Project < ActiveRecord::Base
       else
         me.feed!(
           :message => message,
+          :picture => "http://"+ request.host+self.picture.url(:thumb),
           :link => url,
           :name => self.name,
           :description =>  status
@@ -86,7 +87,11 @@ class Project < ActiveRecord::Base
   end
 
   def share_with_facebook_url(opts)
+     if opts[:url_picture].match(/^http/)
       url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link="+opts[:url].to_s+"&picture="+opts[:url_picture].to_s+"&name="+opts[:project_name].to_s+"&caption=Shaipz.com&description="+opts[:project_status].to_s+"&redirect_uri="+opts[:redirect_url].to_s
+    else
+      url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link="+opts[:url].to_s+"&picture="+"http://"+ request.host+self.picture.url(:thumb)+"&name="+opts[:project_name].to_s+"&caption=Shaipz.com&description="+opts[:project_status].to_s+"&redirect_uri="+opts[:redirect_url].to_s
+    end
   end
 
 end
