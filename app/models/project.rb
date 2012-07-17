@@ -17,10 +17,9 @@ class Project < ActiveRecord::Base
                       "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]
 
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :cohousing, :event, :city, :zipcode, :project_status
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :cohousing, :event, :city, :zipcode, :project_status, :share_on_facebook
 
   default_scope :order => 'updated_at DESC'
-
 
   def self.project_statuses
     PROJECT_STATUSES.map do |status|
@@ -63,4 +62,18 @@ class Project < ActiveRecord::Base
   def full_address
     "#{address} #{zipcode} #{city}"
   end
+
+  def send_to_facebook_wall (session, message, url, status)
+    if session[:fb_access_token]!= nil && self.share_on_facebook
+      me = FbGraph::User.me(session[:fb_access_token])
+      me.feed!(
+        :message => message,
+        :picture => "http://" + request.host + self..picture.url,
+        :link => url,
+        :name => self.name,
+        :description =>  status
+      )
+    end
+  end
+
 end

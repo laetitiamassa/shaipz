@@ -24,9 +24,12 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status
   #
 
+  def is_loggued_with_facebook? (session)
+    !(session[:fb_access_token].nil?)
+  end
+
   def find_all_projects
     @projects_of_user = self.project_participations | self.projects
-
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)

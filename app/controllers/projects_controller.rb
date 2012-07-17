@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
     @project.owner = current_user
     if @project.save
       flash[:notice] = t("project.create_success")
+      @project.send_to_facebook_wall(session,t("facebook.create"), project_url(@project), t("project.statuses.#{@project.project_status}"))
       redirect_to stream_path
     else
       @user = current_user
@@ -62,4 +63,6 @@ class ProjectsController < ApplicationController
       redirect_to stream_path
     end
   end
+
+
 end

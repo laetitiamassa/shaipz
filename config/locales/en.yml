@@ -29,8 +29,8 @@ en:
     save_changes: "Update your profile"
     update_success: "Your profile is updated"
     update_errors: "Oops, something went wrong with your profile."
-    favorite_areas: "Favorite areas"
-    favorite_areas_form: "Favorite areas (enter zip codes)"
+    favorite_areas: "Favorite districts"
+    favorite_areas_form: "Favorite districts (enter zip codes)"
     maximum_budget: "Maximum budget"
     maximum_budget_form: "Maximum budget (in euros)"
     minimum_space: "Minimum space"
@@ -82,6 +82,7 @@ en:
     destroy: "Delete the project"
     destroy_confirmation: "Are your sure you want to definitively erase this project?"
     how_far_is_the_project: "How far is the project?"
+    share_on_facebook: "Share on facebook?"
     statuses:
       building_discovery: "We are discovering the building"
       people_discovery: "We are discovering each other"
@@ -100,6 +101,7 @@ en:
     destroy_success: "You successfully left the project."
     destroy: "Leave the project"
     destroy_confirmation: "Are your sure you want to leave and loose your priority on the project?"
+    share_on_facebook: "Share your participation on facebook?"
   footer:
     terms_of_use: "Terms of services"
     how_it_works: "How it works?"
@@ -127,3 +129,6 @@ en:
         content: "You can have more details"
   shaipz:
     i_am_in: "Shaipz I'm in"
+  facebook:
+    create: "I've just created an awesome project on Shaipz.com!"
+    join: "I've just joined an awesome project on Shaipz.com!"

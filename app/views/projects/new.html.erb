@@ -53,10 +53,18 @@
           <%= f.label :event, t("project.event") %>
           <%= f.text_area :event, :rows => 5 %>
         </li>
-			<li class="string">
+				<li class="string">
 	        <%= f.label :project_status, t("project.how_far_is_the_project") %>
-	        <%= f.select :project_status, @project_statuses, {:include_blank => true} %>
+	        <%= f.select :project_status, @project_statuses %>
 	      </li>
+				<% if current_user.is_loggued_with_facebook?(session) %>
+				 	<li class="checkbox">
+	          <%= f.check_box :share_on_facebook %>
+	          <%= f.label :share_on_facebook, t("project.share_on_facebook") %>
+	        </li>
+				<% else %>
+					<%= f.hidden_field :share_on_facebook, :value => '0' %>
+				<% end %>
       </ul>
       <div class="form-actions clear">
         <span class="green-button"><%= f.submit t('project.create_project') %></span>

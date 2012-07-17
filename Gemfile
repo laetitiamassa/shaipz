@@ -8,6 +8,7 @@ gem 'rails', '3.2.6'
 gem 'pg'
 gem 'devise'
 
+gem 'fb_graph'
 gem 'nifty-generators'
 gem 'omniauth-facebook'
 

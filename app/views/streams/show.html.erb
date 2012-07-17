@@ -8,7 +8,6 @@
       </div>
     </section>
 
-
     <section id="projects">
       <h2><span><%= t("stream.all_projects") %><span></h2>
       <ol>
@@ -45,6 +44,9 @@
             <% else %>
               <%= form_for "participation", :url => participations_path do |f| %>
                 <%= f.hidden_field :project_id, :value => project.id %>
+								<% unless current_user.is_loggued_with_facebook?(session) %>
+									<%= f.hidden_field :share_on_facebook, :value => '0' %>
+								<% end %>
                 <div class="join-action">
                   <%= f.submit t("project.join") %>
                 </div>
