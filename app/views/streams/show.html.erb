@@ -34,7 +34,7 @@
 							      :project_name => project.name,
 							      :url_picture => project.picture.url(:thumb),
 							      :project_status => t("project.statuses.#{project.project_status}"),
-										:redirect_url => root_url }) )%>
+										:redirect_url => root_url }, request) )%>
             </div>
 
             <div class="details">
