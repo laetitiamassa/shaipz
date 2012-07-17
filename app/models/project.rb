@@ -76,4 +76,8 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def share_with_facebook_url(opts)
+      url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link="+opts[:url].to_s+"&picture="+opts[:url_picture].to_s+"&name="+opts[:project_name].to_s+"&caption=Shaipz.com&description="+opts[:project_status].to_s+"&redirect_uri="+opts[:redirect_url].to_s
+  end
+
 end
