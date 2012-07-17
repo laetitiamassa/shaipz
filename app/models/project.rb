@@ -63,9 +63,9 @@ class Project < ActiveRecord::Base
     "#{address} #{zipcode} #{city}"
   end
 
-  def send_to_facebook_wall (session, message, url, status, request)
-    if session[:fb_access_token]!= nil
-      me = FbGraph::User.me(session[:fb_access_token])
+  def send_to_facebook_wall (cookies, message, url, status, request)
+    if cookies[:fb_access_token]!= nil
+      me = FbGraph::User.me(cookies[:fb_access_token])
       if self.picture.url.match(/^http/)
         me.feed!(
           :message => message,

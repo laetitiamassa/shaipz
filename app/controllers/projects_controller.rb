@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
     if @project.save
       flash[:notice] = t("project.create_success")
       if @project.share_on_facebook
-        @project.send_to_facebook_wall(session,t("facebook.create"), project_url(@project), t("project.statuses.#{@project.project_status}"), request)
+        @project.send_to_facebook_wall(cookies,t("facebook.create"), project_url(@project), t("project.statuses.#{@project.project_status}"), request)
       end
       redirect_to stream_path
     else
