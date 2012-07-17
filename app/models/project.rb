@@ -63,12 +63,12 @@ class Project < ActiveRecord::Base
     "#{address} #{zipcode} #{city}"
   end
 
-  def send_to_facebook_wall (session, message, url, status)
+  def send_to_facebook_wall (session, message, url, status, request)
     if session[:fb_access_token]!= nil && self.share_on_facebook
       me = FbGraph::User.me(session[:fb_access_token])
       me.feed!(
         :message => message,
-        #:picture => "http://" + request.host + self.picture.url,
+        :picture => "http://" + request.host + self.picture.url,
         :link => url,
         :name => self.name,
         :description =>  status

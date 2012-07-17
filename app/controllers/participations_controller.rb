@@ -4,7 +4,7 @@ class ParticipationsController < ApplicationController
     @participation.participant = current_user
     NotificationMailer.new_participant(current_user, @participation.project).deliver
     if @participation.save
-      @participation.project.send_to_facebook_wall(session, t("facebook.join"), project_url(@participation.project), t("project.statuses.#{@participation.project.project_status}"))
+      @participation.project.send_to_facebook_wall(session, t("facebook.join"), project_url(@participation.project), t("project.statuses.#{@participation.project.project_status}"), request)
       flash[:notice] = t("participation.create_success")
       redirect_to @participation.project
     else
