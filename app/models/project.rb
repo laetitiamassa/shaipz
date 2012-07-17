@@ -68,7 +68,7 @@ class Project < ActiveRecord::Base
       me = FbGraph::User.me(session[:fb_access_token])
       me.feed!(
         :message => message,
-        :picture => "http://" + request.host + self.picture.url(:thumb),
+        :picture => self.picture.url(:thumb),
         :link => url,
         :name => self.name,
         :description =>  status
