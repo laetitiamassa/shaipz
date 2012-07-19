@@ -26,8 +26,12 @@
 <section id="sign-up" class="clear">
   <div id="shaipz-info">
     <h2><%= t("home.sign_up_for_shaipz") %></h2>
-    <p class="description"><%= t("home.whats_shaipz") %></p>
-    <p class="soon"><%= link_to t('home.how_it_works'), how_it_works_path %></p>
+		<div id="youtube">
+    		<iframe width="250" height="145" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
+<p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p>
+
+		</div>
+
   </div>
   <%= form_for("user", :url => user_registration_path) do |f| %>
     <ul class="fields">
@@ -63,7 +67,13 @@
       <span class="green-button"><%= f.submit t('home.sign_up') %></span><small> It's free !</small>
     </div>
   <% end %>
+
+</div>
+
+</div>
+
+</section>
+<div id = "follow-like">
 <div class="fb-like" data-href="https://www.facebook.com/Shaipz" data-send="false" data-width="450" data-show-faces="false"></div>
 <a href="https://twitter.com/shaipzapp" class="twitter-follow-button" data-show-count="false">Follow @shaipzapp</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</section>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>

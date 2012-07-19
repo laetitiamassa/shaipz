@@ -28,7 +28,6 @@ form ul li {
 }
 
 
-
 /* Top bar */
 
 #top-bar {
@@ -412,10 +411,8 @@ header #flash .notice {
 
 #sign-up #shaipz-info {
   position: absolute;
-  width: 260px;
+  width: 300px;
 }
-
-
 
 #sign-up h2 {
   color: #666;
@@ -427,6 +424,24 @@ header #flash .notice {
 #sign-up .description {
   color: #aaa;
   line-height: 1.7;
+}
+
+#sign-up .how-it-works{
+	position:relative;
+	right:-165px;
+}
+#follow-like{
+	position:relative;
+	top:10px;
+}
+#sign-up .how-it-works a{
+	text-decoration: underline;
+  font-weight:bold;
+}
+
+#sign-up #youtube {
+	position:relative;
+	top:19px;
 }
 
 #sign-up .soon a{
