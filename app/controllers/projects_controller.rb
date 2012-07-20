@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project_statuses = Project.project_statuses
     @project = Project.new
+    @project.source_link=params[:u]
   end
 
   def create

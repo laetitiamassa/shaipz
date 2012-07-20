@@ -1,16 +1,32 @@
+
+</script>
+
 <section id="new-project">
   <%= render :partial => "_shared/profile", :locals => { :user => @user } %>
 
   <div id="project-wrap">
     <h2><%= t("project.define_new_project") %></h2>
+		<h3>select the details from the window and paste them into the form below</h3>
 		<% @project.errors.full_messages.each do |msg| %>
 			<p><b><%= msg %></b></p>
 		<% end %>
+		<p>
+			<% unless @project.source_link.nil? %>
+				<iframe src=<%= @project.source_link %> width='700' height='400' ></iframe>
+			<% else %>
+
+			<% end %>
+		</p>
+
     <%= form_for @project, :html => { :multipart => true } do |f| %>
       <div class="picture">
         <%= f.file_field :picture %>
       </div>
       <ul class="fields">
+				<li class="string">
+          <%= f.label :source_link, t("project.source_link") %>
+          <%= f.text_field :source_link %>
+        </li>
         <li class="string">
           <%= f.label :name, t("project.what_name") %>
           <%= f.text_field :name %>
@@ -29,6 +45,7 @@
             <%= f.text_field :city %>
           </div>
         </li>
+
         <li class="string">
           <%= f.label :total_amount, t("project.how_much") %>
           <%= f.text_field :total_amount %>
@@ -41,10 +58,8 @@
           <%= f.label :maximum_shaipz, t("project.how_many") %>
           <%= f.text_field :maximum_shaipz %>
         </li>
-        <li class="string">
-          <%= f.label :source_link, t("project.source_link") %>
-          <%= f.text_field :source_link %>
-        </li>
+
+
         <li class="checkbox">
           <%= f.check_box :cohousing %>
           <%= f.label :cohousing, t("project.cohousing") %>
