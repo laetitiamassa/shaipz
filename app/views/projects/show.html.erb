@@ -36,15 +36,17 @@
 			<div class="description">
 				<p><%= t(:"project.description_shaipz", :total_amount => @project.total_amount, :total_space => @project.total_space) %><p>
 			</div>
+
+			<div class="address">
+        <h3><%= t("project.address") %></h3>
+        <p><%= @project.full_address %></p>
+      </div>
+
       <div class="event">
         <h3><%= t("project.next_event") %></h3>
         <p><%= @project.event %></p>
       </div>
 
-      <div class="address">
-        <h3><%= t("project.address") %></h3>
-        <p><%= @project.full_address %></p>
-      </div>
     </section>
 
     <section id="participants">
