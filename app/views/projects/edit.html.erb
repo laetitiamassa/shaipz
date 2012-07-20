@@ -52,7 +52,7 @@
         </li>
 				<li class="string">
 	        <strong><%= f.label :project_status, t("project.how_far_is_the_project") %><strong>
-	        <%= f.select :project_status, @project_statuses, {:include_blank => true} %>
+	        <%= f.select :project_status, @project_statuses %>
 	      </li>
         <li class="text">
           <%= f.label :event, t("project.event") %>

@@ -17,7 +17,8 @@ class Project < ActiveRecord::Base
                       "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]
 
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :cohousing, :event, :city, :zipcode, :project_status, :share_on_facebook
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
+                  :cohousing, :event, :city, :zipcode, :project_status, :share_on_facebook
 
   default_scope :order => 'updated_at DESC'
 
@@ -29,6 +30,14 @@ class Project < ActiveRecord::Base
 
   def has_project_status?
     project_status.present?
+  end
+
+  def price_per_shaipz
+    total_amount/maximum_shaipz
+  end
+
+  def space_per_shaipz
+    total_space/maximum_shaipz
   end
 
   def owner_name

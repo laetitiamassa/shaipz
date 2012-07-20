@@ -953,6 +953,12 @@ header #flash .notice {
   font-style: italic;
 }
 
+#show-project .description{
+	font-weight:bold;
+	font-style:italic;
+	color:#1E5270;
+}
+
 #show-project h3 {
   text-transform: uppercase;
   font-size: 0.8em;

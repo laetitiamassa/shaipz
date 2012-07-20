@@ -26,15 +26,16 @@
 			<div class="project-status">
 		    <div class="progress <%= @project.project_status.dasherize if @project.has_project_status? %>"></div>
 		  </div>
-
 			<p class="status"><%= t("project.statuses.#{@project.project_status}") if @project.has_project_status? %></p>
 
       <div class="criteria">
-        <span class="amount"><%= @project.total_amount %> €</span>
-        <span class="space"><%= @project.total_space %> m&sup2;</span>
+        <span class="amount"><%= @project.price_per_shaipz %> €</span>
+        <span class="space"><%= @project.space_per_shaipz %> m&sup2;</span>
         <span class="shaipz"><%= @project.maximum_shaipz %></span>
       </div>
-
+			<div class="description">
+				<p><%= t(:"project.description_shaipz", :total_amount => @project.total_amount, :total_space => @project.total_space) %><p>
+			</div>
       <div class="event">
         <h3><%= t("project.next_event") %></h3>
         <p><%= @project.event %></p>
