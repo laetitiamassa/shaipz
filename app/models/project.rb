@@ -77,19 +77,19 @@ class Project < ActiveRecord::Base
       me = FbGraph::User.me(cookies[:fb_access_token])
       if self.picture.url.match(/^http/)
         me.feed!(
-          :message => maximum_shaipz.to_s + " shaipz of " + space_per_shaipz.to_s + " m2 for " + price_per_shaipz.to_s + " euros each! " + message,
+          :message => message,
           :picture => self.picture.url(:thumb),
           :link => url,
           :name => self.name,
-          :description =>  status
+          :description => maximum_shaipz.to_s + " shaipz of " + space_per_shaipz.to_s + " m2 for " + price_per_shaipz.to_s + " euros each! " + status
           )
       else
         me.feed!(
-          :message => maximum_shaipz.to_s + " shaipz of " + space_per_shaipz.to_s + " m2 for " + price_per_shaipz.to_s + " euros each! " + message,
+          :message => message,
           :picture => "http://"+ request.host+self.picture.url(:thumb),
           :link => url,
           :name => self.name,
-          :description =>  status
+          :description => maximum_shaipz.to_s + " shaipz of " + space_per_shaipz.to_s + " m2 for " + price_per_shaipz.to_s + " euros each! " + status
           )
       end
     end
