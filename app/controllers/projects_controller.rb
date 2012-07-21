@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
       redirect_to stream_path
     else
       @user = current_user
+#      @project.source_link=params[:u]
       flash[:alert] = t("project.create_error")
       @project_statuses = Project.project_statuses
       render :new
