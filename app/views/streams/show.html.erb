@@ -10,11 +10,7 @@
     <section id="projects">
       <h2><span><%= t("stream.all_projects") %><span></h2>
       <ol>
-				<p>
-				  <a href="javascript:var d=document,w=window,e=w.getSelection,k=d.getSelection,x=d.selection,s=(e?e():(k)?k():(x?x.createRange().text:0)),f= 'http://<%= request.host_with_port %>/projects/new',l=d.location,e=encodeURIComponent,p='?v=1&u='+e(l.href)%20+'&t='+e(d.title.replace(/^\s*|\s*$/g,''))%20+'&s='+e(s),u=f+p;location.href=u;">
-				    Bookmarklet
-				  </a>
-				</p>
+
         <% @projects.each do |project| %>
           <li>
             <div class="picture"><%= link_to image_tag(project.picture.url(:thumb)), project_url(project) %></div>
