@@ -33,11 +33,11 @@ class Project < ActiveRecord::Base
   end
 
   def price_per_shaipz
-    total_amount/maximum_shaipz
+    total_amount / maximum_shaipz
   end
 
   def space_per_shaipz
-    total_space/maximum_shaipz
+    total_space / maximum_shaipz
   end
 
   def owner_name
@@ -72,34 +72,37 @@ class Project < ActiveRecord::Base
     "#{address} #{zipcode} #{city}"
   end
 
-  def send_to_facebook_wall (cookies, message, url, status, request)
-    if cookies[:fb_access_token]!= nil
+  def facebook_description
+    "#{maximum_shaipz} shaipz of #{space_per_shaipz} m2 for #{price_per_shaipz} euros each!\n #{status}"
+  end
+
+  def send_to_facebook_wall(cookies, message, url, status, request)
+    if cookies[:fb_access_token]
       me = FbGraph::User.me(cookies[:fb_access_token])
-      if self.picture.url.match(/^http/)
-        me.feed!(
-          :message => message,
-          :picture => self.picture.url(:thumb),
-          :link => url,
-          :name => self.name,
-          :description => maximum_shaipz.to_s + " shaipz of " + space_per_shaipz.to_s + " m2 for " + price_per_shaipz.to_s + " euros each!\n " + status
-          )
-      else
-        me.feed!(
-          :message => message,
-          :picture => "http://"+ request.host+self.picture.url(:thumb),
-          :link => url,
-          :name => self.name,
-          :description => maximum_shaipz.to_s + " shaipz of " + space_per_shaipz.to_s + " m2 for " + price_per_shaipz.to_s + " euros each!\n " + status
-          )
-      end
+      me.feed!({ :message     => message,
+               :link        => url,
+               :name        => self.name,
+               :picture     => thumb_picture_url(request),
+               :description => facebook_description })
     end
   end
 
   def share_with_facebook_url(opts, request)
+    url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link=#{opts[:url]}&name=#{opts[:project_name]}&caption=Shaipz.com&description=#{opts[:project_status]}&redirect_uri=#{opts[:redirect_url]}"
      if opts[:url_picture].match(/^http/)
-      url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link="+opts[:url].to_s+"&picture="+opts[:url_picture].to_s+"&name="+opts[:project_name].to_s+"&caption=Shaipz.com&description="+opts[:project_status].to_s+"&redirect_uri="+opts[:redirect_url].to_s
+      url += "&picture=#{opts[:url_picture]}"
     else
-      url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link="+opts[:url].to_s+"&picture="+"http://"+ request.host+self.picture.url(:thumb)+"&name="+opts[:project_name].to_s+"&caption=Shaipz.com&description="+opts[:project_status].to_s+"&redirect_uri="+opts[:redirect_url].to_s
+      url += "&picture=http://#{request.host + self.picture.url(:thumb)}"
+    end
+  end
+
+  private
+
+  def thumb_picture_url(request)
+    if picture.url.match(/^http/)
+      picture.url(:thumb)
+    else
+      "http://#{request.host + self.picture.url(:thumb)}"
     end
   end
 
