@@ -31,14 +31,16 @@
             </div>
 
             <div class="links">
-              <span class="external"><%= link_to(image_tag("arrow.png"), project.source_link, :target => "_blank") if project.has_source_link? %></span>
+              <span class="external"><%= link_to(t("project.original_ad"), project.source_link, :target => "_blank") if project.has_source_link? %></span>
               <span class="internal"><%= link_to(image_tag("screen.png"), project_url(project)) %></span>
-							<%= link_to( image_tag("facebook-logo.png", :size => '20x20'), project.share_with_facebook_url(
-									{ :url   => project_url(project),
-							      :project_name => project.name,
-							      :url_picture => project.picture.url(:thumb),
-							      :project_status => t("project.statuses.#{project.project_status}"),
-										:redirect_url => root_url }, request) ) %>
+              <span class="facebook-link">
+                <%= link_to(image_tag("facebook-logo.png", :size => '20x20'),
+                            project.share_with_facebook_url({ :url            => project_url(project),
+                                                              :project_name   => project.name,
+                                                              :url_picture    => project.picture.url(:thumb),
+                                                              :project_status => t("project.statuses.#{project.project_status}"),
+                                                              :redirect_url   => root_url }, request)) %>
+              </span>
             </div>
 
             <div class="details">
