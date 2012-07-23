@@ -5,8 +5,8 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     @project = project
     mail(
-      :bcc => @project.participants.all.map(&:email).push(@project.owner.email),
-      :subject => t(:"notification.mail.new_participant.subject", :name => @user.name, :project => @project.name)
+      :bcc => @project.owner_and_participants.map(&:email),
+      :subject => t("notification.mail.new_participant.subject", :name => @user.name, :project => @project.name)
     )
   end
 
@@ -14,8 +14,8 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     @project = project
     mail(
-      :bcc => @project.participants.all.map(&:email).push(@project.owner.email),
-      :subject => t(:"notification.mail.leave_participant.subject", :name => @user.name, :project => @project.name)
+      :bcc => @project.owner_and_participants.map(&:email),
+      :subject => t("notification.mail.leave_participant.subject", :name => @user.name, :project => @project.name)
     )
   end
 
@@ -23,8 +23,8 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     @project = project
     mail(
-      :bcc => @project.participants.all.map(&:email),
-      :subject => t(:"notification.mail.update_project.subject", :name => @user.name, :project => @project.name)
+      :bcc => @project.participants.map(&:email),
+      :subject => t("notification.mail.update_project.subject", :name => @user.name, :project => @project.name)
     )
   end
 
@@ -32,8 +32,8 @@ class NotificationMailer < ActionMailer::Base
     @project = project
     @user    = user
     mail(
-      :bcc => @project.participants.all.map(&:email),
-      :subject => t(:"notification.mail.destroy_project.subject", :name => @user.name, :project => @project.name)
+      :bcc => @project.participants.map(&:email),
+      :subject => t("notification.mail.destroy_project.subject", :name => @user.name, :project => @project.name)
     )
   end
 end
