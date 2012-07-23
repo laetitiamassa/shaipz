@@ -7,15 +7,10 @@
   <div id="project-wrap">
     <h2><%= t("project.define_new_project") %></h2>
 		<h3>select the details from the window and paste them into the form below</h3>
-		<% @project.errors.full_messages.each do |msg| %>
-			<p><b><%= msg %></b></p>
-		<% end %>
 		<p>
-			<% unless @project.source_link.nil? || @project.source_link.blank? %>
-				<iframe src=<%= @project.source_link %> width='700' height='400' ></iframe>
-			<% else %>
-
-			<% end %>
+			<% if @project.source_link.present? %>
+				<iframe src=<%= @project.source_link %> width='700' height='400'></iframe>
+      <% end %>
 		</p>
 
     <%= form_for @project, :html => { :multipart => true } do |f| %>
