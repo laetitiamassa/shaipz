@@ -29,12 +29,11 @@ class User < ActiveRecord::Base
   end
 
   def find_all_projects
-    @projects_of_user = self.project_participations | self.projects
+    @projects_of_user = project_participations | projects
   end
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    user = User.find_by_email(auth.info.email)
-    user
+    find_by_email(auth.info.email)
   end
 
   def self.new_with_session(params, session)
@@ -48,13 +47,13 @@ class User < ActiveRecord::Base
   def self.user_from_facebook(params, session)
     facebook_user = User.new
     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-      facebook_user.name = data["name"]
-      facebook_user.email = data["email"]
-      facebook_user.password =  facebook_user.name+rand(5000).to_s+facebook_user.email+rand(5000).to_s
-      facebook_user.favorite_areas = '1000'
-      facebook_user.minimum_space = '1'
-      facebook_user.maximum_budget = '1'
-      facebook_user.confirmed_at = Time.now
+      facebook_user.name           = data["name"]
+      facebook_user.email          = data["email"]
+      facebook_user.password       = SecureRandom.urlsafe_base64
+      facebook_user.favorite_areas = "1000"
+      facebook_user.minimum_space  = true
+      facebook_user.maximum_budget = true
+      facebook_user.confirmed_at   = Time.now
     end
     facebook_user
   end
