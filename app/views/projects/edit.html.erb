@@ -3,9 +3,6 @@
 
   <div id="project-wrap">
     <h2><%= t("project.define_new_project") %></h2>
-		<% @project.errors.full_messages.each do |msg| %>
-			<p><b><%= msg %></b></p>
-		<% end %>
     <%= form_for @project, :html => { :multipart => true } do |f| %>
       <div class="picture">
         <%= image_tag @project.picture.url(:medium) %>
