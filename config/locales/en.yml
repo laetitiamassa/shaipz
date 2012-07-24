@@ -84,6 +84,7 @@ en:
     how_far_is_the_project: "How far is the project?"
     share_on_facebook: "Share on facebook?"
     description_shaipz: "The global price of the project is %{total_amount} € for %{total_space} m2"
+    original_ad: "Original ad"
     statuses:
       building_discovery: "We are discovering the building"
       people_discovery: "We are discovering each other"

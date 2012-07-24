@@ -9,7 +9,7 @@
     </div>
     <h2>
       <%= @project.name %>
-      <span class="external"><%= link_to(image_tag("arrow.png"), @project.source_link, :target => "_blank") if @project.has_source_link? %></span>
+      <span class="external"><%= link_to(t("project.original_ad"), @project.source_link, :target => "_blank") if @project.has_source_link? %></span>
     </h2>
     <section id="owner">
       <h3><%= t("project.about_owner") %></h3>

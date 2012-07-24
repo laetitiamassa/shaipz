@@ -627,6 +627,19 @@ header #flash .notice {
   position: absolute;
   top: 40px;
   right: 0;
+  line-height: 17px;
+}
+
+#stream #projects ol li .links span img {
+  vertical-align: middle;
+}
+
+#stream #projects ol li .links span a {
+  text-decoration: none;
+}
+
+#stream #projects ol li .links span a:hover {
+  text-decoration: underline;
 }
 
 #stream #projects ol li .links span + span {
@@ -918,6 +931,18 @@ header #flash .notice {
   top: 0;
 }
 
+#show-project #project-wrap h2 .external a {
+  font-size: 0.7em;
+  display: inline-block;
+  background: url("arrow.png") no-repeat right center;
+  padding: 0 24px 0 0;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+#show-project #project-wrap h2 .external a:hover {
+  text-decoration: underline;
+}
 
 #show-project #owner {
   width: 280px;
