@@ -50,7 +50,7 @@
 			    </li>
 			    <li>
 			   		<span class="label"><%= t("search_settings.minimum_space") %></span>
-			    	<%= @url_immo.surface_for_building(@user.minimum_space) %> m&sup2;
+			    	<%= @url_immo.surface_for_building(@user.minimum_space).to_i %> m&sup2;
 			   	</li>
 					<% @url_immo.url(@user.maximum_budget, @user.favorite_areas.split(', '), @user.minimum_space).each do |u| %>
 		      	<li>
