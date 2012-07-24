@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @url_immo = UrlSearchGenerator.new("immoweb")
   end
 
   def edit

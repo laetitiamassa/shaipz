@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  include Round
   belongs_to :owner, :class_name => "User"
   has_many :participations, :dependent => :destroy
   has_many :participants, :through => :participations
@@ -16,7 +17,6 @@ class Project < ActiveRecord::Base
   PROJECT_STATUSES = ["building_discovery", "people_discovery", "interest_confirmation", "feasibility_stamp", "internal_agreement",
                       "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]
 
-
   attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
                   :cohousing, :event, :city, :zipcode, :project_status, :share_on_facebook
 
@@ -33,7 +33,7 @@ class Project < ActiveRecord::Base
   end
 
   def price_per_shaipz
-    total_amount/maximum_shaipz
+    round_to_thousands(total_amount / maximum_shaipz)
   end
 
   def space_per_shaipz
@@ -67,6 +67,7 @@ class Project < ActiveRecord::Base
   def total_amount=(amount)
     write_attribute(:total_amount, amount.gsub(/[\.,]/, ""))
   end
+
 
   def full_address
     "#{address} #{zipcode} #{city}"

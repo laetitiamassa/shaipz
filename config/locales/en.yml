@@ -133,3 +133,13 @@ en:
   facebook:
     create: "I've just created an awesome project on Shaipz.com!"
     join: "I've just joined an awesome project on Shaipz.com!"
+  search_settings:
+    criteria: "Let's find a building on the web matching with you! Try these criterias:"
+    types_buildings_text: "Your building type"
+    maximum_budget: "Maximum price"
+    minimum_space: "Minimum space"
+    direct_link: "Direct link"
+    types_buildings:
+      rental_complex: "rental complex"
+      house: "house"
+

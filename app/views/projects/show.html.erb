@@ -29,12 +29,12 @@
 			<p class="status"><%= t("project.statuses.#{@project.project_status}") if @project.has_project_status? %></p>
 
       <div class="criteria">
-        <span class="amount"><%= @project.price_per_shaipz %> €</span>
+        <span class="amount"><%= number_to_currency(@project.price_per_shaipz, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %> </span>
         <span class="space"><%= @project.space_per_shaipz %> m&sup2;</span>
         <span class="shaipz"><%= @project.maximum_shaipz %></span>
       </div>
 			<div class="description">
-				<p><%= t(:"project.description_shaipz", :total_amount => @project.total_amount, :total_space => @project.total_space) %><p>
+				<p><%= t(:"project.description_shaipz", :total_amount => number_to_currency(@project.total_amount, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") , :total_space => @project.total_space) %><p>
 			</div>
 
 			<div class="address">

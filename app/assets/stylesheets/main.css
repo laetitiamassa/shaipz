@@ -27,7 +27,6 @@ form ul li {
   font-family: 'Amaranth', sans-serif;
 }
 
-
 /* Top bar */
 
 #top-bar {
@@ -65,8 +64,6 @@ form ul li {
 	font-weight: bold;
 }
 
-
-
 #social-logo ul li a{
 	color: #fff;
 	text-decoration: none;
@@ -75,6 +72,7 @@ form ul li {
 #social-logo .wrap{
 	position: relative;
 }
+
 #social-logo .wrap ul li .links a{
 	position: relative;
 	top: -5px;
@@ -135,8 +133,6 @@ form ul li {
 
 }
 
-
-
 #sign-in .form-actions .button input {
   display: block;
   border: none;
@@ -176,7 +172,6 @@ header .logo a {
 header .logo strong a{
 	color: #d2f9f9;
 }
-
 
 header .tagline {
   display: inline-block;
@@ -236,7 +231,6 @@ header #flash .notice {
   margin: 0 0 10px 0;
   height: 41px;
 }
-
 
 #content form .fields li.checkbox {
   line-height: 41px;
@@ -303,7 +297,6 @@ header #flash .notice {
   border-radius: 3px;
 }
 
-
 #content form .form-actions .button input {
   padding: 6px 40px;
   font-weight: bold;
@@ -332,7 +325,6 @@ header #flash .notice {
 }
 
 #content form .form-actions .green-button input{
-
   border: none;
   background: url("button-b-bg.png") repeat-x center center;
   color: #fff;
@@ -347,9 +339,6 @@ header #flash .notice {
   -webkit-box-shadow: 0 1px 2px #ddd;
   box-shadow: 0 1px 2px #ddd;
 }
-
-
-
 
 /* Profile on the side */
 
@@ -483,7 +472,6 @@ header #flash .notice {
   font-weight: bold;
 }
 
-
 #sign-up form .form-actions input{
 	display: block;
   border: none;
@@ -525,7 +513,6 @@ header #flash .notice {
   top: 8px;
   left: 12px;
 }
-
 
 #stream #start-project .action-call .button {
   position: relative;
@@ -1216,8 +1203,6 @@ footer nav ul {
   right: 0;
 }
 
-
-
 footer nav ul li {
   display: inline-block;
 }
@@ -1236,42 +1221,52 @@ footer nav ul li .links a {
 	top:-5px;
 }
 
-
 /* Devise */
 
 #error_explanation h2 {
   color: #d63f00;
 }
+
 a {
 	color: #999;
 }
 
-#how-it-works .youtube{
+/* How it works */
+
+#how-it-works .youtube {
 	text-align: center;
 }
 
-#how-it-works h1{
+#how-it-works h1 {
 	font-size : xx-large;
 	text-align: center;
 	color: #1b8e8a
 }
 
-#how-it-works h2{
+#how-it-works h2 {
 	font-size : large;
 }
 
-#how-it-works p{
+#how-it-works p {
 	font-size : 110%;
 }
 
-#how-it-works p a{
+#how-it-works p a {
 	font-size : 100%;
-	color: #1b8e8a
+	color: #1b8e8a;
 }
 
-#how-it-works a{
+#how-it-works a {
 	font-size : 110%;
-	color: #1b8e8a
+	color: #1b8e8a;
 }
 
+/* Errors */
 
+form .fields .field_with_errors input {
+  background-color: #ffdfdf !important;
+}
+
+form .fields .field_with_errors label {
+  color: #d63f00 !important;
+}

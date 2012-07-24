@@ -23,15 +23,49 @@
       </li>
       <li>
         <span class="label"><%= t("profile.maximum_budget") %></span>
-        <%= @user.maximum_budget %> €
+        <%= number_to_currency(@user.maximum_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %>
       </li>
       <li>
         <span class="label"><%= t("profile.minimum_space") %></span>
         <%= @user.minimum_space %> m&sup2;
       </li>
     </ul>
+		<% if @user.id == current_user.id %>
+			<div id="research-links">
+				<h3><%= t("search_settings.criteria") %></h3>
+				<ul>
+					<li>
+						<span class="label"><%= t("search_settings.types_buildings_text") %></span>
+			      <% @url_immo.type_building(@user.minimum_space).each do |type|%>
+			 				<%= t("search_settings.types_buildings.#{type}") %>,
+						<% end %>
+					</li>
+			    <li>
+			    	<span class="label"><%= t("search_settings.favorite_areas") %></span>
+			      <%=  @user.favorite_areas %>
+			   	</li>
+			   	<li>
+			    	<span class="label"><%= t("search_settings.maximum_budget") %></span>
+			      <%= number_to_currency(@url_immo.budget_searched(@user.maximum_budget), :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %>
+			    </li>
+			    <li>
+			   		<span class="label"><%= t("search_settings.minimum_space") %></span>
+			    	<%= @url_immo.surface_for_building(@user.minimum_space) %> m&sup2;
+			   	</li>
+					<% @url_immo.url(@user.maximum_budget, @user.favorite_areas.split(', '), @user.minimum_space).each do |u| %>
+		      	<li>
+							<span class="label"><%= t("search_settings.direct_link") %></span>
+		       		<%= link_to image_tag('immoweb.gif', :size => '170x40'), u %>
+		     		</li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
   </div>
+
+
   <div class="report">
 	<%= link_to 'Report', new_user_report_path(@user) %>
   </div>
+
 </section>
