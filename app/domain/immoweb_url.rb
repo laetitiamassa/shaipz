@@ -24,7 +24,7 @@ class ImmowebUrl
     zipcode_query = ""
     zipcodes[0..3].each_with_index do |zipcode, index|
       commune_index = index.succ
-      zipcode_query + "&xcodecommune#{commune_index}=#{zipcode}"
+      zipcode_query += "&xcodecommune#{commune_index}=#{zipcode}"
     end
     zipcode_query
   end

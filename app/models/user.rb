@@ -87,4 +87,8 @@ class User < ActiveRecord::Base
   def maximum_budget=(budget)
     write_attribute(:maximum_budget, budget.gsub(/[\.,]/, ""))
   end
+
+  def zipcodes
+    favorite_areas.split(", ")
+  end
 end

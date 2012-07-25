@@ -3,6 +3,8 @@ class StreamsController < ApplicationController
 
   def show
     @user = current_user
-    @projects = Project.all
+    if (@projects =  Project.where(:zipcode => [current_user.zipcodes])).blank?
+      @projects = Project.all
+    end
   end
 end
