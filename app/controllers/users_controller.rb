@@ -6,10 +6,13 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @url_immo = UrlSearchGenerator.new("immoweb")
+     @urls = @url_immo.url(@user.maximum_budget, @user.favorite_areas.split(', '), @user.minimum_space)
   end
 
   def edit
     @user = current_user
+    @url_immo = UrlSearchGenerator.new("immoweb")
+    @urls = @url_immo.url(@user.maximum_budget, @user.favorite_areas.split(', '), @user.minimum_space)
     @personal_statuses = User.personal_statuses
   end
 
@@ -20,6 +23,8 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       @personal_statuses = User.personal_statuses
+      @url_immo = UrlSearchGenerator.new("immoweb")
+      @urls = @url_immo.url(@user.maximum_budget, @user.favorite_areas.split(', '), @user.minimum_space)
       flash[:alert] = t("profile.update_errors")
       render :edit
     end

@@ -135,11 +135,10 @@ en:
     create: "I've just created an awesome project on Shaipz.com!"
     join: "I've just joined an awesome project on Shaipz.com!"
   search_settings:
-    criteria: "Let's find a building on the web matching with you! Try these criterias:"
-    types_buildings_text: "Your building type"
-    maximum_budget: "Maximum price"
-    minimum_space: "Minimum space"
-    direct_link: "Direct link"
+    criteria_with_house: "To create a project, you should search for a rental complex or a house of minimum %{surface} m2 for a maximum budget of %{price}"
+    criteria: "To create a project, you should search for a rental complex of minimum %{surface} m2 for a maximum budget of %{price}"
+    link_to_rental: "Create your project from a rental complex:"
+    link_to_house: "Create your project from a house:"
     types_buildings:
       rental_complex: "rental complex"
       house: "house"

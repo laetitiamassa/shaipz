@@ -20,7 +20,12 @@ class ImmowebUrl
     "&xprice2=#{max_price}"
   end
 
-  def self.zipcode (zipcodes)
-    "&xcodecommune1=#{zipcodes[0]}&xcodecommune2=#{zipcodes[1]}&xcodecommune3=#{zipcodes[2]}&xcodecommune4=#{zipcodes[3]}"
+  def self.zipcode(zipcodes)
+    zipcode_query = ""
+    zipcodes[0..3].each_with_index do |zipcode, index|
+      commune_index = index.succ
+      zipcode_query + "&xcodecommune#{commune_index}=#{zipcode}"
+    end
+    zipcode_query
   end
 end

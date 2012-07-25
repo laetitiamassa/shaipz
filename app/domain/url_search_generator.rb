@@ -18,9 +18,13 @@ class UrlSearchGenerator
     @url
   end
 
+  def can_have_a_house?(surface)
+    surface >= 70
+  end
+
   def type_building (surface)
     types = ["rental_complex"]
-    if surface >= 70
+    if can_have_a_house?(surface)
       types.push("house")
     end
     types
