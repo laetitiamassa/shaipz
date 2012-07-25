@@ -348,55 +348,63 @@ header #flash .notice {
 
 /* Profile on the side */
 
-
-
 #profile-wrap {
   width: 200px;
   position: absolute;
-}
 
-#profile-wrap #profile-box h2 {
-  margin: 10px 0;
-}
+  #profile-box h2 {
+    margin: 10px 0;
+  }
 
-#profile-wrap #profile-info ul {
-  margin: 10px 0 0 0;
-  padding: 0;
-}
+  #profile-info ul {
+    margin: 10px 0 0 0;
+    padding: 0;
 
-#profile-wrap #profile-info ul li {
-  list-style: none;
-  margin: 0 0 10px;
-}
+    li {
+      list-style: none;
+      margin: 0 0 10px;
 
-#profile-wrap #profile-info ul li .label {
-  font-weight: bold;
-  display: inline-block;
-  width: 105px;
+      .label {
+        font-weight: bold;
+        display: inline-block;
+        width: 105px;
+      }
+    }
+  }
 }
 
 /* Homepage */
 
-#why-shaipz .why-box {
-  width: 300px;
-  float: left;
-  margin: 0 0 20px 0;
-}
+#why-shaipz {
+  .why-box {
+    width: 300px;
+    float: left;
+    margin: 0 0 20px 0;
 
-#why-shaipz .why-box + .why-box {
-  margin: 0 0 20px 20px;
-}
+    h3 {
+      font-weight: normal;
+      text-shadow: 0 1px 0 #fff;
+      margin: 0;
 
-#why-shaipz h3 {
-  font-weight: normal;
-  text-shadow: 0 1px 0 #fff;
-  margin: 0;
-}
+      strong {
+        color: #1b8e8a;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
 
-#why-shaipz h3 strong {
-  color: #1b8e8a;
-  text-transform: uppercase;
-  font-weight: bold;
+  .why-box + .why-box {
+    margin: 0 0 20px 20px;
+  }
+
+  .why-box.neighbours {
+    text-align: center;
+  }
+
+  .why-box.terms-of-living {
+    text-align: right;
+  }
 }
 
 #sign-up {
