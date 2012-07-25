@@ -21,10 +21,12 @@
         <span class="label"><%= t("profile.favorite_areas") %></span>
         <%= @user.favorite_areas %>
       </li>
-      <li>
-        <span class="label"><%= t("profile.maximum_budget") %></span>
-        <%= number_to_currency(@user.maximum_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %>
-      </li>
+			<% if !@user.hide_budget || @user == current_user %>
+      	<li>
+        	<span class="label"><%= t("profile.maximum_budget") %></span>
+        	<%= number_to_currency(@user.maximum_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %>
+      	</li>
+			<% end %>
       <li>
         <span class="label"><%= t("profile.minimum_space") %></span>
         <%= @user.minimum_space %> m&sup2;

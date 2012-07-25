@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     :size => { :less_than => 2.megabytes }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status
+  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget
   #
 
   def is_loggued_with_facebook? (session)

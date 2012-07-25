@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717101543) do
+ActiveRecord::Schema.define(:version => 20120725124134) do
 
   create_table "participations", :force => true do |t|
     t.integer  "participant_id",                      :null => false
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20120717101543) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean  "hide_budget",            :default => false
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
