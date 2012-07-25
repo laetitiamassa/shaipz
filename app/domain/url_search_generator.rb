@@ -1,51 +1,46 @@
-
 class UrlSearchGenerator
-  def initialize(search_engine)
+  def initialize(search_engine, user)
     @search_engine = search_engine
+    @user = user
   end
 
-  def url (max_price, zipcode, surface)
-    @url = Array.new
-    budget_required = budget_searched(max_price)
-    types_building = type_building(surface)
-    surface_building = surface_for_building(surface)
-    types_building.each do |type|
+  def generate_urls
+    urls = []
+    building_types.each do |building_type|
       case @search_engine
         when "immoweb"
-          @url << ImmowebUrl::URL + ImmowebUrl.type_building(type) + ImmowebUrl.minimum_space(surface_building)+ ImmowebUrl.maximum_price(budget_required) + ImmowebUrl.zipcode(zipcode)
+          urls << ImmowebUrl.generate_search_url(searched_budget, building_type, searched_space, searched_areas)
       end
     end
-    @url
+    urls
   end
 
-  def can_have_a_house?(surface)
-    surface >= 70
-  end
-
-  def type_building (surface)
+  def building_types
     types = ["rental_complex"]
-    if can_have_a_house?(surface)
-      types.push("house")
-    end
+    types.push("house") if user_can_have_a_house?
     types
   end
 
-  def budget_searched (max_price)
-    if max_price<150000
-      return max_price * 5
-    elsif max_price <350000
-      return max_price * 7
+  def searched_budget
+    maximum_budget = @user.maximum_budget
+    if maximum_budget.between?(150000, 350000)
+      maximum_budget * 7
     else
-      return max_price * 5
+      maximum_budget * 5
     end
   end
 
-  def surface_for_building (surface)
-    if surface < 100
-      return surface * 3
-    elsif surface >= 100
-      return surface * 2.2
-    end
+  def searched_space
+    minimum_space = @user.minimum_space
+    space = minimum_space < 100 ? minimum_space * 3 : minimum_space * 2.2
+    space.to_i
+  end
+
+  def searched_areas
+    @user.favorite_areas.split(", ")
+  end
+
+  def user_can_have_a_house?
+    @user.minimum_space >= 70
   end
 end
-

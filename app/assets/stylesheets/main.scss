@@ -773,24 +773,40 @@ header #flash .notice {
 
 #research-links {
   margin: 0 0 0 220px;
-  position: relative;
-}
 
-#research-links ul {
-  list-style: none;
-  padding: 0 0 0px;
-}
+  ul {
+    list-style: none;
+    padding: 0 0 0px;
 
-#research-links ul li {
-  list-style: none;
-  margin: 0 0 15px;
-}
+    li {
+      list-style: none;
+      margin: 0 0 15px;
 
-#research-links ul li .label {
-  display: block;
-  font-weight: bold;
-  margin: 0 0 7px;
-  color: #aaa;
+      .label {
+        display: block;
+        font-weight: bold;
+        margin: 0 0 7px;
+        color: #aaa;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        background: url("immo-search-bg.png") repeat-x center bottom;
+        border: 1px solid #ddd;
+        padding: 0 6px 0 11px;
+
+        .search-link {
+          display: inline-block;
+          background: url("arrow-immo.png") no-repeat right center;
+          font-weight: bold;
+          padding: 0 20px 0 0;
+          line-height: 30px;
+          color: #00698c !important;
+        }
+      }
+    }
+  }
 }
 
 

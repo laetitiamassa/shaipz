@@ -1,15 +1,15 @@
 <% if @user.id == current_user.id %>
 	<div id="research-links">
-		<% if @url_immo.can_have_a_house?(@user.minimum_space) %>
-			<h4><%= t("search_settings.criteria_with_house", :surface => @url_immo.surface_for_building(@user.minimum_space).to_i,
-								:price => number_to_currency(@url_immo.budget_searched(@user.maximum_budget),
+		<% if @url_immo.user_can_have_a_house? %>
+			<h4><%= t("search_settings.criteria_with_house", :surface => @url_immo.searched_space,
+								:price => number_to_currency(@url_immo.searched_budget,
 																		:delimiter =>'.',
 																		:strip_insignificant_zeros => true,
 																		:unit => "€",
-																		:format => "%n %u"))  %></h4>
+																		:format => "%n %u")) %></h4>
 		<% else %>
-		<h4><%= t("search_settings.criteria", :surface => @url_immo.surface_for_building(@user.minimum_space).to_i,
-								:price => number_to_currency(@url_immo.budget_searched(@user.maximum_budget),
+		<h4><%= t("search_settings.criteria", :surface => @url_immo.searched_space,
+								:price => number_to_currency(@url_immo.searched_budget,
 																		:delimiter =>'.',
 																		:strip_insignificant_zeros => true,
 																		:unit => "€",
@@ -19,8 +19,8 @@
 				<% @urls.each_with_index do |url, index| %>
       		<li>
 						<span class="label"><%= t("search_settings.link_to_building",
-																		:type => t("search_settings.types_buildings.#{@types_building[index]}")) %></span>
-      			<%= link_to image_tag('immoweb.gif', :size => '170x40', ), url, :target => "_blank" %>
+																		:type => t("search_settings.types_buildings.#{@building_types[index]}")) %></span>
+                                  <%= link_to content_tag(:span, t("search_settings.find_one_on_immoweb"), :class => "search-link"), url, :target => "_blank" %>
      			</li>
 				<% end %>
 			</ul>
