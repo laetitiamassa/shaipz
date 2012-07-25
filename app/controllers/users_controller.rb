@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @url_immo = UrlSearchGenerator.new("immoweb")
-     @urls = @url_immo.url(@user.maximum_budget, @user.favorite_areas.split(', '), @user.minimum_space)
+    @urls = @url_immo.url(@user.maximum_budget, @user.favorite_areas.split(', '), @user.minimum_space)
+    @types_building =  @url_immo.type_building(@user.minimum_space)
   end
 
   def edit
