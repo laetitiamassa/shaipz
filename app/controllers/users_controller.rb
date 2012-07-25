@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     @user = current_user
     @url_immo = UrlSearchGenerator.new("immoweb")
     @urls = @url_immo.url(@user.maximum_budget, @user.favorite_areas.split(', '), @user.minimum_space)
+    @types_building =  @url_immo.type_building(@user.minimum_space)
     @personal_statuses = User.personal_statuses
   end
 
