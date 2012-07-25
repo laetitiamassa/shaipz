@@ -50,9 +50,10 @@ en:
     home: "Home"
     profile: "Profile"
     sign_out: "Log out"
+    shaipz: "My Shaipz"
   stream:
     start_project: "Create your project"
-    all_projects: "All projects"
+    all_projects: "Open projects"
   project:
     define_new_project: "Define your project"
     create_project: "Create your project"
