@@ -3,20 +3,13 @@
 
   <div id="project-wrap">
     <h2><%= t("project.define_new_project") %></h2>
-       <p>
-						<% unless @project.source_link.nil? || @project.source_link.blank? %>
-							<iframe src=<%= @project.source_link %> width='700' height='400' ></iframe>
-						<% end %>
-					</p>
-		<% @project.errors.full_messages.each do |msg| %>
-			<p><b><%= msg %></b></p>
-		<% end %>
 
     <%= form_for @project, :html => { :multipart => true } do |f| %>
-
       <div class="picture">
+        <%= image_tag @project.picture.url(:medium) %>
         <%= f.file_field :picture %>
       </div>
+
       <ul class="fields">
 				<li class="string">
           <%= f.label :source_link, t("project.source_link") %>
