@@ -8,9 +8,6 @@
     </ul>
     <ul class="fields">
 			<h2><%= t("profile.fill_your_profile") %></h2>
-			<% @user.errors.full_messages.each do |msg| %>
-				<p><b><%= msg %></b></p>
-			<% end %>
       <li class="string">
         <%= f.label :name %>
         <%= f.text_field :name %>

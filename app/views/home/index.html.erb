@@ -1,12 +1,13 @@
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=268091083289955";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=268091083289955";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <section id="why-shaipz">
   <div class="why-box">
@@ -33,6 +34,7 @@
 		</div>
 
   </div>
+
   <%= form_for("user", :url => user_registration_path) do |f| %>
     <ul class="fields">
       <li class="string">
@@ -64,14 +66,15 @@
     </ul>
 
     <div class="form-actions clear">
-      <span class="green-button"><%= f.submit t('home.sign_up') %></span><small> It's free !</small>
+      <small>It's free !</small><span class="green-button"><%= f.submit t('home.sign_up') %></span>
     </div>
   <% end %>
-
-
-
 </section>
+
 <div id = "follow-like">
-<div class="fb-like" data-href="https://www.facebook.com/Shaipz" data-send="false" data-width="450" data-show-faces="false"></div>
-<a href="https://twitter.com/shaipzapp" class="twitter-follow-button" data-show-count="false">Follow @shaipzapp</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+  <div class="fb-like" data-href="https://www.facebook.com/Shaipz" data-send="false" data-width="450" data-show-faces="false"></div>
+  <a href="https://twitter.com/shaipzapp" class="twitter-follow-button" data-show-count="false">Follow @shaipzapp</a>
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  </script>
+</div>

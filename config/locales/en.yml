@@ -125,7 +125,7 @@ en:
         content: "You can have more details"
       destroy_project:
         subject: "%{name} has removed %{project}!"
-        content: "You can have more details"
+        content: "Your can create another project"
       update_project:
         subject: "%{name} has updated %{project}!"
         content: "You can have more details"

@@ -27,7 +27,7 @@
             </div>
 
             <div class="links">
-              <span class="external"><%= link_to(t("project.original_ad"), project.source_link, :target => "_blank") if project.has_source_link? %></span>
+              <span class="external"><%= link_to(image_tag("arrow.png"), project.source_link, :target => "_blank") if project.has_source_link? %></span>
               <span class="internal"><%= link_to(image_tag("screen.png"), project_url(project)) %></span>
               <span class="facebook-link">
                 <%= link_to(image_tag("facebook-logo.png", :size => '20x20'),

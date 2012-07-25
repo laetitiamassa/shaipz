@@ -2,6 +2,9 @@
   <div id="profile-box">
     <div class="picture">
       <%= image_tag @user.picture.url(:medium) %>
+      <% if @user == current_user %>
+        <div class="edit"><%= link_to t("profile.edit"), edit_user_path(@user) %></div>
+      <% end %>
     </div>
 
     <div class="personal-status">

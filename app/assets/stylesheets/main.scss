@@ -832,6 +832,21 @@ header #flash .notice {
 #show-profile #profile-box {
   width: 200px;
   position: absolute;
+
+  .picture .edit {
+    background: #fff url("file.png") no-repeat 5px center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+    padding: 5px 5px 5px 25px;
+
+    a {
+      color: #1e5270;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
 }
 
 #profile-box .status {
@@ -841,7 +856,7 @@ header #flash .notice {
   font-style: italic;
 }
 
-#show-profile  .report a {
+#show-profile .report a {
 	position: absolute;
 	right:    0;
 	bottom:   0;
