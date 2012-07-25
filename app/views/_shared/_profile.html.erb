@@ -20,7 +20,7 @@
       </li>
       <li>
         <span class="label"><%= t("profile.maximum_budget") %></span>
-        <%= user.maximum_budget %> €
+        <%= number_to_currency(user.maximum_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u")%>
       </li>
       <li>
         <span class="label"><%= t("profile.minimum_space") %></span>
