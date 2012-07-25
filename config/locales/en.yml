@@ -107,6 +107,7 @@ en:
   footer:
     terms_of_use: "Terms of services"
     how_it_works: "How it works?"
+    browser_support: "The website does not support old versions of IE yet."
   report:
     reason: "What do you report?"
     submit: "Submit"

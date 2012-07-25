@@ -7,19 +7,6 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-	<script type="text/javascript">
-
-  	var _gaq = _gaq || [];
-  	_gaq.push(['_setAccount', 'UA-31837662-1']);
-  	_gaq.push(['_trackPageview']);
-
-  	(function() {
-    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  	})();
-
-	</script>
 </head>
 <body>
 	<div id="fb-root"></div>
@@ -32,8 +19,6 @@
 	      cookie     : true,
 	      xfbml      : true
 	    });
-
-	    // Additional initialization code here
 	  };
 
 	  // Load the SDK Asynchronously
@@ -72,10 +57,11 @@
 								<%= link_to t('footer.how_it_works'), how_it_works_path %>
 							</div>
 						</li>
-						<li></li>
+
 						<li>
 	            <%= link_to image_tag("facebook-logo-white.png", :size => "25x25"), "http://facebook.com/shaipz", :target => "_blank" %>
 	          </li>
+
             <li>
 	            <%= link_to image_tag("twitter-logo-white.png", :size => "25x25"), "http://twitter.com/shaipzapp", :target => "_blank" %>
 	          </li>
@@ -83,7 +69,6 @@
 						<li>
 	            <%= link_to image_tag("contact-logo-white.png", :size => "25x25"), "mailto:hello@shaipz.com", :target => "_blank" %>
 	          </li>
-
 					</ul>
 					</nav>
 				</nav>
@@ -115,7 +100,10 @@
 
   <header>
     <div class="wrap">
-      <h1 class="logo"><%= link_to "Shaipz", root_url %></h1>
+      <h1 class="logo">
+        <%= link_to "Shaipz", root_url %>
+        <em>beta</em>
+      </h1>
       <p class="tagline">Collaborative home buying</p>
 
       <section id="flash">
@@ -138,6 +126,7 @@
     <div class="wrap">
       <h1 class="logo">Shaipz</h1>
       <p class="tagline">Collaborative home buying</p>
+      <p class="browser"><%= t("footer.browser_support") %></p>
       <nav>
         <ul>
 					<li>
@@ -151,7 +140,6 @@
             	<%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf"), :target => "_blank" %>
 						</div>
           </li>
-					<li></li>
 					<li>
             <%= link_to image_tag("facebook-logo.png", :size => "25x25"), "http://facebook.com/shaipz", :target => "_blank" %>
           </li>
@@ -165,5 +153,17 @@
       </nav>
     </div>
   </footer>
+
+	<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31837662-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </body>
 </html>

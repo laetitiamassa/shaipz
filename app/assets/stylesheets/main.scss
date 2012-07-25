@@ -14,6 +14,10 @@ form ul li {
   list-style: none;
 }
 
+a {
+	color: #999;
+}
+
 .clear {
   clear: both;
 }
@@ -59,12 +63,12 @@ form ul li {
   right: 0;
 }
 
-#social-logo ul li{
+#social-logo ul li {
 	display: inline-block;
 	font-weight: bold;
 }
 
-#social-logo ul li a{
+#social-logo ul li a {
 	color: #fff;
 	text-decoration: none;
 }
@@ -73,7 +77,7 @@ form ul li {
 	position: relative;
 }
 
-#social-logo .wrap ul li .links a{
+#social-logo .wrap ul li .links a {
 	position: relative;
 	top: -5px;
 }
@@ -97,7 +101,6 @@ form ul li {
 #sign-in .wrap{
 	position: relative;
 }
-
 
 #sign-in  .facebook-button {
 	display: inline-block;
@@ -162,6 +165,7 @@ header .logo {
   color: #fff;
   text-shadow: 0 1px 2px #555;
   margin: 10px 10px 10px 0;
+  position: relative;
 }
 
 header .logo a {
@@ -169,8 +173,11 @@ header .logo a {
   color: #fff;
 }
 
-header .logo strong a{
-	color: #d2f9f9;
+header .logo em {
+  position: absolute;
+  font-size: 0.3em;
+  right: 2px;
+  bottom: -4px;
 }
 
 header .tagline {
@@ -265,7 +272,6 @@ header #flash .notice {
 #content form .fields .string strong label{
   color: #1b8e8a ;
 }
-
 
 #content form .fields .string input {
   color: #555;
@@ -421,6 +427,7 @@ header #flash .notice {
 	position:relative;
 	right:-165px;
 }
+
 #follow-like{
 	position:relative;
 	top:10px;
@@ -1247,55 +1254,57 @@ footer {
   border-top: 1px solid #e1e1e1;
   padding: 20px 0;
   color: #777;
-}
 
-footer .logo {
-  display: inline-block;
-  margin: 0 7px 0 0;
-}
+  .wrap {
+    position: relative;
 
-footer .tagline {
-  display: inline-block;
-  font-style: italic;
-}
+    .logo {
+      display: inline-block;
+      margin: 0 7px 0 0;
+    }
 
-footer .wrap {
-  position: relative;
-}
+    .tagline {
+      display: inline-block;
+      font-style: italic;
+    }
 
-footer nav ul {
-  padding: 0;
-  position: absolute;
-  top: -10px;
-  right: 0;
-}
+    .browser {
+      font-style: italic;
+      color: #999;
+    }
 
-footer nav ul li {
-  display: inline-block;
-}
+    nav ul {
+      padding: 0;
+      position: absolute;
+      top: -10px;
+      right: 0;
 
-footer nav ul li a {
-  color: #999;
-  text-decoration: none;
-  font-weight: bold;
-}
+      li {
+        display: inline-block;
+      }
 
-footer nav ul li .links {
-	color: #231;
-}
-footer nav ul li .links a {
-	position:relative;
-	top:-5px;
+      a {
+        color: #999;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .links {
+        color: #231;
+
+        a {
+          position:relative;
+          top:-5px;
+        }
+      }
+    }
+  }
 }
 
 /* Devise */
 
 #error_explanation h2 {
   color: #d63f00;
-}
-
-a {
-	color: #999;
 }
 
 /* How it works */
