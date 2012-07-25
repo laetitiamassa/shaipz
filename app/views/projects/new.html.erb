@@ -11,12 +11,6 @@
 		<% @project.errors.full_messages.each do |msg| %>
 			<p><b><%= msg %></b></p>
 		<% end %>
-		<h3>select the details from the window and paste them into the form below</h3>
-		<p>
-			<% if @project.has_source_link? %>
-				<iframe src=<%= @project.source_link %> width='700' height='400'></iframe>
-      <% end %>
-		</p>
 
     <%= form_for @project, :html => { :multipart => true } do |f| %>
 
