@@ -89,6 +89,6 @@ class User < ActiveRecord::Base
   end
 
   def zipcodes
-    favorite_areas.split(", ")
+    favorite_areas.split(",").map(&:to_i)
   end
 end
