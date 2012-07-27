@@ -2,7 +2,7 @@
 
 <p><%= t("notification.mail.update_project.subject", :name => @user.name, :project => @project.name) %></p>
 <p>
-  <%= t("notification.mail.update_project.content")%> <%= link_to "here" , project_url(@project) %>.
+  <%= t("notification.mail.update_project.content")%> <%= link_to t("notification.mail.here") , project_url(@project) %>.
 </p>
 
 <p><%= t("notification.mail.signature") %></p>

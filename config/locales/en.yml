@@ -117,6 +117,7 @@ en:
     create_error: "We cannot create your report, please verify the details."
   notification:
     mail:
+      here: "here"
       salutation: "Hi there,"
       signature: "Have a great day!"
       team: "The Shaipz Team"
