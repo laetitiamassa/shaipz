@@ -1,6 +1,8 @@
 Shaipz::Application.routes.draw do
 
 
+
+
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions", :confirmations => "confirmations",
                                        :omniauth_callbacks => "users/omniauth_callbacks" }
 
@@ -74,6 +76,7 @@ Shaipz::Application.routes.draw do
   resources :reports
   resources :participations
   resource :stream
+  resource :friend_invitations
   resource :shaipz
   resource :change_password
   resource :how_it_works

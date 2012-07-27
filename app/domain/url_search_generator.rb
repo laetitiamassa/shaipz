@@ -37,7 +37,7 @@ class UrlSearchGenerator
   end
 
   def searched_areas
-    @user.favorite_areas.split(", ")
+    @user.zipcodes
   end
 
   def user_can_have_a_house?

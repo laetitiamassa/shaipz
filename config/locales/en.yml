@@ -166,4 +166,7 @@ en:
     types_buildings:
       rental_complex: "rental complex"
       house: "house"
+  friend_invitation:
+    title: "Invite your friends to join shaipz!"
+    friend: "Friend %{id}"
 

@@ -1,0 +1,23 @@
+<section id="stream">
+  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
+	<div id="stream-wrap">
+		<h2><%= t("friend_invitation.title") %> </h2>
+		<%= form_tag("/friend_invitations", :method => "post") do %>
+			<ul class="fields">
+				<% @friends.each_with_index do |friend, index| %>
+        <li class="string">
+           <%= label_tag(index, t("friend_invitation.friend", :id => index.succ)) %>
+           <%= text_field_tag t("friend_invitation.friend", :id => index),nil, :id => 'friends_#{index}_email', :name => "friends[#{index}][email]"%>
+        </li>
+				<% end %>
+				<li class="string">
+					<%= text_area_tag(:message, "Hi, nice site", :size => '40x8') %>
+				</li>
+			</ul>
+			<%=@dest %>
+			<div class="form-actions clear">
+	      <span class="green-button"><%= submit_tag("Search") %></span>
+	    </div>
+		<% end %>
+	</div>
+</section>
