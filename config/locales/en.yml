@@ -137,6 +137,7 @@ en:
   facebook:
     create: "I've just created an awesome project on Shaipz.com!"
     join: "I've just joined an awesome project on Shaipz.com!"
+    description: "%{shaipz} shaipz of %{space} m2 for %{price} euros each, in %{zipcode} %{city}"
   search_settings:
     criteria_with_house: "To create a project, you should search for a rental complex or a house of minimum %{surface} m2 for a maximum budget of %{price}"
     criteria: "To create a project, you should search for a rental complex of minimum %{surface} m2 for a maximum budget of %{price}"
