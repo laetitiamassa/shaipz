@@ -58,10 +58,6 @@ class User < ActiveRecord::Base
     facebook_user
   end
 
-  def picture_file_name=(file_name)
-    write_attribute(:picture_file_name, file_name.force_encoding("ASCII-8BIT"))
-  end
-
   def has_picture?
     picture.present?
   end
