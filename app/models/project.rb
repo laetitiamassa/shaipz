@@ -82,7 +82,7 @@ class Project < ActiveRecord::Base
           :picture => self.picture.url(:thumb),
           :link => url,
           :name => self.name,
-          :description => t("facebook.description", :shaipz => maximum_shaipz, :space => space_per_shaipz, :price => price_per_shaipz, :zipcode => zipcode, :city => city)
+          :description => I18n.t("facebook.description", :shaipz => maximum_shaipz, :space => space_per_shaipz, :price => price_per_shaipz, :zipcode => zipcode, :city => city)
           )
       else
         me.feed!(
@@ -90,7 +90,7 @@ class Project < ActiveRecord::Base
           :picture => "http://"+ request.host+self.picture.url(:thumb),
           :link => url,
           :name => self.name,
-          :description => t("facebook.description", :shaipz => maximum_shaipz, :space => space_per_shaipz, :price => price_per_shaipz, :zipcode => zipcode, :city => city)
+          :description => I18n.t("facebook.description", :shaipz => maximum_shaipz, :space => space_per_shaipz, :price => price_per_shaipz, :zipcode => zipcode, :city => city)
           )
       end
     end
