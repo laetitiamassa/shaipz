@@ -8,8 +8,10 @@ en:
     have_nice_day: "Have a nice day!"
     thank_you: "Thank you"
     have_fun: "Have fun!"
+    here: "here"
   sign_in:
     email: "email"
+    example_email: "myname@myemail.com"
     password: "password"
     sign_in: "Log in"
     forgot_your_password: "Forgot your password?"
@@ -25,6 +27,7 @@ en:
     ready_soon: "We’ll be ready to launch very soon!"
     how_it_works: "Discover what Shaipz is all about!"
   profile:
+    example_name: "Firstname Lastname"
     edit: "Edit"
     save_changes: "Update your profile"
     update_success: "Your profile is updated"
@@ -38,6 +41,8 @@ en:
     how_ready_you_are: "How ready are you to buy your flat?"
     change_your_password: "Change your password"
     change_password: "Change password"
+    example_password: "my password"
+    example_newpassword: "my new password"
     fill_your_profile: "Complete your profile"
     hide_budget: "Hide your budget to other people?"
   statuses:
@@ -58,7 +63,9 @@ en:
     define_new_project: "Define your project"
     create_project: "Create your project"
     what_name: "What's the name of your project?"
+    example_projectname: "4 flats in an awesome building downtown"
     where: "Where is it located? (please enter a zip code)"
+    example_adress: "Princess Street, 4"
     how_much: "How much does it cost? (global price, in euros)"
     how_big: "How big is it? (global space, in m2)"
     source_link: "What's your source? (do not forget http://)"
@@ -68,8 +75,11 @@ en:
     address_form: "What's the exact address? (insert the street and number if you have them)"
     address: "Address"
     zipcode: "Zipcode"
+    example_zipcode: "1040"
     city: "City"
+    example_city: "Etterbeek"
     how_many: "How many shaipz? (please enter a number)"
+    example_text: "Let's meet this Friday 6pm in front of the building to see if it's worth!"
     join: "Join"
     join_project: "Join the project"
     in_project: "in project"
@@ -115,6 +125,7 @@ en:
     submit: "Submit"
     create_success: "Your report has been successfully sent"
     create_error: "We cannot create your report, please verify the details."
+    example_report: "Somethings goes wrong with..."
   notification:
     mail:
       here: "here"

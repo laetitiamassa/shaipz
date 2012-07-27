@@ -8,11 +8,11 @@
     <ul class="fields">
       <li class="string">
         <%= f.label :email %>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, :placeholder => t("example_email") %>
       </li>
       <li class="string">
         <%= f.label :password %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, :placeholder => t("example_password") %>
       </li>
       <li class="checkbox">
         <%= f.check_box :cohousing %>
@@ -22,15 +22,15 @@
     <ul class="fields">
       <li class="string">
         <%= f.label :favorite_areas %>
-        <%= f.text_field :favorite_areas %>
+        <%= f.text_field :favorite_areas, :placeholder => "1030, 1050, 2040, 7850, 3000" %>
       </li>
       <li class="string">
         <%= f.label :minimum_space %>
-        <%= f.text_field :minimum_space %>
+        <%= f.text_field :minimum_space, :placeholder => "70" %>
       </li>
       <li class="string">
         <%= f.label :maximum_budget %>
-        <%= f.text_field :maximum_budget %>
+        <%= f.text_field :maximum_budget, :placeholder => "160000" %>
       </li>
     </ul>
     <div class="form-actions clear">

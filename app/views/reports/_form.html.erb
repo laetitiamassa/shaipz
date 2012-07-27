@@ -9,7 +9,7 @@
   <% end %>
   <h2><%= t('report.reason') %></h2>
   <div class="field">
-    <%= f.text_area :content, rows: 8 %>
+    <%= f.text_area :content, :placeholder => t("example_report"), rows: 8 %>
   </div>
 
 	<div class="form-actions clear">

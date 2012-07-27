@@ -6,12 +6,12 @@
   <ul class="fields">
     <li class="string">
       <%= f.label :password, "New password" %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, :placeholder => t("example_newpassword") %>
     </li>
 
     <li class="string">
       <%= f.label :password_confirmation, "Confirm new password" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, :placeholder => t("example_newpassword") %>
     </li>
   </ul>
 
@@ -21,3 +21,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+

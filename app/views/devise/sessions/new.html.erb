@@ -5,12 +5,12 @@
     <ul class="fields">
       <li class="string">
         <%= f.label :email %>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, :placeholder => t("example_email") %>
       </li>
 
       <li class="string">
         <%= f.label :password %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, :placeholder => t("example_password") %>
       </li>
 
       <% if devise_mapping.rememberable? -%>

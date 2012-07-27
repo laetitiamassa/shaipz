@@ -11,50 +11,48 @@
       </div>
 
       <ul class="fields">
-				<li class="string">
-          <%= f.label :source_link, t("project.source_link") %>
-          <%= f.text_field :source_link %>
-        </li>
         <li class="string">
           <%= f.label :name, t("project.what_name") %>
-          <%= f.text_field :name %>
+          <%= f.text_field :name, :placeholder => t("example_projectname") %>
         </li>
         <li class="string">
           <%= f.label :address, t("project.address_form") %>
-          <%= f.text_field :address %>
+          <%= f.text_field :address, :placeholder => t("example_adress") %>
         </li>
         <li class="string two-fields">
           <div class="field">
             <%= f.label :zipcode, t("project.zipcode") %>
-            <%= f.text_field :zipcode, :value => nil %>
+            <%= f.text_field :zipcode, :placeholder => t("example_zipcode"), :value => nil %>
           </div>
           <div class="field">
             <%= f.label :city, t("project.city") %>
-            <%= f.text_field :city %>
+            <%= f.text_field :city, :placeholder => t("example_city") %>
           </div>
         </li>
 
         <li class="string">
           <%= f.label :total_amount, t("project.how_much") %>
-          <%= f.text_field :total_amount %>
+          <%= f.text_field :total_amount, :placeholder => "570000" %>
         </li>
         <li class="string">
           <%= f.label :total_space, t("project.how_big") %>
-          <%= f.text_field :total_space %>
+          <%= f.text_field :total_space, :placeholder => "435" %>
         </li>
         <li class="string">
           <%= f.label :maximum_shaipz, t("project.how_many") %>
-          <%= f.text_field :maximum_shaipz %>
+          <%= f.text_field :maximum_shaipz, :placeholder => "4" %>
         </li>
-
-
+        <li class="string">
+          <%= f.label :source_link, t("project.source_link") %>
+          <%= f.text_field :source_link, :placeholder => "http://..." %>
+        </li>
         <li class="checkbox">
           <%= f.check_box :cohousing %>
           <%= f.label :cohousing, t("project.cohousing") %>
         </li>
         <li class="text">
           <%= f.label :event, t("project.event") %>
-          <%= f.text_area :event, :rows => 5 %>
+          <%= f.text_area :event, :placeholder => t("example_text"), :rows => 5 %>
         </li>
 				<li class="string">
 	        <strong><%= f.label :project_status, t("project.how_far_is_the_project") %><strong>
@@ -75,3 +73,4 @@
     <% end %>
   </div>
 </section>
+
