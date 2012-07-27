@@ -8,6 +8,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     @project_statuses = Project.project_statuses
     @project = Project.new
+    @event_types = Project.event_types
   end
 
   def create
@@ -38,6 +39,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @user = current_user
     @project_statuses = Project.project_statuses
+    @event_types = Project.event_types
   end
 
   def update
@@ -50,8 +52,9 @@ class ProjectsController < ApplicationController
       redirect_to @project
     else
       @user = current_user
-      flash[:alert] = t("project.update_error")
       @project_statuses = Project.project_statuses
+      @event_types = Project.event_types
+      flash[:alert] = t("project.update_error")
       render :edit
     end
   end

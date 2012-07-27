@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
   has_many :reports, :as => :reportable
   has_attached_file :picture, { :styles => { :medium => "720x200#", :thumb => "100x50#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
-  validates :owner_id, :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event, :presence => true
+  validates :owner_id, :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :event_description, :presence => true
   validates_numericality_of :total_amount, :maximum_shaipz, :total_space
   validates :zipcode, :length => { :is => 4 }
 
@@ -17,14 +17,22 @@ class Project < ActiveRecord::Base
   PROJECT_STATUSES = ["building_discovery", "people_discovery", "interest_confirmation", "feasibility_stamp", "internal_agreement",
                       "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
-                  :cohousing, :event, :city, :zipcode, :project_status, :share_on_facebook
+  EVENT_TYPES = ["meeting", "visit", "other"]
 
-  default_scope :order => 'updated_at DESC'
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
+                  :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date
+
+  default_scope :order => "updated_at DESC"
 
   def self.project_statuses
     PROJECT_STATUSES.map do |status|
       [I18n.t("project.statuses.#{status}"), status]
+    end
+  end
+
+  def self.event_types
+    EVENT_TYPES.map do |type|
+      [I18n.t("event.types.#{type}"), type]
     end
   end
 
@@ -68,6 +76,13 @@ class Project < ActiveRecord::Base
     write_attribute(:total_amount, amount.gsub(/[\.,]/, ""))
   end
 
+  def event_type
+    I18n.t("event.types.#{read_attribute(:event_type)}")
+  end
+
+  def event
+    "#{I18n.l(event_date, :format => :short) if event_date} #{event_type}: #{event_description}"
+  end
 
   def full_address
     "#{address} #{zipcode} #{city}"

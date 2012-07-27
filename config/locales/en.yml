@@ -61,6 +61,12 @@ en:
   stream:
     start_project: "Create your project"
     all_projects: "Open projects"
+  event:
+    next: "Next event"
+    types:
+      other: "Other"
+      meeting: "Meeting"
+      visit: "Visit"
   project:
     define_new_project: "Define your project"
     create_project: "Create your project"

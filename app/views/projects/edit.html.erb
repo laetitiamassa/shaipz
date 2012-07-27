@@ -52,9 +52,20 @@
 	        <strong><%= f.label :project_status, t("project.how_far_is_the_project") %><strong>
 	        <%= f.select :project_status, @project_statuses %>
 	      </li>
+      </ul>
+      <h3><%= t("event.next") %></h3>
+      <ul class="fields">
         <li class="text">
-          <%= f.label :event, t("project.event") %>
-          <%= f.text_area :event, :placeholder => t("example_text"), :rows => 5 %>
+          <%= f.label :event_type, t("project.event_type") %>
+          <%= f.select :event_type, @event_types %>
+        </li>
+        <li class="text">
+          <%= f.label :event_description, t("project.event_description") %>
+          <%= f.text_area :event_description, :placeholder => t("example_text"), :rows => 5 %>
+        </li>
+        <li class="text">
+          <%= f.label :event_date, t("project.event_date") %>
+          <%= f.datetime_select :event_date %>
         </li>
       </ul>
       <div class="form-actions clear">

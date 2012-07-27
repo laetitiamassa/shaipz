@@ -440,6 +440,7 @@ header #flash .notice {
 	position:relative;
 	top:10px;
 }
+
 #sign-up .how-it-works a{
 	text-decoration: underline;
   font-weight:bold;
@@ -1066,11 +1067,13 @@ header #flash .notice {
 	color:#1E5270;
 }
 
-#show-project h3 {
-  text-transform: uppercase;
-  font-size: 0.8em;
-  color: #1e5270;
-  margin: 0 0 10px 0;
+#show-project, #new-project, #edit-project {
+  h3 {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: #1e5270;
+    margin: 0 0 10px 0;
+  }
 }
 
 #show-project #owner h4 {
