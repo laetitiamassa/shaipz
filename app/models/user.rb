@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
   end
 
   def picture_file_name=(file_name)
-    write_attribute(:picture_file_name, file_name.force_encoding("UTF-8"))
+    write_attribute(:picture_file_name, file_name.force_encoding("ASCII-8BIT"))
   end
 
   def has_picture?
