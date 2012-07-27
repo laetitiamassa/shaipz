@@ -33,7 +33,7 @@
                 <%= link_to(image_tag("facebook-logo.png", :size => '20x20'),
                             project.share_with_facebook_url({ :url            => project_url(project),
                                                               :project_name   => project.name,
-                                                              :url_picture    => project.picture.url(:thumb),
+                                                              :url_picture    => project.picture.url(:medium),
                                                               :project_status => t("project.statuses.#{project.project_status}"),
                                                               :redirect_url   => root_url }, request)) %>
               </span>

@@ -88,34 +88,32 @@ class Project < ActiveRecord::Base
     "#{address} #{zipcode} #{city}"
   end
 
-  def send_to_facebook_wall (cookies, message, url, status, request)
-    if cookies[:fb_access_token]!= nil
+  def description_for_facebook
+    I18n.t("facebook.description", :shaipz => maximum_shaipz, :space => space_per_shaipz, :price => price_per_shaipz, :zipcode => zipcode, :city => city)
+  end
+
+  def send_to_facebook_wall(cookies, message, url, status, request)
+    if cookies[:fb_access_token] != nil
       me = FbGraph::User.me(cookies[:fb_access_token])
-      if self.picture.url.match(/^http/)
-        me.feed!(
-          :message => message,
-          :picture => self.picture.url(:thumb),
-          :link => url,
-          :name => self.name,
-          :description => I18n.t("facebook.description", :shaipz => maximum_shaipz, :space => space_per_shaipz, :price => price_per_shaipz, :zipcode => zipcode, :city => city)
-          )
-      else
-        me.feed!(
-          :message => message,
-          :picture => "http://"+ request.host+self.picture.url(:thumb),
-          :link => url,
-          :name => self.name,
-          :description => I18n.t("facebook.description", :shaipz => maximum_shaipz, :space => space_per_shaipz, :price => price_per_shaipz, :zipcode => zipcode, :city => city)
-          )
-      end
+      me.feed!(:message => message,
+               :picture => self.picture.url.match(/^http/) ? self.picture.url(:medium) : "http://" + request.host + self.picture.url(:medium),
+               :link => url,
+               :name => self.name,
+               :description => description_for_facebook)
     end
   end
 
   def share_with_facebook_url(opts, request)
-     if opts[:url_picture].match(/^http/)
-      url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link="+opts[:url].to_s+"&picture="+opts[:url_picture].to_s+"&name="+opts[:project_name].to_s+"&caption=Shaipz.com&description="+opts[:project_status].to_s+"&redirect_uri="+opts[:redirect_url].to_s
+    url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link=" + opts[:url].to_s +
+          "&name=" + opts[:project_name].to_s +
+          "&caption=Shaipz.com&description=" + opts[:project_status].to_s +
+          "&redirect_uri=" + opts[:redirect_url].to_s +
+          "&picture="
+
+    if opts[:url_picture].match(/^http/)
+      url += opts[:url_picture].to_s
     else
-      url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link="+opts[:url].to_s+"&picture="+"http://"+ request.host+self.picture.url(:thumb)+"&name="+opts[:project_name].to_s+"&caption=Shaipz.com&description="+opts[:project_status].to_s+"&redirect_uri="+opts[:redirect_url].to_s
+      url += "http://" + request.host + self.picture.url(:medium)
     end
   end
 
