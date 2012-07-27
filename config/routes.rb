@@ -80,6 +80,8 @@ Shaipz::Application.routes.draw do
 
   root :to => 'home#index'
 
+  match "/howitworks" => "how_it_works#show"
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
