@@ -20,7 +20,7 @@
 	        <%= link_to t("profile.change_password"), edit_change_password_path %>
 	      </li>
       <li class="string">
-        <%= f.label :personal_status, t("profile.how_ready_you_are") %>
+        <strong><%= f.label :personal_status, t("profile.how_ready_you_are") %><strong>
         <%= f.select :personal_status, @personal_statuses, {:include_blank => true} %>
       </li>
       <li class="checkbox">

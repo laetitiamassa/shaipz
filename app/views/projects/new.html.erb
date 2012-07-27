@@ -57,7 +57,7 @@
           <%= f.text_area :event, :rows => 5 %>
         </li>
 				<li class="string">
-	        <%= f.label :project_status, t("project.how_far_is_the_project") %>
+	        <strong><%= f.label :project_status, t("project.how_far_is_the_project") %><strong>
 	        <%= f.select :project_status, @project_statuses %>
 	      </li>
 				<% if current_user.is_loggued_with_facebook?(session) %>
