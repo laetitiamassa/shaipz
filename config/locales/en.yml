@@ -3,7 +3,12 @@
 
 en:
   example_email: "shaipz@gmail.com"
-  example_password: "password"
+  example_name: "Philippe Dupont"
+  example_projectname: "Attract people with something original"
+  example_address: "13/23 Astrid Street"
+  example_zipcode: "1000"
+  example_city: "Brussels"
+  example_text: "Describe briefly the next event"
   generals:
     hello: "Hello"
     goodbye: "Good bye"

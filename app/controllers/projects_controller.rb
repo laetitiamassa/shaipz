@@ -1,5 +1,4 @@
 # encoding: UTF-8
-
 class ProjectsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :require_owner, :only => [:edit, :update]
