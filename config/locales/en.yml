@@ -47,6 +47,7 @@ en:
     example_newpassword: "my new password"
     fill_your_profile: "Complete your profile"
     hide_budget: "Hide your budget to other people?"
+    friend_invitation: "Invite your friends"
   statuses:
     not_buying: "I'm not buying yet."
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity."
