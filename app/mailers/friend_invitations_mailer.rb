@@ -4,7 +4,7 @@ class FriendInvitationsMailer < ActionMailer::Base
   def new(user,emails,message) #when a participant is joining
     @user    = user
     @emails = emails
-    @message = message.gsub(/\n/, '</br>')
+    @message = message
     mail(
       :to =>  @emails,
       :cc => @user.email,
