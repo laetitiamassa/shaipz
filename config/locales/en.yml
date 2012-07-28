@@ -174,5 +174,16 @@ en:
       house: "house"
   friend_invitation:
     title: "Invite your friends to join shaipz!"
-    friend: "Friend %{id}"
-
+    friend: "Friend's email %{id}"
+    your_message: "Your message:"
+    submit: "Invite friends"
+    back_to_profile: "Back to your profile"
+    description_facebook: "Shaipz is a new way to get your dream home, in your dream area, with your dream neighbours, at a dream price. Sign up for free on Shaipz.com!"
+    subtitle: "You can insert your friends'email below, "
+    subtitle_middle: " it on Facebook, or "
+    subtitle_end: " about it!"
+    mail_content: "Hi,\n\nI've discovered Shaipz, a platform where you can buy your flat at better price, choose your neighbours and decide how your building will be organized!\n\nYou should try it out here on http://shaipz.com , it's just awesome (and it's free)! \n\nBye,\n\n %{user}"
+    success: "Congratulations! You've successfully invited your friends to join you on Shaipz!"
+    error: "Oops something is wrong. Please check e-mail addresses and/or your message"
+    mailer:
+      subject: "Your friend %{user} invites you to join Shaipz"

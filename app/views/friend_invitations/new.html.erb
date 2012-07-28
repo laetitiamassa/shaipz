@@ -1,23 +1,31 @@
-<section id="stream">
-  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
-	<div id="stream-wrap">
-		<h2><%= t("friend_invitation.title") %></h2>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<section id="new-project">
+  <%= render :partial => "_shared/profile", :locals => { :user => @user } %>
+  <div id="project-wrap">
+  	<h2><%= t("friend_invitation.title") %></h2>
+		<p><%= t("friend_invitation.subtitle") %> <%= link_to image_tag("facebook_logo_invite.png"), "https://www.facebook.com/dialog/feed?app_id=268091083289955&link=http://shaipz.com&name=Shaipz,%20collaborative%20home%20buying&caption=Shaipz.com&description=" + t("friend_invitation.description_facebook") + "&redirect_uri=" + user_url(current_user) +
+          "&picture=http://shaipz.com/assets/shaipz_logo.jpeg" %> <%= t("friend_invitation.subtitle_middle") %> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://shaipz.com" data-text="I've just joined #Shaipz, a new way to get my dream home and neighbours! Join Shaipz for free now" data-via="shaipzapp" data-lang="en" data-count="none"> Tweet </a> <%= t("friend_invitation.subtitle_end") %> </p>
+
 		<%= form_tag("/friend_invitations", :method => "post") do %>
 			<ul class="fields">
 				<% @friends.each_with_index do |friend, index| %>
         <li class="string">
-           <%= label_tag(index, t("friend_invitation.friend", :id => index.succ)) %>
-           <%= text_field_tag t("friend_invitation.friend", :id => index),nil, :id => 'friends_#{index}_email', :name => "friends[#{index}][email]"%>
+          <%= label_tag(index, t("friend_invitation.friend", :id => index.succ)) %>
+          <%= text_field_tag t("friend_invitation.friend", :id => index), nil, :id => 'friends_#{index}_email', :name => "friends[#{index}][email]"%>
         </li>
 				<% end %>
-				<li class="text-area">
+				<li class="text">
 					<%= label_tag( t("friend_invitation.your_message")) %>
-					<%= text_area_tag(:message, "Hi, nice site", :size => '50x10') %>
+					<%= text_area_tag(:message, t("friend_invitation.mail_content", :user => current_user.name), :size => '50x10') %>
 				</li>
 			</ul>
 			<div class="form-actions clear">
-	      <span class="green-button"><%= submit_tag("Search") %></span>
+	      <span class="green-button"><%= submit_tag(t("friend_invitation.submit")) %></span>
+				<div class="report">
+					<%= link_to t("friend_invitation.back_to_profile"), user_path(@user) %>
+			  </div>
 	    </div>
 		<% end %>
-	</div>
+  </div>
 </section>
