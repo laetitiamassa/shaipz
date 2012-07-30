@@ -1,5 +1,38 @@
-<section id="sign-in-wrap">
-  <h2>Sign in</h2>
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=268091083289955";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<section id="why-shaipz">
+<div class="why-box place">
+    <h3><strong><%= t("home.better") %></strong> <%= t("home.place") %></h3>
+    <div class="video"></div>
+  </div>
+  <div class="why-box neighbours">
+    <h3><strong><%= t("home.chosen") %></strong> <%= t("home.neighbours") %></h3>
+    <div class="video"></div>
+  </div>
+  <div class="why-box terms-of-living">
+    <h3><strong><%= t("home.chosen") %></strong> <%= t("home.terms_of_living") %></h3>
+    <div class="video"></div>
+  </div>
+</section>
+
+<section id="sign-up" class="clear">
+  <div id="shaipz-info">
+    <h2><%= t("home.sign_in") %></h2>
+		<div id="youtube">
+      <iframe width="250" height="145" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
+<p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p>
+
+		</div>
+  </div>
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <ul class="fields">
@@ -10,7 +43,7 @@
 
       <li class="string">
         <%= f.label :password %>
-        <%= f.password_field :password, :placeholder => t("example_password") %>
+        <%= f.password_field :password %>
       </li>
 
       <% if devise_mapping.rememberable? -%>
@@ -19,11 +52,20 @@
           <%= f.label :remember_me %>
         </li>
       <% end -%>
+    </ul>
 
-      <div class="form-actions">
+      <div class="form-actions clear">
         <span class="button"><%= f.submit "Sign in" %></span>
       </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
 </section>
+
+<div id = "follow-like">
+  <div class="fb-like" data-href="https://www.facebook.com/Shaipz" data-send="false" data-width="450" data-show-faces="false"></div>
+  <a href="https://twitter.com/shaipzapp" class="twitter-follow-button" data-show-count="false">Follow @shaipzapp</a>
+  <script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  </script>
+</div>

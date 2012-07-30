@@ -418,7 +418,7 @@ header #flash .notice {
   }
 }
 
-#sign-up {
+#sign-up, .auth-form {
   border: 1px solid #eee;
   background: #fafafa;
   padding: 20px;
@@ -430,11 +430,17 @@ header #flash .notice {
   width: 300px;
 }
 
-#sign-up h2 {
-  color: #666;
-  font-size: 1.8em;
-  margin: 0;
-  text-shadow: 0 1px 0 #fff;
+#sign-up, .auth-form {
+  h2 {
+    color: #666;
+    font-size: 1.8em;
+    margin: 0;
+    text-shadow: 0 1px 0 #fff;
+  }
+}
+
+.auth-form h2 {
+  margin: 0 0 15px;
 }
 
 #sign-up .description {

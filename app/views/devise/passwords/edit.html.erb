@@ -1,24 +1,24 @@
-<h2>Change your password</h2>
+<section class="auth-form" class="clear">
+  <h2>Change your password</h2>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
-  <ul class="fields">
-    <li class="string">
-      <%= f.label :password, "New password" %>
-      <%= f.password_field :password, :placeholder => t("example_newpassword") %>
-    </li>
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+    <%= f.hidden_field :reset_password_token %>
+    <ul class="fields">
+      <li class="string">
+        <%= f.label :password, "New password" %>
+        <%= f.password_field :password, :placeholder => t("example_newpassword") %>
+      </li>
 
-    <li class="string">
-      <%= f.label :password_confirmation, "Confirm new password" %>
-      <%= f.password_field :password_confirmation, :placeholder => t("example_newpassword") %>
-    </li>
-  </ul>
+      <li class="string">
+        <%= f.label :password_confirmation, "Confirm new password" %>
+        <%= f.password_field :password_confirmation, :placeholder => t("example_newpassword") %>
+      </li>
+    </ul>
 
-  <div class="form-actions">
-    <span class="button"><%= f.submit "Change my password" %></span>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <span class="button"><%= f.submit "Change my password" %></span>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
-
+  <%= render "devise/shared/links" %>
+</section>

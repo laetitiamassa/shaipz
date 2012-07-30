@@ -23,6 +23,7 @@ en:
     sign_in: "Log in"
     forgot_your_password: "Forgot your password?"
   home:
+    sign_in: "Log in"
     better: "Better"
     place: "place, made affordable"
     chosen: "Chosen"
