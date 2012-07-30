@@ -36,4 +36,13 @@ class NotificationMailer < ActionMailer::Base
       :subject => t("notification.mail.destroy_project.subject", :name => @user.name, :project => @project.name)
     )
   end
+
+  def create_project (user, project, users_concerned)
+    @project = project
+    @user    = user
+    mail(
+      :to => users_concerned.map(&:email),
+      :subjet => t("notification.mail.create_project.subject", :name => @user.name, :project => @project.name)
+    )
+  end
 end

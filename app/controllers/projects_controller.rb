@@ -13,14 +13,17 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     @project.owner = current_user
+
     if @project.save
       flash[:notice] = t("project.create_success")
+      ProjectsCreationHandler.new(@project,current_user).after_creation_mailing
       if @project.share_on_facebook
         @project.send_to_facebook_wall(cookies,t("facebook.create"), project_url(@project), t("project.statuses.#{@project.project_status}"), request)
       end
       redirect_to stream_path
     else
       @user = current_user
+      @event_types = Project.event_types
       flash[:alert] = t("project.create_error")
       @project_statuses = Project.project_statuses
       render :new

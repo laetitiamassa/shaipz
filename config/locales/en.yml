@@ -160,6 +160,10 @@ en:
       leave_participant:
         subject: "%{name} has left %{project}!"
         content: "You can have more details"
+      create_project:
+        subject: "%{name} created a new cohousing project!"
+        content: "%{name} created %{project}, a new cohousing project you might be interested in!"
+        join: "You can have more details and join"
   shaipz:
     i_am_in: "Shaipz I'm in"
   facebook:
