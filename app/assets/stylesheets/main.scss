@@ -926,6 +926,18 @@ header #flash .notice {
   width: 0;
 }
 
+#profile-box .profile-actions {
+  margin: 5px 0 0;
+  padding: 0;
+  li {
+    margin: 0 0 10px;
+    list-style: none;
+    a {
+      color: #1B8E8A;
+    }
+  }
+}
+
 .personal-status .progress.not-buying {
   width: 10%;
 }
