@@ -60,9 +60,13 @@
         <div id="participation">
           <%= form_for "participation", :url => participations_path do |f| %>
             <%= f.hidden_field :project_id, :value => @project.id %>
-						<% if current_user.authenticated_with_facebook?(session) %>
-			          <%= f.check_box :share_on_facebook, {checked: true} %>
-			          <%= f.label :share_on_facebook, t("participation.share_on_facebook") %>
+            <% if current_user.authenticated_with_facebook?(session) %>
+              <ul class="fields">
+                <li class="checkbox">
+			            <%= f.check_box :share_on_facebook, { :checked => true } %>
+                  <%= f.label :share_on_facebook, t("participation.share_on_facebook") %>
+                </li>
+              </ul>
 						<% else %>
 							<%= f.hidden_field :share_on_facebook, :value => '0' %>
 						<% end %>
