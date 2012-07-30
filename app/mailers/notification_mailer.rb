@@ -41,8 +41,8 @@ class NotificationMailer < ActionMailer::Base
     @project = project
     @user    = user
     mail(
-      :to => users_concerned.map(&:email),
-      :subjet => t("notification.mail.create_project.subject", :name => @user.name, :project => @project.name)
+      :bcc => users_concerned.map(&:email),
+      :subjet => t("notification.mail.create_project.subject", :name => @user.name)
     )
   end
 end

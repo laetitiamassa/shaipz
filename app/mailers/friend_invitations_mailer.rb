@@ -5,7 +5,7 @@ class FriendInvitationsMailer < ActionMailer::Base
     @user    = user
     @emails = emails
     @message = message
-    mail(:to =>  @emails,
+    mail(:bcc =>  @emails,
          :subject => t("friend_invitation.mailer.subject", :user => @user.name))
   end
 end
