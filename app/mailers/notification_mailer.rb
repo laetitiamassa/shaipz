@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "no-reply@shaipz.com"
+  default from: "Shaipz <no-reply@shaipz.com>"
 
   def new_participant(user,project) #when a participant is joining
     @user    = user
