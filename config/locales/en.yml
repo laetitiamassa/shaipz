@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  example_report: "Indicate what's wrong here."
   example_email: "shaipz@gmail.com"
   example_name: "Philippe Dupont"
   example_projectname: "Attract people with something original"

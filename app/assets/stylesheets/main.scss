@@ -226,7 +226,7 @@ header #flash .notice {
   -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
   color: #777;
-  min-height: 387px;
+  min-height: 436px;
 }
 
 #content form .fields {
@@ -522,6 +522,18 @@ header #flash .notice {
   -moz-box-shadow: 0 1px 2px #ddd;
   -webkit-box-shadow: 0 1px 2px #ddd;
   box-shadow: 0 1px 2px #ddd;
+}
+
+/* Report */
+
+#report {
+  position: relative;
+  #report-wrap {
+    margin: 0 0 0 220px;
+    h2 {
+      margin: 0 0 15px;
+    }
+  }
 }
 
 /* Stream */
@@ -893,6 +905,7 @@ header #flash .notice {
 #show-profile .report a {
 	position: absolute;
 	right:    0;
+	bottom:   0;
   font-weight: bold;
 	color: #999;
   text-decoration: none;
