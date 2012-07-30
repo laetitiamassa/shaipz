@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget
   #
 
-  def is_loggued_with_facebook? (session)
+  def authenticated_with_facebook?(session)
     !(session[:fb_access_token].nil?)
   end
 

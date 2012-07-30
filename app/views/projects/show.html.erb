@@ -51,11 +51,16 @@
 
     <section id="participants">
       <h3><%= t("project.participants") %></h3>
-      <% unless @project.has_participant_or_owner?(@user) %>
+      <% if @project.has_participant_or_owner?(@user) %>
+        <div class="position">
+          <span>#<%= @project.priority_order_for_participant(@user) %></span>
+          <%= t("project.in_project") %>
+        </div>
+		  <% else %>
         <div id="participation">
           <%= form_for "participation", :url => participations_path do |f| %>
             <%= f.hidden_field :project_id, :value => @project.id %>
-						<% if current_user.is_loggued_with_facebook?(session) %>
+						<% if current_user.authenticated_with_facebook?(session) %>
 			          <%= f.check_box :share_on_facebook, {checked: true} %>
 			          <%= f.label :share_on_facebook, t("participation.share_on_facebook") %>
 						<% else %>
@@ -66,35 +71,35 @@
             </div>
           <% end %>
         </div>
-		<% else %>
-		<div class="position">
-      <span>#<%= @project.priority_order_for_participant(@user) %></span>
-      <%= t("project.in_project") %>
-    </div>
-		  <% if current_user.id == @project.owner.id%>
-
-	        <div class="leave-button">
-	          <%= button_to t("project.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm('"+ t("project.destroy_confirmation") +"')" %>
-	         </div>
-
-	       <%else %>
-	         <div class="leave-button">
-	            <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm('"+ t("participation.destroy_confirmation") +"')" %>
-	         </div>
-	       <%end%>
       <% end %>
+
       <ol>
         <% @participants.each do |p| %>
           <li>
-            <%= link_to image_tag(p.picture.url(:thumb)), user_path(p) %>
+            <%= link_to(image_tag(p.picture.url(:thumb)), user_path(p)) %>
             <%= link_to p.name, user_path(p) %>
           </li>
         <% end %>
       </ol>
 
+      <% if @project.has_user_as_owner?(@user) %>
+        <div class="leave-action">
+          <div class="leave-button">
+            <%= button_to t("project.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')}" %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @project.has_participant?(@user) %>
+        <div class="leave-action">
+          <div class="leave-button">
+            <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('participation.destroy_confirmation')}" %>
+          </div>
+        </div>
+      <% end %>
     </section>
-	<div class= "report">
-	  <%= link_to 'Report', new_project_report_path(@project) %>
-	</div>
+    <div class= "report">
+      <%= link_to 'Report', new_project_report_path(@project) %>
+    </div>
   </div>
 </section>

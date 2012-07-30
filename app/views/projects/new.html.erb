@@ -69,7 +69,7 @@
           <%= f.label :event_date, t("project.event_date") %>
           <%= f.datetime_select :event_date %>
         </li>
-				<% if current_user.is_loggued_with_facebook?(session) %>
+				<% if current_user.authenticated_with_facebook?(session) %>
 				 	<li class="checkbox">
 	          <%= f.check_box :share_on_facebook %>
 	          <%= f.label :share_on_facebook, t("project.share_on_facebook") %>

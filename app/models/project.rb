@@ -60,6 +60,14 @@ class Project < ActiveRecord::Base
     source_link.present?
   end
 
+  def has_user_as_owner?(user)
+    user == owner
+  end
+
+  def has_participant?(participant)
+    participants.include?(participant)
+  end
+
   def has_participant_or_owner?(participant)
     owner_and_participants.include?(participant)
   end

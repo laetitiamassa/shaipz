@@ -804,10 +804,11 @@ header #flash .notice {
   ul {
     list-style: none;
     padding: 0 0 0px;
+    margin: 0;
 
     li {
       list-style: none;
-      margin: 0 0 15px;
+      margin: 15px 0 0;
 
       .label {
         display: block;
@@ -886,7 +887,7 @@ header #flash .notice {
 #show-profile .report a {
 	position: absolute;
 	right:    0;
-	bottom:   0;
+  font-weight: bold;
 	color: #999;
   text-decoration: none;
 }
@@ -1136,62 +1137,60 @@ header #flash .notice {
   background-image: url("person.png");
 }
 
-#show-project  .report a {
+#show-project .report a {
 	position: absolute;
-	right:    0;
-	bottom:   150;
+	right: 0;
 	color: #999;
   text-decoration: none;
 }
 
-#show-project #participants .position {
-  position: relative;
-  width: 100px;
-	bottom : 2px;
-  background: #dedede;
-  padding: 6px 5px 6px 0;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid #ccc;
-  font-weight: bold;
-  text-shadow: 0 1px 0 #eee;
-}
+#show-project #participants {
+  .position {
+    width: 100px;
+    background: #dedede;
+    padding: 6px 5px 6px 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #eee;
+    margin: 0 0 10px;
 
-#show-project #participants .position span {
-  background: #fff;
-  padding: 6px 5px;
-  margin: 0 5px 0 0;
-}
+    span {
+      background: #fff;
+      padding: 6px 5px;
+      margin: 0 5px 0 0;
+    }
+  }
+  .leave-action {
+    .leave-button {
+      display: inline-block;
+      background: url("back-button-bg.png") repeat-x center top;
+      padding: 4px;
+      -moz-box-shadow: inset 0 1px 2px #ccc;
+      -webkit-box-shadow: inset 0 1px 2px #ccc;
+      box-shadow: inset 0 1px 2px #ccc;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
 
-#show-project #participants .leave-button  {
-	position: absolute;
-	right:    0;
-	bottom:   4px;
-	display: inline-block;
-  background: url("back-button-bg.png") repeat-x center top;
-  padding: 4px;
-  -moz-box-shadow: inset 0 1px 2px #ccc;
-  -webkit-box-shadow: inset 0 1px 2px #ccc;
-  box-shadow: inset 0 1px 2px #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-#show-project #participants .leave-button  input {
-  padding: 6px 40px;
-  font-weight: bold;
-  color: #777;
-  border: none;
-  text-shadow: 0 1px 0 #fff;
-  background: #fff url("button-bg.png") repeat-x center bottom;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
-  box-shadow: 0 1px 2px #ccc;
+      input {
+        padding: 6px 40px;
+        font-weight: bold;
+        color: #777;
+        border: none;
+        text-shadow: 0 1px 0 #fff;
+        background: #fff url("button-bg.png") repeat-x center bottom;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        -moz-box-shadow: 0 1px 2px #ccc;
+        -webkit-box-shadow: 0 1px 2px #ccc;
+        box-shadow: 0 1px 2px #ccc;
+      }
+    }
+  }
 }
 
 #show-project #participants .join-action {
@@ -1222,7 +1221,7 @@ header #flash .notice {
 }
 
 #show-project #participants ol {
-  margin: 0;
+  margin: 0 0 20px 0;
   padding: 0;
 }
 
