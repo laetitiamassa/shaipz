@@ -349,19 +349,20 @@ header #flash .notice {
 
 /* Profile on the side */
 
-#profile-box strong p a{
-	color: #1b8e8a;
-}
 
 #profile-wrap {
   width: 200px;
   position: absolute;
 
-  #profile-box h2 {
-    margin: 10px 0;
+  #profile-box {
+    h2 {
+      margin: 10px 0;
+    }
+
+    strong p a {
+	    color: #1b8e8a;
+    }
   }
-
-
 
   #profile-info ul {
     margin: 10px 0 0 0;
@@ -540,280 +541,298 @@ header #flash .notice {
 
 #stream {
   position: relative;
-}
 
-#stream #stream-wrap {
-  min-height: 377px;
-  margin: 0 0 0 220px;
-}
+  #stream-wrap {
+    min-height: 377px;
+    margin: 0 0 0 220px;
+  }
 
-#stream #start-project .action-call {
-  text-align: center;
-}
+  #start-project .action-call {
+    text-align: center;
 
-#stream #start-project .action-call .button .icon {
-  background: url("project.png") no-repeat;
-  display: block;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  top: 8px;
-  left: 12px;
-}
+    .button {
+      position: relative;
+      display: inline-block;
+      padding: 4px;
 
-#stream #start-project .action-call .button {
-  position: relative;
-  display: inline-block;
-  padding: 4px;
-}
+      a {
+        display: block;
+        border: none;
+        background: url("button-b-bg.png") repeat-x center center;
+        color: #fff;
+        padding: 6px 30px;
+        font-weight: bold;
+        text-decoration: none;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        -moz-box-shadow: 0 1px 2px #ddd;
+        -webkit-box-shadow: 0 1px 2px #ddd;
+        box-shadow: 0 1px 2px #ddd;
+      }
 
-#stream #start-project .action-call .button a {
-  display: block;
-  border: none;
-  background: url("button-b-bg.png") repeat-x center center;
-  color: #fff;
-  padding: 6px 30px;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0 1px 2px #ddd;
-  -webkit-box-shadow: 0 1px 2px #ddd;
-  box-shadow: 0 1px 2px #ddd;
-}
+      a:active {
+        -moz-box-shadow: 0 0 2px #ccc;
+        -webkit-box-shadow: 0 0 2px #ccc;
+        box-shadow: 0 0 2px #ccc;
+      }
 
-#stream #start-project .action-call .button a:active {
-  -moz-box-shadow: 0 0 2px #ccc;
-  -webkit-box-shadow: 0 0 2px #ccc;
-  box-shadow: 0 0 2px #ccc;
-}
+      .icon {
+        background: url("project.png") no-repeat;
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 8px;
+        left: 12px;
+      }
+    }
+  }
 
-#stream #projects h2 {
-  background: url("stream-header-bg2.png") repeat-x center center;
-  text-transform: uppercase;
-  margin: 15px 0 5px;
-  padding: 0;
-  font-size: 1em;
-  color: #1b8e8a;
-}
+  #projects {
+    h2 {
+      background: url("stream-header-bg2.png") repeat-x center center;
+      text-transform: uppercase;
+      margin: 15px 0 5px;
+      padding: 0;
+      font-size: 1em;
+      color: #1b8e8a;
 
-#stream #projects h2 span {
-  display: inline-block;
-  padding: 0 5px 0 0;
-  background: #fff;
-}
+      span {
+        display: inline-block;
+        padding: 0 5px 0 0;
+        background: #fff;
+      }
+    }
 
-#stream #projects ol {
-  margin: 0;
-  padding: 0;
-}
+    ol {
+      margin: 0;
+      padding: 0;
 
-#stream #projects ol li {
-  list-style: none;
-  padding: 10px 0;
-  position: relative;
-  width: 500px;
-}
+      li {
+        list-style: none;
+        padding: 10px 0;
+        position: relative;
+        width: 500px;
 
-#stream #projects ol li + li {
-  border-top: 1px solid #f2f2f2;
-}
+        .picture {
+          float: left;
+          margin: 0 10px 10px 0;
 
-#stream #projects ol li .picture {
-  float: left;
-  margin: 0 10px 10px 0;
-}
+          img {
+            border: 1px solid #dbdbdb;
+            width: 100px;
+            height: 50px;
+            vertical-align: middle;
+            padding: 3px;
+            -moz-box-shadow: 0 1px 1px #efefef;
+            -webkit-box-shadow: 0 1px 1px #efefef;
+            box-shadow: 0 1px 1px #efefef;
+          }
+        }
 
-#stream #projects ol li .picture img {
-  border: 1px solid #dbdbdb;
-  width: 100px;
-  height: 50px;
-  vertical-align: middle;
-  padding: 3px;
-  -moz-box-shadow: 0 1px 1px #efefef;
-  -webkit-box-shadow: 0 1px 1px #efefef;
-  box-shadow: 0 1px 1px #efefef;
-}
+        h3 {
+          margin: 0 0 15px 0;
+          padding: 0;
+          color: #777;
+          font-size: 1.1em;
 
-#stream #projects ol li h3 {
-  margin: 0 0 15px 0;
-  padding: 0;
-  color: #777;
-  font-size: 1.1em;
-}
+          a {
+            text-decoration: none;
+            color: #777;
+          }
 
-#stream #projects ol li h3 a {
-  text-decoration: none;
-  color: #777;
-}
+          small {
+            color: #aaa;
 
-#stream #projects ol li h3 small {
-  color: #aaa;
-}
+            a {
+              color: #aaa;
+              text-decoration: none;
+            }
 
-#stream #projects ol li h3 small a {
-  color: #aaa;
-  text-decoration: none;
-}
+            a:hover {
+              text-decoration: underline;
+            }
+          }
+        }
 
-#stream #projects ol li h3 small a:hover {
-  text-decoration: underline;
-}
+        .criteria span, .details span {
+          display: inline-block;
+          line-height: 1.5;
+          padding: 0 20px 0 26px;
+          background-position: center left;
+          background-repeat: no-repeat;
+        }
 
-#stream #projects ol li .criteria {
-  margin: 0 0 10px;
-}
+        .criteria {
+          margin: 0 0 10px;
+        }
 
-#stream #projects ol li .details {
-  clear: left;
-}
+        .details {
+          clear: left;
+        }
 
-#stream #projects ol li .links {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  line-height: 17px;
-}
+        .links {
+          position: absolute;
+          top: 40px;
+          right: 0;
+          line-height: 17px;
 
-#stream #projects ol li .links span img {
-  vertical-align: middle;
-}
+          span {
+            img {
+              vertical-align: middle;
+            }
 
-#stream #projects ol li .links span a {
-  text-decoration: none;
-}
+            a {
+              text-decoration: none;
+            }
 
-#stream #projects ol li .links span a:hover {
-  text-decoration: underline;
-}
+            a:hover {
+              text-decoration: underline;
+            }
+          }
 
-#stream #projects ol li .links span + span {
-  margin: 0 0 0 5px;
-}
+          span + span {
+            margin: 0 0 0 5px;
+          }
+        }
 
-#stream #projects ol li .criteria span, #stream #projects ol li .details span {
-  display: inline-block;
-  line-height: 1.5;
-  padding: 0 20px 0 26px;
-  background-position: center left;
-  background-repeat: no-repeat;
-}
+        .amount {
+          background-image: url("tag.png");
+        }
 
-#stream #projects ol li .amount {
-  background-image: url("tag.png");
-}
+        .space {
+          background-image: url("home.png");
+        }
 
-#stream #projects ol li .space {
-  background-image: url("home.png");
-}
+        .shaipz {
+          background-image: url("person.png");
+        }
 
-#stream #projects ol li .shaipz {
-  background-image: url("person.png");
-}
+        .address {
+          background-image: url("location.png");
+        }
 
-#stream #projects ol li .address {
-  background-image: url("location.png");
-}
+        .event {
+          background-image: url("clock.png");
+        }
 
-#stream #projects ol li .event {
-  background-image: url("clock.png");
-}
+        .join-action {
+          position: absolute;
+          bottom: 10px;
+          right: 0;
 
-#stream #projects ol li .join-action {
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-}
+          input {
+            display: block;
+            border: none;
+            background: url("button-b-bg.png") repeat-x center center;
+            color: #fff;
+            padding: 6px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            -moz-box-shadow: 0 1px 2px #ddd;
+            -webkit-box-shadow: 0 1px 2px #ddd;
+            box-shadow: 0 1px 2px #ddd;
+          }
 
-#stream #projects ol li .join-action input {
-  display: block;
-  border: none;
-  background: url("button-b-bg.png") repeat-x center center;
-  color: #fff;
-  padding: 6px 20px;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0 1px 2px #ddd;
-  -webkit-box-shadow: 0 1px 2px #ddd;
-  box-shadow: 0 1px 2px #ddd;
-}
+          a:active {
+            -moz-box-shadow: 0 0 1px #ccc;
+            -webkit-box-shadow: 0 0 1px #ccc;
+            box-shadow: 0 0 1px #ccc;
+          }
+        }
 
-#stream #projects ol li .join-action a:active {
-  -moz-box-shadow: 0 0 1px #ccc;
-  -webkit-box-shadow: 0 0 1px #ccc;
-  box-shadow: 0 0 1px #ccc;
-}
+        .position {
+          position: absolute;
+          bottom: 10px;
+          right: 0;
+          background: #dedede;
+          padding: 6px 5px 6px 0;
+          -webkit-border-radius: 2px;
+          -moz-border-radius: 2px;
+          border-radius: 2px;
+          border: 1px solid #ccc;
+          font-weight: bold;
+          text-shadow: 0 1px 0 #eee;
 
-#stream #projects ol li .position {
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-  background: #dedede;
-  padding: 6px 5px 6px 0;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid #ccc;
-  font-weight: bold;
-  text-shadow: 0 1px 0 #eee;
-}
+          span {
+            background: #fff;
+            padding: 6px 5px;
+            margin: 0 5px 0 0;
+          }
+        }
+      }
 
-#stream #projects ol li .position span {
-  background: #fff;
-  padding: 6px 5px;
-  margin: 0 5px 0 0;
+      li + li {
+        border-top: 1px solid #f2f2f2;
+      }
+    }
+  }
 }
 
 /* Edit profile */
 
 #edit-profile {
   position: relative;
-}
 
-#edit-profile form .picture {
-  margin: 0;
-  padding: 0;
-  position: absolute;
+  ul {
+    margin: 0;
+    padding: 0;
 
-  input {
-    position: absolute;
-    bottom: 20px;
-    left: 5px;
-    width: 190px;
+    li {
+      list-style: none;
+      margin: 0 0 15px;
+
+      .label {
+        display: block;
+        font-weight: bold;
+        margin: 0 0 7px;
+        color: #aaa;
+      }
+    }
   }
-}
 
-#edit-profile form .picture img {
-  display: block;
-  margin: 0 0 10px 0;
-}
+  form {
+    .fields {
+      margin: 0 0 0 220px;
+    }
 
-#edit-profile form .profile-actions {
-  margin: 10px 0 0 0;
-}
+    .picture {
+      margin: 0;
+      padding: 0;
+      position: absolute;
 
-#edit-profile form .profile-actions a {
-  color: #777;
-  text-decoration: none;
-}
+      input {
+        position: absolute;
+        bottom: 20px;
+        left: 5px;
+        width: 190px;
+      }
 
-#edit-profile form .profile-actions a:hover {
-  text-decoration: underline;
-}
+      img {
+        display: block;
+        margin: 0 0 10px 0;
+      }
+    }
 
-#edit-profile form .fields {
-  margin: 0 0 0 220px;
-}
+    .profile-actions {
+      margin: 10px 0 0 0;
 
-#edit-profile ul {
-  margin: 0;
-  padding: 0;
+      a {
+        color: #777;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
 #research-links {
@@ -855,18 +874,6 @@ header #flash .notice {
   }
 }
 
-
-#edit-profile ul li {
-  list-style: none;
-  margin: 0 0 15px;
-}
-
-#edit-profile ul li .label {
-  display: block;
-  font-weight: bold;
-  margin: 0 0 7px;
-  color: #aaa;
-}
 
 /* Show profile */
 
@@ -1343,7 +1350,6 @@ header #flash .notice {
 .project-status .progress.move-in {
   width: 100%;
 }
-
 
 /* Footer */
 
