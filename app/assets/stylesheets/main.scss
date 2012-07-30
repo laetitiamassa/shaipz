@@ -34,7 +34,7 @@ a {
 /* Top bar */
 
 #top-bar {
-  background: #1a1a1a;
+  background: #333;
   color: #fff;
 }
 
@@ -112,7 +112,7 @@ a {
 
 #sign-in .fields input {
   border: none;
-  padding: 3px 5px;
+  padding: 5px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -125,32 +125,21 @@ a {
   font-weight: bold;
 }
 
-#sign-in .form-actions .button {
-  background: url("sign-in-back-button-bg.png") repeat-x center center;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  padding: 1px;
+#sign-in .form-actions .button input {
   display: inline-block;
   margin: 0 5px;
-
-}
-
-#sign-in .form-actions .button input {
-  display: block;
+  background: url("sign-in-button-bg.png") repeat-x center center;
   border: none;
-  background: url("button-b-bg.png") repeat-x center center;
   color: #fff;
-  padding: 6px 20px;
+  padding: 4px 20px;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  -moz-box-shadow: 0 1px 2px #ddd;
-  -webkit-box-shadow: 0 1px 2px #ddd;
-  box-shadow: 0 1px 2px #ddd;
+  -moz-box-shadow: 0 1px 2px #222;
+  box-shadow: 0 1px 2px #222;
 }
 
 /* Header */
@@ -197,10 +186,8 @@ header #flash .message {
   background: #fff;
   font-weight: bold;
   padding: 10px 10px 10px 36px;
-  -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
-  box-shadow: 0 1px 2px #ccc;
-  -webkit-border-radius: 3px;
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
@@ -264,15 +251,14 @@ header #flash .notice {
   color: #aaa;
 }
 
-#content form .fields .string label, #content form .fields .text label  {
+#content form .fields .string label, #content form .fields .text label {
   display: block;
   margin: 0 0 5px 0;
 }
 
-#content form .fields .string strong label{
+#content form .fields .string strong label {
   color: #1b8e8a ;
 }
-
 
 #content form .fields .string input {
   color: #555;
@@ -592,7 +578,7 @@ header #flash .notice {
 
   #projects {
     h2 {
-      background: url("stream-header-bg2.png") repeat-x center center;
+      background: url("stream-header-bg.png") repeat-x center center;
       text-transform: uppercase;
       margin: 15px 0 5px;
       padding: 0;
