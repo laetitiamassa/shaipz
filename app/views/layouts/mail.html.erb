@@ -6,7 +6,7 @@
         font-family: "Lucida Grande", arial, sans-serif;
         margin: 0 auto;
         width: 632px;
-        font-size: 0.7em;
+        font-size: 0.8em;
       }
 
       #content {
@@ -15,12 +15,15 @@
         padding: 20px;
       }
 
-      #content h1, #content .tagline {
-        display: inline-block;
-        margin: 0 0 0 15px;
+      h1 {
+        display: inline;
       }
 
-      #content h2 {
+      p.tagline {
+        display: inline;
+      }
+
+      h2 {
         margin: 0 0 15px;
         padding: 0;
         color: #666;
@@ -28,15 +31,11 @@
         font-weight: bold;
       }
 
-      #content p a {
-        color: "#1b8e8A";
-      }
-
-      #content p {
+      p {
         color: #aaa;
       }
 
-      #content p.signature {
+      p.signature {
         color: #545454;
       }
     </style>
@@ -44,7 +43,7 @@
   <body>
     <div class="wrap">
       <h1>
-        <%= image_tag("shaipz_logo.png", :alt => "Shaipz") %>
+        <img src="http://shaipz.com/assets/shaipz_logo.png" alt="Shaipz logo">
       </h1>
       <p class="tagline">Collaborative home buying</p>
       <div id="content">
