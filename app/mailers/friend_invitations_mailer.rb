@@ -1,4 +1,5 @@
 class FriendInvitationsMailer < ActionMailer::Base
+  layout 'mail'
   default from: "Shaipz <hello@shaipz.com>"
 
   def new(user, emails, message)
