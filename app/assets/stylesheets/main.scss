@@ -349,6 +349,10 @@ header #flash .notice {
 
 /* Profile on the side */
 
+#profile-box strong p a{
+	color: #1b8e8a;
+}
+
 #profile-wrap {
   width: 200px;
   position: absolute;
@@ -356,6 +360,8 @@ header #flash .notice {
   #profile-box h2 {
     margin: 10px 0;
   }
+
+
 
   #profile-info ul {
     margin: 10px 0 0 0;
@@ -369,6 +375,10 @@ header #flash .notice {
         font-weight: bold;
         display: inline-block;
         width: 105px;
+			}
+
+			strong a {
+				color: #1b8e8a;
       }
     }
   }

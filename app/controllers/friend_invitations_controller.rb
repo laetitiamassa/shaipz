@@ -7,7 +7,7 @@ class FriendInvitationsController < ApplicationController
     mail_friends = FriendInvitationHandler.new(current_user,params[:friends],params[:message])
     if mail_friends.send_email
       flash[:notice] = t("friend_invitation.success")
-      redirect_to user_path(current_user)
+      redirect_to stream_path
     else
       flash[:alert] = t("friend_invitation.error")
       redirect_to new_friend_invitations_path

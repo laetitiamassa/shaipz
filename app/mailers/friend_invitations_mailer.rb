@@ -1,5 +1,5 @@
 class FriendInvitationsMailer < ActionMailer::Base
-  default from: "shaipz@shaipz.com"
+  default from: "Shaipz <no-reply@shaipz.com>"
 
   def new(user,emails,message) #when a participant is joining
     @user    = user

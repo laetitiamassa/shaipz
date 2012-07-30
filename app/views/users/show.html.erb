@@ -11,7 +11,7 @@
       <div class="progress <%= @user.personal_status.dasherize if @user.has_personal_status? %>"></div>
     </div>
     	<p class="status"><%= t("statuses.#{@user.personal_status}") if @user.has_personal_status? %></p>
-			<p><%= link_to t('profile.friend_invitation'), new_friend_invitations_path %></p>
+			<strong><p><%= link_to t('profile.friend_invitation'), new_friend_invitations_path %></p></strong>
   </div>
 
   <div id="profile-info">
