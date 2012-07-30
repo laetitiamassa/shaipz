@@ -335,7 +335,6 @@ header #flash .notice {
 
 /* Profile on the side */
 
-
 #profile-wrap {
   width: 200px;
   position: absolute;
@@ -539,39 +538,22 @@ header #flash .notice {
     .button {
       position: relative;
       display: inline-block;
-      padding: 4px;
+      background: url("immo-search-bg.png") repeat-x center bottom;
+      border: 1px solid #ddd;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      padding: 6px 30px;
+      text-decoration: none;
 
-      a {
-        display: block;
-        border: none;
-        background: url("button-b-bg.png") repeat-x center center;
-        color: #fff;
-        padding: 6px 30px;
+      span {
+        background: url("project.png") no-repeat center left;
+        display: inline-block;
+        line-height: 16px;
+        padding: 0 0 0 23px;
+        color: #00698c;
         font-weight: bold;
         text-decoration: none;
-        text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
-        -moz-box-shadow: 0 1px 2px #ddd;
-        -webkit-box-shadow: 0 1px 2px #ddd;
-        box-shadow: 0 1px 2px #ddd;
-      }
-
-      a:active {
-        -moz-box-shadow: 0 0 2px #ccc;
-        -webkit-box-shadow: 0 0 2px #ccc;
-        box-shadow: 0 0 2px #ccc;
-      }
-
-      .icon {
-        background: url("project.png") no-repeat;
-        display: block;
-        width: 16px;
-        height: 16px;
-        position: absolute;
-        top: 8px;
-        left: 12px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, .85);
       }
     }
   }
