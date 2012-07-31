@@ -3,7 +3,7 @@
     <div class="picture">
       <%= image_tag @user.picture.url(:medium) %>
       <% if @user == current_user %>
-        <div class="edit"><%= link_to t("profile.edit"), edit_user_path(@user) %></div>
+        <%= link_to t("profile.edit"), edit_user_path(@user), :class => "edit" %>
       <% end %>
     </div>
 
@@ -45,10 +45,11 @@
     </ul>
   </div>
 
-<%= render 'search_links' %>
-
-<div class="report">
-  <%= link_to 'Report', new_user_report_path(@user) %>
-</div>
-
+  <%= render 'search_links' %>
 </section>
+
+<% content_for :report do %>
+  <div class="report">
+    <%= link_to 'Report', new_user_report_path(@user) %>
+  </div>
+<% end %>

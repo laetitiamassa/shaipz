@@ -1,0 +1,61 @@
+%section#new-project
+  = render :partial => "_shared/profile", :locals => { :user => @user }
+
+  #project-wrap
+    %h2= t("project.define_new_project")
+
+    = form_for @project, :html => { :multipart => true } do |f|
+      .picture
+        = image_tag @project.picture.url(:medium)
+        = f.file_field :picture
+      %ul.fields
+        %li.string
+          = f.label :name, t("project.what_name")
+          = f.text_field :name, :placeholder => t("example_projectname")
+        %li.string
+          = f.label :address, t("project.address_form")
+          = f.text_field :address, :placeholder => t("example_address")
+        %li.string.two-fields
+          .field
+            = f.label :zipcode, t("project.zipcode")
+            = f.text_field :zipcode, :placeholder => t("example_zipcode"), :value => nil
+          .field
+            = f.label :city, t("project.city")
+            = f.text_field :city, :placeholder => t("example_city")
+        %li.string
+          = f.label :total_amount, t("project.how_much")
+          = f.text_field :total_amount, :placeholder => "570000"
+        %li.string
+          = f.label :total_space, t("project.how_big")
+          = f.text_field :total_space, :placeholder => "435"
+        %li.string
+          = f.label :maximum_shaipz, t("project.how_many")
+          = f.text_field :maximum_shaipz, :placeholder => "4"
+        %li.string
+          = f.label :source_link, t("project.source_link")
+          = f.text_field :source_link, :placeholder => "http://..."
+        %li.checkbox
+          = f.check_box :cohousing
+          = f.label :cohousing, t("project.cohousing")
+        %li.string
+          %strong= f.label :project_status, t("project.how_far_is_the_project")
+          = f.select :project_status, @project_statuses
+      %h3= t("event.next")
+      %ul.fields
+        %li.text
+          = f.label :event_type, t("project.event_type")
+          = f.select :event_type, @event_types
+        %li.text
+          = f.label :event_description, t("project.event_description")
+          = f.text_area :event_description, :placeholder => t("example_text"), :rows => 5
+        %li.text
+          = f.label :event_date, t("project.event_date")
+          = f.datetime_select :event_date
+        - if current_user.authenticated_with_facebook?(session)
+          %li.checkbox
+            = f.check_box :share_on_facebook
+            = f.label :share_on_facebook, t("project.share_on_facebook")
+        - else
+          = f.hidden_field :share_on_facebook, :value => '0'
+      .form-actions.clear
+        %span.green-button= f.submit t('project.create_project')

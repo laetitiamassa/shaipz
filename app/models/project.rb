@@ -64,8 +64,16 @@ class Project < ActiveRecord::Base
     user == owner
   end
 
+  def has_participants?
+    participants.any?
+  end
+
   def has_participant?(participant)
     participants.include?(participant)
+  end
+
+  def participants_emails
+    participants.map(&:email)
   end
 
   def has_participant_or_owner?(participant)

@@ -58,7 +58,7 @@ a {
 }
 
 #social-logo ul {
-  position : absolute;
+  position: absolute;
 	top: -52px;
   right: 0;
 }
@@ -113,7 +113,6 @@ a {
 #sign-in .fields input {
   border: none;
   padding: 5px;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   font-weight: bold;
@@ -135,7 +134,6 @@ a {
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   -moz-box-shadow: 0 1px 2px #222;
@@ -210,7 +208,6 @@ header #flash .notice {
   padding: 20px;
   background: #fff;
   -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
   color: #777;
   min-height: 436px;
@@ -235,11 +232,9 @@ header #flash .notice {
 }
 
 #content form .fields li.text textarea {
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   -moz-box-shadow: inset 0 1px 2px #b0b0b0;
-  -webkit-box-shadow: inset 0 1px 2px #b0b0b0;
   box-shadow: inset 0 1px 2px #b0b0b0;
   border: none;
   width: 480px;
@@ -263,11 +258,9 @@ header #flash .notice {
 #content form .fields .string input {
   color: #555;
   border: none;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   -moz-box-shadow: inset 0 1px 2px #b0b0b0;
-  -webkit-box-shadow: inset 0 1px 2px #b0b0b0;
   box-shadow: inset 0 1px 2px #b0b0b0;
   padding: 5px;
   width: 190px;
@@ -283,9 +276,7 @@ header #flash .notice {
   background: url("back-button-bg.png") repeat-x center top;
   padding: 4px;
   -moz-box-shadow: inset 0 1px 2px #ccc;
-  -webkit-box-shadow: inset 0 1px 2px #ccc;
   box-shadow: inset 0 1px 2px #ccc;
-  -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
@@ -297,17 +288,14 @@ header #flash .notice {
   border: none;
   text-shadow: 0 1px 0 #fff;
   background: #fff url("button-bg.png") repeat-x center bottom;
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
 }
 
 #content form .form-actions .button input:active {
   -moz-box-shadow: 0 0 2px #ccc;
-  -webkit-box-shadow: 0 0 2px #ccc;
   box-shadow: 0 0 2px #ccc;
 }
 
@@ -325,12 +313,15 @@ header #flash .notice {
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   -moz-box-shadow: 0 1px 2px #ddd;
-  -webkit-box-shadow: 0 1px 2px #ddd;
   box-shadow: 0 1px 2px #ddd;
+}
+
+#content .report a {
+	color: #999;
+  text-decoration: none;
 }
 
 /* Profile on the side */
@@ -434,7 +425,7 @@ header #flash .notice {
   line-height: 1.7;
 }
 
-#sign-up .how-it-works{
+#sign-up .how-it-works {
 	position:relative;
 	right:-165px;
 }
@@ -444,7 +435,7 @@ header #flash .notice {
 	top:10px;
 }
 
-#sign-up .how-it-works a{
+#sign-up .how-it-works a {
 	text-decoration: underline;
   font-weight:bold;
 }
@@ -467,7 +458,6 @@ header #flash .notice {
   font-style: italic;
   text-align: center;
   line-height: 2;
-  -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
@@ -493,7 +483,7 @@ header #flash .notice {
   font-weight: bold;
 }
 
-#sign-up form .form-actions input{
+#sign-up form .form-actions input {
 	display: block;
   border: none;
   background: url("button-b-bg.png") repeat-x center center;
@@ -502,11 +492,9 @@ header #flash .notice {
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   -moz-box-shadow: 0 1px 2px #ddd;
-  -webkit-box-shadow: 0 1px 2px #ddd;
   box-shadow: 0 1px 2px #ddd;
 }
 
@@ -595,7 +583,6 @@ header #flash .notice {
             vertical-align: middle;
             padding: 3px;
             -moz-box-shadow: 0 1px 1px #efefef;
-            -webkit-box-shadow: 0 1px 1px #efefef;
             box-shadow: 0 1px 1px #efefef;
           }
         }
@@ -700,17 +687,14 @@ header #flash .notice {
             font-weight: bold;
             text-decoration: none;
             text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-            -webkit-border-radius: 2px;
             -moz-border-radius: 2px;
             border-radius: 2px;
             -moz-box-shadow: 0 1px 2px #ddd;
-            -webkit-box-shadow: 0 1px 2px #ddd;
             box-shadow: 0 1px 2px #ddd;
           }
 
           a:active {
             -moz-box-shadow: 0 0 1px #ccc;
-            -webkit-box-shadow: 0 0 1px #ccc;
             box-shadow: 0 0 1px #ccc;
           }
         }
@@ -848,50 +832,45 @@ header #flash .notice {
 #show-profile {
   position: relative;
   min-height: 260px;
-}
 
-#show-profile #profile-box {
-  width: 200px;
-  position: absolute;
-
-  .picture .edit {
-    background: #fff url("file.png") no-repeat 5px center;
+  #profile-box {
+    width: 200px;
     position: absolute;
-    top: 0;
-    left: 0;
-    text-transform: uppercase;
-    padding: 5px 5px 5px 25px;
 
-    a {
+    .picture .edit {
+      display: block;
+      background: #fff url("file.png") no-repeat 5px center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-transform: uppercase;
+      padding: 5px 5px 5px 25px;
       color: #1e5270;
       font-weight: bold;
       text-decoration: none;
     }
+
+    .status {
+      margin: 0;
+      padding: 5px;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .profile-actions {
+      margin: 5px 0 0;
+      padding: 0;
+
+      li {
+        margin: 0 0 10px;
+        list-style: none;
+
+        a {
+          color: #1B8E8A;
+        }
+      }
+    }
   }
-}
-
-#profile-box .status {
-  margin: 0;
-  padding: 5px;
-  font-weight: bold;
-  font-style: italic;
-}
-
-#show-profile .report a {
-	position: absolute;
-	right:    0;
-	bottom:   0;
-  font-weight: bold;
-	color: #999;
-  text-decoration: none;
-}
-
-.report a {
-	position: inline-block;
-	right:    0;
-	bottom:   0;
-	color: #999;
-  text-decoration: none;
 }
 
 .personal-status {
@@ -901,9 +880,7 @@ header #flash .notice {
   width: 194px;
   background: url("back-button-bg.png") repeat-x bottom center;
   -moz-box-shadow: inset 0 1px 2px #ccc;
-  -webkit-box-shadow: inset 0 1px 2px #ccc;
   box-shadow: inset 0 1px 2px #ccc;
-  -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
@@ -912,24 +889,10 @@ header #flash .notice {
   background: url("progress.png") repeat-x;
   height: 14px;
   -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
-  -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
   width: 0;
-}
-
-#profile-box .profile-actions {
-  margin: 5px 0 0;
-  padding: 0;
-  li {
-    margin: 0 0 10px;
-    list-style: none;
-    a {
-      color: #1B8E8A;
-    }
-  }
 }
 
 .personal-status .progress.not-buying {
@@ -1029,14 +992,12 @@ header #flash .notice {
 
 #show-project #project-wrap .cover .edit {
   background: #fff url("file.png") no-repeat 5px center;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
   text-transform: uppercase;
   padding: 5px 5px 5px 25px;
-}
-
-#show-project #project-wrap .cover .edit a {
   color: #1e5270;
   font-weight: bold;
   text-decoration: none;
@@ -1143,19 +1104,11 @@ header #flash .notice {
   background-image: url("person.png");
 }
 
-#show-project .report a {
-	position: absolute;
-	right: 0;
-	color: #999;
-  text-decoration: none;
-}
-
 #show-project #participants {
   .position {
     width: 100px;
     background: #dedede;
     padding: 6px 5px 6px 0;
-    -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
     border: 1px solid #ccc;
@@ -1169,15 +1122,16 @@ header #flash .notice {
       margin: 0 5px 0 0;
     }
   }
+
   .leave-action {
+    text-align: right;
+
     .leave-button {
       display: inline-block;
       background: url("back-button-bg.png") repeat-x center top;
       padding: 4px;
       -moz-box-shadow: inset 0 1px 2px #ccc;
-      -webkit-box-shadow: inset 0 1px 2px #ccc;
       box-shadow: inset 0 1px 2px #ccc;
-      -webkit-border-radius: 3px;
       -moz-border-radius: 3px;
       border-radius: 3px;
 
@@ -1188,11 +1142,9 @@ header #flash .notice {
         border: none;
         text-shadow: 0 1px 0 #fff;
         background: #fff url("button-bg.png") repeat-x center bottom;
-        -webkit-border-radius: 2px;
         -moz-border-radius: 2px;
         border-radius: 2px;
         -moz-box-shadow: 0 1px 2px #ccc;
-        -webkit-box-shadow: 0 1px 2px #ccc;
         box-shadow: 0 1px 2px #ccc;
       }
     }
@@ -1212,17 +1164,14 @@ header #flash .notice {
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   -moz-box-shadow: 0 1px 2px #ddd;
-  -webkit-box-shadow: 0 1px 2px #ddd;
   box-shadow: 0 1px 2px #ddd;
 }
 
 #show-project #participants .join-action a:active {
   -moz-box-shadow: 0 0 1px #ccc;
-  -webkit-box-shadow: 0 0 1px #ccc;
   box-shadow: 0 0 1px #ccc;
 }
 
@@ -1256,9 +1205,7 @@ header #flash .notice {
   width: 300px;
   background: url("back-button-bg.png") repeat-x bottom center;
   -moz-box-shadow: inset 0 1px 2px #ccc;
-  -webkit-box-shadow: inset 0 1px 2px #ccc;
   box-shadow: inset 0 1px 2px #ccc;
-  -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
@@ -1267,9 +1214,7 @@ header #flash .notice {
   background: url("progress.png") repeat-x;
   height: 14px;
   -moz-box-shadow: 0 1px 2px #ccc;
-  -webkit-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
-  -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
   width: 0;
@@ -1386,26 +1331,26 @@ footer {
 }
 
 #how-it-works h1 {
-	font-size : xx-large;
+	font-size: xx-large;
 	text-align: center;
 	color: #1b8e8a
 }
 
 #how-it-works h2 {
-	font-size : large;
+	font-size: large;
 }
 
 #how-it-works p {
-	font-size : 110%;
+	font-size: 110%;
 }
 
 #how-it-works p a {
-	font-size : 100%;
+	font-size: 100%;
 	color: #1b8e8a;
 }
 
 #how-it-works a {
-	font-size : 110%;
+	font-size: 110%;
 	color: #1b8e8a;
 }
 

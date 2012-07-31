@@ -11,6 +11,7 @@ gem 'devise'
 gem 'fb_graph'
 gem 'nifty-generators'
 gem 'omniauth-facebook'
+gem 'haml'
 
 
 gem "paperclip", "~> 3.0"

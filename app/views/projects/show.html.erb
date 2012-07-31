@@ -1,18 +1,22 @@
 <section id="show-project">
   <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
+
   <div id="project-wrap">
     <div class="cover">
       <%= image_tag @project.picture.url(:medium) %>
       <% if @user.owner_of_project?(@project) %>
-        <div class="edit"><%= link_to t("project.edit"), edit_project_path(@project) %></div>
+        <%= link_to t("project.edit"), edit_project_path(@project), :class => "edit" %>
       <% end %>
     </div>
+
     <h2>
       <%= @project.name %>
       <span class="external"><%= link_to(t("project.original_ad"), @project.source_link, :target => "_blank") if @project.has_source_link? %></span>
     </h2>
+
     <section id="owner">
       <h3><%= t("project.about_owner") %></h3>
+
       <div class="owner-profile">
         <div class="picture">
           <%= image_tag @owner.picture.url(:thumb) %>
@@ -46,7 +50,6 @@
         <h3><%= t("project.next_event") %></h3>
         <p><%= @project.event %></p>
       </div>
-
     </section>
 
     <section id="participants">
@@ -102,8 +105,11 @@
         </div>
       <% end %>
     </section>
-    <div class= "report">
-      <%= link_to 'Report', new_project_report_path(@project) %>
-    </div>
   </div>
 </section>
+
+<% content_for :report do %>
+  <div class="report">
+    <%= link_to 'Report', new_user_report_path(@user) %>
+  </div>
+<% end %>

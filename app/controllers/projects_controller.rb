@@ -15,17 +15,20 @@ class ProjectsController < ApplicationController
     @project.owner = current_user
 
     if @project.save
-      flash[:notice] = t("project.create_success")
-      ProjectsCreationHandler.new(@project,current_user).after_creation_mailing
+      ProjectsCreationHandler.new(@project, current_user).after_creation_mailing
+
       if @project.share_on_facebook
-        @project.send_to_facebook_wall(cookies,t("facebook.create"), project_url(@project), t("project.statuses.#{@project.project_status}"), request)
+        @project.send_to_facebook_wall(cookies, t("facebook.create"), project_url(@project), t("project.statuses.#{@project.project_status}"), request)
       end
+
+      flash[:notice] = t("project.create_success")
       redirect_to stream_path
     else
       @user = current_user
       @event_types = Project.event_types
-      flash[:alert] = t("project.create_error")
       @project_statuses = Project.project_statuses
+
+      flash[:alert] = t("project.create_error")
       render :new
     end
   end
@@ -47,10 +50,11 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
-      flash[:notice] = t("project.update_success")
-      if @project.participants.all.map(&:email) != []
+      if @project.has_participants?
         NotificationMailer.update_project(current_user, @project).deliver
       end
+
+      flash[:notice] = t("project.update_success")
       redirect_to @project
     else
       @user = current_user
@@ -65,6 +69,7 @@ class ProjectsController < ApplicationController
 
   def require_owner
     project = Project.find(params[:id])
+
     unless project.owner == current_user
       flash[:alert] = t("project.must_be_owner")
       redirect_to stream_path

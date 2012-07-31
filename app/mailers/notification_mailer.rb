@@ -24,7 +24,7 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     @project = project
     mail(
-      :bcc => @project.participants.map(&:email),
+      :bcc => @project.participants_emails,
       :subject => t("notification.mail.update_project.subject", :name => @user.name, :project => @project.name)
     )
   end
@@ -33,7 +33,7 @@ class NotificationMailer < ActionMailer::Base
     @project = project
     @user    = user
     mail(
-      :bcc => @project.participants.map(&:email),
+      :bcc => @project.participants_emails,
       :subject => t("notification.mail.destroy_project.subject", :name => @user.name, :project => @project.name)
     )
   end

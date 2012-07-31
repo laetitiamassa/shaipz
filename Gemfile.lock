@@ -83,6 +83,7 @@ GEM
     ffi (1.0.11)
     gherkin (2.11.1)
       json (>= 1.4.6)
+    haml (3.1.6)
     hashie (1.2.0)
     hike (1.2.1)
     httparty (0.8.3)
@@ -222,6 +223,7 @@ DEPENDENCIES
   database_cleaner
   devise
   fb_graph
+  haml
   jquery-rails
   mocha
   nifty-generators
