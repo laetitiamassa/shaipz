@@ -1,0 +1,81 @@
+%section#show-project
+  = render :partial => "_shared/profile", :locals => {:user => @user}
+
+  #project-wrap
+    .cover
+      = image_tag @project.picture.url(:medium)
+      - if @user.owner_of_project?(@project)
+        = link_to t("project.edit"), edit_project_path(@project), :class => "edit"
+
+    %h2
+      = @project.name
+      %span.external= link_to(t("project.original_ad"), @project.source_link, :target => "_blank") if @project.has_source_link?
+
+    %section#owner
+      %h3= t("project.about_owner")
+
+      .owner-profile
+        .picture= image_tag @owner.picture.url(:thumb)
+        %h4= link_to(@owner.name, user_path(@owner))
+        .status= t("statuses.#{@owner.personal_status}") if @owner.has_personal_status?
+
+    %section#details
+			.project-status
+        %div{:class => "progress #{@project.project_status.dasherize if @project.has_project_status?}"}
+			%p.status= t("project.statuses.#{@project.project_status}") if @project.has_project_status?
+
+      .criteria
+        %span.amount= number_to_currency(@project.price_per_shaipz, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u")
+        %span.space
+          = @project.space_per_shaipz
+          m&sup2;
+        %span.shaipz= @project.maximum_shaipz
+
+			.description
+				%p= t("project.description_shaipz", :total_amount => number_to_currency(@project.total_amount, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"), :total_space => @project.total_space)
+
+			.address
+        %h3= t("project.address")
+        %p= @project.full_address
+
+      .event
+        %h3= t("project.next_event")
+        %p= @project.event
+
+    %section#participants
+      %h3= t("project.participants")
+      - if @project.has_participant_or_owner?(@user)
+        .position
+          %span= "##{@project.priority_order_for_participant(@user)}"
+          = t("project.in_project")
+		  - else
+        #participation
+          = form_for "participation", :url => participations_path do |f|
+            = f.hidden_field :project_id, :value => @project.id
+            - if current_user.authenticated_with_facebook?(session)
+              %ul.fields
+                %li.checkbox
+			            = f.check_box :share_on_facebook, { :checked => true }
+                  = f.label :share_on_facebook, t("participation.share_on_facebook")
+						- else
+							= f.hidden_field :share_on_facebook, :value => "0"
+
+            .join-action
+              = f.submit t("project.join_project")
+
+      %ol
+        - @participants.each do |p|
+          %li
+            = link_to(image_tag(p.picture.url(:thumb)), user_path(p))
+            = link_to p.name, user_path(p)
+
+      - if @project.has_user_as_owner?(@user)
+        .leave-action
+          .leave-button= button_to t("project.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')}"
+
+      - if @project.has_participant?(@user)
+        .leave-action
+          .leave-button= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('participation.destroy_confirmation')}"
+
+- content_for :report do
+  .report= link_to 'Report', new_project_report_path(@project)
