@@ -1,4 +1,4 @@
-class UrlSearchGenerator
+class SearchUrlGenerator
   def initialize(search_engine, user)
     @search_engine = search_engine
     @user = user

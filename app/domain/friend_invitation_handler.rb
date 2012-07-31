@@ -1,6 +1,5 @@
 class FriendInvitationHandler
-
-  def initialize (user, friends, message)
+  def initialize(user, friends, message)
     @user = user
     @friends = friends
     @message = message

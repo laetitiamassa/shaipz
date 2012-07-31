@@ -4,14 +4,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @url_immo = UrlSearchGenerator.new("immoweb", @user)
+    @url_immo = SearchUrlGenerator.new("immoweb", @user)
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
   end
 
   def edit
     @user = current_user
-    @url_immo = UrlSearchGenerator.new("immoweb", @user)
+    @url_immo = SearchUrlGenerator.new("immoweb", @user)
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
     @personal_statuses = User.personal_statuses
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       flash[:notice] = t("profile.update_success")
       redirect_to new_friend_invitations_path
     else
-      @url_immo = UrlSearchGenerator.new("immoweb", @user)
+      @url_immo = SearchUrlGenerator.new("immoweb", @user)
       @urls = @url_immo.generate_urls
       @building_types = @url_immo.building_types
       @personal_statuses = User.personal_statuses
