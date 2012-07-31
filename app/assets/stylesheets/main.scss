@@ -96,58 +96,57 @@ a {
 
 #sign-in {
   padding: 20px 0;
-}
 
-#sign-in a {
-  color: #fff;
-}
+  a {
+    color: #fff;
+  }
 
-#sign-in .field_with_errors {
-  display: inline-block;
-}
+  .field_with_errors {
+    display: inline-block;
+  }
 
-#sign-in .fields, #sign-in .form-actions {
-  display: inline;
-}
+  .fields, .form-actions {
+    display: inline;
+  }
+  .wrap {
+    position: relative;
+  }
 
-#sign-in .wrap{
-	position: relative;
-}
+  .facebook-button {
+    display: inline-block;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
-#sign-in .facebook-button {
-	display: inline-block;
-	padding: 0;
-  position: absolute;
-  top: 0px;
-  right: 0;
-}
+  .fields input {
+    border: none;
+    padding: 5px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0 5px 0 0;
+  }
 
-#sign-in .fields input {
-  border: none;
-  padding: 5px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin: 0 5px 0 0;
-}
+  .fields label {
+    font-weight: bold;
+  }
 
-#sign-in .fields label {
-  font-weight: bold;
-}
-
-#sign-in .form-actions .button input {
-  display: inline-block;
-  margin: 0 5px;
-  background: url("sign-in-button-bg.png") repeat-x center center;
-  border: none;
-  color: #fff;
-  padding: 4px 20px;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0 1px 2px #222;
-  box-shadow: 0 1px 2px #222;
+  .form-actions .button input {
+    display: inline-block;
+    margin: 0 5px;
+    background: url("sign-in-button-bg.png") repeat-x center center;
+    border: none;
+    color: #fff;
+    padding: 4px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0 1px 2px #222;
+    box-shadow: 0 1px 2px #222;
+  }
 }
 
 /* Header */
