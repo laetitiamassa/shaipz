@@ -36,51 +36,63 @@ a {
 #top-bar {
   background: #333;
   color: #fff;
+
+  .wrap {
+    position: relative;
+
+    #menu {
+      a {
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      ul {
+        margin: 0;
+        padding: 20px 0;
+
+        li {
+          display: inline-block;
+        }
+
+        li + li {
+          margin: 0 0 0 20px;
+        }
+      }
+    }
+
+    #social-logo {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      ul {
+        margin: 14px 0;
+
+        li {
+          display: inline-block;
+          font-weight: bold;
+          margin: 0 0 0 5px;
+
+          a {
+            height: 25px;
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            line-height: 25px;
+          }
+
+          img {
+            vertical-align: bottom;
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+  }
 }
 
-#menu a {
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-#menu ul {
-  margin: 0;
-  padding: 20px 0;
-}
-
-#menu ul li {
-  display: inline-block;
-}
-
-#menu ul li + li {
-  margin: 0 0 0 20px;
-}
-
-#social-logo ul {
-  position: absolute;
-	top: -52px;
-  right: 0;
-}
-
-#social-logo ul li {
-	display: inline-block;
-	font-weight: bold;
-}
-
-#social-logo ul li a {
-	color: #fff;
-	text-decoration: none;
-}
-
-#social-logo .wrap{
-	position: relative;
-}
-
-#social-logo .wrap ul li .links a {
-	position: relative;
-	top: -5px;
-}
 
 #sign-in {
   padding: 20px 0;
@@ -1310,28 +1322,32 @@ footer {
       margin: 0;
     }
 
-    nav ul {
-      padding: 0;
+    nav {
       position: absolute;
-      top: -10px;
+      top: 0;
       right: 0;
 
-      li {
-        display: inline-block;
-      }
+      ul {
+        margin: 5px 0;
 
-      a {
-        color: #999;
-        text-decoration: none;
-        font-weight: bold;
-      }
+        li {
+          margin: 0 0 0 5px;
+          display: inline-block;
+          font-weight: bold;
 
-      .links {
-        color: #231;
+          a {
+            height: 25px;
+            display: inline-block;
+            color: #999;
+            text-decoration: none;
+            line-height: 25px;
+          }
 
-        a {
-          position:relative;
-          top:-5px;
+          img {
+            vertical-align: bottom;
+            width: 25px;
+            height: 25px;
+          }
         }
       }
     }

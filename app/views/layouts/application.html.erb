@@ -58,27 +58,23 @@
           </ul>
         </nav>
 				<nav id="social-logo">
-					<nav class="wrap">
 					<ul>
 						<li>
-							<div class="links">
-								<%= link_to t('footer.how_it_works'), how_it_works_path %>
-							</div>
+							<%= link_to t('footer.how_it_works'), how_it_works_path %>
 						</li>
 
 						<li>
-	            <%= link_to image_tag("facebook-logo-white.png", :size => "25x25"), "http://facebook.com/shaipz", :target => "_blank" %>
+	            <%= link_to image_tag("facebook-logo-white.png"), "http://facebook.com/shaipz", :target => "_blank" %>
 	          </li>
 
             <li>
-	            <%= link_to image_tag("twitter-logo-white.png", :size => "25x25"), "http://twitter.com/shaipzapp", :target => "_blank" %>
+	            <%= link_to image_tag("twitter-logo-white.png"), "http://twitter.com/shaipzapp", :target => "_blank" %>
 	          </li>
 
 						<li>
-	            <%= link_to image_tag("contact-logo-white.png", :size => "25x25"), "mailto:hello@shaipz.com", :target => "_blank" %>
+	            <%= link_to image_tag("contact-logo-white.png"), "mailto:hello@shaipz.com", :target => "_blank" %>
 	          </li>
 					</ul>
-					</nav>
 				</nav>
       <% else %>
         <div id="sign-in">
@@ -139,24 +135,19 @@
       <nav>
         <ul>
 					<li>
-						<div class="links">
-            	<%= link_to t('footer.how_it_works'), how_it_works_path %>
-						</div>
-          </li>
-					<li></li>
-					<li>
-						<div class="links">
-            	<%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf"), :target => "_blank" %>
-						</div>
+            <%= link_to t('footer.how_it_works'), how_it_works_path %>
           </li>
 					<li>
-            <%= link_to image_tag("facebook-logo.png", :size => "25x25"), "http://facebook.com/shaipz", :target => "_blank" %>
+            <%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf"), :target => "_blank" %>
           </li>
 					<li>
-            <%= link_to image_tag("twitter-logo.png", :size => "25x25"), "http://twitter.com/shaipzapp", :target => "_blank" %>
+            <%= link_to image_tag("facebook-logo.png"), "http://facebook.com/shaipz", :target => "_blank" %>
           </li>
 					<li>
-            <%= link_to image_tag("contact-logo.png", :size => "25x25"), "mailto:hello@shaipz.com", :target => "_blank" %>
+            <%= link_to image_tag("twitter-logo.png"), "http://twitter.com/shaipzapp", :target => "_blank" %>
+          </li>
+					<li>
+            <%= link_to image_tag("contact-logo.png"), "mailto:hello@shaipz.com", :target => "_blank" %>
           </li>
         </ul>
       </nav>
