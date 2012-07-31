@@ -9,6 +9,8 @@
         <%= image_tag @project.picture.url(:medium) %>
         <%= f.file_field :picture %>
       </div>
+      <p class="warning"><%= t("warning.check_filename") %></p>
+
       <ul class="fields">
         <li class="string">
           <%= f.label :name, t("project.what_name") %>

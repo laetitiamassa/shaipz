@@ -1,0 +1,44 @@
+%section#edit-profile
+  = form_for(@user, :url => user_path, :html => { :multipart => true }) do |f|
+    #side-content
+      %ul.picture
+        %li
+          = image_tag @user.picture.url(:medium)
+          = f.file_field :picture
+      %p.warning= t("warning.check_filename")
+
+    #main-content
+      %h2= t("profile.fill_your_profile")
+
+      %ul.fields
+        %li.string
+          = f.label :name
+          = f.text_field :name, :placeholder => t("example_name")
+        %li.string
+          = f.label :email
+          = f.email_field :email, :placeholder => t("example_email")
+        %li.string
+          = link_to t("profile.change_password"), edit_change_password_path
+        %li.string
+          %strong= f.label :personal_status, t("profile.how_ready_you_are")
+          = f.select :personal_status, @personal_statuses, {:include_blank => true}
+        %li.checkbox
+          = f.check_box :cohousing
+          = f.label  :cohousing, t("profile.cohousing")
+      %ul.fields
+        %li.string
+          = f.label :favorite_areas, t("profile.favorite_areas_form")
+          = f.text_field :favorite_areas, :placeholder => "1050, 1081, 2000, 7850, 3000"
+        %li.string
+          = f.label :minimum_space, t("profile.minimum_space_form")
+          = f.text_field :minimum_space, :placeholder => "50"
+        %li.string
+          = f.label :maximum_budget, t("profile.maximum_budget_form")
+          = f.text_field :maximum_budget, :placeholder => "160000"
+        %li.checkbox
+          = f.check_box :hide_budget
+          = f.label :hide_budget, t("profile.hide_budget")
+      .form-actions.clear
+        %span.green-button= f.submit t('profile.save_changes')
+
+  = render 'search_links'

@@ -194,3 +194,5 @@ en:
     error: "Oops something is wrong. Please check e-mail addresses and/or your message"
     mailer:
       subject: "Your friend %{user} invites you to join Shaipz"
+  warning:
+    check_filename: "Please check that there are no accents in the file name."

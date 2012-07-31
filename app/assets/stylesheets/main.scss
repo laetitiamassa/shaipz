@@ -748,25 +748,38 @@ header #flash .notice {
   }
 
   form {
-    .fields {
+    #main-content {
       margin: 0 0 0 220px;
+
+      h2 {
+        margin: 0 0 20px;
+      }
     }
 
-    .picture {
+    #side-content {
+      width: 200px;
       margin: 0;
       padding: 0;
       position: absolute;
 
-      input {
-        position: absolute;
-        bottom: 20px;
-        left: 5px;
-        width: 190px;
+      .picture li {
+        position: relative;
+
+        input {
+          position: absolute;
+          bottom: 5px;
+          left: 5px;
+          width: 190px;
+        }
+
+        img {
+          display: block;
+          margin: 0 0 10px 0;
+        }
       }
 
-      img {
-        display: block;
-        margin: 0 0 10px 0;
+      .warning {
+        color: #aaa;
       }
     }
 
@@ -945,14 +958,25 @@ header #flash .notice {
 
 #project-wrap {
   margin: 0 0 0 220px;
-}
 
-#project-wrap h2 {
-  margin: 0 0 20px 0;
+  h2 {
+    margin: 0 0 20px 0;
+  }
 }
 
 #project-wrap form .picture {
   margin: 0 0 10px 0;
+  position: relative;
+
+  input {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+  }
+}
+
+#project-wrap .warning {
+  color: #aaa;
 }
 
 #new-project form ul .two-fields .field {
@@ -974,9 +998,6 @@ header #flash .notice {
 }
 
 /* Project details */
-
-#show-project {
-}
 
 #show-project #project-wrap {
   position: relative;
