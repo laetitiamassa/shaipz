@@ -115,8 +115,6 @@ a {
   padding: 5px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
   margin: 0 5px 0 0;
 }
 
@@ -1288,6 +1286,7 @@ footer {
     .browser {
       font-style: italic;
       color: #999;
+      margin: 0;
     }
 
     nav ul {
