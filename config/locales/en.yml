@@ -55,7 +55,9 @@ en:
     fill_your_profile: "Complete your profile"
     hide_budget: "Hide your budget to other people?"
     friend_invitation: "Invite your friends"
+    invite_friends: "+ Invite friends"
     cohousing: "Open to cohousing?"
+    find: "Find"
   statuses:
     not_buying: "I'm not buying yet."
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity."
@@ -98,6 +100,7 @@ en:
     how_many: "How many shaipz? (please enter a number)"
     example_text: "Let's meet this Friday 6pm in front of the building to see if it's worth!"
     join: "Join"
+    create: "Create"
     join_project: "Join the project"
     in_project: "in project"
     create_success: "Congratulations! Your project has been created!"

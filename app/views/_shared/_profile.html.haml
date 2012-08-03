@@ -1,0 +1,29 @@
+%section#profile-wrap
+  #profile-box
+    .picture
+      = image_tag user.picture.url(:medium)
+
+    %h2= user.name
+
+    .personal-status
+      %div{ :class => "progress #{user.personal_status.dasherize if user.has_personal_status?}" }
+    %p.status= t("statuses.#{user.personal_status}") if user.has_personal_status?
+
+  #profile-info
+    %ul
+      %li
+        %span.label= t("profile.favorite_areas")
+        = user.favorite_areas
+      %li
+        %span.label= t("profile.maximum_budget")
+        = number_to_currency(user.maximum_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u")
+      %li
+        %span.label= t("profile.minimum_space")
+        = user.minimum_space
+        m&sup2;
+
+  %ul#profile-actions
+    %li= link_to t("profile.find"), user_path(user)
+    %li= link_to t("project.create"), new_project_path
+    %li= link_to t("project.join"), stream_path
+    %li.invitation= link_to t("profile.invite_friends"), new_friend_invitations_path

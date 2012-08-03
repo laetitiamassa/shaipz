@@ -219,7 +219,8 @@ header #flash .notice {
   -moz-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
   color: #777;
-  min-height: 436px;
+  min-height: 454px;
+  position: relative;
 }
 
 #content form .fields {
@@ -329,6 +330,9 @@ header #flash .notice {
 }
 
 #content .report a {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
 	color: #999;
   text-decoration: none;
 }
@@ -961,6 +965,35 @@ header #flash .notice {
   font-weight: bold;
   margin: 0 0 10px;
   color: #aaa;
+}
+
+/* Profile actions */
+
+#profile-actions {
+  margin: 20px 0 0 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px 10px 0;
+  }
+
+  .invitation {
+    display: block;
+    font-size: 1.2em;
+  }
+
+  a {
+    color: #00698c;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #1B8E8A;
+  }
 }
 
 /* Projects */

@@ -1,0 +1,40 @@
+%section#show-profile
+  #profile-box
+    .picture
+      = image_tag @user.picture.url(:medium)
+      - if @user == current_user
+        = link_to t("profile.edit"), edit_user_path(@user), :class => "edit"
+
+    .personal-status
+      %div{ :class => "progress #{@user.personal_status.dasherize if @user.has_personal_status?}" }
+    %p.status= t("statuses.#{@user.personal_status}") if @user.has_personal_status?
+
+    %ul#profile-actions
+      %li= link_to t("profile.find"), user_path(@user)
+      %li= link_to t("project.create"), new_project_path
+      %li= link_to t("project.join"), stream_path
+      %li.invitation= link_to t("profile.invite_friends"), new_friend_invitations_path
+
+  #profile-info
+    %h2= @user.has_name? ? @user.name : @user.name_placeholder
+
+    %ul
+      %li
+        %span.label= t("profile.email")
+        = @user.email
+      %li
+        %span.label= t("profile.favorite_areas")
+        = @user.favorite_areas
+      - if !@user.hide_budget || @user == current_user
+        %li
+          %span.label= t("profile.maximum_budget")
+          = number_to_currency(@user.maximum_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u")
+      %li
+        %span.label= t("profile.minimum_space")
+        = @user.minimum_space
+        m&sup2;
+
+  = render "search_links"
+
+- content_for :report do
+  .report= link_to 'Report', new_user_report_path(@user)
