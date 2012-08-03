@@ -8,6 +8,9 @@ class ProjectsController < ApplicationController
     @project_statuses = Project.project_statuses
     @project = Project.new
     @event_types = Project.event_types
+    @url_immo = SearchUrlGenerator.new("immoweb", @user)
+    @urls = @url_immo.generate_urls
+    @building_types = @url_immo.building_types
   end
 
   def create
@@ -27,6 +30,9 @@ class ProjectsController < ApplicationController
       @user = current_user
       @event_types = Project.event_types
       @project_statuses = Project.project_statuses
+      @url_immo = SearchUrlGenerator.new("immoweb", @user)
+      @urls = @url_immo.generate_urls
+      @building_types = @url_immo.building_types
 
       flash[:alert] = t("project.create_error")
       render :new

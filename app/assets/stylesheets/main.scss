@@ -515,8 +515,10 @@ header #flash .notice {
 
 #report {
   position: relative;
+
   #report-wrap {
     margin: 0 0 0 220px;
+
     h2 {
       margin: 0 0 15px;
     }
@@ -735,6 +737,30 @@ header #flash .notice {
 
       li + li {
         border-top: 1px solid #f2f2f2;
+      }
+    }
+  }
+
+  #create-call {
+    text-align: right;
+    margin: 0 220px 0 0;
+
+    h4 {
+      text-transform: uppercase;
+      color: #1E5270;
+      margin: 20px 0 5px 0;
+    }
+
+    p {
+      margin: 0;
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: #777;
       }
     }
   }
@@ -1021,6 +1047,39 @@ header #flash .notice {
 
 #project-wrap .warning {
   color: #aaa;
+}
+
+#project-wrap .search-links {
+  h4 {
+    margin: 0 0 5px 0;
+  }
+
+  ul {
+    margin: 0 0 5px;
+    padding: 0;
+    font-weight: bold;
+
+    li {
+      list-style: none;
+
+      a {
+        color: #00698c;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #1B8E8A;
+      }
+    }
+
+    li + li {
+      margin: 5px 0 0;
+    }
+  }
+
+  p {
+    margin: 5px 0 15px 0;
+  }
 }
 
 #new-project form ul .two-fields .field {

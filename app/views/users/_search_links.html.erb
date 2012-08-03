@@ -8,7 +8,7 @@
 																		:unit => "€",
 																		:format => "%n %u")) %></h4>
 		<% else %>
-		<h4><%= t("search_settings.criteria", :surface => @url_immo.searched_space,
+      <h4><%= t("search_settings.criteria", :surface => @url_immo.searched_space,
 								:price => number_to_currency(@url_immo.searched_budget,
 																		:delimiter =>'.',
 																		:strip_insignificant_zeros => true,

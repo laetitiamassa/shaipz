@@ -4,6 +4,16 @@
   #project-wrap
     %h2= t("project.define_new_project")
 
+    %section.search-links
+      - if @url_immo.user_can_have_a_house?
+        %h4= t("search_settings.criteria_with_house", :surface => @url_immo.searched_space, :price => number_to_currency(@url_immo.searched_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"))
+      - else
+        %h4= t("search_settings.criteria", :surface => @url_immo.searched_space, :price => number_to_currency(@url_immo.searched_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"))
+      %ul
+        - @urls.each_with_index do |url, index|
+          %li= link_to content_tag(:span, t("search_settings.find_a_#{@building_types[index]}_on_immoweb"), :class => "search-link"), url, :target => "_blank"
+      %p= t("project.copy_and_paste_relevant_details")
+
     = form_for @project, :html => { :multipart => true } do |f|
       .picture
         = image_tag @project.picture.url(:medium)

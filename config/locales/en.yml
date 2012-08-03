@@ -71,7 +71,7 @@ en:
     shaipz: "My Shaipz"
   stream:
     start_project: "Create your project"
-    all_projects: "Open projects"
+    all_projects: "Open projects in your favorite districts"
   event:
     next: "Next event"
     types:
@@ -79,7 +79,10 @@ en:
       meeting: "Meeting"
       visit: "Visit"
   project:
+    cannot_find: "Can't find what you want here?"
+    create_your_own: "Then create your own project (it's super easy)"
     define_new_project: "Define your project"
+    copy_and_paste_relevant_details: "(Then you can copy and paste the relevant details into the form below)"
     create_project: "Create your project"
     what_name: "What's the name of your project?"
     example_projectname: "4 flats in an awesome building downtown"
@@ -175,6 +178,8 @@ en:
     join: "I've just joined an awesome project on Shaipz.com!"
     description: "%{shaipz} shaipz of %{space} m2 for %{price} euros each, in %{zipcode} %{city}"
   search_settings:
+    find_a_house_on_immoweb: "Let's find a house on immoweb!"
+    find_a_rental_complex_on_immoweb: "Let's find a rental complex on immoweb!"
     criteria_with_house: "To create a project, you should search for a rental complex or a house of minimum %{surface} m2 for a maximum budget of %{price}"
     criteria: "To create a project, you should search for a rental complex of minimum %{surface} m2 for a maximum budget of %{price}"
     link_to_building: "Create your project from a %{type}:"
