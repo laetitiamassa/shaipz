@@ -344,8 +344,28 @@ header #flash .notice {
   position: absolute;
 
   #profile-box {
+    .picture .edit {
+      display: none;
+      background: #fff url("file.png") no-repeat 5px center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-transform: uppercase;
+      padding: 5px 5px 5px 25px;
+      color: #1e5270;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .cohousing {
+      position: absolute;
+      right: 0;
+      top: 211px;
+    }
+
     h2 {
       margin: 10px 0;
+      width: 170px;
     }
 
     strong p a {
@@ -653,11 +673,14 @@ header #flash .notice {
 
         .links {
           position: absolute;
-          top: 40px;
+          top: 39px;
           right: 0;
-          line-height: 17px;
+          line-height: 16px;
 
           span {
+            display: inline-block;
+            width: 18px;
+
             img {
               vertical-align: middle;
             }
@@ -886,7 +909,6 @@ header #flash .notice {
   }
 }
 
-
 /* Show profile */
 
 #show-profile {
@@ -896,6 +918,16 @@ header #flash .notice {
   #profile-box {
     width: 200px;
     position: absolute;
+
+    .cohousing {
+      position: relative;
+
+      img {
+        position: absolute;
+        right: 0;
+        top: -2px;
+      }
+    }
 
     .picture .edit {
       display: block;
@@ -1006,13 +1038,14 @@ header #flash .notice {
 #profile-actions {
   margin: 20px 0 0 0;
   padding: 0;
+  text-align: center;
   font-weight: bold;
   font-size: 1.2em;
 
   li {
     list-style: none;
     display: inline-block;
-    margin: 0 20px 10px 0;
+    margin: 0 10px 10px 10px;
   }
 
   .invitation {

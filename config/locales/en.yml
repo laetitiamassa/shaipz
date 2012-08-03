@@ -53,10 +53,12 @@ en:
     example_password: "my password"
     example_newpassword: "my new password"
     fill_your_profile: "Complete your profile"
+    report: "Report"
     hide_budget: "Hide your budget to other people?"
     friend_invitation: "Invite your friends"
     invite_friends: "+ Invite friends"
     cohousing: "Open to cohousing?"
+    open_to_cohousing: "Open to cohousing"
     find: "Find"
   statuses:
     not_buying: "I'm not buying yet."
@@ -81,6 +83,8 @@ en:
   project:
     cannot_find: "Can't find what you want here?"
     create_your_own: "Then create your own project (it's super easy)"
+    check_out_new_projects: "Check out brand new projects"
+    or_create_your_own: "or create your own (it's super easy)"
     define_new_project: "Define your project"
     copy_and_paste_relevant_details: "(Then you can copy and paste the relevant details into the form below)"
     create_project: "Create your project"

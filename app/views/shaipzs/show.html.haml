@@ -1,5 +1,5 @@
 %section#stream
-  = render :partial => "_shared/profile", :locals => {:user => @user}
+  = render :partial => "_shared/profile", :locals => { :user => @user }
 
   #stream-wrap
     %section#start-project
@@ -8,7 +8,7 @@
 
     %section#projects
       %h2
-        %span= t("stream.all_projects")
+        %span= t("shaipz.i_am_in")
 
       %ol
         - @projects.each do |project|
@@ -16,4 +16,5 @@
 
     %section#create-call
       %h4= t("project.cannot_find")
-      %p= link_to t("project.create_your_own"), new_project_path
+      %p= link_to t("project.check_out_new_projects"), stream_path
+      %p= link_to t("project.or_create_your_own"), new_project_path

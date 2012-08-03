@@ -5,15 +5,21 @@
       - if @user == current_user
         = link_to t("profile.edit"), edit_user_path(@user), :class => "edit"
 
+    - if @user.cohousing?
+      .cohousing
+        %h3= t("profile.open_to_cohousing")
+        = image_tag ("cohousing.png")
+
     .personal-status
       %div{ :class => "progress #{@user.personal_status.dasherize if @user.has_personal_status?}" }
     %p.status= t("statuses.#{@user.personal_status}") if @user.has_personal_status?
 
-    %ul#profile-actions
-      %li= link_to t("profile.find"), user_path(@user)
-      %li= link_to t("project.create"), new_project_path
-      %li= link_to t("project.join"), stream_path
-      %li.invitation= link_to t("profile.invite_friends"), new_friend_invitations_path
+    - if current_user == @user
+      %ul#profile-actions
+        %li= link_to t("profile.find"), user_path(@user)
+        %li= link_to t("project.create"), new_project_path
+        %li= link_to t("project.join"), stream_path
+        %li.invitation= link_to t("profile.invite_friends"), new_friend_invitations_path
 
   #profile-info
     %h2= @user.has_name? ? @user.name : @user.name_placeholder
@@ -37,4 +43,4 @@
   = render "search_links"
 
 - content_for :report do
-  .report= link_to 'Report', new_user_report_path(@user)
+  .report= link_to t("profile.report"), new_user_report_path(@user)

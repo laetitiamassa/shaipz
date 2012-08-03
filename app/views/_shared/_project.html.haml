@@ -1,0 +1,43 @@
+%li
+  .picture= link_to image_tag(project.picture.url(:thumb)), project_url(project)
+
+  %h3
+    = link_to truncate(project.name, :length => 30), project_path(project)
+    %small>
+      by
+      = link_to project.owner_name, user_path(project.owner)
+
+  .criteria
+    %span.amount= number_to_currency(project.price_per_shaipz, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u")
+    %span.space
+      = project.space_per_shaipz
+      m&sup2;
+    %span.shaipz= project.maximum_shaipz
+    %span.cohousing= image_tag "cohousing.png" if project.cohousing
+
+  .links
+    %span.external= link_to(image_tag("arrow.png"), project.source_link, :target => "_blank") if project.has_source_link?
+    %span.internal= link_to(image_tag("screen.png"), project_url(project))
+    %span.facebook-link
+      = link_to(image_tag("facebook-logo-circle.png"),
+                          project.share_with_facebook_url({ :url            => project_url(project),
+                                                            :project_name   => project.name,
+                                                            :url_picture    => project.picture.url(:medium),
+                                                            :project_status => t("project.statuses.#{project.project_status}"),
+                                                            :redirect_url   => root_url }, request))
+
+  .details
+    %span.address= project.zipcode
+    %span.event= truncate(project.event, :length => 40)
+
+  - if project.has_participant_or_owner?(@user)
+    .position
+      %span= "##{project.priority_order_for_participant(@user)}"
+      = t("project.in_project")
+  - else
+    = form_for "participation", :url => participations_path do |f|
+      = f.hidden_field :project_id, :value => project.id
+      - unless current_user.authenticated_with_facebook?(session)
+        = f.hidden_field :share_on_facebook, :value => "0"
+      .join-action
+        = f.submit t("project.join")

@@ -2,8 +2,12 @@
   #profile-box
     .picture
       = image_tag user.picture.url(:medium)
+      - if user == current_user
+        = link_to t("profile.edit"), edit_user_path(user), :class => "edit"
 
     %h2= user.name
+
+    .cohousing= image_tag ("cohousing.png") if user.cohousing?
 
     .personal-status
       %div{ :class => "progress #{user.personal_status.dasherize if user.has_personal_status?}" }
@@ -27,3 +31,15 @@
     %li= link_to t("project.create"), new_project_path
     %li= link_to t("project.join"), stream_path
     %li.invitation= link_to t("profile.invite_friends"), new_friend_invitations_path
+
+  :javascript
+    var $editButton = $("#profile-box .edit");
+    var $profilePicture = $("#profile-box .picture");
+
+    $profilePicture.mouseover(function() {
+      $editButton.show();
+    });
+
+    $profilePicture.mouseout(function() {
+      $editButton.hide();
+    });
