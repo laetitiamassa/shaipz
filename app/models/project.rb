@@ -20,7 +20,7 @@ class Project < ActiveRecord::Base
   EVENT_TYPES = ["meeting", "visit", "other"]
 
   attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
-                  :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date
+                  :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants
 
   default_scope :order => "updated_at DESC"
 
@@ -102,6 +102,18 @@ class Project < ActiveRecord::Base
 
   def full_address
     "#{address} #{zipcode} #{city}"
+  end
+
+  def short_address
+    "#{zipcode} #{city}"
+  end
+
+  def address_for_user(user)
+    if !has_participant_or_owner?(user) && hide_street_from_non_participants?
+      short_address
+    else
+      full_address
+    end
   end
 
   def description_for_facebook

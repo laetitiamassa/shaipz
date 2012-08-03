@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727103118) do
+ActiveRecord::Schema.define(:version => 20120803111624) do
 
   create_table "participations", :force => true do |t|
     t.integer  "participant_id",                      :null => false
@@ -22,28 +22,29 @@ ActiveRecord::Schema.define(:version => 20120727103118) do
   end
 
   create_table "projects", :force => true do |t|
-    t.integer  "owner_id",                                  :null => false
-    t.string   "name",                                      :null => false
+    t.integer  "owner_id",                                               :null => false
+    t.string   "name",                                                   :null => false
     t.string   "address"
-    t.integer  "total_amount",                              :null => false
-    t.integer  "total_space",                               :null => false
-    t.integer  "maximum_shaipz",                            :null => false
+    t.integer  "total_amount",                                           :null => false
+    t.integer  "total_space",                                            :null => false
+    t.integer  "maximum_shaipz",                                         :null => false
     t.string   "source_link"
-    t.boolean  "cohousing",            :default => false
+    t.boolean  "cohousing",                         :default => false
     t.text     "event_description"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
-    t.integer  "zipcode",              :default => 0,       :null => false
+    t.datetime "created_at",                                             :null => false
+    t.datetime "updated_at",                                             :null => false
+    t.integer  "zipcode",                           :default => 0,       :null => false
     t.string   "city"
     t.string   "project_status"
-    t.boolean  "share_on_facebook",    :default => true
+    t.boolean  "share_on_facebook",                 :default => true
     t.datetime "event_date"
-    t.string   "event_type",           :default => "other", :null => false
+    t.string   "event_type",                        :default => "other", :null => false
     t.text     "note"
+    t.boolean  "hide_street_from_non_participants", :default => false
   end
 
   create_table "reports", :force => true do |t|

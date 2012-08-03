@@ -36,7 +36,7 @@
 
       .address
         %h3= t("project.address")
-        %p= @project.full_address
+        %p= @project.address_for_user(@user)
 
       .event
         %h3= t("project.next_event")

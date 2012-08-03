@@ -90,6 +90,7 @@ en:
     example_adress: "Princess Street, 4"
     how_much: "How much does it cost? (global price, in euros)"
     how_big: "How big is it? (global space, in m2)"
+    hide_street_from_non_participants: "Hide street from non-participants"
     source_link: "What's your source? (do not forget http://)"
     cohousing: "Is it a cohousing project?"
     event: "What's the next step?"

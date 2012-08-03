@@ -4,16 +4,6 @@
   #project-wrap
     %h2= t("project.define_new_project")
 
-    %section.search-links
-      - if @url_immo.user_can_have_a_house?
-        %h4= t("search_settings.criteria_with_house", :surface => @url_immo.searched_space, :price => number_to_currency(@url_immo.searched_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"))
-      - else
-        %h4= t("search_settings.criteria", :surface => @url_immo.searched_space, :price => number_to_currency(@url_immo.searched_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"))
-      %ul
-        - @urls.each_with_index do |url, index|
-          %li= link_to content_tag(:span, t("search_settings.find_a_#{@building_types[index]}_on_immoweb"), :class => "search-link"), url, :target => "_blank"
-      %p= t("project.copy_and_paste_relevant_details")
-
     = form_for @project, :html => { :multipart => true } do |f|
       .picture
         = image_tag @project.picture.url(:medium)
@@ -30,7 +20,7 @@
         %li.string.two-fields
           .field
             = f.label :zipcode, t("project.zipcode")
-            = f.text_field :zipcode, :placeholder => t("example_zipcode"), :value => nil
+            = f.text_field :zipcode, :placeholder => t("example_zipcode")
           .field
             = f.label :city, t("project.city")
             = f.text_field :city, :placeholder => t("example_city")
@@ -45,7 +35,7 @@
           = f.text_field :total_space, :placeholder => "435"
         %li.string
           = f.label :maximum_shaipz, t("project.how_many")
-          = f.text_field :maximum_shaipz, :placeholder => "4"
+          = f.text_field :maximum_shaipz, :placeholder => 4
         %li.string
           = f.label :source_link, t("project.source_link")
           = f.text_field :source_link, :placeholder => "http://..."
@@ -55,7 +45,9 @@
         %li.string
           %strong= f.label :project_status, t("project.how_far_is_the_project")
           = f.select :project_status, @project_statuses
+
       %h3= t("event.next")
+
       %ul.fields
         %li.text
           = f.label :event_type, t("project.event_type")
@@ -66,11 +58,5 @@
         %li.text
           = f.label :event_date, t("project.event_date")
           = f.datetime_select :event_date
-        - if current_user.authenticated_with_facebook?(session)
-          %li.checkbox
-            = f.check_box :share_on_facebook
-            = f.label :share_on_facebook, t("project.share_on_facebook")
-        - else
-          = f.hidden_field :share_on_facebook, :value => '0'
       .form-actions.clear
-        %span.green-button= f.submit t('project.create_project')
+        %span.green-button= f.submit t('project.update_project')
