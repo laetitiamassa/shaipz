@@ -27,6 +27,7 @@
                 = project.space_per_shaipz
                 m&sup2;
               %span.shaipz= project.maximum_shaipz
+              %span.cohousing= image_tag "cohousing.png" if project.cohousing
 
             .links
               %span.external= link_to(image_tag("arrow.png"), project.source_link, :target => "_blank") if project.has_source_link?

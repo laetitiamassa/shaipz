@@ -30,6 +30,7 @@
           = @project.space_per_shaipz
           m&sup2;
         %span.shaipz= @project.maximum_shaipz
+        %span.cohousing= t("project.for_cohousing") if @project.cohousing?
 
       .description
         %p= t("project.description_shaipz", :total_amount => number_to_currency(@project.total_amount, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"), :total_space => @project.total_space)

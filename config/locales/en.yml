@@ -84,6 +84,7 @@ en:
     define_new_project: "Define your project"
     copy_and_paste_relevant_details: "(Then you can copy and paste the relevant details into the form below)"
     create_project: "Create your project"
+    for_cohousing: "Cohousing"
     what_name: "What's the name of your project?"
     example_projectname: "4 flats in an awesome building downtown"
     where: "Where is it located? (please enter a zip code)"

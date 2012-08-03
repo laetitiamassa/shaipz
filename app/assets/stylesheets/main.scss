@@ -637,6 +637,14 @@ header #flash .notice {
 
         .criteria {
           margin: 0 0 10px;
+
+          .cohousing {
+            position: absolute;
+            top: 10px;
+            right: 0;
+            margin: 0;
+            padding: 0;
+          }
         }
 
         .details {
@@ -1163,14 +1171,14 @@ header #flash .notice {
   margin: 0 10px 0 0;
 }
 
-#show-project  .status {
+#show-project .status {
   margin: 2px;
   padding: 5px;
   font-weight: bold;
   font-style: italic;
 }
 
-#show-project .description{
+#show-project .description {
 	font-weight:bold;
 	font-style:italic;
 	color:#1E5270;
@@ -1208,7 +1216,7 @@ header #flash .notice {
 
 #show-project .criteria span {
   display: inline-block;
-  line-height: 1.5;
+  line-height: 20px;
   padding: 0 20px 0 26px;
   background-position: center left;
   background-repeat: no-repeat;
@@ -1224,6 +1232,10 @@ header #flash .notice {
 
 #show-project .criteria .shaipz {
   background-image: url("person.png");
+}
+
+#show-project .criteria .cohousing {
+  background-image: url("cohousing.png");
 }
 
 #show-project #participants {
