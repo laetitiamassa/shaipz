@@ -82,6 +82,7 @@ en:
       visit: "Visit"
   project:
     cannot_find: "Can't find what you want here?"
+    want_more: "Want more?"
     create_your_own: "Then create your own project (it's super easy)"
     check_out_new_projects: "Check out brand new projects"
     or_create_your_own: "or create your own (it's super easy)"

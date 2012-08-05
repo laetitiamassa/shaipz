@@ -15,6 +15,6 @@
           = render :partial => "_shared/project", :locals => { :project => project }
 
     %section#create-call
-      %h4= t("project.cannot_find")
+      %h4= t("project.want_more")
       %p= link_to t("project.check_out_new_projects"), stream_path
       %p= link_to t("project.or_create_your_own"), new_project_path
