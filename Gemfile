@@ -10,7 +10,7 @@ gem 'devise'
 
 gem 'fb_graph'
 gem 'nifty-generators'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.0'
 gem 'haml'
 
 
