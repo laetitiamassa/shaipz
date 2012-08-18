@@ -227,7 +227,7 @@ DEPENDENCIES
   jquery-rails
   mocha
   nifty-generators
-  omniauth-facebook
+  omniauth-facebook (= 1.4.0)
   paperclip (~> 3.0)
   pg
   rails (= 3.2.7)
