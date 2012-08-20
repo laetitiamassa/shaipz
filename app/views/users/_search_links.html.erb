@@ -1,5 +1,7 @@
 <% if @user.id == current_user.id %>
+	
 	<div id="research-links">
+	
 		<% if @url_immo.user_can_have_a_house? %>
 			<h4><%= t("search_settings.criteria_with_house", :surface => @url_immo.searched_space,
 								:price => number_to_currency(@url_immo.searched_budget,

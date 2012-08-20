@@ -24,7 +24,7 @@
           = f.select :personal_status, @personal_statuses, {:include_blank => true}
         %li.checkbox
           = f.check_box :cohousing
-          = f.label  :cohousing, t("profile.cohousing")
+          = f.label  :cohousing, t("profile.cohousing"), {:title => t("profile.definition_cohousing")}
       %ul.fields
         %li.string
           = f.label :favorite_areas, t("profile.favorite_areas_form")
@@ -39,6 +39,8 @@
           = f.check_box :hide_budget
           = f.label :hide_budget, t("profile.hide_budget")
       .form-actions.clear
-        %span.green-button= f.submit t('profile.save_changes')
+        %span.green-button= f.submit t('profile.save_changes')   
+     
+      %h3= t("search_settings.ideal")
 
   = render 'search_links'

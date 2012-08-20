@@ -7,7 +7,7 @@
 
     %h2= user.name
 
-    .cohousing= image_tag ("cohousing.png") if user.cohousing?
+    .cohousing= image_tag ("cohousing.png"), :title => t("profile.logo_cohousing") if user.cohousing?
 
     .personal-status
       %div{ :class => "progress #{user.personal_status.dasherize if user.has_personal_status?}" }
@@ -27,9 +27,9 @@
         m&sup2;
 
   %ul#profile-actions
-    %li= link_to t("profile.find"), user_path(user)
-    %li= link_to t("project.create"), new_project_path
-    %li= link_to t("project.join"), stream_path
+    %li= link_to t("profile.find"), user_path(user), :title => t("profile.find_shortcut")
+    %li= link_to t("project.create"), new_project_path, :title => t("project.create_shortcut")
+    %li= link_to t("project.join"), stream_path, :title => t("project.join_shortcut")
     %li.invitation= link_to t("profile.invite_friends"), new_friend_invitations_path
 
   :javascript

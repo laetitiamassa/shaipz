@@ -14,9 +14,6 @@
         %li.string
           = f.label :name, t("project.what_name")
           = f.text_field :name, :placeholder => t("example_projectname")
-        %li.string
-          = f.label :address, t("project.address_form")
-          = f.text_field :address, :placeholder => t("example_address")
         %li.string.two-fields
           .field
             = f.label :zipcode, t("project.zipcode")
@@ -24,6 +21,9 @@
           .field
             = f.label :city, t("project.city")
             = f.text_field :city, :placeholder => t("example_city")
+        %li.string
+          = f.label :address, t("project.address_form")
+          = f.text_field :address, :placeholder => t("example_address")
         %li.checkbox
           = f.check_box :hide_street_from_non_participants
           = f.label :hide_street_from_non_participants, t("project.hide_street_from_non_participants")
@@ -53,10 +53,10 @@
           = f.label :event_type, t("project.event_type")
           = f.select :event_type, @event_types
         %li.text
-          = f.label :event_description, t("project.event_description")
-          = f.text_area :event_description, :placeholder => t("example_text"), :rows => 5
-        %li.text
           = f.label :event_date, t("project.event_date")
           = f.datetime_select :event_date
+        %li.text
+          = f.label :event_description, t("project.event_description")
+          = f.text_area :event_description, :placeholder => t("example_text"), :rows => 5
       .form-actions.clear
         %span.green-button= f.submit t('project.update_project')
