@@ -38,7 +38,7 @@ class NotificationMailer < ActionMailer::Base
     )
   end
 
-  def create_project (user, project, users_concerned)
+  def create_project(user, project, users_concerned)
     @project = project
     @user    = user
     mail(
