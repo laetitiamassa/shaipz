@@ -1,6 +1,6 @@
 class ImmowebUrl
-  BASE_URL = "http://www.immoweb.be/fr/searchgo.cfm?mycurrent_Section=buy&xcarte=N&xidcategorie=1&xvpp=Y&xneuf=Y&xmeuble=&xcodepays=B&xdevice=EUR&xorderby1=codecommune&xorderby2=prixhtva&xdisplay=gallery&xinitliste=Y&xadvanced=Y&ongletsearchactif=1&xframeheight=1276"
-
+  BASE_URL = "http://www.immoweb.be/fr/searchgo.cfm?mycurrent_Section=buy&xcarte=N&xidcategorie=1&xvpp=Y&xneuf=Y&xmeuble=&xcodepays=B&xdevice=EUR&xorderby1=prixhtva&xorderby2=codecommune&xdisplay=gallery&xinitliste=Y&xadvanced=Y&ongletsearchactif=1&xframeheight=1276"
+ 
   def initialize(budget, building_type, minimum_space, zipcodes)
     @budget = budget
     @building_type = building_type

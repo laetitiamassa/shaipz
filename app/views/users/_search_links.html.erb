@@ -2,6 +2,7 @@
 	
 	<div id="research-links">
 	
+	<h2><%= t("search_settings.ideal") %></h2>
 		<% if @url_immo.user_can_have_a_house? %>
 			<h4><%= t("search_settings.criteria_with_house", :surface => @url_immo.searched_space,
 								:price => number_to_currency(@url_immo.searched_budget,
