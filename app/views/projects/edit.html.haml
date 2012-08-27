@@ -2,7 +2,7 @@
   = render :partial => "_shared/profile", :locals => { :user => @user }
 
   #project-wrap
-    %h2= t("project.define_new_project")
+    %h2= t("project.edit_project")
 
     = form_for @project, :html => { :multipart => true } do |f|
       .picture
@@ -54,7 +54,7 @@
           = f.select :event_type, @event_types
         %li.text
           = f.label :event_date, t("project.event_date")
-          = f.datetime_select :event_date
+          = f.datetime_select :event_date, :order => [:day,:month,:year]
         %li.text
           = f.label :event_description, t("project.event_description")
           = f.text_area :event_description, :placeholder => t("example_text"), :rows => 5

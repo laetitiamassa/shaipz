@@ -1,0 +1,58 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+fr:
+  errors:
+    messages:
+      expired: "a expiré, vous pouvez en demander un nouveau"
+      not_found: "introuvable"
+      already_confirmed: "est déjà confirmé. Essayez de vous connecter."
+      not_locked: "n'était pas verrouillé"
+      not_saved:
+        one: "Oups, vous devriez vérifier un champ :"
+        other: "Oups, vous devriez vérifier %{count} champs :"
+
+  devise:
+    failure:
+      already_authenticated: 'Vous êtes déjà connectés.'
+      unauthenticated: 'Vous devez vous connecter ou vous inscrire pour continuer.'
+      unconfirmed: 'Vous devez confirmer votre compte avant de continuer.'
+      locked: 'Votre compte est verrouillé.'
+      invalid: 'Votre email ou mot de passe est invalide.'
+      invalid_token: "Jeton d'authentification invalide."
+      timeout: 'Votre session a expiré. Reconnectez-vous pour continuer.'
+      inactive: 'Votre compte n est pas encore activé. Vérifiez votre email de confirmation.'
+    sessions:
+      signed_in: 'Vous êtes bien connecté.'
+      signed_out: 'Vous vous êtes bien déconnecté.'
+    passwords:
+      send_instructions: 'Vous recevrez un email avec les instruction de réinitialisation de votre mot de passe dans quelques minutes.'
+      updated: 'Votre mot de passe a bien été modifié. Vous êtes maintenant connecté(e).'
+      updated_not_active: 'Votre mot de passe a bien été modifié.'
+      send_paranoid_instructions: "Si votre adresse email existe dans notre base de données, vous recevrez un lien pour recouvrer votre mot de passe à votre adresse email dans quelques minutes."
+      no_token: "Vous ne pouvez pas accéder à cette page si vous ne provenez pas de votre email dont le mot de passe a été réinitialisé. Si vous venez bien de cette adresse email, assurez-vous d'avoir utilisé l'entièreté de l'url fournie."
+    confirmations:
+      send_instructions: 'Vous allez recevoir un email contenant les instructions de confirmation de votre compte dans un instant.'
+      send_paranoid_instructions: 'Si votre email existe dans notre base de données, vous recevrez un email contenant les instructions de confirmation de votre compte dans un instant.'
+      confirmed: 'Votre compte a bien été confirmé. Vous êtes maintenant connecté(e).'
+    registrations:
+      signed_up: 'Bienvenue! Vous êtes bien inscrit(e) !'
+      signed_up_but_unconfirmed: 'Un message contenant un lien de confirmation a été envoyé à votre adresse email. Ouvrez le lien pour activer votre compte.'
+      signed_up_but_inactive: "Vous êtes bien inscrit(e). Toutefois, nous n'avons pas pu vous connecter car votre compte n'est pas encore activé."
+      signed_up_but_locked: "Vous êtes bien inscrit(e). Toutefois, nous n'avons pas pu vous connecter car votre compte est verrouillé."
+      updated: 'Vous avez bien mis votre compte à jour!'
+      update_needs_confirmation: "Vous avez bien mis votre compte à jour, mais nous devons vérifiez votre nouvelle adresse email. Pourriez-vous vérifier votre email et cliquer sur le lien de confirmation pour finaliser la confirmation de votre nouvelle adresse email."
+      destroyed: 'Au revoir, votre compte a bien été clôturé. Nous espérons vous revoir bientôt.'
+    unlocks:
+      send_instructions: 'Vous allez recevoir un email contenant les instructions pour déverrouiller votre compte dans quelques minutes.'
+      unlocked: 'Votre compte a bien été déverrouillé. Vous pouvez vous connectez pour continuer.'
+      send_paranoid_instructions: 'Si votre compte existe, vous allez recevoir un email contenant les instructions pour le déverrouiller dans quelques minutes.'
+    omniauth_callbacks:
+      success: 'Vous avez bien été authentifié depuis votre compte %{kind}.'
+      failure: 'Nous n avons pas pu vous authentifier depuis votre compte %{kind} car "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Votre compte Shaipz - Instructions de confirmation'
+      reset_password_instructions:
+        subject: 'Votre compte Shaipz - Instructions de réinitialisation de mot de passe'
+      unlock_instructions:
+        subject: 'Votre compte Shaipz - Instructions de déverouillage'

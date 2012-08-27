@@ -1,0 +1,59 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+nl:
+  errors:
+    messages:
+      expired: "Uw sessie is verlopen, probeer het opnieuw"
+      not_found: "niet gevonden"
+      already_confirmed: "al bevestigd, gelieve U in te loggen"
+      not_locked: "niet afgesloten"
+      not_saved:
+        one: "Oeps, een vak lijkt onjuist:"
+        other: "Oeps, gelieve %{count} vakken na te kijken:"
+
+  devise:
+    failure:
+      already_authenticated: 'U bent al ingelogd.'
+      unauthenticated: 'Je moet ingelogd zijn of meld je aan om verder te kunnen gaan.'
+      unconfirmed: 'Uw rekening moet bevestigd worden voordat u verder gaat.'
+      locked: 'Uw rekening is geblokkeerd.'
+      invalid: 'Uw e-mail of wachtwoord is ongeldig.'
+      invalid_token: 'Ongeldige authentificatie token.'
+      timeout: 'Uw sessie is verlopen, gelieve opnieuw in te loggen om verder te kunnen gaan.'
+      inactive: 'Uw rekening is nog niet actief, gelieve uw e-mail na te kijken.'
+    sessions:
+      signed_in: 'U bent ingelogd.'
+      signed_out: 'U bent uitgelogd.'
+    passwords:
+      send_instructions: 'U zal binnenkort een e-mail met instructies krijgen om uw wachtwoord te resetten.'
+      updated: 'Uw wachtwoord is aangepast. U bent nu ingelogd.'
+      updated_not_active: 'Uw wachtwoord is succesvol gewijzigd.'
+      send_paranoid_instructions: "U zal binnenkort een wachtwoord “recovery link” op uw e-mail ontvangen als uw e-mail in onze database bestaat."
+      no_token: "U kunt deze pagina niet openen zonder op de wachtwoord “recovery link” te klikken (instructies zijn op uw e-mail gestuurd). Gelieve te zorgen dat U op de volledige link hebt geklikt."
+    confirmations:
+      send_instructions: 'Uw rekening moet bevestigd zijn. U zal binnenkort een e-mail met instructies krijgen.'
+      send_paranoid_instructions: 'Uw rekening moet bevestigd zijn. U zal binnenkort een e-mail met instructies krijgen als uw e-mail in onze database bestaat.'
+      
+      confirmed: 'Uw rekening is succesvol bevestigd. U bent nu ingelogd.'
+    registrations:
+      signed_up: 'Welkom! U bent succesvol ingeschreven!'
+      signed_up_but_unconfirmed: 'Een bericht met een bevestiging link is naar uw e-mail verzonden. Gelieve op de link te klikken om u rekening te activeren.'
+      signed_up_but_inactive: 'U bent succesvol ingeschreven. We kunnen U niet aanmelden omdat uw rekening nog niet actief is.'
+      signed_up_but_locked: 'U bent succesvol ingeschreven. Toch kunnen we U niet aanmelden omdat uw rekening geblokkeerd is.'
+      updated: 'Uw rekening is succesvol bijgewerkt!'
+      update_needs_confirmation: "Uw rekening is succesvol bijgewerkt. We moeten uw nieuwe e-mail controleren. Klik op de bevestiging link die op uw nieuwe e-mail is gestuurd."
+      destroyed: 'Tot ziens! Uw rekening is dicht. We hopen dat je weer snel terug zal komen.'
+    unlocks:
+      send_instructions: 'U zal binnenkort een e-mail met instructies krijgen om uw rekening vrijgeven.'
+      unlocked: 'Uw rekening is successvol ontgrendeld. Gelieve in te loggen.'
+      send_paranoid_instructions: 'U zal binnenkort een e-mail met instructies krijgen om uw rekening vrijgeven, als uw rekening bestaat.'
+    omniauth_callbacks:
+      success: 'Sucessvol authentificatie op %{kind} rekening.'
+      failure: 'Authentificatie niet mogelijk op %{kind} rekening omdat ‘%{reason}’.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Uw Shaipz rekening - Instructies bevestiging.'
+      reset_password_instructions:
+        subject: 'Uw Shaipz rekening - Reset wachtwoord instructies.'
+      unlock_instructions:
+        subject: 'Uw Shaipz rekening - Instructies om uw rekening vrijgeven.'

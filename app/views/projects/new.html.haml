@@ -62,7 +62,7 @@
           = f.select :event_type, @event_types
         %li.text
           = f.label :event_date, t("project.event_date")
-          = f.datetime_select :event_date
+          = f.datetime_select :event_date, :order => [:day,:month,:year]
         %li.text
           = f.label :event_description, t("project.event_description")
           = f.text_area :event_description, :placeholder => t("example_text"), :rows => 5

@@ -55,6 +55,11 @@
             <li>
               <%= link_to(t("menu.sign_out"), destroy_user_session_path, :method => :delete) %>
             </li>
+            <li>
+              <%= link_to image_tag("en_flag.jpeg"), url_for(:locale => 'en') %>  
+              <%= link_to image_tag("nl_flag.jpeg"), url_for(:locale => 'nl') %>  
+              <%= link_to image_tag("fr_flag.jpeg"), url_for(:locale => 'fr') %>
+            </li>
           </ul>
         </nav>
 				<nav id="social-logo">
@@ -118,7 +123,13 @@
         <% if alert %>
           <div class="message alert"><%= alert %></div>
         <% end %>
+        <li>
+              <%= link_to image_tag("en_flag.jpeg"), url_for(:locale => 'en') %>  
+              <%= link_to image_tag("nl_flag.jpeg"), url_for(:locale => 'nl') %>  
+              <%= link_to image_tag("fr_flag.jpeg"), url_for(:locale => 'fr') %>
+        </li> 
       </section>
+        
     </div>
   </header>
 
