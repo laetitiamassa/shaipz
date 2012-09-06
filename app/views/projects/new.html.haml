@@ -2,7 +2,9 @@
   = render :partial => "_shared/profile", :locals => { :user => @user }
 
   #project-wrap
-    %h2= t("project.define_new_project")
+    %h2
+      = t("project.define_new_project")
+      %span.how= link_to(t("help"), "mailto:hello@Shaipz.com") 
 
     %section.search-links
       - if @url_immo.user_can_have_a_house?

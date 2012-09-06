@@ -17,6 +17,7 @@ en:
     thank_you: "Thank you"
     have_fun: "Have fun!"
     here: "here"
+  help: "help?"
   sign_in:
     email: "email"
     example_email: "myname@myemail.com"

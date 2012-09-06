@@ -380,12 +380,12 @@ header #flash .notice {
 
     li {
       list-style: none;
-      margin: 0 0 10px;
+      margin: 0 0 15px;
 
       .label {
         font-weight: bold;
         display: inline-block;
-        width: 105px;
+        width: 125px;
 			}
 
 			strong a {
@@ -1041,17 +1041,17 @@ header #flash .notice {
   padding: 0;
   text-align: center;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.1em;
 
   li {
     list-style: none;
     display: inline-block;
-    margin: 0 10px 10px 10px;
+    margin: 0 5px 5px 5px;
   }
 
   .invitation {
     display: block;
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 
   a {
@@ -1140,6 +1140,27 @@ header #flash .notice {
 
 #new-project form ul .two-fields .field + .field input {
   width: 120px !important;
+}
+
+/* Edit project */
+
+#new-project #project-wrap h2 .how {
+  position: absolute;
+  right: 5px;
+  top: 17px;
+}
+
+#new-project #project-wrap h2 .how a {
+  font-size: 0.7em;
+  color: #1b8e8a;
+  font-style: italic;
+  display: inline-block;
+  padding: 0 17px 0 0;
+  text-decoration: none;
+}
+
+#new-project #project-wrap h2 .how a:hover {
+  text-decoration: underline;
 }
 
 /* Project details */
@@ -1502,6 +1523,39 @@ footer {
 #how-it-works .youtube {
 	text-align: center;
 }
+
+#how {
+  .how-box {
+    width: 200px;
+    float: left;
+    margin: 0 0 10px 0;
+
+    h3 {
+      font-weight: normal;
+      text-shadow: 0 1px 0 #fff;
+      margin: 0;
+
+      strong {
+        color: #1b8e8a;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .how-box + .how-box {
+    margin: 0 0 20px 20px;
+  }
+
+  .how-box.people {
+    text-align: center;
+  }
+
+  .how-box.happenings {
+    text-align: right;
+  }
+}
+
 
 #how-it-works h1 {
 	font-size: xx-large;

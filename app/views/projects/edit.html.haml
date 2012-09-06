@@ -2,7 +2,9 @@
   = render :partial => "_shared/profile", :locals => { :user => @user }
 
   #project-wrap
-    %h2= t("project.edit_project")
+    %h2
+      = t("project.edit_project")
+      %span.how= link_to(t("help"), "mailto:hello@Shaipz.com") 
 
     = form_for @project, :html => { :multipart => true } do |f|
       .picture
