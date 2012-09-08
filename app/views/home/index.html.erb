@@ -28,14 +28,19 @@
   <div id="shaipz-info">
     <h2><%= t("home.sign_up_for_shaipz") %></h2>
 		<div id="youtube">
-      <iframe width="250" height="145" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
+      <iframe width="300" height="175" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
+<p><i>Shaipz enables <b>people</b> to gather around a <b>building</b> for sale, in order to buy it, shape it and organize it themselves. <b>On their own terms</b>.</i></p>
 <p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p>
-
 		</div>
   </div>
 
   <%= form_for("user", :url => user_registration_path) do |f| %>
-    <ul class="fields">
+    <div class="facebook-button">
+	  <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %>
+	  <br><b><i>or go through the form below</i></b></p></center>
+	</div>
+
+	<ul class="fields">
       <li class="string">
         <%= f.label :email %>
         <%= f.email_field :email, :placeholder => t("example_email") %>
