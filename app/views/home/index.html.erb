@@ -26,53 +26,82 @@
 
 <section id="sign-up" class="clear">
   <div id="shaipz-info">
-   
-		<div id="youtube">
+    <div id="youtube">
       <iframe width="400" height="205" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
-<p class="description">Shaipz enables people to gather around a building for sale, in order to buy it, shape it and organize it themselves. On their own terms.</p>
-<p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p>
-		</div>
+      <p class="description">Shaipz enables people to gather around a building for sale, in order to buy it, shape it and organize it themselves. On their own terms.</p>
+      <p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p>
+	</div>
   </div>
 
   <%= form_for("user", :url => user_registration_path) do |f| %>
-    <div class="facebook-button">
-	  <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %>
-	  <br><b><i>or go through the form below</i></b></p></center>
-	  <p></p>
+    
+    <div id="facebook_signup">
+      <br>
+      <br>
+      <center><%= image_tag("shaipz_logo.png", :size => "200x71" ) %>
+      <h2><i>A better way to buy your home</i></h2>
+      <br>
+      <div class="facebook-button">
+	    <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
+	    <div id="email_signup_button">
+	      <p>or sign up <u>via email</u></p></center>
+	       <br>
+           <br>
+           <br>
+	    </div>  
+	  </div>
 	</div>
+    
+    <div id="email_signup">
+      <div class="facebook-button">
+	    <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
+	    <p><i><b>or go through the form below</b></i></p></center>
+	  </div>
+  
+	  <ul class="fields">
+        <li class="string">
+          <%= f.label :email %>
+          <%= f.email_field :email, :placeholder => t("example_email") %>
+        </li>
+        <li class="string">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </li>
+        <li class="checkbox">
+          <%= f.check_box :cohousing %>
+          <%= f.label :cohousing,  t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
+        </li>
+      </ul>
+      <ul class="fields">
+        <li class="string">
+          <%= f.label :favorite_areas, t("profile.favorite_areas_form") %>
+          <%= f.text_field :favorite_areas, :placeholder => "1030, 1050, 2040, 7850, 3000" %>
+        </li>
+        <li class="string">
+          <%= f.label :minimum_space, t("profile.minimum_space_form") %>
+          <%= f.text_field :minimum_space, :placeholder => "70" %>
+        </li>
+        <li class="string">
+          <%= f.label :maximum_budget, t("profile.maximum_budget_form") %>
+          <%= f.text_field :maximum_budget, :placeholder => "150000" %>
+        </li>
+      </ul>
 
-	<ul class="fields">
-      <li class="string">
-        <%= f.label :email %>
-        <%= f.email_field :email, :placeholder => t("example_email") %>
-      </li>
-      <li class="string">
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </li>
-      <li class="checkbox">
-        <%= f.check_box :cohousing %>
-        <%= f.label :cohousing,  t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
-      </li>
-    </ul>
-    <ul class="fields">
-      <li class="string">
-        <%= f.label :favorite_areas, t("profile.favorite_areas_form") %>
-        <%= f.text_field :favorite_areas, :placeholder => "1030, 1050, 2040, 7850, 3000" %>
-      </li>
-      <li class="string">
-        <%= f.label :minimum_space, t("profile.minimum_space_form") %>
-        <%= f.text_field :minimum_space, :placeholder => "70" %>
-      </li>
-      <li class="string">
-        <%= f.label :maximum_budget, t("profile.maximum_budget_form") %>
-        <%= f.text_field :maximum_budget, :placeholder => "150000" %>
-      </li>
-    </ul>
-
-    <div class="form-actions clear">
-      <small>It's free !</small><span class="green-button"><%= f.submit t('home.sign_up') %></span>
+      <div class="form-actions clear">
+        <small>It's free !</small><span class="green-button"><%= f.submit t('home.sign_up') %></span>
+      </div>
     </div>
+    
+  <script type="text/javascript">
+      $(document).ready (function(){
+        $("#email_signup").hide();
+        $("#email_signup_button").click(function(){
+          $("#email_signup").show();
+          $("#facebook_signup").hide();
+        });
+      });
+    </script>
+    
   <% end %>
 </section>
 
