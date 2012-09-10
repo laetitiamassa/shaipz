@@ -35,9 +35,12 @@ fr:
     chosen: "Le choix"
     terms_of_living: "de son mode de vie"
     neighbours: "de ses voisins"
-    sign_up: "S'inscrire"
+    sign_up: "Inscrivez-vous"
+    or_email_signup: "ou inscrivez-vous"
+    or_fill_in_form: "ou complétez le formulaire"
     sign_up_for_shaipz: "Inscrivez-vous sur Shaipz"
     whats_shaipz: "Shaipz est une plate-forme permettant aux gens de se connecter autour d'un bien à vendre, en vue de l'acheter, de le diviser, et de l'organiser eux-mêmes. Selon leurs propres envies."
+    baseline: "Votre achat immobilier peut être malin"
     ready_soon: "Nous serons bientôt prêts pour le lancement!"
     how_it_works: "Découvrez le concept Shaipz!"
   profile:

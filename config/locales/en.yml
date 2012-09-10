@@ -32,8 +32,11 @@ en:
     terms_of_living: "terms of living"
     neighbours: "neighbours"
     sign_up: "Sign up"
+    or_email_signup: "or sign up"
+    or_fill_in_form: "or go through the form below"
     sign_up_for_shaipz: "Sign up for Shaipz"
     whats_shaipz: "Shaipz is a platform enabling people to gather around a building for sale, in order to buy it, shape it and organize it themselves. On their own terms."
+    baseline: "A smart way to buy your home"
     ready_soon: "We’ll be ready to launch very soon!"
     how_it_works: "Discover what Shaipz is all about!"
   profile:
