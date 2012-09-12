@@ -94,6 +94,7 @@ en:
     check_out_new_projects: "Check out brand new projects"
     or_create_your_own: "or create your own (it's super easy)"
     define_new_project: "What is your project?"
+    define_next: "What do you want to do next?"
     edit_project: "Edit your project"
     insert_info: "Insert below the global information of the building you want to create a project from"
     copy_and_paste_relevant_details: "(Then you can copy and paste the relevant details into the form below)"
