@@ -183,8 +183,10 @@ en:
         subject: "%{name} has joined %{project}!"
         content: "You can have more details"
       destroy_project:
-        subject: "%{name} has removed %{project}!"
-        content: "Your can create another project"
+        subject: "%{name} has removed %{project}."
+        content:  
+          recreate: "You can either recreate the same project by requesting the link of the original ad by email "
+          create_brand_new: ", or create your own brand new project from "
       update_project:
         subject: "%{name} has updated %{project}!"
         content: "You can have more details"

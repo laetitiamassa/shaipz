@@ -187,7 +187,9 @@ nl:
         content: "U kunt meer informatie hebben"
       destroy_project:
         subject: "%{name} heeft %{project} verwijderd!"
-        content: "U kunt meer informatie hebben"
+        content:  
+          recreate: "U kunt hetzelfde project opnieuw maken, door vragen de link van de oorspronkelijke advertentie per e-mail "
+          create_brand_new: ", of maak uw eigen gloednieuwe project "
       update_project:
         subject: "%{name} heeft %{project} bijgewerkt!"
         content: "U kunt meer informatie hebben"

@@ -188,7 +188,9 @@ fr:
         content: "Vous pouvez en savoir plus"
       destroy_project:
         subject: "%{name} a supprimé %{project}!"
-        content: "Vous pouvez en savoir plus"
+        content:  
+          recreate: "Vous pouvez soit recréer le même projet en demandant le lien de l'annonce originale par email "
+          create_brand_new: ", soit créer votre propre projet tout neuf, à partir d'"
       update_project:
         subject: "%{name} a mis à jour %{project}!"
         content: "Vous pouvez en savoir plus"
