@@ -137,7 +137,7 @@ en:
     destroy: "Delete the project"
     destroy_confirmation: "Are your sure you want to definitively erase this project?"
     how_far_is_the_project: "How far is the project?"
-    share_on_facebook: "Share on facebook"
+    share_on_facebook: "Boost your project with facebook!"
     description_shaipz: "The global price of the project is %{total_amount} for %{total_space} m2"
     original_ad: "Original ad"
     logo_original_ad: "Go to the original ad on the web"
@@ -162,7 +162,7 @@ en:
     destroy_success: "You successfully left the project."
     destroy: "Leave the project"
     destroy_confirmation: "Are your sure you want to leave and loose your priority on the project?"
-    share_on_facebook: "Share your participation on facebook"
+    share_on_facebook: "Boost the project with facebook"
   footer:
     terms_of_use: "Terms of services"
     how_it_works: "How it works"

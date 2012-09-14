@@ -140,7 +140,7 @@ nl:
     destroy: "Verwijder het project"
     destroy_confirmation: "Bent U zeker dat U dit project eindelijk wilt verwijderen?"
     how_far_is_the_project: "Hoe ver is het project?"
-    share_on_facebook: "Delen op Facebook"
+    share_on_facebook: "Verhoog uw project met facebook"
     description_shaipz: "De globale prijs van het project is %{total_amount} voor %{total_space} m2"
     original_ad: "Oorsponkelijke advertentie"
     logo_original_ad: "Ga naar de oorsponkelijke advertentie op het web"
@@ -165,7 +165,7 @@ nl:
     destroy_success: "U verliet het project successvol."
     destroy: "Verlaat het project"
     destroy_confirmation: "Bent U zeker dat u wilt vertrekken en uw prioriteit verliezen op het project?"
-    share_on_facebook: "Delen op Facebook"
+    share_on_facebook: "Verhoog het project met facebook"
   footer:
     terms_of_use: "Algemene voorwaarden"
     how_it_works: "Hoe het functioneert"

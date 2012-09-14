@@ -141,7 +141,7 @@ fr:
     destroy: "Supprimer le projet"
     destroy_confirmation: "Etes-vous sûr(e) de vouloir définitivement supprimer ce projet ?"
     how_far_is_the_project: "A quel stade se trouve le projet ?"
-    share_on_facebook: "Partager sur Facebook"
+    share_on_facebook: "Boostez votre projet avec facebook"
     description_shaipz: "Le prix global du projet est de %{total_amount} pour %{total_space} m2"
     original_ad: "Annonce d'origine"
     logo_original_ad: "Allez à l'annonce originale sur le web"
@@ -166,7 +166,7 @@ fr:
     destroy_success: "Vous avez bien quitté ce projet."
     destroy: "Quitter le projet"
     destroy_confirmation: "Etes-vous sûr(e) de vouloir quitter le projet et y perdre ainsi votre priorité ?"
-    share_on_facebook: "Partager sur facebook"
+    share_on_facebook: "Boostez le projet avec facebook"
   footer:
     terms_of_use: "Conditions d'utilisation"
     how_it_works: "Comment ça marche"
