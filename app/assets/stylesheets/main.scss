@@ -1077,7 +1077,7 @@ header #flash .notice {
 }
 
 #project-wrap form .picture {
-  margin: 0 700px 10px 0;
+  margin: 20px 700px 10px 0;
   position: relative;
 
   input {
@@ -1093,15 +1093,15 @@ header #flash .notice {
 
 #project-wrap .search-links {
   h4 {
-    position: absolute;
+    position: relative;
     left: 750px;
     top: 100px;
   }
 
   ul {
     position: absolute;
-    left: 550px;
-    top: 150px;
+    left: 210px;
+    top: 55px;
     padding: 0;
     font-weight: bold;
 
@@ -1128,81 +1128,111 @@ header #flash .notice {
   }
 }
 
+#project-wrap #whats_your_project {
+  h2{
+    color: #00698c;
+  }
+}
+ 
+#project-wrap #whats_your_project .place {
+    position: relative;
+    margin: 10px 20px 5px 0;
+}   
+    
+#project-wrap #whats_your_project .source {
+    position: relative;
+    margin: 10px 20px 5px 0;
+}
+
 #project-wrap #nothing_in_mind .nothing_yet {
     font-style: italic;
     text-decoration: underline;
     color: #1b8e8a;
-    position: absolute;
-    left: 550px;
-    top: 125px;
-}
-
-#project-wrap #whats_your_project .name {
-    margin: 20px 50px 5px 0;
     position: relative;
+    margin: 30px 20px 5px 0;
 }
 
-#project-wrap #whats_your_project .source {
-    position: absolute;
-    left: 475px;
-    top: 266px;
-}
-
-#project-wrap #whats_your_project .cohousing {
-    position: absolute;
-    left: 700px;
-    top: 275px;
+#project-wrap #whats_your_project .whats_details {
+    margin: 20px 50px 5px 0;
+    position: relative;  
+    
+    h2{
+    color: #00698c;
+    }
 }
 
 #project-wrap #whats_your_project .how_much {
-    margin: 10px 50px 5px 0;
-    position: relative;
+    position: absolute;
+    left: 300px;
+    top: 45px;
 }
 
 #project-wrap #whats_your_project .how_big {
     position: absolute;
-    left: 475px;
-    top: 317px;
-}
-
-#project-wrap #whats_your_project .how_many {
-    position: absolute;
-    left: 700px;
-    top: 317px;
+    left: 300px;
+    top: 95px;
 }
 
 #project-wrap #whats_your_project .zipcode_and_city {
-    margin: 10px 50px 5px 0;
-    position: relative;
+    position: absolute;
+    left: 300px;
+    top: 145px;
 }
 
 #project-wrap #whats_your_project .street {
     position: absolute;
-    left: 475px;
-    top: 370px;
+    left: 300px;
+    top: 195px;
 }
 
 #project-wrap #whats_your_project .hide_street {
     position: absolute;
-    left: 700px;
-    top: 378px;
+    left: 510px;
+    top: 205px;
 }
 
-#project-wrap .whats_next {
-    margin: 36px 50px 5px 0;
+#project-wrap #whats_your_project .people {
+    margin: 20px 50px 5px 0;
     position: relative;
 }
 
-#project-wrap .whats_next .click_next {
-    color: #1b8e8a;
-    font-style: italic;
+#project-wrap #whats_your_project .name {
+    margin: 10px 50px 5px 0;
+    position: relative;
 }
 
+#project-wrap #whats_your_project .how_many {
+    position: absolute;
+    left: 270px;
+    top: 65px;
+}
+
+#project-wrap #whats_your_project .cohousing {
+    position: absolute;
+    left: 480px;
+    top: 75px;
+    
+}
+
+#project-wrap #whats_your_project .happenings {
+    margin: 20px 50px 5px 0;
+    position: relative;
+}
+
+#project-wrap .whats_next {
+    margin: 10px 50px 5px 0;
+    position: relative;
+}
+
+#project-wrap .next_box .project_status {
+    margin: 10px 50px 5px 0;
+    position: relative;
+}
 
 #project-wrap .next_box .event_date {
     position: absolute;
-    left: 340px;
-    top: 522px;
+    left: 110px;
+    top: 115px;
 }
    
 #new-project form ul .two-fields .field {
