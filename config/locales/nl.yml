@@ -36,6 +36,7 @@ nl:
     neighbours: "buren"
     sign_up: "Meld aan"
     or_email_signup: "of meld aan"
+    or_email_signin: "of log in"
     or_fill_in_form: "of vul het formulier in"
     sign_up_for_shaipz: "Meld op Shaipz aan"
     whats_shaipz: "Shaipz is een platform waarmee mensen zich verzamelen om een gebouw te kopen. Ze geven vorm en organiseren het zelf met hun eigen voorwaarden."

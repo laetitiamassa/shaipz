@@ -85,6 +85,7 @@
         <div id="sign-in">
 					<div class="wrap">
           	<%= form_for("user", :url => user_session_path) do |f| %>
+          	
             	<div class="fields">
               	<%= f.email_field :email, :placeholder => t("sign_in.email") %>
               	<%= f.password_field :password, :placeholder => t("sign_in.password") %>

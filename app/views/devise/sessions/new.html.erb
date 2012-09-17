@@ -28,13 +28,40 @@
   <div id="shaipz-info">
     <h2><%= t("home.sign_in") %></h2>
 		<div id="youtube">
-      <iframe width="250" height="145" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
-<p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p>
-
+      <iframe width="400" height="205" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
+      <p class="description"><%= t("home.whats_shaipz") %></p>
+      <p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p></iframe>
 		</div>
   </div>
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  
+    <div id="facebook_signup">
+      <br>
+      <br>
+      <br>
+      <center><%= image_tag("shaipz_logo.png", :size => "200x71" ) %>
+      <h2><i><%= t("home.baseline") %></i></h2>
+      <br>
+      <div class="facebook-button">
+	    <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
+	    <div id="email_signup_button">
+	      <p><%= t("home.or_email_signin") %> <u>via email</u></p></center>
+	       <br>
+           <br>
+           <br>
+           <br>
+           <br>
+	    </div>  
+	  </div>
+	</div>
+    
+    <div id="email_signup">
+      <div class="facebook-button">
+	    <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
+	    <p><i><b><%= t("home.or_fill_in_form") %></b></i></p></center>
+	  </div>
+    
     <ul class="fields">
       <li class="string">
         <%= f.label :email %>
@@ -53,6 +80,16 @@
         </li>
       <% end -%>
     </ul>
+    
+    <script type="text/javascript">
+      $(document).ready (function(){
+        $("#email_signup").hide();
+        $("#email_signup_button").click(function(){
+          $("#email_signup").toggle("active");
+          $("#facebook_signup").hide();
+        });
+      });
+    </script>
 
       <div class="form-actions clear">
         <span class="button"><%= f.submit "Sign in" %></span>
