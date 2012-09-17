@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(current_user.id)
     if @user.update_attributes(params[:user])
       flash[:notice] = t("profile.update_success")
-      redirect_to stream_path
+      redirect_to new_project_path
     else
       @url_immo = SearchUrlGenerator.new("immoweb", @user)
       @urls = @url_immo.generate_urls
