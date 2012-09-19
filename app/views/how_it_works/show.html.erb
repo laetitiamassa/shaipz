@@ -10,34 +10,34 @@
 	<div id="stream-wrap">
 	
 		<section id='how-it-works'>
-			<h1>What is Shaipz?</h1>
+			<h1><%= t("how.whats_shaipz") %></h1>
 			<div class="youtube">
 				<iframe width="450" height="300" src="http://www.youtube.com/embed/f4zwYhjYuiQ" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<br/>
 
-			<h1>How it works?</h1>
+			<h1><%= t("footer.how_it_works") %>?</h1>
 
-			<h2>Step 1 – the Place : <i>think BIG!</i></h2>
-			<p><b>Instead of</b> looking for your <b>appartement, search for the whole building</b> where you would like to buy an appartment. Once you’ve found your dream building, create a project on Shaipz around that building, and complete the détails of that project.</p>
-			<%= link_to 'Create a project', new_project_path %>
+			<h2><%= t("how.place") %> : <i><%= t("how.place_baseline") %></i></h2>
+			<p><%= t("how.instead") %> <b><%= t("how.whole_building") %></b> <%= t("how.once_found") %></p>
+			<%= link_to t("how.create_call"), new_project_path %>
 
-			<h2>Step 2 – the People : invite them, and collaborate</h2>
-			<p>Once you've created your project, share it on Shaipz.com and in your social networks, so that <b>people with similar or complementary tastes can join!</b></p>
-			<p>Once you have reached the minimum required people for the project (for the number of available appartments you see or imagine in it), <b>discover each other with the participants, visit the building altogether and start collaborating</b> in order to achieve the group sale of the building and <b>define your own internal terms</b> (for example : a common garden, garage or spare room, an extension, ...).</p>
-			<%= link_to 'Create a project', new_project_path %>
+			<h2><%= t("how.people") %></h2>
+			<p><%= t("how.share") %><b><%= t("how.can_join") %></b></p>
+			<p><%= t("how.reach_minimum") %> <b><%= t("how.collaborate") %></b> <%= t("how.achieve") %> <b><%= t("how.terms") %></b> <%= t("how.terms_example") %>.</p>
+			<%= link_to t("how.create_call"), new_project_path %>
 
-			<h2>Step 3 – the Offline Sale: make it happen</h2>
-			<p>Together with your co-buyers,  you can negotiate the sale with the seller, in order to (1) <b>get your global price offer accepted by the seller</b>, (2) then <b>divide the building</b> in several appartments according to your internal terms, and (3) finally <b>sign the notarial sales deed</b> recognizing the number of different appartments you defined (this might sometimes be subject to administrative authorizations).</p>
-			<p>This way, <b>each member of the “buying group” buys, from day one, his/her own appartment</b>, in a building whose people and internal terms he/she previously knows and agreed on!</p>
-			<%= link_to 'Discover the opened projects', stream_path %> or <%= link_to 'Create your own project', new_project_path %>.
-			<h1>Another question?</h1>
-			<p>We’d love to hear from you!</p>
-			<p>Don’t be shy, and <b>drop us an email</b> at <%= link_to "hello@Shaipz.com", "mailto:hello@Shaipz.com" %></p>
-			<p>You can also:</p>
-			<p><b>Follow us: </b> <%= link_to "http://twitter.com/shaipzapp", "http://twitter.com/shaipzapp" %></p>
-			<p><b>Like us: </b> <%= link_to "http://facebook.com/shaipz", "http://facebook.com/shaipz" %></p>
-			<p><b>Join us: </b> <%= link_to "http://checkthis.com/6r45","http://checkthis.com/6r45" %></p>
+			<h2><%= t("how.happenings") %></h2>
+			<p><%= t("how.negotiate") %> <b><%= t("how.global_offer") %></b>, <%= t("how.then") %> <b><%= t("how.divide") %></b> <%= t("how.in_several_apart") %> <b><%= t("how.deed") %></b> <%= t("how.recognize") %>.</p>
+			<p><%= t("how.this_way") %>, <b><%= t("how.own_apart") %></b>, <%= t("how.previously_agreed") %></p>
+			<%= link_to t("how.join"), stream_path %> <%= t("how.or") %> <%= link_to t("how.create_call"), new_project_path %>.
+			<h1><%= t("how.questions") %></h1>
+			<p><%= t("how.ask_questions") %></p>
+			<p><%= t("how.shy") %> <b><%= t("how.email") %></b> <%= t("how.email_at") %> <%= link_to "hello@Shaipz.com", "mailto:hello@Shaipz.com" %></p>
+			<p><%= t("how.also") %></p>
+			<p><b><%= t("how.twitter") %> </b> <%= link_to "http://twitter.com/shaipzapp", "http://twitter.com/shaipzapp" %></p>
+			<p><b><%= t("how.facebook") %> </b> <%= link_to "http://facebook.com/shaipz", "http://facebook.com/shaipz" %></p>
+			<p><b><%= t("how.join_team") %> </b> <%= link_to "http://checkthis.com/6r45","http://checkthis.com/6r45" %></p>
 		</section>
 	</div>
 </section>
