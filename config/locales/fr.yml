@@ -248,7 +248,7 @@ fr:
   warning:
     check_filename: "Vérifiez qu'il n'y ait pas d'accent dans votre fichier."
   how:
-    whats_shaipz: "What is Shaipz?"
+    whats_shaipz: "Shaipz, c'est quoi ?"
     place: "Etape 1 – l'Endroit"
     place_baseline: "voyez GRAND!"
     instead: "Au lieu de rechercher votre seul appartement,"
