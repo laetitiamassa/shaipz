@@ -1695,6 +1695,87 @@ footer {
 	color: #1b8e8a;
 }
 
+/* timeline */
+
+#how-it-works .timeline {
+	
+	h3 {
+	font-size: 125%;
+	font-style: italic;
+	color: #1b8e8a;
+	}
+}
+
+#timeline-step {
+  .timeline-step {
+    width: 300px;
+    float: left;
+    margin: 0 0 10px 0;
+
+    h3 {
+      font-weight: normal;
+      text-shadow: 0 1px 0 #fff;
+      margin: 0;
+
+      strong {
+        color: #1b8e8a;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .timeline-step + .timeline-step {
+    margin: 0 0 5px 5px;
+  }
+
+  .timeline-step.building {
+    text-align: center;
+  }
+
+  .timeline-step.people {
+    text-align: right;
+  }
+  
+  .timeline-step.interest {
+    text-align: right;
+  }
+  
+  .timeline-step.feasibility {
+    text-align: right;
+  }
+  
+  .timeline-step.agreement {
+    text-align: right;
+  }
+  
+  .timeline-step.offer {
+    text-align: right;
+  }
+  
+  .timeline-step.acceptance {
+    text-align: right;
+  }
+  
+  .timeline-step.sales {
+    text-align: right;
+  }
+  
+  .timeline-step.challenges {
+    text-align: right;
+  }
+  
+  .timeline-step.deed {
+    text-align: right;
+  }
+  
+  .timeline-step.move {
+    text-align: right;
+  }
+}
+
+
+
 /* Errors */
 
 form .fields .field_with_errors input {

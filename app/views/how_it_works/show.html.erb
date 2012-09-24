@@ -2,35 +2,109 @@
 
 <% if @user != nil %>
 
-	<%= render :partial => "_shared/profile", :locals => {:user => @user} %>
-	<% end %>
+  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
+  <% end %>
 	
 	
+<div id="stream-wrap">
 	
-	<div id="stream-wrap">
-	
-		<section id='how-it-works'>
+  <section id='how-it-works'>
 			<h1><%= t("how.whats_shaipz") %></h1>
 			<div class="youtube">
 				<iframe width="450" height="300" src="http://www.youtube.com/embed/f4zwYhjYuiQ" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<br/>
 
-			<h1><%= t("footer.how_it_works") %>?</h1>
+			<h1><%= t("how.how") %></h1>
 
+            <! the place>
+            
 			<h2><%= t("how.place") %> : <i><%= t("how.place_baseline") %></i></h2>
 			<p><%= t("how.instead") %> <b><%= t("how.whole_building") %></b> <%= t("how.once_found") %></p>
 			<%= link_to t("how.create_call"), new_project_path %>
 
+			<! the people>
+			
 			<h2><%= t("how.people") %></h2>
 			<p><%= t("how.share") %><b><%= t("how.can_join") %></b></p>
 			<p><%= t("how.reach_minimum") %> <b><%= t("how.collaborate") %></b> <%= t("how.achieve") %> <b><%= t("how.terms") %></b> <%= t("how.terms_example") %>.</p>
 			<%= link_to t("how.create_call"), new_project_path %>
-
+			
+<! the happenings>
+			
 			<h2><%= t("how.happenings") %></h2>
-			<p><%= t("how.negotiate") %> <b><%= t("how.global_offer") %></b>, <%= t("how.then") %> <b><%= t("how.divide") %></b> <%= t("how.in_several_apart") %> <b><%= t("how.deed") %></b> <%= t("how.recognize") %>.</p>
-			<p><%= t("how.this_way") %>, <b><%= t("how.own_apart") %></b>, <%= t("how.previously_agreed") %></p>
-			<%= link_to t("how.join"), stream_path %> <%= t("how.or") %> <%= link_to t("how.create_call"), new_project_path %>.
+			
+<! timeline>
+			
+<! timeline image>
+		
+		<div class="timeline">
+			
+			
+<! timeline details>
+			
+			<div id="building-discovery">
+			<h3><%= t("timeline.building-discovery") %></h3>
+			Visit the building, either alone in advance, or together with the other participants of the project.
+			</div>
+			
+			<div id="people-discovery">
+			<h3><%= t("timeline.people-discovery") %></h3>
+			While visiting the building, before or after, meet with the other participants of the project and discuss around what each of you wants or dreams of.
+			</div>
+			
+			<div id="interest-confirmation">
+			<h3><%= t("timeline.interest-confirmation") %></h3>
+			Once you've discovered the bulding as well as each other, if you all fell in love with the building and each other, meet each other with the participants, and decide whether you'll go further.
+			</div>
+			
+			<div id="feasibility-stamp">
+			<h3><%= t("timeline.feasibility-stamp") %></h3>
+			You all fell in love with the building and each other! But is it technically possible to realise your dream in that building? You'd better make a double check with a professional (an architect or so): visit the building again, with an architect this time.
+			</div>
+			
+			<div id="internal-agreement">
+			<h3><%= t("timeline.internal-agreement") %></h3>
+			Everything went well so far: great place, great people, the professional thinks the project is feasible... Now it's time to make a written agreement between all the participants who want to go further; so that each one of you stays commited. 
+			</div>
+			
+			<div id="global-offer-making">
+			<h3><%= t("timeline.global-offer-making") %></h3>
+			Participants are now all on the same page. Now, you can start to negotiate the best global price with the seller. 
+			</div>
+			
+			<div id="global-offer-acceptance">
+			<h3><%= t("timeline.global-offer-acceptance") %></h3>
+			Waow! The seller accepted your global offer, which means that each of the participants can jump out of joy: you (almost) made it! Congrats, but keep focused.
+			</div>
+			
+			<div id="sales-agreement">
+			<h3><%= t("timeline.sales-agreement") %></h3>
+			Well, now it's nearly official: you got it! Seal your agreement towards the seller, before the notary public.
+			</div>
+			
+			<div id="challenges-fixing">
+			<h3><%= t("timeline.challenges-fixing") %></h3>
+			Between the sales agreement and the notarial deed, there is some time to fix what needs to be fixed (adjust divisions and prices between participants, obtain administrative authorizations if required, ...), so that the different flats can be treated as separated "from day one". 
+			</div>
+			
+			<div id="notarial-deed">
+			<h3><%= t("timeline.notarial-deed") %></h3>
+			Once your challenges are fixed, and that each flat can be considered separately, it's time to wrap it all up: go back before the notary public, this time to sign the notarial deed (the actual sale)! Mazeltov!
+			</div>
+			
+			<div id="move-in">
+			<h3><%= t("timeline.move-in") %></h3>
+			In case the title is not clear enough: pack your boxes and get in your brand new shiny dreamy flat! 
+			<br>And don't forget to enjoy your intentional neighbourhood! 
+			</div>
+		
+		
+		</div>
+			
+<p><%= link_to t("how.join"), stream_path %> <%= t("how.or") %> <%= link_to t("how.create_call"), new_project_path %></p>			
+			
+			
 			<h1><%= t("how.questions") %></h1>
 			<p><%= t("how.ask_questions") %></p>
 			<p><%= t("how.shy") %> <b><%= t("how.email") %></b> <%= t("how.email_at") %> <%= link_to "hello@Shaipz.com", "mailto:hello@Shaipz.com" %></p>
@@ -38,6 +112,10 @@
 			<p><b><%= t("how.twitter") %> </b> <%= link_to "http://twitter.com/shaipzapp", "http://twitter.com/shaipzapp" %></p>
 			<p><b><%= t("how.facebook") %> </b> <%= link_to "http://facebook.com/shaipz", "http://facebook.com/shaipz" %></p>
 			<p><b><%= t("how.join_team") %> </b> <%= link_to "http://checkthis.com/6r45","http://checkthis.com/6r45" %></p>
+			
+			
+			
+			
 		</section>
 	</div>
 </section>
