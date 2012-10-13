@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(:version => 20121001052225) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "participations", :force => true do |t|
     t.integer  "participant_id",                      :null => false
     t.integer  "project_id",                          :null => false
@@ -80,8 +94,8 @@ ActiveRecord::Schema.define(:version => 20121001052225) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.string   "favorite_areas",         :default => "",    :null => false
-    t.integer  "maximum_budget"			 :default => 150000  :null => false
-    t.integer  "minimum_space",          :default => 50,     :null => false
+    t.integer  "maximum_budget"
+    t.integer  "minimum_space",          :default => 0,     :null => false
     t.boolean  "cohousing",              :default => false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
