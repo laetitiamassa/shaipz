@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120825101833) do
+ActiveRecord::Schema.define(:version => 20121001052225) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -80,8 +80,8 @@ ActiveRecord::Schema.define(:version => 20120825101833) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.string   "favorite_areas",         :default => "",    :null => false
-    t.integer  "maximum_budget"
-    t.integer  "minimum_space",          :default => 0,     :null => false
+    t.integer  "maximum_budget"			 :default => 150000  :null => false
+    t.integer  "minimum_space",          :default => 50,     :null => false
     t.boolean  "cohousing",              :default => false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
