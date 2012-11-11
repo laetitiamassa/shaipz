@@ -3,6 +3,7 @@ class FriendInvitationsController < ApplicationController
     @user = current_user
     @friends = Array.new(5)
   end
+
   def create
     mail_friends = FriendInvitationHandler.new(current_user,params[:friends],params[:message])
     if mail_friends.send_email

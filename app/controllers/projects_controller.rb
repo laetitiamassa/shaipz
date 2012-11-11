@@ -81,6 +81,4 @@ class ProjectsController < ApplicationController
       redirect_to stream_path
     end
   end
-
-
 end
