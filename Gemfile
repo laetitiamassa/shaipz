@@ -10,6 +10,7 @@ gem 'omniauth-facebook', '~> 1.4.1'
 gem 'haml',              '~> 3.1.7'
 gem 'jquery-rails',      '~> 2.1.3'
 gem 'paperclip',         '~> 3.3.1'
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.5'
