@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121001052225) do
+ActiveRecord::Schema.define(:version => 20121119130708) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20121001052225) do
     t.string   "event_type",                        :default => "other", :null => false
     t.text     "note"
     t.boolean  "hide_street_from_non_participants", :default => false
+    t.datetime "disabled_at"
   end
 
   create_table "reports", :force => true do |t|
