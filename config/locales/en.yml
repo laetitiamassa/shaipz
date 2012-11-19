@@ -173,6 +173,7 @@ en:
     destroy: "Leave the project"
     destroy_confirmation: "Are your sure you want to leave and loose your priority on the project?"
     share_on_facebook: "Boost the project with facebook"
+    project_disabled: "The project is not active anymore, but you can create a new one."
   footer:
     terms_of_use: "Terms of services"
     how_it_works: "How it works"
@@ -194,7 +195,7 @@ en:
         content: "You can have more details"
       destroy_project:
         subject: "%{name} has removed %{project}."
-        content:  
+        content:
           recreate: "You can either recreate the same project by requesting the link of the original ad by email "
           create_brand_new: ", or create your own brand new project from "
       update_project:

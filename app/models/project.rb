@@ -36,6 +36,10 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def disabled?
+    disabled_at.present?
+  end
+
   def has_project_status?
     project_status.present?
   end

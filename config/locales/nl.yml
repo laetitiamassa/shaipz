@@ -176,6 +176,8 @@ nl:
     destroy: "Verlaat het project"
     destroy_confirmation: "Bent U zeker dat u wilt vertrekken en uw prioriteit verliezen op het project?"
     share_on_facebook: "Verhoog het project met facebook"
+    project_disabled: "Het project is niet langer actief, maar u kunt een nieuwe aanmaken."
+
   footer:
     terms_of_use: "Algemene voorwaarden"
     how_it_works: "Hoe het functioneert"
@@ -197,7 +199,7 @@ nl:
         content: "U kunt meer informatie hebben"
       destroy_project:
         subject: "%{name} heeft %{project} verwijderd!"
-        content:  
+        content:
           recreate: "U kunt hetzelfde project opnieuw maken, door vragen de link van de oorspronkelijke advertentie per e-mail "
           create_brand_new: ", of maak uw eigen gloednieuwe project "
       update_project:

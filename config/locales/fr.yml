@@ -5,7 +5,7 @@ fr:
   time:
     formats:
       short: "%d/%m à %H:%M -"
-  
+
   example_report: "Indiquez ce qui se passe."
   example_email: "moi@monemail.com"
   example_name: "Philippe Dupont"
@@ -177,6 +177,8 @@ fr:
     destroy: "Quitter le projet"
     destroy_confirmation: "Etes-vous sûr(e) de vouloir quitter le projet et y perdre ainsi votre priorité ?"
     share_on_facebook: "Boostez le projet avec facebook"
+    project_disabled: "Le projet n'est plus actif, mais vous pouvez un créer un nouveau."
+
   footer:
     terms_of_use: "Conditions d'utilisation"
     how_it_works: "Comment ça marche"
@@ -198,7 +200,7 @@ fr:
         content: "Vous pouvez en savoir plus"
       destroy_project:
         subject: "%{name} a supprimé %{project}!"
-        content:  
+        content:
           recreate: "Vous pouvez soit recréer le même projet en demandant le lien de l'annonce originale par email "
           create_brand_new: ", soit créer votre propre projet tout neuf, à partir d'"
       update_project:

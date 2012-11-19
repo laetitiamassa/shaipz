@@ -1,4 +1,6 @@
 class ParticipationsController < ApplicationController
+  before_filter :check_project_status, :only => :create
+
   def create
     @participation = Participation.new(params[:participation])
     @participation.participant = current_user
@@ -35,5 +37,10 @@ class ParticipationsController < ApplicationController
       NotificationMailer.leave_participant(current_user, the_project).deliver
     end
     t("participation.destroy_success")
+  end
+
+  def check_project_status
+    project = Project.find(params[:participation][:project_id])
+    redirect_to(new_project_url, :alert => t("participation.project_disabled")) if project.disabled?
   end
 end
