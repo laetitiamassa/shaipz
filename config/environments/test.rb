@@ -35,4 +35,8 @@ Shaipz::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  APP_HOST = "127.0.0.1:3000"
+  FACEBOOK_APP_ID = "341379642627997"
+  FACEBOOK_APP_SECRET = "a313d999b37b9591c267ebc1f1f9582b"
 end

@@ -34,7 +34,7 @@
   </div>
 
   <%= form_for("user", :url => user_registration_path) do |f| %>
-    
+
     <div id="facebook_signup">
       <br>
       <br>
@@ -49,16 +49,22 @@
            <br>
            <br>
            <br>
-	    </div>  
+	    </div>
 	  </div>
 	</div>
-    
+
     <div id="email_signup">
       <div class="facebook-button">
-	    <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
-	    <p><i><b><%= t("home.or_fill_in_form") %></b></i></p></center>
+	    <center>
+        <p>
+          <%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %>
+        </p>
+        <p>
+          <i><b><%= t("home.or_fill_in_form") %></b></i>
+        </p>
+      </center>
 	  </div>
-  
+
 	  <ul class="fields">
         <li class="string">
           <%= f.label :email %>
@@ -92,7 +98,7 @@
         <small>It's free !</small><span class="green-button"><%= f.submit t('home.sign_up') %></span>
       </div>
     </div>
-    
+
   <script type="text/javascript">
       $(document).ready (function(){
         $("#email_signup").hide();
@@ -102,7 +108,7 @@
         });
       });
     </script>
-    
+
   <% end %>
 </section>
 

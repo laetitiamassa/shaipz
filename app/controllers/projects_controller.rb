@@ -14,16 +14,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project])
-    @project.owner = current_user
-
-    if @project.save
-      ProjectsCreationHandler.new(@project, current_user).after_creation_mailing
-
-      if @project.share_on_facebook
-        @project.send_to_facebook_wall(cookies, t("facebook.create"), project_url(@project), t("project.statuses.#{@project.project_status}"), request)
-      end
-
+    @project = current_user.projects.build(params[:project])
+    facebook_service = FacebookService.new(cookies[:fb_access_token])
+    if ProjectCreator.new(@project, facebook_service).create!
       flash[:notice] = t("project.create_success")
       redirect_to stream_path
     else

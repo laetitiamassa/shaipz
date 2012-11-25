@@ -36,5 +36,9 @@ Shaipz::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+
+  APP_HOST = "localhost:3000"
+  FACEBOOK_APP_ID = "341379642627997"
+  FACEBOOK_APP_SECRET = "a313d999b37b9591c267ebc1f1f9582b"
 end

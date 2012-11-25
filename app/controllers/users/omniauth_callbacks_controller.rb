@@ -13,7 +13,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       new_user = User.user_from_facebook(params, session)
       if new_user.save
         sign_in new_user, :event => :authentication
-        flash[:notice] =  I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
+        flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
         redirect_to edit_user_path(new_user)
       else
         I18n.t "devise.omniauth_callbacks.error", :kind => "Facebook"

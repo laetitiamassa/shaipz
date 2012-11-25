@@ -2,13 +2,9 @@ class ParticipationsController < ApplicationController
   before_filter :check_project_status, :only => :create
 
   def create
-    @participation = Participation.new(params[:participation])
-    @participation.participant = current_user
-    NotificationMailer.new_participant(current_user, @participation.project).deliver
-    if @participation.save
-      if @participation.share_on_facebook
-        @participation.project.send_to_facebook_wall(cookies, t("facebook.join"), project_url(@participation.project), t("project.statuses.#{@participation.project.project_status}"), request)
-      end
+    @participation = current_user.participations.build(params[:participation])
+    facebook_service = FacebookService.new(cookies[:fb_access_token])
+    if ParticipationCreator.new(@participation, facebook_service).create!
       flash[:notice] = t("participation.create_success")
       redirect_to @participation.project
     else
@@ -17,7 +13,6 @@ class ParticipationsController < ApplicationController
     end
   end
 
-
   def destroy
     project = Project.find(params[:id])
     flash[:notice] = leave_project(project)
@@ -25,6 +20,7 @@ class ParticipationsController < ApplicationController
   end
 
   private
+
   def leave_project(the_project)
     if the_project.owner == current_user
       if the_project.participants.all.map(&:email) != []

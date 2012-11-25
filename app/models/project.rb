@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
   has_many :reports, :as => :reportable
   has_attached_file :picture, { :styles => { :medium => "720x200#", :thumb => "100x50#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
-  validates :owner_id, :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :event_description, :presence => true
+  validates :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :event_description, :presence => true
   validates_numericality_of :total_amount, :maximum_shaipz, :total_space
   validates :zipcode, :length => { :is => 4 }
 
@@ -112,6 +112,14 @@ class Project < ActiveRecord::Base
     "#{zipcode} #{city}"
   end
 
+  def picture_url(size = :original)
+    if picture.url.match(/^http/)
+      picture.url(size)
+    else
+      "http://#{APP_HOST}#{picture.url(size)}"
+    end
+  end
+
   def address_for_user(user)
     if !has_participant_or_owner?(user) && hide_street_from_non_participants?
       short_address
@@ -120,33 +128,11 @@ class Project < ActiveRecord::Base
     end
   end
 
-  def description_for_facebook
+  def facebook_description
     I18n.t("facebook.description", :shaipz => maximum_shaipz, :space => space_per_shaipz, :price => price_per_shaipz, :zipcode => zipcode, :city => city)
   end
 
-  def send_to_facebook_wall(cookies, message, url, status, request)
-    if cookies[:fb_access_token] != nil
-      me = FbGraph::User.me(cookies[:fb_access_token])
-      me.feed!(:message => message,
-               :picture => self.picture.url.match(/^http/) ? self.picture.url(:medium) : "http://" + request.host + self.picture.url(:medium),
-               :link => url,
-               :name => self.name,
-               :description => description_for_facebook)
-    end
+  def facebook_sharing_url(link, redirect_uri)
+    "https://www.facebook.com/dialog/feed?app_id=#{FACEBOOK_APP_ID}&link=#{link}&name=#{name}&caption=Shaipz.com&description=#{facebook_description}&redirect_uri=#{redirect_uri}&picture=#{picture_url(:medium)}"
   end
-
-  def share_with_facebook_url(opts, request)
-    url = "https://www.facebook.com/dialog/feed?app_id=268091083289955&link=" + opts[:url].to_s +
-          "&name=" + opts[:project_name].to_s +
-          "&caption=Shaipz.com&description=" + description_for_facebook +
-          "&redirect_uri=" + opts[:redirect_url].to_s +
-          "&picture="
-
-    if opts[:url_picture].match(/^http/)
-      url += opts[:url_picture].to_s
-    else
-      url += "http://" + request.host + self.picture.url(:medium)
-    end
-  end
-
 end
