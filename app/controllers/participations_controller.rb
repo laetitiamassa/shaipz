@@ -15,25 +15,13 @@ class ParticipationsController < ApplicationController
 
   def destroy
     project = Project.find(params[:id])
-    flash[:notice] = leave_project(project)
-    redirect_to stream_path
+    if ProjectLeaver.new(project, current_user).leave!
+      flash[:notice] = t("participation.destroy_success")
+      redirect_to stream_path
+    end
   end
 
   private
-
-  def leave_project(the_project)
-    if the_project.owner == current_user
-      if the_project.participants.all.map(&:email) != []
-        NotificationMailer.destroy_project(current_user, the_project).deliver
-      end
-      the_project.destroy
-    else
-      participation = Participation.find_by_participant_id_and_project_id(current_user.id, the_project.id)
-      participation.destroy
-      NotificationMailer.leave_participant(current_user, the_project).deliver
-    end
-    t("participation.destroy_success")
-  end
 
   def check_project_status
     project = Project.find(params[:participation][:project_id])
