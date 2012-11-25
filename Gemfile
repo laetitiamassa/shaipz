@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.9'
 
 gem 'thin',              '~> 1.5.0'
 gem 'pg',                '~> 0.14.1'
@@ -19,7 +19,7 @@ group :assets do
 end
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.1'
 
 group :production do
   gem 'aws-sdk', '~> 1.7.1'
