@@ -70,6 +70,9 @@
             = link_to(image_tag(p.picture.url(:thumb)), user_path(p))
             = link_to p.has_name? ? p.name : p.name_placeholder, user_path(p)
 
+      #disqus_thread
+        = render :partial => "_shared/disqus", :locals => { :title => @project.name }
+      
       - if @project.has_user_as_owner?(@user)
         .leave-action
           .leave-button= button_to t("project.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')}"
