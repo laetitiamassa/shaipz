@@ -1,0 +1,30 @@
+!!!
+
+%html
+  %head
+    %title Admin | Shaipz
+    = stylesheet_link_tag 'admin', :media => 'all'
+    = javascript_include_tag 'admin'
+
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          = link_to "Shaipz admin", admin_root_path, :class => 'brand'
+
+          - if current_admin
+            %ul.nav
+              %li{ :class => ('active' if controller.controller_name == 'projects') }
+                = link_to "Projects", admin_projects_path
+            %ul.nav.pull-right
+              %li
+                = link_to "Logout", destroy_admin_session_path, :method => :delete
+
+    - flash.each do |key, message|
+      .container
+        .alert{ :class => "alert-#{key}" }
+          = link_to "&times;".html_safe, '#', :class => 'close', 'data-dismiss' => 'alert'
+          = message
+
+    .container
+      = yield

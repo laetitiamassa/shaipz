@@ -1,4 +1,3 @@
-# encoding: UTF-8
 class ProjectsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :require_owner, :only => [:edit, :update]
@@ -16,7 +15,7 @@ class ProjectsController < ApplicationController
   def create
     @project = current_user.projects.build(params[:project])
     facebook_service = FacebookService.new(cookies[:fb_access_token])
-    if ProjectCreator.new(@project, facebook_service).create!
+    if ProjectCreator.new(@project, facebook_service).create
       flash[:notice] = t("project.create_success")
       redirect_to stream_path
     else

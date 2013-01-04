@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119130708) do
+ActiveRecord::Schema.define(:version => 20121213220937) do
+
+  create_table "admins", :force => true do |t|
+    t.string   "email",               :default => "", :null => false
+    t.string   "encrypted_password",  :default => "", :null => false
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",       :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+  end
+
+  add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -44,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20121119130708) do
   end
 
   create_table "projects", :force => true do |t|
-    t.integer  "owner_id",                                               :null => false
+    t.integer  "owner_id"
     t.string   "name",                                                   :null => false
     t.string   "address"
     t.integer  "total_amount",                                           :null => false
@@ -59,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20121119130708) do
     t.datetime "picture_updated_at"
     t.datetime "created_at",                                             :null => false
     t.datetime "updated_at",                                             :null => false
-    t.integer  "zipcode",                           :default => 0,       :null => false
+    t.string   "zipcode",                                                :null => false
     t.string   "city"
     t.string   "project_status"
     t.boolean  "share_on_facebook",                 :default => true

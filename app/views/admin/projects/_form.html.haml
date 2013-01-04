@@ -1,0 +1,90 @@
+= f.hidden_field :share_on_facebook, :value => '0'
+
+%fieldset
+  %legend Owner
+
+  .control-group
+    = f.label :owner, :class => 'control-label'
+    .controls= f.select :owner_id, options_from_collection_for_select(@users, 'id', 'name_or_placeholder', @project.owner_id), :include_blank => "Select an owner"
+
+%fieldset
+  %legend Shaipz information
+
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls= f.text_field :name, :class => 'span4'
+
+  .control-group
+    = f.label :source_link, :class => 'control-label'
+    .controls= f.text_field :source_link, :placeholder => "http://...", :class => 'span4'
+
+  .control-group
+    = f.label :total_amount, :class => 'control-label'
+    .controls
+      .input-append
+        = f.text_field :total_amount, :placeholder => "570000", :class => 'span2'
+        %span.add-on €
+
+  .control-group
+    = f.label :total_space, :class => 'control-label'
+    .controls
+      .input-append
+        = f.text_field :total_space, :placeholder => "435", :class => 'span2'
+        %span.add-on m2
+
+  .control-group
+    = f.label :maximum_shaipz, :class => 'control-label'
+    .controls= f.text_field :maximum_shaipz, :class => 'span2'
+
+  .control-group
+    = f.label :cohousing, :class => 'control-label'
+    .controls= f.check_box :cohousing
+
+%fieldset
+  %legend Address
+
+  .control-group
+    = f.label :address, :class => 'control-label'
+    .controls= f.text_field :address, :class => 'span4'
+
+  .control-group
+    = f.label :zipcode, :class => 'control-label'
+    .controls= f.text_field :zipcode, :class => 'span2'
+
+  .control-group
+    = f.label :city, :class => 'control-label'
+    .controls= f.text_field :city, :class => 'span2'
+
+  .control-group
+    = f.label :hide_street_from_non_participants, :class => 'control-label'
+    .controls= f.check_box :hide_street_from_non_participants
+
+%fieldset
+  %legend Status
+
+  .control-group
+    = f.label :project_status, :class => 'control-label'
+    .controls= f.select :project_status, @project_statuses
+
+%fieldset
+  %legend Event
+
+  .control-group
+    = f.label :event_type, :class => 'control-label'
+    .controls= f.select :event_type, @event_types
+
+  .control-group
+    = f.label :event_date, :class => 'control-label'
+    .controls= f.datetime_select :event_date, :order => [:day,:month,:year]
+
+  .control-group
+    = f.label :event_description, :class => 'control-label'
+    .controls= f.text_area :event_description, :rows => 5, :class => 'span8'
+
+%fieldset
+  %legend Picture
+
+  .picture= image_tag f.object.picture.url(:medium), :class => 'img-polaroid' unless f.object.new_record?
+  .control-group
+    = f.label :picture, :class => 'control-label'
+    .controls= f.file_field :picture

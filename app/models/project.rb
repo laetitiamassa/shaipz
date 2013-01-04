@@ -1,4 +1,9 @@
 class Project < ActiveRecord::Base
+  PROJECT_STATUSES = ["building_discovery", "people_discovery", "interest_confirmation", "feasibility_stamp", "internal_agreement",
+                      "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]
+
+  EVENT_TYPES = ["meeting", "visit", "other"]
+
   include Round
   belongs_to :owner, :class_name => "User"
   has_many :participations, :dependent => :destroy
@@ -6,21 +11,18 @@ class Project < ActiveRecord::Base
   has_many :reports, :as => :reportable
   has_attached_file :picture, { :styles => { :medium => "720x200#", :thumb => "100x50#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
-  validates :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :event_description, :presence => true
+  validates :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :event_description, :owner, :presence => true
   validates_numericality_of :total_amount, :maximum_shaipz, :total_space
   validates :zipcode, :length => { :is => 4 }
-
   validates_attachment :picture,
     :content_type => { :content_type => /image/ },
     :size => { :less_than => 2.megabytes }
 
-  PROJECT_STATUSES = ["building_discovery", "people_discovery", "interest_confirmation", "feasibility_stamp", "internal_agreement",
-                      "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]
-
-  EVENT_TYPES = ["meeting", "visit", "other"]
-
   attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
                   :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants
+
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
+                  :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :owner_id, :as => :admin
 
   default_scope :order => "updated_at DESC"
 

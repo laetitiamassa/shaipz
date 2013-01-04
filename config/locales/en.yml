@@ -78,7 +78,7 @@ en:
     home: "Home"
     profile: "Profile"
     sign_out: "Log out"
-    shaipz: "My Projects"
+    shaipz: "My projects"
   stream:
     start_project: "Create your project"
     all_projects: "Open projects"

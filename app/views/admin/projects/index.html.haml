@@ -1,0 +1,23 @@
+.page-header
+  %h1 Projects
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th Name
+      %th Owner
+      %th Actions
+  %tbody
+    - @projects.each do |project|
+      %tr
+        %td= project.id
+        %td= project.name
+        %td= project.owner_name
+        %td
+          = link_to edit_admin_project_path(project), :class => 'btn btn-small' do
+            %i.icon-pencil
+            Edit
+
+.btn-group
+  =link_to "Create a new project", new_admin_project_path, :class => 'btn btn-info'
