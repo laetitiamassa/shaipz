@@ -16,6 +16,8 @@
             %ul.nav
               %li{ :class => ('active' if controller.controller_name == 'projects') }
                 = link_to "Projects", admin_projects_path
+              %li{ :class => ('active' if controller.controller_name == 'users') }
+                = link_to "Users", admin_users_path
             %ul.nav.pull-right
               %li
                 = link_to "Logout", destroy_admin_session_path, :method => :delete

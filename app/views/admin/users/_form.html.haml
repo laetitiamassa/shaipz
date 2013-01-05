@@ -1,0 +1,55 @@
+%fieldset
+  %legend Login information
+
+  .control-group
+    = f.label :email, :class => 'control-label'
+    .controls= f.text_field :email, :class => 'span4'
+
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls= f.text_field :name, :class => 'span4'
+
+
+%fieldset
+  %legend Shaipz information
+
+  .control-group
+    = f.label :favorite_areas, :class => 'control-label'
+    .controls= f.text_field :favorite_areas, :class => 'span4'
+
+  .control-group
+    = f.label :maximum_budget, :class => 'control-label'
+    .controls
+      .input-append
+        = f.text_field :maximum_budget, :class => 'span2'
+        %span.add-on €
+
+  .control-group
+    = f.label :minimum_space, :class => 'control-label'
+    .controls
+      .input-append
+        = f.text_field :minimum_space, :placeholder => "435", :class => 'span2'
+        %span.add-on m2
+
+  .control-group
+    = f.label :cohousing, :class => 'control-label'
+    .controls= f.check_box :cohousing
+
+  .control-group
+    = f.label :hide_budget, :class => 'control-label'
+    .controls= f.check_box :hide_budget
+
+%fieldset
+  %legend Status
+
+  .control-group
+    = f.label :personal_status, :class => 'control-label'
+    .controls= f.select :personal_status, @personal_statuses
+
+%fieldset
+  %legend Picture
+
+  .picture= image_tag f.object.picture.url(:medium), :class => 'img-polaroid' unless f.object.new_record?
+  .control-group
+    = f.label :picture, :class => 'control-label'
+    .controls= f.file_field :picture
