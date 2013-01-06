@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  require 'csv'
+
   PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying"]
 
   has_many :projects, :foreign_key => "owner_id"
@@ -122,5 +124,14 @@ class User < ActiveRecord::Base
 
   def zipcodes
     favorite_areas.split(",")
+  end
+
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |user|
+        csv << user.attributes.values_at(*column_names)
+      end
+    end
   end
 end

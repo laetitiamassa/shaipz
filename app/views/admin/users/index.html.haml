@@ -40,3 +40,6 @@
           = link_to edit_admin_user_path(user), :class => 'btn btn-small' do
             %i.icon-pencil
             Edit
+
+.btn-group
+  = link_to "Export to CSV", admin_users_path(:format => :csv), :class => 'btn btn-info'

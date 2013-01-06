@@ -1,6 +1,10 @@
 class Admin::UsersController < Admin::BaseController
   def index
     @users = User.order('created_at ASC')
+    respond_to do |format|
+      format.html
+      format.csv { send_data @users.to_csv }
+    end
   end
 
   def edit
