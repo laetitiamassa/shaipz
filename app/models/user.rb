@@ -100,6 +100,14 @@ class User < ActiveRecord::Base
     confirmed_at.present?
   end
 
+  def signed_in?
+    current_sign_in_at.present?
+  end
+
+  def signed_in_before?
+    last_sign_in_at.present?
+  end
+
   def remembered?
     remember_created_at.present?
   end

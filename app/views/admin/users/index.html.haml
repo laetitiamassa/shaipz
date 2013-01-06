@@ -30,8 +30,8 @@
         %td= user.confirmed? ? distance_of_time_in_words(user.created_at, user.confirmed_at) : :never
         %td
           %span.badge= user.sign_in_count
-        %td= l(user.current_sign_in_at, :format => :long)
-        %td= l(user.last_sign_in_at, :format => :long)
+        %td= l(user.current_sign_in_at, :format => :long) if user.signed_in?
+        %td= l(user.last_sign_in_at, :format => :long) if user.signed_in_before?
         %td= user.remembered? ? l(user.remember_created_at, :format => :long) : :never
         %td= user.has_reset_password? ? :yes : :no
         %td= user.current_sign_in_ip
