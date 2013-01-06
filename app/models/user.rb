@@ -123,7 +123,7 @@ class User < ActiveRecord::Base
   end
 
   def zipcodes
-    favorite_areas.split(",")
+    favorite_areas.gsub(" ", "").split(",")
   end
 
   def self.to_csv(options = {})

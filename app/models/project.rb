@@ -25,6 +25,7 @@ class Project < ActiveRecord::Base
                   :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :owner_id, :as => :admin
 
   default_scope :order => "updated_at DESC"
+  scope :active, where(:disabled_at => nil)
 
   def self.project_statuses
     PROJECT_STATUSES.map do |status|
