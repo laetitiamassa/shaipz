@@ -9,7 +9,7 @@
   %body
     .navbar.navbar-fixed-top
       .navbar-inner
-        .container
+        .container-fluid
           = link_to "Shaipz admin", admin_root_path, :class => 'brand'
 
           - if current_admin
@@ -23,10 +23,10 @@
                 = link_to "Logout", destroy_admin_session_path, :method => :delete
 
     - flash.each do |key, message|
-      .container
+      .container-fluid
         .alert{ :class => "alert-#{key}" }
           = link_to "&times;".html_safe, '#', :class => 'close', 'data-dismiss' => 'alert'
           = message
 
-    .container
+    .container-fluid
       = yield

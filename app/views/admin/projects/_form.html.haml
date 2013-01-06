@@ -5,7 +5,7 @@
 
   .control-group
     = f.label :owner, :class => 'control-label'
-    .controls= f.select :owner_id, options_from_collection_for_select(@users, 'id', 'name_or_placeholder', @project.owner_id), :include_blank => "Select an owner"
+    .controls= f.select :owner_id, options_from_collection_for_select(@users, 'id', 'name_or_placeholder_with_id', @project.owner_id), :include_blank => "Select an owner"
 
 %fieldset
   %legend Shaipz information

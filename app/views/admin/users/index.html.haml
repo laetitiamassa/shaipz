@@ -7,7 +7,16 @@
       %th ID
       %th Name
       %th Email
-      %th Join shaipz on
+      %th Joined via
+      %th Joined shaipz on
+      %th Confirmation delay
+      %th Sign in count
+      %th Current sign in
+      %th Last sign in
+      %th Remembered at
+      %th Password reset
+      %th Current sign in IP
+      %th Last sign in IP
       %th Actions
   %tbody
     - @users.each do |user|
@@ -15,7 +24,18 @@
         %td= user.id
         %td= user.name
         %td= user.email
+        %td
+          %span.label.label-info= user.registration_method
         %td= l(user.created_at, :format => :long)
+        %td= user.confirmed? ? distance_of_time_in_words(user.created_at, user.confirmed_at) : :never
+        %td
+          %span.badge= user.sign_in_count
+        %td= l(user.current_sign_in_at, :format => :long)
+        %td= l(user.last_sign_in_at, :format => :long)
+        %td= user.remembered? ? l(user.remember_created_at, :format => :long) : :never
+        %td= user.has_reset_password? ? :yes : :no
+        %td= user.current_sign_in_ip
+        %td= user.last_sign_in_ip
         %td
           = link_to edit_admin_user_path(user), :class => 'btn btn-small' do
             %i.icon-pencil

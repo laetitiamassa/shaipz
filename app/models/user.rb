@@ -84,8 +84,28 @@ class User < ActiveRecord::Base
     name.present? ? name : name_placeholder
   end
 
+  def name_or_placeholder_with_id
+    "##{id} - #{name_or_placeholder}"
+  end
+
   def name_placeholder
     email.split("@")[0]
+  end
+
+  def registration_method
+    confirmation_sent_at.present? ? :mail : :facebook
+  end
+
+  def confirmed?
+    confirmed_at.present?
+  end
+
+  def remembered?
+    remember_created_at.present?
+  end
+
+  def has_reset_password?
+    reset_password_sent_at.present?
   end
 
   def maximum_budget=(budget)
