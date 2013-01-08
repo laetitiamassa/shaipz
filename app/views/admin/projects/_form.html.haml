@@ -88,3 +88,10 @@
   .control-group
     = f.label :picture, :class => 'control-label'
     .controls= f.file_field :picture
+
+%fieldset
+  %legend Disable
+
+  .control-group
+    = f.label :disabled_at, :class => 'control-label'
+    .controls= f.datetime_select :disabled_at, :order => [:day,:month,:year], :include_blank => true

@@ -11,4 +11,16 @@ class Participation < ActiveRecord::Base
   def disable
     update_attributes(:left_at => Time.now)
   end
+
+  def participant_name_with_id
+    participant.name_or_placeholder_with_id
+  end
+
+  def project_name_with_id
+    project.name_with_id
+  end
+
+  def left?
+    left_at.present?
+  end
 end

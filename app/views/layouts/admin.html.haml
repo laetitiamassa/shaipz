@@ -18,6 +18,8 @@
                 = link_to "Projects", admin_projects_path
               %li{ :class => ('active' if controller.controller_name == 'users') }
                 = link_to "Users", admin_users_path
+              %li{ :class => ('active' if controller.controller_name == 'participations') }
+                = link_to "Participations", admin_participations_path
             %ul.nav.pull-right
               %li
                 = link_to "Logout", destroy_admin_session_path, :method => :delete

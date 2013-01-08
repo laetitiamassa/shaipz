@@ -1,0 +1,28 @@
+.page-header
+  %h1 Projects
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th Member
+      %th Project
+      %th Participation date
+      %th Shared on facebook?
+      %th User left?
+      %th Actions
+  %tbody
+    - @participations.each do |participation|
+      %tr
+        %td= participation.id
+        %td= link_to participation.participant_name_with_id, edit_admin_user_path(participation.participant) if participation.participant
+        %td= link_to participation.project_name_with_id, edit_admin_project_path(participation.project)
+        %td= l(participation.created_at, :format => :long)
+        %td
+          %span.label{ :class => ('label-success' if participation.share_on_facebook) }
+            = participation.share_on_facebook
+        %td= l(participation.left_at, :format => :long) if participation.left?
+        %td
+          = link_to edit_admin_participation_path(participation), :class => 'btn btn-small' do
+            %i.icon-pencil
+            Edit

@@ -9,6 +9,7 @@ Shaipz::Application.routes.draw do
   namespace :admin do
     resources :projects
     resources :users
+    resources :participations
 
     root :to => 'projects#index'
   end

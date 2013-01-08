@@ -1,0 +1,13 @@
+.page-header
+  %h1
+    Participation
+    %small= @participation.participant_name_with_id
+    in
+    %small= @participation.project_name_with_id
+
+= form_for [:admin, @participation], :html => { :multipart => true, :class => 'form-horizontal' } do |f|
+  = render :partial => 'form', :locals => { :f => f }
+
+  .form-actions
+    = f.submit "Update", :class => 'btn btn-primary'
+    = link_to "Cancel", admin_users_path, :class => 'btn'

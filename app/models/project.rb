@@ -81,6 +81,10 @@ class Project < ActiveRecord::Base
     participants.include?(participant)
   end
 
+  def name_with_id
+    "#{id} - #{name}"
+  end
+
   def participants_emails
     participants.map(&:email)
   end
