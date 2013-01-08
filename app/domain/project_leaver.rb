@@ -2,18 +2,26 @@ class ProjectLeaver
   attr_accessor :participation, :user, :project
 
   def initialize(project, user)
-    @participation = Participation.find_by_participant_id_and_project_id(user.id, project.id)
+    @participation = Participation.active.find_by_participant_id_and_project_id(user.id, project.id)
     @user          = user
     @project       = project
   end
 
   def leave!
     if project.has_user_as_owner?(user)
-      NotificationMailer.destroy_project(user, project).deliver if project.has_participants?
-      project.destroy
+      disable_project
     else
-      NotificationMailer.leave_participant(user, project).deliver
-      participation.destroy
+      disable_participation
     end
+  end
+
+  def disable_participation
+    NotificationMailer.leave_participant(user, project).deliver
+    participation.disable
+  end
+
+  def disable_project
+    NotificationMailer.destroy_project(user, project).deliver if project.has_participants?
+    project.disable
   end
 end

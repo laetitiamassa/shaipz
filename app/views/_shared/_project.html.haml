@@ -1,4 +1,4 @@
-%li
+%li{ :class => ('disabled' if project.disabled?) }
   .picture= link_to image_tag(project.picture.url(:thumb)), project_url(project)
 
   %h3

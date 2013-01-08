@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
 
   include Round
   belongs_to :owner, :class_name => "User"
-  has_many :participations, :dependent => :destroy
+  has_many :participations, :dependent => :destroy, :conditions => { :left_at => nil }
   has_many :participants, :through => :participations
   has_many :reports, :as => :reportable
   has_attached_file :picture, { :styles => { :medium => "720x200#", :thumb => "100x50#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
@@ -18,11 +18,9 @@ class Project < ActiveRecord::Base
     :content_type => { :content_type => /image/ },
     :size => { :less_than => 2.megabytes }
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
-                  :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link,
-                  :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :owner_id, :as => :admin
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :owner_id, :as => :admin
 
   default_scope :order => "updated_at DESC"
   scope :active, where(:disabled_at => nil)
@@ -41,6 +39,10 @@ class Project < ActiveRecord::Base
 
   def disabled?
     disabled_at.present?
+  end
+
+  def disable
+    update_attributes(:disabled_at => Time.now)
   end
 
   def has_project_status?
