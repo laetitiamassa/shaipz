@@ -10,6 +10,7 @@ class ParticipationCreator
   def create!
     if participation.save!
       NotificationMailer.new_participant(participant, participation.project).deliver
+      NotificationMailer.after_participation(participant,participation.project).deliver
       facebook_service.post_participation_on_wall(participation) if participation.share_on_facebook
       true
     else

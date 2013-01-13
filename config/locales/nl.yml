@@ -192,6 +192,7 @@ nl:
     mail:
       here: "hier"
       salutation: "Hallo,"
+      congratulation: "Proficiat!"
       signature: "We wensen U een geweldige dag!"
       team: "De Shaipz Team"
       new_participant:
@@ -212,6 +213,12 @@ nl:
         subject: "%{name} heeft een nieuw samenhuizing project gemaakt!"
         content: "%{name} heeft %{project} gemaakt, een nieuw samenhuizing project dat U misschien wel geïnteresseerd zou zijn!"
         join: "U kunt meer informatie hebben en deelnemen"
+      after_participation:
+        subject: "Congratulations on your new participation! Now let's make it happen."
+        content1: "You have joined the project %{project} on Shaipz!"
+        content2: "You want to maximise your chances to make it happen? Then follow"
+        best_practices: "the Participant Best Practices"
+        content3: "You can go back to the page of the project"
   shaipz:
     i_am_in: "Projecten die ik deel aan"
   facebook:

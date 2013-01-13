@@ -10,6 +10,16 @@ class NotificationMailer < ActionMailer::Base
       :subject => t("notification.mail.new_participant.subject", :name => @user.name, :project => @project.name)
     )
   end
+  
+  def after_participation(user,project) #after joining a project
+    @user    = user
+    @project = project
+    mail(
+      :to => user.email,
+      :subject => t("notification.mail.after_participation.subject"), 
+      :project => @project.name
+    )
+  end
 
   def leave_participant(user,project) #when a participant is leaving
     @user    = user
@@ -43,7 +53,7 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     mail(
       :bcc => users_concerned.map(&:email),
-      :subjet => t("notification.mail.create_project.subject", :name => @user.name)
+      :subject => t("notification.mail.create_project.subject", :name => @user.name)
     )
   end
 end

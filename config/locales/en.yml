@@ -188,6 +188,7 @@ en:
     mail:
       here: "here"
       salutation: "Hi there,"
+      congratulation: "Congratulations!"
       signature: "Have a great day!"
       team: "The Shaipz Team"
       new_participant:
@@ -208,6 +209,12 @@ en:
         subject: "%{name} has created a new cohousing project!"
         content: "%{name} has created %{project}, a new cohousing project you might be interested in!"
         join: "You can have more details and join"
+      after_participation:
+        subject: "Congratulations on your new participation! Now let's make it happen."
+        content1: "You have joined the project %{project} on Shaipz!"
+        content2: "You want to maximise your chances to make it happen? Then follow"
+        best_practices: "the Participant Best Practices"
+        content3: "You can go back to the page of the project"
   shaipz:
     i_am_in: "Projects I'm in"
   facebook:

@@ -28,6 +28,28 @@ ActiveRecord::Schema.define(:version => 20130108204639) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
 
+  create_table "authors", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "login"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "title",            :limit => 50, :default => ""
+    t.text     "comment"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+  end
+
+  add_index "comments", ["commentable_id"], :name => "index_comments_on_commentable_id"
+  add_index "comments", ["commentable_type"], :name => "index_comments_on_commentable_type"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
   create_table "participations", :force => true do |t|
     t.integer  "participant_id",                      :null => false
     t.integer  "project_id",                          :null => false
@@ -55,8 +77,8 @@ ActiveRecord::Schema.define(:version => 20130108204639) do
     t.datetime "updated_at",                                             :null => false
     t.string   "zipcode",                                                :null => false
     t.string   "city"
-    t.boolean  "share_on_facebook",                 :default => true
     t.string   "project_status"
+    t.boolean  "share_on_facebook",                 :default => true
     t.datetime "event_date"
     t.string   "event_type",                        :default => "other", :null => false
     t.text     "note"
