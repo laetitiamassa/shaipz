@@ -1,46 +1,44 @@
-<section id="stream">
-
-<% if @user != nil %>
-
-  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
-  <% end %>
+<section id='how-it-works'>
+    
+    <h1><%= t("how.how") %></h1>
+    
+  </section>
+  
+	<div class="timeline">
+		  <section id="why-shaipz">
+		    <h2><i><%= t("how.baseline") %></i></h2>
+            <div class="why-box place">              
+              <div class="video"><%= link_to image_tag("discovery_all_icon.png", :size => "220x220") %></div>
+              <h3><strong><%= t("Discovery") %></h3>
+            </div>
+            <div class="why-box neighbours">
+              <div class="video"><%= link_to image_tag("commitment_icon.png", :size => "220x220") %></div>
+              <h3><strong><%= t("Commitment") %></h3>
+            </div>
+            <div class="why-box terms-of-living">
+              <div class="video"><%= link_to image_tag("paperwork_icon.png", :size => "220x220") %></div>
+              <h3><strong><%= t("Paperwork") %></h3>
+            </div>
+            <div class="why-box terms-of-living">
+              <div class="video"><%= link_to image_tag("success_icon.png", :size => "220x220") %></div>
+              <h3><strong><%= t("Happiness") %></h3>
+            </div>
+          </section>
+    </div>
 	
 	
 <div id="stream-wrap">
-	
   <section id='how-it-works'>
-			<h1><%= t("how.whats_shaipz") %></h1>
-			<div class="youtube">
-				<iframe width="450" height="300" src="http://www.youtube.com/embed/f4zwYhjYuiQ" frameborder="0" allowfullscreen></iframe>
-			</div>
-			<br/>
 
-			<h1><%= t("how.how") %></h1>
-
-            <! the place>
-            
-			<h2><%= t("how.place") %> : <i><%= t("how.place_baseline") %></i></h2>
-			<p><%= t("how.instead") %> <b><%= t("how.whole_building") %></b> <%= t("how.once_found") %></p>
-			<%= link_to t("how.create_call"), new_project_path %>
-
-			<! the people>
-			
-			<h2><%= t("how.people") %></h2>
-			<p><%= t("how.share") %><b><%= t("how.can_join") %></b></p>
-			<p><%= t("how.reach_minimum") %> <b><%= t("how.collaborate") %></b> <%= t("how.achieve") %> <b><%= t("how.terms") %></b> <%= t("how.terms_example") %>.</p>
-			<%= link_to t("how.create_call"), new_project_path %>
-			
-<! the happenings>
-			
-			<h2><%= t("how.happenings") %></h2>
-			
+		
+	
 <! timeline>
 			
 <! timeline image>
-		
+	  <section id='how-it-works'>	
 		<div class="timeline">
-			
-			
+		  	
+		
 <! timeline details>
 			
 			<div id="building-discovery">

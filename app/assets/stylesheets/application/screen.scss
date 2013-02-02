@@ -220,7 +220,7 @@ header #flash .notice {
   -moz-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
   color: #777;
-  min-height: 454px;
+  min-height: 650px;
   position: relative;
 }
 
@@ -398,14 +398,24 @@ header #flash .notice {
 /* Homepage */
 
 #why-shaipz {
+  h2 {
+    color: #666;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 25px 0 0 0;
+    text-shadow: 0 1px 0 #fff;
+    }
+    
   .why-box {
-    width: 300px;
+    width: 235px;
+    height: 250px;
     float: left;
-    margin: 0 0 20px 0;
+    margin: 15px 0 20px 0;
 
     h3 {
       font-weight: normal;
       text-shadow: 0 1px 0 #fff;
+      text-align: center;
       margin: 0;
 
       strong {
@@ -414,10 +424,17 @@ header #flash .notice {
         font-weight: bold;
       }
     }
+    h2 {
+    color: #666;
+    font-size: 1.8em;
+    text-align: center;
+    margin: 0;
+    text-shadow: 0 1px 0 #fff;
+    }
   }
 
   .why-box + .why-box {
-    margin: 0 0 20px 20px;
+    margin: 0 0 0px 0px;
   }
 
   .why-box.neighbours {
@@ -425,7 +442,11 @@ header #flash .notice {
   }
 
   .why-box.terms-of-living {
-    text-align: right;
+    text-align: center;
+  }
+  
+  .why-box.terms-of-living {
+    text-align: center;
   }
 }
 
@@ -1643,7 +1664,7 @@ footer {
 #how {
   .how-box {
     width: 200px;
-    float: left;
+    float: center;
     margin: 0 0 10px 0;
 
     h3 {
@@ -1695,6 +1716,44 @@ footer {
 #how-it-works a {
 	font-size: 110%;
 	color: #1b8e8a;
+}
+
+/* icons */
+
+#how-it-works icons {
+  .how-icon {
+    width: 200px;
+    float: left;
+    margin: 0 0 20px 0;
+
+    h3 {
+      font-weight: normal;
+      text-shadow: 0 1px 0 #fff;
+      margin: 0;
+
+      strong {
+        color: #1b8e8a;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .how-icon + .how-icon {
+    margin: 0 0 20px 20px;
+  }
+
+  .how-icon.commitment {
+    text-align: center;
+  }
+
+  .how-icon.paperwork {
+    text-align: center;
+  }
+  
+  .how-icon.success {
+    text-align: center;
+  }
 }
 
 /* timeline */

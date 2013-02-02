@@ -294,7 +294,8 @@ fr:
     also: "You can also"
     twitter: "Follow us:"
     facebook: "Like us:"
-    Join us: "Join us:"
+    join_team: "Join the team:"
+    baseline: "Découvrez comme fonctionne Shaipz, de la case 'Découverte' à la case 'Bonheur' "
   timeline:
     building-discovery: "1 - Discover the building"
     people-discovery: "2 - Discover the people"

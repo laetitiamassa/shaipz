@@ -292,7 +292,8 @@ nl:
     also: "You can also"
     twitter: "Follow us:"
     facebook: "Like us:"
-    Join us: "Join us:"
+    join_team: "Join the team:"
+    baseline: "Discover how Shaipz works, step by step, from discovery to hapiness"
   timeline:
     building-discovery: "1 - Discover the building"
     people-discovery: "2 - Discover the people"
