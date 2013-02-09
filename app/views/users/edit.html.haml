@@ -22,6 +22,9 @@
         %li.string
           %strong= f.label :personal_status, t("profile.how_ready_you_are")
           = f.select :personal_status, @personal_statuses, {:include_blank => true}
+        %li.string
+          %strong= f.label :personal_timing, t("profile.personal_timing_form")
+          = f.text_field :personal_timing, :placeholder => "Mondays evening, Weekends, Lunches"
         %li.checkbox
           = f.check_box :cohousing
           = f.label  :cohousing, t("profile.cohousing"), {:title => t("profile.definition_cohousing")}

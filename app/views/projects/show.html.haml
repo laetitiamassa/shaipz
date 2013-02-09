@@ -69,6 +69,9 @@
           %li
             = link_to(image_tag(p.picture.url(:thumb)), user_path(p))
             = link_to p.has_name? ? p.name : p.name_placeholder, user_path(p)
+            = t("(") 
+            = p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder
+            = t(")")
 
       #disqus_thread
         = render :partial => "_shared/disqus", :locals => { :title => @project.name }

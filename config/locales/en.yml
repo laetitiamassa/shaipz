@@ -68,6 +68,9 @@ en:
     logo_cohousing: "open to cohousing"
     find: "Find"
     find_shortcut: "Click here to find your ideal building on the web"
+    personal_timing: "Best moments for a visit or a meeting"
+    personal_timing_form: "What are your 3 best moments for a visit or a meeting?" 
+    default_personal_timing: "anytime"
   statuses:
     not_buying: "I'm not buying yet"
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity"

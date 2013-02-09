@@ -71,6 +71,9 @@ nl:
     logo_cohousing: "Open voor samenhuizing"
     find: "Vinden"
     find_shortcut: "Klik hier om uw ideale gebouw vinden op het web"
+    personal_timing: "Best moments for a visit or a meeting"
+    personal_timing_form: "What are your 3 best moments for a visit or a meeting?" 
+    default_personal_timing: "anytime"
   statuses:
     not_buying: "Ik ben nog niet klaar te kopen."
     looking_for_opportunity: "Ik ben nog niet klaar te kopen uitgezonderd als het een fantastisch opportuniteit is"

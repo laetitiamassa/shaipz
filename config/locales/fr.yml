@@ -72,6 +72,9 @@ fr:
     logo_cohousing: "ouvert(e) à l'habitat groupé"
     find: "Trouver"
     find_shortcut: "Cliquez ici pour trouver votre immeuble idéal sur le web"
+    personal_timing: "Meilleurs moments pour une visite ou une réunion"
+    personal_timing_form: "Quels sont vos 3 meilleurs moments de disponibilités pour une visite ou une réunion ?" 
+    default_personal_timing: "je ferai du temps"
   statuses:
     not_buying: "Je n'achète pas pour l'instant."
     looking_for_opportunity: "Je n'achète pas pour l'instant, sauf si c'est une opportunité unique"

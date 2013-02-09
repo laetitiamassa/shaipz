@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     :size => { :less_than => 2.megabytes }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget
+  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget, :personal_timing
 
   def authenticated_with_facebook?(session)
     !(session[:fb_access_token].nil?)
@@ -67,9 +67,21 @@ class User < ActiveRecord::Base
   def has_name?
     name.present?
   end
-
+  
   def has_personal_status?
     personal_status.present?
+  end
+  
+  def has_personal_timing?
+    personal_timing.present?
+  end
+  
+  def personal_timing_placeholder
+    I18n.t("profile.default_personal_timing")
+  end
+  
+  def personal_timing_or_placeholder
+    personal_timing.present? ? personal_timing : personal_timing_placeholder
   end
 
   def self.personal_statuses
