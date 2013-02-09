@@ -22,7 +22,6 @@
         %li.string
           %strong= f.label :personal_status, t("profile.how_ready_you_are")
           = f.select :personal_status, @personal_statuses, {:include_blank => true}
-     
         %li.checkbox
           = f.check_box :cohousing
           = f.label  :cohousing, t("profile.cohousing"), {:title => t("profile.definition_cohousing")}
