@@ -1,6 +1,6 @@
 class Admin::ProjectsController < Admin::BaseController
   def index
-    @project = Project.order('created_at DESC')
+    @projects = Project.order('created_at DESC')
   end
 
   def new
