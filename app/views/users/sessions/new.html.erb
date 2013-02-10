@@ -9,20 +9,6 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<section id="why-shaipz">
-<div class="why-box place">
-    <h3><strong><%= t("home.better") %></strong> <%= t("home.place") %></h3>
-    <div class="video"></div>
-  </div>
-  <div class="why-box neighbours">
-    <h3><strong><%= t("home.chosen") %></strong> <%= t("home.neighbours") %></h3>
-    <div class="video"></div>
-  </div>
-  <div class="why-box terms-of-living">
-    <h3><strong><%= t("home.chosen") %></strong> <%= t("home.terms_of_living") %></h3>
-    <div class="video"></div>
-  </div>
-</section>
 
 <section id="sign-up" class="clear">
   <div id="shaipz-info">
@@ -106,3 +92,22 @@
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
   </script>
 </div>
+<div id="why-shaipz">
+    <h2><i><%= t("how.baseline") %></i></h2>
+    <div class="why-box place">              
+      <%= link_to image_tag("discovery_all_icon.png", :size => "220x220"), how_it_works_path %>
+      <h3><strong><%= t("Discovery") %></h3>
+    </div>
+    <div class="why-box neighbours">
+      <%= link_to image_tag("commitment_icon.png", :size => "220x220"), how_it_works_path %>
+      <h3><strong><%= t("Commitment") %></h3>
+    </div>
+    <div class="why-box terms-of-living">
+      <%= link_to image_tag("paperwork_icon.png", :size => "220x220"), how_it_works_path %>
+      <h3><strong><%= t("Paperwork") %></h3>
+    </div>
+    <div class="why-box terms-of-living">
+      <%= link_to image_tag("success_icon.png", :size => "220x220"), how_it_works_path %>
+      <h3><strong><%= t("Happiness") %></h3>
+    </div>
+  </div>
