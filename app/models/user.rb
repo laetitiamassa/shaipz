@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     :size => { :less_than => 2.megabytes }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget
+  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget, :personal_timing
 
   def authenticated_with_facebook?(session)
     !(session[:fb_access_token].nil?)
@@ -42,7 +42,6 @@ class User < ActiveRecord::Base
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
-        user.picture = data["image"] if user.picture.blank?
       end
     end
   end
@@ -52,7 +51,6 @@ class User < ActiveRecord::Base
     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
       facebook_user.name           = data["name"]
       facebook_user.email          = data["email"]
-      facebook_user.picture        = data["image"]
       facebook_user.password       = SecureRandom.urlsafe_base64
       facebook_user.favorite_areas = "1000"
       facebook_user.minimum_space  = '50'
