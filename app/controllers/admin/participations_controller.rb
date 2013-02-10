@@ -1,6 +1,6 @@
 class Admin::ParticipationsController < Admin::BaseController
   def index
-    @participations = Participation.all
+    @participations = Participation.order('created_at DESC')
   end
 
   def edit
