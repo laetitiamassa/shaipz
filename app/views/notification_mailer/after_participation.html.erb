@@ -4,12 +4,14 @@
   <%= t("notification.mail.after_participation.content1", :project => @project.name) %>
 </p>
 <p>
-  <%= t("notification.mail.after_participation.content2") %> <%= link_to t("notification.mail.after_participation.best_practices"), "http://checkthis.com/shaipzjoiner" %>.
+  <%= t("notification.mail.after_participation.content2") %> <%= link_to t("notification.mail.after_participation.best_practices_joiner"), "http://checkthis.com/shaipzjoiner" %>.
 </p>
-
 <p>
-  <%= t("notification.mail.after_participation.content3") %> <%= link_to t("notification.mail.here"), project_url(@project) %>.
+  <%= t("notification.mail.after_participation.content3") %> <%= link_to t("notification.mail.after_participation.best_practices_leader"), "http://checkthis.com/shaipzleader" %>.
 </p>
+<p><b>
+  <%= t("notification.mail.after_participation.content4") %> <%= link_to t("notification.mail.here"), project_url(@project) %>.
+</b></p>
 
 <p><%= t("notification.mail.signature") %></p>
 <p class="signature"><%= t("notification.mail.team") %></p>

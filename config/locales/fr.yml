@@ -218,11 +218,13 @@ fr:
         content: "%{name} a créé %{project}, un nouveau projet d'habitat groupé qui pourrait vous intéresser!"
         join: "Vous pouvez avoir plus de détails et joindre ce projet"
       after_participation:
-        subject: "Félicitations pour votre nouvelle participation ! Maintenant, concrétisons-la."
+        subject: "Concrétisez votre projet"
         content1: "Vous avez rejoint le projet %{project} sur Shaipz!"
         content2: "Pour mettre toutes les chances de votre côté et concrétiser ce projet, découvrez"
-        best_practices: "l'art et la manière de participer à un projet Shaipz"
-        content3: "Vous pouvez revenir à la page du projet"
+        best_practices_joiner: "l'art et la manière de participer à un projet Shaipz"
+        content3: "Si vous êtes le premier à rejoindre ce projet, jetez un oeil à"
+        best_practices_leader: "l'art et la manière de mener un projet Shaipz"
+        content4: "Vous pouvez revenir à la page du projet"
   shaipz:
     i_am_in: "Projets auxquels je participe"
   facebook:

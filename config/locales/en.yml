@@ -213,11 +213,13 @@ en:
         content: "%{name} has created %{project}, a new cohousing project you might be interested in!"
         join: "You can have more details and join"
       after_participation:
-        subject: "Congratulations on your new participation! Now let's make it happen."
+        subject: "Make your project happen"
         content1: "You have joined the project %{project} on Shaipz!"
         content2: "You want to maximise your chances to make it happen? Then follow"
-        best_practices: "the Participant Best Practices"
-        content3: "You can go back to the page of the project"
+        best_practices_joiner: "the Participant Best Practices"
+        content3: "If you are the first to join the project, then have a look at"
+        best_practices_leader: "the Leader Best Practices"
+        content4: "You can go back to the page of the project"
   shaipz:
     i_am_in: "Projects I'm in"
   facebook:
