@@ -28,7 +28,10 @@
       %li
         %span.label= t("profile.email")
         = @user.email
-      
+      %li
+        %span.label= t("profile.personal_timing")
+        = @user.has_personal_timing ? @user.personal_timing : @user.personal_timing_placeholder
+
       %li
         %span.label= t("profile.favorite_areas")
         = @user.favorite_areas
