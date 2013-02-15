@@ -72,9 +72,6 @@
             = t("(")
             = t("statuses.#{p.personal_status}") if p.has_personal_status?
             = t(")")
-          %li
-            = t("project.personal_timing")
-            = p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder
          
             
             
