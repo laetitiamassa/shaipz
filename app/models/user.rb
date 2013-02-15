@@ -76,7 +76,7 @@ class User < ActiveRecord::Base
     write_attribute(:personal_timings, timing.gsub(" ", "").split(","))
   end
 
-  def has_personal_timings?
+  def has_personal_timing?
     personal_timings.present?
   end
   
