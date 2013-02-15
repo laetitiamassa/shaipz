@@ -169,6 +169,7 @@ en:
       challenges_fixing: "We have arranged all internal and/or administrative challenges!"
       notarial_deed: "The notarial deed has been executed!"
       move_in : "We are happily moving in! :-D"
+    personal_timing: "I can come "
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."

@@ -172,6 +172,7 @@ nl:
       challenges_fixing: "We hebben alle interne en / of administratieve uitdagingen geregeld!"
       notarial_deed: "De notariële akte is uitgevoerd!"
       move_in : "Wij gaan bewegen! :-D"
+    personal_timing: "I can come "
   participation:
     create_success: "Proficiat! Nu neem je deel aan het project."
     create_error: "U kunt niet aan dit project deelnemen."

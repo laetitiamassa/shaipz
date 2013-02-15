@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
     personal_status.present?
   end
   
-  def self.personal_timing=(timing)
+  def self.personal_timings=(timing)
     write_attribute(:personal_timing, timing.gsub(" ", "").split(","))
   end
   

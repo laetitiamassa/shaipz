@@ -27,6 +27,7 @@ class UsersController < ApplicationController
       @urls = @url_immo.generate_urls
       @building_types = @url_immo.building_types
       @personal_statuses = User.personal_statuses
+      @personal_timings = User.personal_timings
       flash[:alert] = t("profile.update_errors")
       render :edit
     end
