@@ -5,7 +5,7 @@
       - if user == current_user
         = link_to t("profile.edit"), edit_user_path(user), :class => "edit"
 
-    %h2= user.name
+    %h2= user.has_name? ? user.name : user.name_placeholder
 
     .cohousing= image_tag ("cohousing.png"), :title => t("profile.logo_cohousing") if user.cohousing?
 
@@ -27,9 +27,9 @@
         m&sup2;
 
   %ul#profile-actions
-    %li= link_to t("profile.find"), user_path(user), :title => t("profile.find_shortcut")
-    %li= link_to t("project.create"), new_project_path, :title => t("project.create_shortcut")
-    %li= link_to t("project.join"), stream_path, :title => t("project.join_shortcut")
+    %li= link_to image_tag("find_building_icon.png", :size => "54x42"), user_path(user), :title => t("profile.find_shortcut")
+    %li= link_to image_tag("create_project_icon.png", :size => "54x42"), new_project_path, :title => t("project.create_shortcut")
+    %li= link_to image_tag("join_project_icon.png", :size => "54x42"), stream_path, :title => t("project.join_shortcut")
     %li.invitation= link_to t("profile.invite_friends"), new_friend_invitations_path
 
   :javascript
