@@ -46,6 +46,10 @@
     = f.label :personal_status, :class => 'control-label'
     .controls= f.select :personal_status, @personal_statuses
 
+  .control-group
+    = f.label :personal_timing, :class => 'control-label'
+    .controls= f.text_field :personal_timing, :class => 'span4'
+
 %fieldset
   %legend Picture
 

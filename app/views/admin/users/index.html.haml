@@ -16,6 +16,11 @@
       %th Sign in count
       %th Current sign in
       %th Last sign in
+      %th Favorite areas
+      %th Maximum budget
+      %th Minimum space
+      %th Readiness
+      %th Availabilities
       %th Remembered at
       %th Password reset
       %th Current sign in IP
@@ -35,6 +40,11 @@
           %span.badge= user.sign_in_count
         %td= l(user.current_sign_in_at, :format => :long) if user.signed_in?
         %td= l(user.last_sign_in_at, :format => :long) if user.signed_in_before?
+        %td= user.favorite_areas
+        %td= user.maximum_budget
+        %td= user.minimum_space
+        %td= user.personal_status
+        %td= user.personal_timing
         %td= user.remembered? ? l(user.remember_created_at, :format => :long) : :never
         %td= user.has_reset_password? ? :yes : :no
         %td= user.current_sign_in_ip
