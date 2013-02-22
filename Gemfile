@@ -12,6 +12,7 @@ gem 'jquery-rails',      '~> 2.1.3'
 gem 'paperclip',         '~> 3.3.1'
 gem 'newrelic_rpm'
 gem 'nokogiri'
+gem 'acts_as_commentable_with_threading'
 
 group :assets do
   gem 'sass-rails',     '~> 3.2.5'

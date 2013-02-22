@@ -9,6 +9,7 @@ class ProjectCreator
 
   def create
     if project.save
+      NotificationMailer.after_creation(owner, project).deliver
       NotificationMailer.create_project(owner, project, users_interested_in_cohousing).deliver if project.cohousing
       facebook_service.post_project_on_wall(project) if facebook_service && project.share_on_facebook
       true

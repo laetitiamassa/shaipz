@@ -226,6 +226,12 @@ fr:
         content3: "Si vous êtes le premier à rejoindre ce projet, jetez un oeil à"
         best_practices_leader: "l'art et la manière de mener un projet Shaipz"
         content4: "Vous pouvez revenir à la page du projet"
+      after_creation:
+        subject: "Partagez votre projet et concrétisez-le"
+        content1: "Vous avez créé le nouveau projet %{project} sur Shaipz!"
+        content2: "Pour mettre toutes les chances de votre côté et concrétiser ce projet, partagez votre projet dans vos réseaux. En plus, découvrez"
+        best_practices_leader: "l'art et la manière de mener un projet sur Shaipz"
+        content3: "Vous pouvez revenir à la page du projet"
   shaipz:
     i_am_in: "Projets auxquels je participe"
   facebook:

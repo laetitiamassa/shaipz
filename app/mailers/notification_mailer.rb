@@ -21,6 +21,16 @@ class NotificationMailer < ActionMailer::Base
     )
   end
 
+  def after_creation(user,project) #after having created a new project
+    @user    = user
+    @project = project
+    mail(
+      :to => user.email,
+      :subject => t("notification.mail.after_creation.subject"),
+      :project => @project.name
+    )
+  end
+
   def leave_participant(user,project) #when a participant is leaving
     @user    = user
     @project = project
