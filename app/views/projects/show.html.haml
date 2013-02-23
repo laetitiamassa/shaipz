@@ -65,16 +65,18 @@
               = f.submit t("project.join_project")
 
       %ol
-        - @participants.each do |p|
-          %li
-            = link_to(image_tag(p.picture.url(:thumb)), user_path(p))
-            = link_to p.has_name? ? p.name : p.name_placeholder, user_path(p)
-            = t("(")
-            = t("statuses.#{p.personal_status}") if p.has_personal_status?
-            = t(")")
-          %li
-            = t("project.personal_timing")
-            = p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder
+        #participants_data
+          - @participants.each do |p|
+            %li
+              = link_to(image_tag(p.picture.url(:thumb)), user_path(p))
+            %li
+              %ul
+                %li
+                  %span= link_to p.has_name? ? p.name : p.name_placeholder, user_path(p)
+                %li 
+                  %span   
+                    = t("project.personal_timing")
+                    = p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder
             
             
 

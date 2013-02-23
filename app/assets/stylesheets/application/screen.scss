@@ -1507,11 +1507,21 @@ header #flash .notice {
 }
 
 #show-project #participants ol li {
+
+  span {  
+    font-size: 1.5em;
+    color: #1e5270;
+  }
   list-style: none;
 }
 
-#show-project #participants ol li + li {
+
+#show-project #participants ul li + li {
   margin: 10px 0 0 0;
+  span {  
+    font-size: 1em;
+    font-style: italic;
+  }
 }
 
 #show-project #participants ol li a {
@@ -1522,6 +1532,7 @@ header #flash .notice {
 #show-project #participants ol li img {
   vertical-align: middle;
   margin: 0 10px 0 0;
+  float: left;
 }
 
 .project-status {
