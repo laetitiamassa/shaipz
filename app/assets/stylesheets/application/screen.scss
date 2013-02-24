@@ -575,15 +575,18 @@ header #flash .notice {
   #stream-wrap {
     min-height: 377px;
     margin: 0 0 0 220px;
+    width: 720px;
   }
 
-  #start-project .action-call {
-    text-align: center;
+  #start-project 
+
+    .action-call {
+      text-align: right;
 
     .button {
       position: relative;
       display: inline-block;
-      background: url("/assets/immo-search-bg.png") repeat-x center bottom;
+      background: url("/assets/immo-search-bg.png") repeat-x right bottom;
       border: 1px solid #ddd;
       -moz-border-radius: 2px;
       border-radius: 2px;
@@ -627,7 +630,7 @@ header #flash .notice {
         list-style: none;
         padding: 10px 0;
         position: relative;
-        width: 500px;
+        width: 720px;
 
         &.disabled {
           opacity: .4;
@@ -639,8 +642,8 @@ header #flash .notice {
 
           img {
             border: 1px solid #dbdbdb;
-            width: 100px;
-            height: 50px;
+            width: 140px;
+            height: 70px;
             vertical-align: middle;
             padding: 3px;
             -moz-box-shadow: 0 1px 1px #efefef;
@@ -652,7 +655,7 @@ header #flash .notice {
           margin: 0 0 15px 0;
           padding: 0;
           color: #777;
-          font-size: 1.1em;
+          font-size: 1.3em;
 
           a {
             text-decoration: none;
@@ -694,7 +697,8 @@ header #flash .notice {
         }
 
         .details {
-          clear: left;
+          clear: float;
+          margin-bottom: 5px; 
         }
 
         .links {
@@ -800,7 +804,7 @@ header #flash .notice {
 
   #create-call {
     text-align: right;
-    margin: 0 220px 0 0;
+    margin: 0 0px 0 0;
 
     h4 {
       text-transform: uppercase;

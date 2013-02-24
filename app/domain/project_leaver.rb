@@ -16,8 +16,8 @@ class ProjectLeaver
   end
 
   def disable_participation
-    NotificationMailer.leave_participant(user, project).deliver
     participation.disable
+    NotificationMailer.leave_participant(user, project).deliver
   end
 
   def disable_project
