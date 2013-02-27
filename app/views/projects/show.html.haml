@@ -78,11 +78,6 @@
                     = t("project.personal_timing")
                     = p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder
             
-            
-
-      #disqus_thread
-        = render :partial => "_shared/disqus", :locals => { :title => @project.name }
-
       - if @project.has_user_as_owner?(@user)
         .leave-action
           .leave-button= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')}"
@@ -90,6 +85,10 @@
       - if @project.has_participant?(@user)
         .leave-action
           .leave-button= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('participation.destroy_confirmation')}"
+
+
+      #disqus_thread
+        = render :partial => "_shared/disqus", :locals => { :title => @project.name }
 
 - content_for :report do
   .report= link_to 'Report', new_project_report_path(@project)
