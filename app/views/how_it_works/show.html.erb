@@ -2,44 +2,49 @@
     
     <h1><%= t("how.how") %></h1>
     
-  </section>
-  
-	<div class="timeline">
-		  <section id="why-shaipz">
-		    <h2><i><%= t("how.baseline") %></i></h2>
-            <div class="why-box place">              
-              <div class="video"><%= link_to image_tag("discovery_all_icon.png", :size => "220x220") %></div>
-              <h3><strong><%= t("Discovery") %></h3>
-            </div>
-            <div class="why-box neighbours">
-              <div class="video"><%= link_to image_tag("commitment_icon.png", :size => "220x220") %></div>
-              <h3><strong><%= t("Commitment") %></h3>
-            </div>
-            <div class="why-box terms-of-living">
-              <div class="video"><%= link_to image_tag("paperwork_icon.png", :size => "220x220") %></div>
-              <h3><strong><%= t("Paperwork") %></h3>
-            </div>
-            <div class="why-box terms-of-living">
-              <div class="video"><%= link_to image_tag("success_icon.png", :size => "220x220") %></div>
-              <h3><strong><%= t("Happiness") %></h3>
-            </div>
-          </section>
-    </div>
-	
-	
-<div id="stream-wrap">
-  <section id='how-it-works'>
+	  <section id="why-shaipz">
+	  <h2><i><%= t("how.baseline") %></i></h2>
+	  
+		<div id="discovery-icon-more" class="why-box place">              
+		  <div class="video"><%= link_to image_tag("discovery_all_icon.png", :size => "220x220") %></div>
+		  <h3><strong><%= t("Discovery") %></h3>
+		</div>
+		
+		<div class="why-box neighbours">
+		  <div class="video"><%= link_to image_tag("commitment_icon.png", :size => "220x220") %></div>
+		  <h3><strong><%= t("Commitment") %></h3>
+		</div>
+	    
+	    <div class="why-box terms-of-living">
+	      <div class="video"><%= link_to image_tag("paperwork_icon.png", :size => "220x220") %></div>
+	      <h3><strong><%= t("Paperwork") %></h3>
+	    </div>
+	    
+	    <div class="why-box terms-of-living">
+	      <div class="video"><%= link_to image_tag("success_icon.png", :size => "220x220") %></div>
+	      <h3><strong><%= t("Happiness") %></h3>
+	    </div>
+	  </section>
+
+	<div id="FAQ">
+		<h1 style="text-align: left"><%= t("FAQ.what") %></h1>
+		<p><%= t("FAQ.what-intro") %> <span id="FAQ-what-more" class="FAQ-more"><%= t("FAQ.more") %></span></p>
+		<div id="FAQ-what-further" class="FAQ-further"><p><%= t("FAQ.what-content1") %><%= t("FAQ.what-content-connect") %><%= t("FAQ.what-content2") %><%= t("FAQ.what-content-collaborate") %><%= t("FAQ.what-content3") %></p></div>
 
 		
-	
-<! timeline>
-			
-<! timeline image>
-	  <section id='how-it-works'>	
-		<div class="timeline">
-		  	
-		
-<! timeline details>
+		<h1 style="text-align: left"><%= t("FAQ.how") %></h1>
+		<p><%= t("FAQ.how-intro") %> <span id="FAQ-how-more" class="FAQ-more"><%= t("FAQ.more") %></span></p>
+		<div id="FAQ-how-further" class="FAQ-further">
+			<p><%= t("FAQ.how-content1") %></p>
+			<p><%= t("FAQ.how-content2") %></p>
+			<p><%= t("FAQ.how-content3") %></p>
+			<p><span id="FAQ-timeline-more" class="FAQ-more"><%= t("FAQ.how-timeline") %></span></p>
+	    </div>
+
+       
+		<section id='how-it-works'>	
+		<div id="FAQ-timeline-further" class="timeline">  	
+            <!-- timeline details-->
 			
 			<div id="building-discovery">
 			<h3><%= t("timeline.building-discovery") %></h3>
@@ -96,23 +101,62 @@
 			<p><%= t("timeline.move-in-content1") %><br><%= t("timeline.move-in-content2") %></p> 
 			</div>
 		
-		
 		</div>
+
+	    <h1 style="text-align: left"><%= t("FAQ.affordable") %></h1>
+	    <p><%= t("FAQ.affordable-intro") %> <span id="FAQ-affordable-more" class="FAQ-more"><%= t("FAQ.more") %></span></p>
+	    <div id="FAQ-affordable-further" class="FAQ-further">
+		    <p><%= t("FAQ.affordable-content1") %></p>
+		    <p><%= t("FAQ.affordable-content2") %></p>
+		</div>
+
+
+
+
+
+
+	
+
 			
-<p><%= link_to t("how.join"), stream_path %> <%= t("how.or") %> <%= link_to t("how.create_call"), new_project_path %></p>			
+        <p><%= link_to t("how.join"), stream_path %> <%= t("how.or") %> <%= link_to t("how.create_call"), new_project_path %></p>			
 			
 			
-			<h1><%= t("how.questions") %></h1>
-			<p><%= t("how.ask_questions") %></p>
-			<p><%= t("how.shy") %> <b><%= t("how.email") %></b> <%= t("how.email_at") %> <%= link_to "hello@Shaipz.com", "mailto:hello@Shaipz.com" %></p>
-			<p><%= t("how.also") %></p>
-			<p><b><%= t("how.twitter") %> </b> <%= link_to "http://twitter.com/shaipzapp", "http://twitter.com/shaipzapp" %></p>
-			<p><b><%= t("how.facebook") %> </b> <%= link_to "http://facebook.com/shaipz", "http://facebook.com/shaipz" %></p>
-			<p><b><%= t("how.join_team") %> </b> <%= link_to "http://checkthis.com/6r45","http://checkthis.com/6r45" %></p>
-			
-			
-			
+		<h1><%= t("how.questions") %></h1>
+
+		<p><%= t("how.ask_questions") %></p>
+		<p><%= t("how.shy") %> <b><%= t("how.email") %></b> <%= t("how.email_at") %> <%= link_to "hello@Shaipz.com", "mailto:hello@Shaipz.com" %></p>
+		<p><%= t("how.also") %></p>
+		<p><b><%= t("how.twitter") %> </b> <%= link_to "http://twitter.com/shaipzapp", "http://twitter.com/shaipzapp" %></p>
+		<p><b><%= t("how.facebook") %> </b> <%= link_to "http://facebook.com/shaipz", "http://facebook.com/shaipz" %></p>
+		<p><b><%= t("how.join_team") %> </b> <%= link_to "http://checkthis.com/6r45","http://checkthis.com/6r45" %></p>	
 			
 		</section>
-	</div>
+
+	
+    
+    <script type="text/javascript">
+      $(document).ready (function(){
+        $("#FAQ-what-further").hide();
+        $("#FAQ-how-further").hide();
+        $("#FAQ-affordable-further").hide();
+        $("#FAQ-timeline-further").hide();
+	        $("#FAQ-what-more").one("click",function(){
+	          $("#FAQ-what-further").slideDown("active");
+	        });
+	        $("#FAQ-how-more").one("click",function(){
+	          $("#FAQ-how-further").slideDown("active");
+	        });
+	        $("#FAQ-affordable-more").one("click",function(){
+	          $("#FAQ-affordable-further").toggle("active");
+	        });
+	        $("#discovery-icon-more").one("click",function(){
+	          $("#FAQ-timeline-further").toggle("active");
+	        });
+	        $("#FAQ-timeline-more").one("click",function(){
+	          $("#FAQ-timeline-further").toggle("active");
+	        });
+	        
+      });
+    </script>
+
 </section>

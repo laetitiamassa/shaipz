@@ -610,7 +610,7 @@ header #flash .notice {
     h2 {
       background: url("/assets/stream-header-bg.png") repeat-x center center;
       text-transform: uppercase;
-      margin: 15px 0 5px;
+      margin: 0px 0 5px;
       padding: 0;
       font-size: 1em;
       color: #1b8e8a;
@@ -628,7 +628,7 @@ header #flash .notice {
 
       li {
         list-style: none;
-        padding: 10px 0;
+        padding: 0px 0;
         position: relative;
         width: 720px;
 
@@ -1715,12 +1715,13 @@ footer {
 	color: #1b8e8a
 }
 
+
 #how-it-works h2 {
 	font-size: large;
 }
 
 #how-it-works p {
-	font-size: 110%;
+	font-size: 120%;
 }
 
 #how-it-works p a {
@@ -1731,6 +1732,14 @@ footer {
 #how-it-works a {
 	font-size: 110%;
 	color: #1b8e8a;
+}
+
+#how-it-works span {
+  
+  font-style: italic;
+  text-decoration: underline;
+  color: #1b8e8a;
+
 }
 
 /* icons */
@@ -1769,6 +1778,10 @@ footer {
   .how-icon.success {
     text-align: center;
   }
+}
+
+#how-it-works .FAQ-more {
+  cursor: pointer
 }
 
 /* timeline */
