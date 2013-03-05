@@ -4,13 +4,9 @@ class NotificationMailer < ActionMailer::Base
 
   def welcome_user(user) #when a new user is successfully registered
     @user = user
-    @url_create = new_project_path
-    @url_join = stream_path
-    @url_profile = edit_user_path(user)
-    @url_how = how_it_works_path
     mail(
       :to => user.email,
-      :subject => t("notification.mail.welcome_user.subject")
+      :subject => t("notification.mail.welcome_user.subject", :name => @user.name)
     )
   end
 

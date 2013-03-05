@@ -230,7 +230,7 @@ en:
         best_practices_leader: "the Leader Best Practices"
         content3: "You can go back to the page of the project"
       welcome_user:
-        subject: "Welcome to Shaipz, %{name}!"
+        subject: "Welcome to Shaipz !"
         glad: "We're glad to welcome you to the Shaipz Community"
         purpose: "In order to help you find your next home at a more affordable price, with chosen neighbours and chosen terms of living, we at Shaipz are building a bunch of tools, enabling you to connect with people around a building for sale, and to collaborate with them so that each of you can achieve his/her own home ownership dream"
         get_started: "Let's get started"
