@@ -1,4 +1,4 @@
-<h2><%= t("notification.mail.hello"), :name => user.name? ? user.name_placeholder %>!</h2>
+<h2><%= t("notification.mail.hello", :name => @user.name) %>!</h2>
 
 
 <h1><%= t("notification.mail.welcome_user.glad") %>!</h1>
@@ -9,9 +9,9 @@
 
 <h2><%= t("notification.mail.welcome_user.get_started") %>:</p>
 
-<p><%= t("notification.mail.welcome_user.go_to") %> <%= link_to t("Shaipz.com"), "http://shaipz.com" %> <%= t("notification.mail.welcome_user.complete") %> <%= link_to t("notification.mail.welcome_user.profile"), user_edit_url(@user) %>;</p>
+<p><%= t("notification.mail.welcome_user.go_to") %> <%= link_to t("Shaipz.com"), "http://shaipz.com" %> <%= t("notification.mail.welcome_user.complete") %> <%= link_to t("notification.mail.welcome_user.profile"), @url_profile %>;</p>
 
-<p><%= t("notification.mail.welcome_user.join") %> <%= link_to t("notification.mail.welcome_user.existing_project"), home_url %> <%= t("how.or") %> <%= link_to t("notification.mail.welcome_user.create"), new_project_url %> <%= t("notification.mail.welcome_user.on_shaipz") %>;</p>
+<p><%= t("notification.mail.welcome_user.join") %> <%= link_to t("notification.mail.welcome_user.existing_project"), @url_join %> <%= t("how.or") %> <%= link_to t("notification.mail.welcome_user.create"), @url_create %> <%= t("notification.mail.welcome_user.on_shaipz") %>;</p>
 
 <p><%= t("notification.mail.welcome_user.collaborate") %>!</p>
 
@@ -20,7 +20,7 @@
 
 <p><%= t("notification.mail.welcome_user.question") %> <%= link_to t("notification.mail.welcome_user.drop_email"), "mailto:hello@shaipz.com" %>.</p>
 
-<p><%= t("notification.mail.welcome_user.FAQ") %> <%= link_to t("notification.mail.here"),how_it_works_url %>.</p>
+<p><%= t("notification.mail.welcome_user.FAQ") %> <%= link_to t("notification.mail.here"),@url_how %>.</p>
 
 
 <p><%= t("notification.mail.welcome_user.warm_salutation") %>!</p>
