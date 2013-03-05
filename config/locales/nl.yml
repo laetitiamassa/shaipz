@@ -199,6 +199,7 @@ nl:
       congratulation: "Proficiat!"
       signature: "We wensen U een geweldige dag!"
       team: "De Shaipz Team"
+      team_members: "Thuy & Laetitia"
       new_participant:
         subject: "%{name} heeft deel genomen aan %{project}!"
         content: "U kunt meer informatie hebben"
@@ -231,6 +232,24 @@ nl:
         content2: "You want to maximise your chances to make it happen? Then share your project in your networks, and follow"
         best_practices_leader: "the Leader Best Practices"
         content3: "You can go back to the page of the project"
+      welcome_user:
+        subject: "Welcome to Shaipz, %{name}!"
+        glad: "We're glad to welcome you to the Shaipz Community"
+        purpose: "In order to help you find your next home at a more affordable price, with chosen neighbours and chosen terms of living, we at Shaipz are building a bunch of tools, enabling you to connect with people around a building for sale, and to collaborate with them so that each of you can achieve his/her own home ownership dream"
+        get_started: "Let's get started"
+        go_to: "1. Go to"
+        complete: "and complete"
+        profile: "your profile"
+        join: "2. join an"
+        existing_project: "existing project"
+        create: "create a brand new project"
+        on_shaipz: "on Shaipz"
+        collaborate: "3. collaborate with other participants to make your project happen, through four main phases: the discovery, the commitment, the paperwork and the happiness"
+        here_to_help: "Of course, we are standing right here to help"
+        question: "Should you have any question, query or suggestion, please feel free to"
+        drop_email: "drop us an email at hello@shaipz.com"
+        FAQ: "You can also check out the FAQ page"
+        warm_salutation: "See you soon on Shaipz"
   shaipz:
     i_am_in: "Projecten die ik deel aan"
   facebook:

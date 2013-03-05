@@ -1,17 +1,29 @@
-<h2><%= t("notification.mail.congratulation") %></h2>
+<h2><%= t("notification.mail.hello"), :name => user.name? ? user.name_placeholder %>!</h2>
 
-<p>
-  <%= t("notification.mail.after_participation.content1", :project => @project.name) %>
-</p>
-<p>
-  <%= t("notification.mail.after_participation.content2") %> <%= link_to t("notification.mail.after_participation.best_practices_joiner"), "http://checkthis.com/shaipzjoiner" %>.
-</p>
-<p>
-  <%= t("notification.mail.after_participation.content3") %> <%= link_to t("notification.mail.after_participation.best_practices_leader"), "http://checkthis.com/shaipzleader" %>.
-</p>
-<p><b>
-  <%= t("notification.mail.after_participation.content4") %> <%= link_to t("notification.mail.here"), project_url(@project) %>.
-</b></p>
 
-<p><%= t("notification.mail.signature") %></p>
+<h1><%= t("notification.mail.welcome_user.glad") %>!</h1>
+
+
+<p><%= t("notification.mail.welcome_user.purpose") %>.</p>
+
+
+<h2><%= t("notification.mail.welcome_user.get_started") %>:</p>
+
+<p><%= t("notification.mail.welcome_user.go_to") %> <%= link_to t("Shaipz.com"), "http://shaipz.com" %> <%= t("notification.mail.welcome_user.complete") %> <%= link_to t("notification.mail.welcome_user.profile"), user_edit_url(@user) %>;</p>
+
+<p><%= t("notification.mail.welcome_user.join") %> <%= link_to t("notification.mail.welcome_user.existing_project"), home_url %> <%= t("how.or") %> <%= link_to t("notification.mail.welcome_user.create"), new_project_url %> <%= t("notification.mail.welcome_user.on_shaipz") %>;</p>
+
+<p><%= t("notification.mail.welcome_user.collaborate") %>!</p>
+
+
+<h2><%= t("notification.mail.welcome_user.here_to_help") %>:</h2>
+
+<p><%= t("notification.mail.welcome_user.question") %> <%= link_to t("notification.mail.welcome_user.drop_email"), "mailto:hello@shaipz.com" %>.</p>
+
+<p><%= t("notification.mail.welcome_user.FAQ") %> <%= link_to t("notification.mail.here"),how_it_works_url %>.</p>
+
+
+<p><%= t("notification.mail.welcome_user.warm_salutation") %>!</p>
+
+<h2><%= t("notification.mail.team_members") %></h2>
 <p class="signature"><%= t("notification.mail.team") %></p>

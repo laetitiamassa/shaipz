@@ -179,7 +179,7 @@ en:
     share_on_facebook: "Boost the project with facebook"
     project_disabled: "The project is not active anymore, but you can create a new one."
   footer:
-    terms_of_use: "Terms of services"
+    terms_of_use: "Terms"
     how_it_works: "How it works"
     browser_support: "The website does not support old versions of IE yet."
   report:
@@ -192,9 +192,11 @@ en:
     mail:
       here: "here"
       salutation: "Hi there,"
+      hello: "Hello "
       congratulation: "Congratulations!"
       signature: "Have a great day!"
       team: "The Shaipz Team"
+      team_members: "Thuy & Laetitia"
       new_participant:
         subject: "%{name} has joined %{project}!"
         content: "You can have more details"
@@ -227,6 +229,25 @@ en:
         content2: "You want to maximise your chances to make it happen? Then share your project in your networks, and follow"
         best_practices_leader: "the Leader Best Practices"
         content3: "You can go back to the page of the project"
+      welcome_user:
+        subject: "Welcome to Shaipz, %{name}!"
+        glad: "We're glad to welcome you to the Shaipz Community"
+        purpose: "In order to help you find your next home at a more affordable price, with chosen neighbours and chosen terms of living, we at Shaipz are building a bunch of tools, enabling you to connect with people around a building for sale, and to collaborate with them so that each of you can achieve his/her own home ownership dream"
+        get_started: "Let's get started"
+        go_to: "1. Go to"
+        complete: "and complete"
+        profile: "your profile"
+        join: "2. join an"
+        existing_project: "existing project"
+        create: "create a brand new project"
+        on_shaipz: "on Shaipz"
+        collaborate: "3. collaborate with other participants to make your project happen, through four main phases: the discovery, the commitment, the paperwork and the happiness"
+        here_to_help: "Of course, we are standing right here to help"
+        question: "Should you have any question, query or suggestion, please feel free to"
+        drop_email: "drop us an email at hello@shaipz.com"
+        FAQ: "You can also check out the FAQ page"
+        warm_salutation: "See you soon on Shaipz"
+        
   shaipz:
     i_am_in: "Projects I'm in"
   facebook:
@@ -339,7 +360,7 @@ en:
     what-content2: "with other people having similar real estate tastes, and then to"
     what-content-collaborate: "collaborate"
     what-content3: "with each other in order to achieve their respective real estate goals."
-    how: "How does Shaipz works?"
+    how: "How does Shaipz work?"
     how-intro: "Shaipz works around three main aspects: the people, the buildings and the events"
     how-content1: "On Shaipz, each user has a real estate profile, including his/her name, budget, 5 favorite districts, minimum space wanted, as well as his/her buying personal status, his/her openness to cohousing, and of course his/her 3 best moments for a visit or a meeting with potential futur neighbours."
     how-content2: "Besides the users, there are the projects. Based upon a divided or dividable building, each project is created or lead by a Shaipz user like you, and soon joined by other Shaipz users interested in buying one of the appartements available in the building."
