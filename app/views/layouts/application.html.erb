@@ -56,8 +56,7 @@
               <%= link_to(t("menu.sign_out"), destroy_user_session_path, :method => :delete) %>
             </li>
             <li>
-              <%= link_to image_tag("en_flag.jpeg"), url_for(:locale => 'en') %>  
-              <%= link_to image_tag("nl_flag.jpeg"), url_for(:locale => 'nl') %>  
+              <%= link_to image_tag("en_flag.jpeg"), url_for(:locale => 'en') %>    
               <%= link_to image_tag("fr_flag.jpeg"), url_for(:locale => 'fr') %>
             </li>
           </ul>
@@ -99,9 +98,8 @@
 							</div>
 
 							<div class="facebook-button">
-								<%= link_to image_tag("en_flag.jpeg"), url_for(:locale => 'en') %>  
-                                <%= link_to image_tag("nl_flag.jpeg"), url_for(:locale => 'nl') %>  
-                                <%= link_to image_tag("fr_flag.jpeg"), url_for(:locale => 'fr') %>
+								<%= link_to image_tag("en_flag.jpeg"), url_for(:locale => 'en') %>                   
+                <%= link_to image_tag("fr_flag.jpeg"), url_for(:locale => 'fr') %>
 							</div>
 						</div>
           <% end %>
