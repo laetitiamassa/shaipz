@@ -4,3 +4,4 @@ en:
       user:
         update_success: "The user has been correctly updated."
         update_error: "Something prevented this user from being updated!"
+        destroy_success: "This user has been successfully destroyed"
