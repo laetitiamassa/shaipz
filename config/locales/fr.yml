@@ -81,6 +81,7 @@ fr:
     ready_but_bank: "Je veux acheter maintenant, mais je dois encore voir ma banque"
     ready_with_bank: "Je suis prêt(e) à acheter maintenant et j'ai déjà vu ma banque"
     buying: "Je veux et suis hyper prêt(e) à acheter maintenant (ma banque et un tour du marché: vérifiés!)"
+    bought: "Je suis maintenant un(e) heureux(se) propriétaire !"
   menu:
     home: "Accueil"
     profile: "Profil"

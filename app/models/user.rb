@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   require 'csv'
 
-  PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying"]
+  PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying", "bought"]
 
   has_many :projects, :foreign_key => "owner_id"
   has_many :reports, :as => :reportable

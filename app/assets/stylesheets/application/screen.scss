@@ -1037,6 +1037,11 @@ header #flash .notice {
   width: 100%;
 }
 
+.personal-status .progress.bought {
+  background: url("/assets/progress-bought.png") repeat-x;
+  width: 100%;
+}
+
 
 #show-profile #profile-info {
   margin: 0 0 0 220px;

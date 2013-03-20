@@ -80,6 +80,7 @@ nl:
     ready_but_bank: "Ik wil nu kopen, maar ik moet eerst mijn bank zien"
     ready_with_bank: "Ik wil nu kopen, en ik heb mijn bank al gezien"
     buying: "Ik wil nu kopen (bank en overzicht van markt gedaan!)"
+    bought: "Je suis maintenant un(e) heureux(se) propriétaire !"
   menu:
     home: " Startpagina"
     profile: "Profiel"

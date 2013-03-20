@@ -77,6 +77,7 @@ en:
     ready_but_bank: "I want to buy now, but I should see with the bank first"
     ready_with_bank: "I'm ready to buy and I've already seen the bank"
     buying: "I'm over ready to buy now (bank and tour of market: done!)"
+    bought: "I'm now a happy owner!"
   menu:
     home: "Home"
     profile: "Profile"
