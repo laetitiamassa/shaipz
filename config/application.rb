@@ -63,7 +63,7 @@ module Shaipz
     config.active_record.whitelist_attributes = true
 
     #observers
-    config.active_record.observers = :user_observer
+    config.active_record.observers = :user_observer, :participation_observer
 
     # Enable the asset pipeline
     config.assets.enabled = true

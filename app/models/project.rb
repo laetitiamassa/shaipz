@@ -80,6 +80,10 @@ class Project < ActiveRecord::Base
     participants.any?
   end
 
+  def has_enough_participants?
+    owner_and_participants.count == maximum_shaipz.count
+  end
+
   def has_participant?(participant)
     participants.include?(participant)
   end
