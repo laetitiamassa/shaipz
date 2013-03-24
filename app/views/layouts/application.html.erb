@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-  <title>Shaipz | Collaborative home buying</title>
+  <title>Shaipz</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= favicon_link_tag "favicon.png", :type => "image/png" %>
@@ -52,10 +52,7 @@
 						<li>
               <%= link_to(t("menu.shaipz"), shaipz_path) %>
             </li>
-            <li>
-              <%= link_to(t("menu.sign_out"), destroy_user_session_path, :method => :delete) %>
-            </li>
-            <li>
+              <li>
               <%= link_to image_tag("en_flag.jpeg"), url_for(:locale => 'en') %>    
               <%= link_to image_tag("fr_flag.jpeg"), url_for(:locale => 'fr') %>
             </li>
@@ -68,16 +65,9 @@
 						</li>
 
 						<li>
-	            <%= link_to image_tag("facebook-logo-white.png"), "http://facebook.com/shaipz", :target => "_blank" %>
-	          </li>
-
-            <li>
-	            <%= link_to image_tag("twitter-logo-white.png"), "http://twitter.com/shaipzapp", :target => "_blank" %>
-	          </li>
-
-						<li>
-	            <%= link_to image_tag("contact-logo-white.png"), "mailto:hello@shaipz.com", :target => "_blank" %>
-	          </li>
+              <%= link_to(t("menu.sign_out"), destroy_user_session_path, :method => :delete) %>
+            </li>
+          
 					</ul>
 				</nav>
       <% else %>
@@ -112,9 +102,7 @@
     <div class="wrap">
       <h1 class="logo">
         <%= link_to "Shaipz", root_url %>
-        <em>beta</em>
       </h1>
-      <p class="tagline">Collaborative home buying</p>
 
       <section id="flash">
         <% if notice %>
@@ -138,7 +126,6 @@
   <footer>
     <div class="wrap">
       <h1 class="logo">Shaipz</h1>
-      <p class="tagline">Collaborative home buying</p>
       <p class="browser"><%= t("footer.browser_support") %></p>
       <nav>
         <ul>

@@ -181,7 +181,7 @@ en:
     project_disabled: "The project is not active anymore, but you can create a new one."
   footer:
     terms_of_use: "Terms"
-    how_it_works: "How it works"
+    how_it_works: "FAQ"
     browser_support: "The website does not support old versions of IE yet."
   report:
     reason: "What do you want to report?"

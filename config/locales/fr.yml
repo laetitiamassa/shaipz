@@ -185,8 +185,8 @@ fr:
     project_disabled: "Le projet n'est plus actif, mais vous pouvez un créer un nouveau."
 
   footer:
-    terms_of_use: "Conditions d'utilisation"
-    how_it_works: "Comment ça marche"
+    terms_of_use: "Conditions"
+    how_it_works: "FAQ"
     browser_support: "Le site n'est pas optimisé pour les anciennes versions de Internet Explorer."
   report:
     reason: "Que souhaitez-vous signaler?"
