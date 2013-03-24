@@ -142,23 +142,23 @@
           %span.green-button= f.submit t('project.create_project')
         
          
-  :javascript
-    $(document).ready (function(){
-      $("#project-wrap .whats_details").hide();
-      $("#project-wrap .people").hide();
-      $("#project-wrap .happenings").hide();
-      $("#project-wrap .form-actions.clear").hide();
-        $("#project-wrap .place .source").one("click",function(){
-          $("#project-wrap .whats_details").toggle("active");
-       });
-        $("#project-wrap .how_big").one("click",function(){
-          $("#project-wrap .people").toggle("active");
-       }); 
-        $("#project-wrap .people .how_many").one("click",function(){
-        $("#project-wrap .happenings").toggle("active");
-        $("#project-wrap .form-actions.clear").toggle("active");
-       });
-    });
+  / :javascript
+  /   $(document).ready (function(){
+  /     $("#project-wrap .whats_details").hide();
+  /     $("#project-wrap .people").hide();
+  /     $("#project-wrap .happenings").hide();
+  /     $("#project-wrap .form-actions.clear").hide();
+  /       $("#project-wrap .place .source").one("click",function(){
+  /         $("#project-wrap .whats_details").toggle("active");
+  /      });
+  /       $("#project-wrap .how_big").one("click",function(){
+  /         $("#project-wrap .people").toggle("active");
+  /      }); 
+  /       $("#project-wrap .people .how_many").one("click",function(){
+  /       $("#project-wrap .happenings").toggle("active");
+  /       $("#project-wrap .form-actions.clear").toggle("active");
+  /      });
+  /   });
   
   :javascript
     $(document).ready (function(){

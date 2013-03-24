@@ -87,6 +87,7 @@ fr:
     profile: "Profil"
     sign_out: "Déconnexion"
     shaipz: "Mes Projets"
+    create: "Créer mon projet"
   stream:
     start_project: "Créez votre projet"
     all_projects: "Projets ouverts"

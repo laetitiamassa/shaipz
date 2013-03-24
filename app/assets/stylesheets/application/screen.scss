@@ -1186,6 +1186,7 @@ header #flash .notice {
     color: #1b8e8a;
     position: relative;
     margin: 30px 20px 5px 0;
+    cursor: pointer
 }
 
 #project-wrap #whats_your_project .whats_details {
@@ -1788,7 +1789,7 @@ footer {
 }
 
 #how-it-works .FAQ-more {
-  cursor: pointer
+  cursor: pointer 
 }
 
 /* timeline */
