@@ -1,7 +1,7 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 <section id="new-project">
-  <%= render :partial => "_shared/profile", :locals => { :user => @user } %>
+  
   <div id="project-wrap">
   	<h2><%= t("friend_invitation.title") %></h2>
 		<p><%= t("friend_invitation.subtitle") %> <%= link_to image_tag("facebook_logo_invite.png"), "https://www.facebook.com/dialog/feed?app_id=#{FACEBOOK_APP_ID}&link=http://shaipz.com&name=Shaipz,%20collaborative%20home%20buying&caption=Shaipz.com&description=" + t("friend_invitation.description_facebook") + "&redirect_uri=" + user_url(current_user) +

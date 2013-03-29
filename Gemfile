@@ -14,6 +14,7 @@ gem 'paperclip',         '~> 3.4.1'
 gem 'newrelic_rpm'
 gem 'nokogiri'
 gem 'acts_as_commentable_with_threading'
+gem 'bootstrap_forms'
 
 group :assets do
   gem 'sass-rails',     '~> 3.2.6'

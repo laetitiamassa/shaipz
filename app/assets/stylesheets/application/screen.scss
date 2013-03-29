@@ -1,13 +1,16 @@
-
+@import 'bootstrap';
 
 /* Fonts */
 
 @import url(http://fonts.googleapis.com/css?family=Amaranth);
 
 /* Generic */
+.navbar-inner .container {
+  width: 1020px;
+}
 
 body {
-  background: #fafafa url("/assets/bg.png") repeat-x center 50px;
+  background: #fafafa;
   font-size: 0.7em;
   font-family: "Lucida Grande", arial, sans-serif;
   min-width: 1020px;
@@ -210,7 +213,7 @@ header #flash .alert {
 header #flash .notice {
   color: #9fbd5a;
   background: #fff url("/assets/tick.png") no-repeat 10px center;
-}
+} 
 
 /* Content */
 
@@ -222,7 +225,7 @@ header #flash .notice {
   -moz-box-shadow: 0 1px 2px #ccc;
   box-shadow: 0 1px 2px #ccc;
   color: #777;
-  min-height: 700px;
+  min-height: 450px;
   position: relative;
 }
 
@@ -384,11 +387,15 @@ header #flash .notice {
       list-style: none;
       margin: 0 0 15px;
 
-      .label {
+      .label-in {
         font-weight: bold;
         display: inline-block;
         width: 125px;
 			}
+      .p {
+        fond-weight: bold;
+        font-size: 1.7em;
+      }
 
 			strong a {
 				color: #1b8e8a;
@@ -576,8 +583,8 @@ header #flash .notice {
 
   #stream-wrap {
     min-height: 377px;
-    margin: 0 0 0 220px;
-    width: 720px;
+    margin: 0 0 0 0px;
+    width: 920px;
   }
 
   #start-project 
@@ -632,7 +639,7 @@ header #flash .notice {
         list-style: none;
         padding: 10px 0;
         position: relative;
-        width: 720px;
+        width: 920px;
 
         &.disabled {
           opacity: .4;
@@ -644,8 +651,8 @@ header #flash .notice {
 
           img {
             border: 1px solid #dbdbdb;
-            width: 140px;
-            height: 70px;
+            width: 200px;
+            height: 100px;
             vertical-align: middle;
             padding: 3px;
             -moz-box-shadow: 0 1px 1px #efefef;
@@ -654,10 +661,10 @@ header #flash .notice {
         }
 
         h3 {
-          margin: 0 0 15px 0;
+          margin: 0 0 10px 0;
           padding: 0;
           color: #777;
-          font-size: 1.3em;
+          font-size: 1.7em;
 
           a {
             text-decoration: none;
@@ -705,7 +712,7 @@ header #flash .notice {
 
         .links {
           position: absolute;
-          top: 39px;
+          bottom: 50px;
           right: 0;
           line-height: 16px;
 
@@ -727,7 +734,7 @@ header #flash .notice {
           }
 
           span + span {
-            margin: 0 0 0 5px;
+            margin: 0 0 0 2px;
           }
         }
 
@@ -753,20 +760,17 @@ header #flash .notice {
 
         .join-action {
           position: absolute;
-          bottom: 10px;
+          bottom: 5px;
           right: 0;
 
           input {
             display: block;
             border: none;
-            background: url("/assets/button-b-bg.png") repeat-x center center;
             color: #fff;
             padding: 6px 20px;
             font-weight: bold;
             text-decoration: none;
             text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-            -moz-border-radius: 2px;
-            border-radius: 2px;
             -moz-box-shadow: 0 1px 2px #ddd;
             box-shadow: 0 1px 2px #ddd;
           }
@@ -835,7 +839,7 @@ header #flash .notice {
   position: relative;
 
   ul {
-    margin: 0;
+    margin: 0 0 20px;
     padding: 0;
 
     li {
@@ -847,6 +851,10 @@ header #flash .notice {
         font-weight: bold;
         margin: 0 0 7px;
         color: #aaa;
+      }
+
+      .string {
+        margin: 0 0 25px;
       }
     }
   }
@@ -903,7 +911,7 @@ header #flash .notice {
 }
 
 #research-links {
-  margin: 0 0 0 220px;
+  margin: 0 0 0 0px;
 
   ul {
     list-style: none;
@@ -953,11 +961,16 @@ header #flash .notice {
 
     .cohousing {
       position: relative;
+      
+      h3 {
+        font-size: 1.2em;
+        margin-top: -5px;
+      }
 
       img {
         position: absolute;
         right: 0;
-        top: -2px;
+        top: 8px;
       }
     }
 
@@ -1105,7 +1118,7 @@ header #flash .notice {
 /* New project */
 
 #project-wrap {
-  margin: 0 0 0 220px;
+  margin: 0 0 0 0px;
 
   h2 {
     margin: 0 0 2px 0;
@@ -1167,6 +1180,7 @@ header #flash .notice {
 #project-wrap #whats_your_project {
   h2{
     color: #00698c;
+    font-size: 1.5em;
   }
 }
 
@@ -1193,39 +1207,41 @@ header #flash .notice {
     margin: 20px 50px 5px 0;
     position: relative;
 
-    h2{
-    color: #00698c;
+    .picture {
+      position: relative;
+      margin: 10px 10px 10px 0;
     }
+    
 }
 
 #project-wrap #whats_your_project .how_much {
     position: absolute;
     left: 300px;
-    top: 45px;
+    top: 65px;
 }
 
 #project-wrap #whats_your_project .how_big {
     position: absolute;
     left: 300px;
-    top: 95px;
+    top: 115px;
 }
 
 #project-wrap #whats_your_project .zipcode_and_city {
     position: absolute;
     left: 300px;
-    top: 145px;
+    top: 165px;
 }
 
 #project-wrap #whats_your_project .street {
     position: absolute;
     left: 300px;
-    top: 195px;
+    top: 225px;
 }
 
 #project-wrap #whats_your_project .hide_street {
     position: absolute;
     left: 510px;
-    top: 205px;
+    top: 255px;
 }
 
 #project-wrap #whats_your_project .people {
@@ -1241,40 +1257,45 @@ header #flash .notice {
 #project-wrap #whats_your_project .how_many {
     position: absolute;
     left: 270px;
-    top: 65px;
+    top: 112px;
 }
 
 #project-wrap #whats_your_project .cohousing {
     position: absolute;
-    left: 480px;
-    top: 75px;
+    left: 510px;
+    top: 130px;
 
 }
 
 #project-wrap #whats_your_project .happenings {
-    margin: 20px 50px 5px 0;
+    margin: 20px 50px 0px 0;
     position: relative;
 }
 
 #project-wrap .whats_next {
-    margin: 10px 50px 5px 0;
+    margin: 0px 50px 5px 0;
     position: relative;
 }
 
 #project-wrap .next_box .project_status {
-    margin: 10px 50px 5px 0;
+    margin: 10px 10px 5px 0;
     position: relative;
 }
 
+#project-wrap .next_box .event_type {
+    position: relative;
+    margin: 30px 0 0 0;
+}
+
 #project-wrap .next_box .event_date {
-    position: absolute;
-    left: 110px;
-    top: 115px;
+    position: relative;
+    margin: -5px 0 0 0;
 }
 
 #new-project form ul .two-fields .field {
   display: inline-block;
   width: 70px;
+
 }
 
 #new-project form ul .two-fields .field input {
@@ -1367,7 +1388,7 @@ header #flash .notice {
   padding: 10px;
   position: absolute;
   right: 0;
-  top: 250px;
+  top: 320px;
 }
 
 #show-project #owner .picture {
@@ -1377,7 +1398,7 @@ header #flash .notice {
 
 #show-project .status {
   margin: 2px;
-  padding: 5px;
+  padding: 0px;
   font-weight: bold;
   font-style: italic;
 }
@@ -1393,12 +1414,12 @@ header #flash .notice {
     text-transform: uppercase;
     font-size: 0.8em;
     color: #1e5270;
-    margin: 0 0 10px 0;
+    margin: 0 0 0px 0;
   }
 }
 
 #show-project #owner h4 {
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
 }
 
 #show-project #owner h4 a {
@@ -1466,24 +1487,21 @@ header #flash .notice {
 
     .leave-button {
       display: inline-block;
-      background: url("/assets/back-button-bg.png") repeat-x center top;
       padding: 4px;
-      -moz-box-shadow: inset 0 1px 2px #ccc;
-      box-shadow: inset 0 1px 2px #ccc;
+      
       -moz-border-radius: 3px;
       border-radius: 3px;
 
       input {
-        padding: 6px 40px;
+        display: block;
+        padding: 6px 20px;
         font-weight: bold;
-        color: #777;
+        color: #fff;
         border: none;
-        text-shadow: 0 1px 0 #fff;
-        background: #fff url("/assets/button-bg.png") repeat-x center bottom;
-        -moz-border-radius: 2px;
-        border-radius: 2px;
+        text-decoration: none;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
         -moz-box-shadow: 0 1px 2px #ccc;
-        box-shadow: 0 1px 2px #ccc;
+        box-shadow: 0 1px 2px #ddd;
       }
     }
   }
@@ -1496,14 +1514,11 @@ header #flash .notice {
 #show-project #participants .join-action input {
   display: block;
   border: none;
-  background: url("/assets/button-b-bg.png") repeat-x center center;
   color: #fff;
   padding: 6px 20px;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
-  -moz-border-radius: 2px;
-  border-radius: 2px;
   -moz-box-shadow: 0 1px 2px #ddd;
   box-shadow: 0 1px 2px #ddd;
 }
@@ -1529,7 +1544,7 @@ header #flash .notice {
 
 
 #show-project #participants ul li + li {
-  margin: 10px 0 0 0;
+  margin: 2px 0 10px 0;
   span {  
     font-size: 1em;
     font-style: italic;

@@ -1,5 +1,4 @@
 %section#new-project
-  = render :partial => "_shared/profile", :locals => { :user => @user }
 
   #project-wrap
     %h2
@@ -7,6 +6,8 @@
       %span.how= link_to(t("help"), "mailto:hello@Shaipz.com")
     %span= t("project.baseline") 
     
+    = render 'search_links'
+
   #project-wrap
     
     #whats_your_project
@@ -23,15 +24,6 @@
               %li.string
                 = f.label :source_link, t("project.source_link")
                 = f.text_field :source_link, :placeholder => "http://..."
-          
-          #nothing_in_mind
-            %span.nothing_yet= t("search_settings.nothing_yet")
-       
-          #find_on_immoweb  
-            %section.search-links 
-              %ul
-                - @urls.each_with_index do |url, index|
-                  %li= link_to content_tag(:span, t("search_settings.find_a_#{@building_types[index]}_on_immoweb"), :class => "search-link"), url, :target => "_blank"
             
         .whats_details
           %h2= t("project.whats_details")
@@ -99,7 +91,7 @@
             %ul.fields
               %li.checkbox
                 = f.check_box :cohousing
-                = image_tag ("cohousing.png"), :title => t("project.cohousing")
+                = image_tag ("cohousing.png"), :size => "30x30", :title => t("project.cohousing")
         
         .happenings
           %h3= t("project.happenings")
@@ -130,7 +122,7 @@
             %ul.fields
               %li.text
                 = f.label :event_description, t("project.event_description")
-                = f.text_area :event_description, :placeholder => t("example_text"), :rows => 5
+                = f.text_area :event_description, :placeholder => t("project.example_text"), :rows => 5
               - if current_user.authenticated_with_facebook?(session)
                 %li.checkbox
                   = f.check_box :share_on_facebook
@@ -160,10 +152,10 @@
   /      });
   /   });
   
-  :javascript
-    $(document).ready (function(){
-      $("#project-wrap #find_on_immoweb").hide();
-        $("#project-wrap #nothing_in_mind").one("click",function(){
-          $("#project-wrap #find_on_immoweb").toggle("active");
-        });
-      });
+  / :javascript
+  /  $(document).ready (function(){
+  /    $("#project-wrap #find_on_immoweb").hide();
+  /      $("#project-wrap #nothing_in_mind").one("click",function(){
+  /        $("#project-wrap #find_on_immoweb").toggle("active");
+  /      });
+  /    });

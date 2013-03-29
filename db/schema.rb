@@ -28,14 +28,6 @@ ActiveRecord::Schema.define(:version => 20130220200220) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
 
-  create_table "authors", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "login"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
     t.string   "commentable_type", :default => ""
@@ -83,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20130220200220) do
     t.string   "project_status"
     t.boolean  "share_on_facebook",                 :default => true
     t.datetime "event_date"
-    t.string   "event_type",                        :default => "other", :null => false
+    t.string   "event_type",                        :default => "visit", :null => false
     t.text     "note"
     t.boolean  "hide_street_from_non_participants", :default => false
     t.datetime "disabled_at"
@@ -127,7 +119,6 @@ ActiveRecord::Schema.define(:version => 20130220200220) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.boolean  "hide_budget",            :default => false
-    t.string   "availability"
     t.string   "personal_timing"
   end
 

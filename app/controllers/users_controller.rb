@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @projects = @user.find_all_projects
     @url_immo = SearchUrlGenerator.new("immoweb", @user)
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
     @personal_statuses = User.personal_statuses
+
   end
 
   def update
@@ -27,7 +29,7 @@ class UsersController < ApplicationController
       @urls = @url_immo.generate_urls
       @building_types = @url_immo.building_types
       @personal_statuses = User.personal_statuses
-      @personal_timings = User.personal_timings
+      
       flash[:alert] = t("profile.update_errors")
       render :edit
     end

@@ -12,3 +12,8 @@
  *= require normalize
  *= require ./application/screen
  */
+
+body {
+  padding-top: 40px;
+}
+

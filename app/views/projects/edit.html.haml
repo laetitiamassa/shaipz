@@ -1,18 +1,42 @@
 %section#new-project
-  = render :partial => "_shared/profile", :locals => { :user => @user }
+  
 
   #project-wrap
     %h2
       = t("project.edit_project")
       %span.how= link_to(t("help"), "mailto:hello@Shaipz.com") 
+    
+    
 
     = form_for @project, :html => { :multipart => true } do |f|
+
+      %ul.fields
+        %li.string
+          %strong= f.label :project_status, t("project.how_far_is_the_project")
+          = f.select :project_status, @project_statuses
+        %h3= t("project.next_event")
+        %li.text
+          = f.label :event_type, t("project.event_type")
+          = f.select :event_type, @event_types
+        %li.text
+          = f.label :event_date, t("project.event_date")
+          = f.datetime_select :event_date, :order => [:day,:month,:year]
+        %li.text
+          = f.label :event_description, t("project.event_description")
+          = f.text_area :event_description, :placeholder => t("example_text"), :rows => 5
+      
+      %h3= t("project.other_details")
+      
       .picture
-        = image_tag @project.picture.url(:medium)
+        = image_tag @project.picture.url(:thumbcreate)
         = f.file_field :picture
       %p.warning= t("warning.check_filename")
 
       %ul.fields
+        %li.string
+          = f.label :source_link, t("project.source_link")
+          = f.text_field :source_link, :placeholder => "http://..."
+
         %li.string
           = f.label :name, t("project.what_name")
           = f.text_field :name, :placeholder => t("example_projectname")
@@ -38,27 +62,11 @@
         %li.string
           = f.label :maximum_shaipz, t("project.how_many")
           = f.text_field :maximum_shaipz, :placeholder => 4
-        %li.string
-          = f.label :source_link, t("project.source_link")
-          = f.text_field :source_link, :placeholder => "http://..."
         %li.checkbox
           = f.check_box :cohousing
           = f.label :cohousing, t("project.cohousing")
-        %li.string
-          %strong= f.label :project_status, t("project.how_far_is_the_project")
-          = f.select :project_status, @project_statuses
+        
 
-      %h3= t("event.next")
-
-      %ul.fields
-        %li.text
-          = f.label :event_type, t("project.event_type")
-          = f.select :event_type, @event_types
-        %li.text
-          = f.label :event_date, t("project.event_date")
-          = f.datetime_select :event_date, :order => [:day,:month,:year]
-        %li.text
-          = f.label :event_description, t("project.event_description")
-          = f.text_area :event_description, :placeholder => t("example_text"), :rows => 5
+      
       .form-actions.clear
         %span.green-button= f.submit t('project.update_project')

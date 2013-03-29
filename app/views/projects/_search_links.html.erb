@@ -2,28 +2,28 @@
 	
 	<div id="research-links">
 	
-	<h2><%= t("search_settings.ideal") %></h2>
+	<h3><%= t("search_settings.ideal") %></h3>
 		<% if @url_immo.user_can_have_a_house? %>
-			<h4><%= t("search_settings.criteria_with_house", :surface => @url_immo.searched_space,
+			<p><%= t("search_settings.criteria_with_house", :surface => @url_immo.searched_space,
 								:price => number_to_currency(@url_immo.searched_budget,
 																		:delimiter =>'.',
 																		:strip_insignificant_zeros => true,
 																		:unit => "€",
-																		:format => "%n %u")) %></h4>
+																		:format => "%n %u")) %></p>
 		<% else %>
-      <h4><%= t("search_settings.criteria", :surface => @url_immo.searched_space,
+      <p><%= t("search_settings.criteria", :surface => @url_immo.searched_space,
 								:price => number_to_currency(@url_immo.searched_budget,
 																		:delimiter =>'.',
 																		:strip_insignificant_zeros => true,
 																		:unit => "€",
-																		:format => "%n %u"))  %></h4>
+																		:format => "%n %u"))  %></p>
 		<% end %>
 			<ul>
 				<% @urls.each_with_index do |url, index| %>
       		<li>
-						<span class="label"><%= t("search_settings.link_to_building",
+						<span class="label-in"><%= t("search_settings.link_to_building",
 																		:type => t("search_settings.types_buildings.#{@building_types[index]}")) %></span>
-                                  <%= link_to content_tag(:span, t("search_settings.find_one_on_immoweb"), :class => "search-link"), url, :target => "_blank" %>
+                                  <p><%= link_to content_tag(:span, t("search_settings.find_one_on_immoweb"), :class => "search-link"), url, :target => "_blank" %></p>
      			</li>
 				<% end %>
 			</ul>

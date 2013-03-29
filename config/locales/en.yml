@@ -2,6 +2,9 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  current_language: "EN"
+  english: "english"
+  french: "french"
   example_report: "Indicate what's wrong here."
   example_email: "myname@myemail.com"
   example_name: "Philippe Dupont"
@@ -41,16 +44,17 @@ en:
     ready_soon: "We’ll be ready to launch very soon!"
     how_it_works: "Discover what Shaipz is all about!"
   profile:
+    email: "Email: "
     example_name: "Firstname Lastname"
     edit: "Edit"
     save_changes: "Update your profile"
     update_success: "Your profile is updated"
     update_errors: "Oops, something went wrong with your profile."
-    favorite_areas: "Favorite district(s)"
+    favorite_areas: "Favorite district(s): "
     favorite_areas_form: "Favorite district(s) (max 5)"
-    maximum_budget: "Maximum budget"
+    maximum_budget: "Maximum budget: "
     maximum_budget_form: "Maximum budget (in euros)"
-    minimum_space: "Minimum space"
+    minimum_space: "Minimum space: "
     minimum_space_form: "Minimum space (in m2)"
     how_ready_you_are: "How ready are you to buy your flat?"
     change_your_password: "Change your password"
@@ -68,7 +72,7 @@ en:
     logo_cohousing: "open to cohousing"
     find: "Find"
     find_shortcut: "Click here to find your ideal building on the web"
-    personal_timing: "Best moments for a visit or a meeting"
+    personal_timing: "Availabilities: "
     personal_timing_form: "What are your 3 best moments for a visit or a meeting?" 
     default_personal_timing: "anytime"
   statuses:
@@ -80,13 +84,14 @@ en:
     bought: "I'm now a happy owner!"
   menu:
     home: "Home"
-    profile: "Profile"
+    profile: "My profile"
     sign_out: "Log out"
     shaipz: "My projects"
     create: "Create my project"
   stream:
-    start_project: "Create your project"
+    start_project: "Create a project"
     all_projects: "Open projects"
+    original_ad: "Original ad"
   event:
     next: "Next event"
     types:
@@ -133,8 +138,12 @@ en:
     city: "City"
     example_city: "Etterbeek"
     how_many: "How many units?"
+    event_date: "Date of the next event"
+    event_type: "Type of the next event"
+    event_description: "Description of the next event"
     example_text: "Let's meet this Friday 6pm in front of the building to see if it's worth!"
     next_baseline: "Indicate to participants what will happen next, so that they can actively join"
+    other_details: "other details of the project"
     join: "Join"
     join_shortcut: "Click here to discover and join open projects"
     create: "Create"

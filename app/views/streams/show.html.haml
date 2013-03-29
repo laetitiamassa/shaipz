@@ -1,10 +1,10 @@
 %section#stream
-  = render :partial => "_shared/profile", :locals => {:user => @user}
+  
 
   #stream-wrap
     %section#start-project
       .action-call
-        = link_to content_tag(:span, t("stream.start_project")), new_project_path, :class => "button"
+        = link_to content_tag(:span, t("stream.start_project")), new_project_path, :class => "btn btn-success"
 
     %section#projects
       %h2
