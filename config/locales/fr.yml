@@ -6,7 +6,7 @@ fr:
     formats:
       short: "%d/%m à %H:%M -"
 
-  current_language: "FR"
+  current_language: "fr"
   english: "anglais"
   french: "français"
   example_report: "Indiquez ce qui se passe."
