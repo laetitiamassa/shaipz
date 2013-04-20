@@ -310,6 +310,7 @@ en:
       rental_complex: "building"
       house: "house"
   friend_invitation:
+    header: "Invite your friends"
     title: "Your friends might be looking for a home too. Help them out!"
     friend: "Friend's email %{id}"
     your_message: "Your message (type in to edit it):"
@@ -319,7 +320,7 @@ en:
     subtitle: "You can invite your friends by email below, "
     subtitle_middle: " it on Facebook, or even "
     subtitle_end: " about it!"
-    mail_content: "Hi,\n\nI've discovered Shaipz, a platform where you can buy your flat at a better price, choose your neighbours and decide how your building will be organized!\n\nYou should try it out here on http://shaipz.com , it's just awesome (and it's free)! \n\nBye,\n\n%{user}"
+    mail_content: "Hi,\n\nI've discovered Shaipz, a platform where you can buy your flat at a better price, choose your neighbours and decide how your building will be organized!\n\nYou should try it out here on http://shaipz.com , it's just awesome (and the signup is free)! \n\nBye,\n\n%{user}"
     success: "Congratulations! You've successfully invited your friends to join you on Shaipz!"
     error: "Oops something is wrong. Please check e-mail addresses and/or your message"
     mailer:

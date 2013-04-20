@@ -313,6 +313,7 @@ fr:
       rental_complex: "d'un immeuble à appartements"
       house: "d'une maison"
   friend_invitation:
+    header: "Invitez vos amis"
     title: "Vos amis cherchent peut-être un nouveau nid, eux aussi. Aidez-les !"
     title: "Invitez vos amis à vous rejoindre sur Shaipz !"
     friend: "Email de votre ami %{id}"
@@ -323,7 +324,7 @@ fr:
     subtitle: "Vous pouvez inviter vos amis de trois façons: vous pouvez leur envoyer un email, cliquer sur "
     subtitle_middle: " pour le partager sur Facebook, ou envoyer un"
     subtitle_end: " en deux minutes!"
-    mail_content: "Salut,\n\nJe viens de découvrir Shaipz, une plate-forme grâce à laquelle tu peux acheter ton futur appart à un meilleur prix, choisir tes voisins et décider librement de comment sera organisé votre immeuble!\n\nTu devrais essayer ça http://shaipz.com , c'est tout simplement génial... et gratuit en plus ! \n\nA bientôt,\n\n%{user}"
+    mail_content: "Salut,\n\nJe viens de découvrir Shaipz, une plate-forme grâce à laquelle tu peux acheter ton futur appart à un meilleur prix, choisir tes voisins et décider librement de comment sera organisé votre immeuble!\n\nTu devrais essayer ça http://shaipz.com , c'est tout simplement génial... et l'inscription est gratuite en plus ! \n\nA bientôt,\n\n%{user}"
     success: "Félicitations! Vous avez bien invité vos amis à vous rejoindre sur Shaipz !"
     error: "Oups il y a un petit souci. Vérifiez vos adresses email ou votre message"
     mailer:
