@@ -1,96 +1,57 @@
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=268091083289955";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
 
 
-<section id="sign-up" class="clear">
-  <div id="shaipz-info">
-    <h2><%= t("home.sign_in") %></h2>
-		<div id="youtube">
-      <iframe width="400" height="205" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
-      <p class="description"><%= t("home.whats_shaipz") %></p>
-      <p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p></iframe>
-		</div>
-  </div>
+<!-- Header with background -->
+<div class="row-fluid">
+  <div class="span12">      
+    <div id="signin">
 
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  
-    <div id="facebook_signup">
-      <br>
-      <br>
-      <br>
-      <center><%= image_tag("shaipz_logo.png", :size => "200x71" ) %>
-      <h2><i><%= t("home.baseline") %></i></h2>
-      <br>
-      <div class="facebook-button">
-	    <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
-	    <div id="email_signup_button">
-	      <p><%= t("home.or_email_signin") %> <u>via email</u></p></center>
-	       <br>
-           <br>
-           <br>
-           <br>
-           <br>
-	    </div>  
-	  </div>
-	</div>
-    
-    <div id="email_signup">
-      <div class="facebook-button">
-	    <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
-	    <p><i><b><%= t("home.or_fill_in_form") %></b></i></p></center>
-	  </div>
-    
-    <ul class="fields">
-      <li class="string">
-        <%= f.label :email %>
-        <%= f.email_field :email, :placeholder => t("example_email") %>
-      </li>
-
-      <li class="string">
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-      </li>
-
-      <% if devise_mapping.rememberable? -%>
-        <li class="checkbox">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </li>
-      <% end -%>
-    </ul>
-    
-    <script type="text/javascript">
-      $(document).ready (function(){
-        $("#email_signup").hide();
-        $("#email_signup_button").click(function(){
-          $("#email_signup").toggle("active");
-          $("#facebook_signup").hide();
-        });
-      });
-    </script>
-
-      <div class="form-actions clear">
-        <span class="button"><%= f.submit "Sign in" %></span>
+      <div class="row-fluid">
+        <div class="span8 offset2">
+          <div id="tagline" class="text-center"><p>A smart way to buy your home</p></div> 
+        </div>
       </div>
-  <% end %>
+       
+      <div class="row-fluid">
+        <div class="hero-unit signinbloc span3 offset6">
 
-  <%= render "devise/shared/links" %>
-</section>
-
-<div id = "follow-like">
-  <div class="fb-like" data-href="https://www.facebook.com/Shaipz" data-send="false" data-width="450" data-show-faces="false"></div>
-  <a href="https://twitter.com/shaipzapp" class="twitter-follow-button" data-show-count="false">Follow @shaipzapp</a>
-  <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  </script>
-</div>
-
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   
+        <center>
+          <p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
+          <p><i><b><%= t("home.or_fill_in_form") %></b></i></p>
+        </center>
+
+        <ul class="fields">
+          <li class="string">
+            <%= f.label :email %>
+            <%= f.email_field :email, :placeholder => t("example_email") %>
+          </li>
+
+          <li class="string">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+          </li>
+
+          <% if devise_mapping.rememberable? -%>
+          <li class="checkbox">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </li>
+          <% end -%>
+        </ul>
+    
+        <div class="form-actions">
+          <%= f.submit t('home.sign_in'), :class => "btn btn-large btn-block btn-info" %>
+        </div>
+
+        <% end %>
+
+        <div class="devise-links"><%= render "devise/shared/links" %></div>
+        
+        </div> <!-- end hero-unit -->
+      </div> <!-- end row-fluid -->
+
+    </div> <!-- end signin -->
+  </div> <!-- end span12 -->
+</div> <!-- end whole form, tagline and background -->
+

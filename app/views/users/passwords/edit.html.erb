@@ -1,3 +1,37 @@
+<div class="row-fluid">
+        <div class="hero-unit passwordbloc span4 offset4">
+
+    <center>
+          <h2><%= t("sign_in.forgot_your_password") %></h2>
+        </center>
+
+
+
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+    
+
+    <ul class="fields">
+      <li class="string text-center">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </li>
+    </ul>
+    
+        <div class="form-actions">
+          <%= f.submit "Send me reset password instructions", :class => "btn btn-large btn-block btn-info" %>
+        </div>
+
+        <% end %>
+
+        <div class="devise-links"><%= render "devise/shared/links" %></div>
+        
+        </div> <!-- end hero-unit -->
+      </div> <!-- end row-fluid -->
+
+
+
+
+
 <section class="auth-form" class="clear">
   <h2>Change your password</h2>
 

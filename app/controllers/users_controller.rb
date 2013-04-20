@@ -8,14 +8,17 @@ class UsersController < ApplicationController
     @url_immo = SearchUrlGenerator.new("immoweb", @user)
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
+    
   end
 
   def edit
+
     @user = current_user
     @url_immo = SearchUrlGenerator.new("immoweb", @user)
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
     @personal_statuses = User.personal_statuses
+
 
   end
 

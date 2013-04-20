@@ -1,0 +1,93 @@
+<div class="container container-fluid-profile">
+ 
+  <div class="howitworks-header page-header">
+   
+    <div class="row-fluid">
+     
+      <div class="span9 project-name">
+        <h1><%= t("profile.fill_your_profile") %></h1>
+      </div>
+     
+      <div class="span3 text-right edit-project">
+           <div class="btn"><i class="icon-info-sign icon"></i><%= link_to t("help"), "mailto:hello@Shaipz.com" %></div>
+      </div>
+
+    </div>
+
+  </div> <!-- end of header -->
+ 
+
+
+
+
+
+  <%= form_for(@user, :url => user_path, :html => { :multipart => true }) do |f| %>
+    <div class="row-fluid">
+
+        <div class="span4 text-center">
+          <%= image_tag @user.picture.url(:medium) %>
+          <%= f.file_field :picture %>
+          <h6 class="profilepic"><%= t("warning.check_filename") %></h6>
+        </div>
+
+ 
+
+      <ul class="fields span8 profileyou">
+        <legend><h2><i class="icon-user icon-large pull-left icon-muted"></i><%= t("profile.you") %> </h2></legend>
+        <li class="string">
+          <%= f.label :name %>
+          <%= f.text_field :name, :placeholder => t("example_name") %>
+        <li class="string">
+          <%= f.label :email %>
+          <%= f.email_field :email, :placeholder => t("example_email") %>
+        <li class="string">
+          <%= link_to t("profile.change_password"), edit_change_password_path %>
+        </ul>
+      
+      </div>
+        
+
+        <legend><h2><i class="icon-home icon-large pull-left icon-muted"></i><%= t("project.your_ideal_home") %></h2></legend>
+        
+      
+      <ul class="fields">
+       <div class="row-fluid"> 
+        <li class="string span3">
+          <%= f.label :favorite_areas, t("profile.favorite_areas_form") %>
+          <%= f.text_field :favorite_areas, :placeholder => "1050, 1081, 2000, 7850, 3000" %>
+        <li class="string span3">
+          <%= f.label :minimum_space, t("profile.minimum_space_form") %>
+          <%= f.text_field :minimum_space, :placeholder => "50" %>
+        <li class="string span3">
+          <%= f.label :maximum_budget, t("profile.maximum_budget_form") %>
+          <%= f.text_field :maximum_budget, :placeholder => "160000" %>
+        <li class="checkbox span3">
+          <%= f.check_box :hide_budget %>
+          <%= f.label :hide_budget, t("profile.hide_budget") %>
+      </div>
+        <li class="cohousing-profile checkbox">
+          <%= f.check_box :cohousing %>
+          <%= f.label  :cohousing, t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
+        </ul>
+      
+
+<legend><h2><i class="icon-calendar icon-large pull-left icon-muted"></i><%= t("project.your_personal_real_estate_timing") %></h2></legend>
+<ul>
+          <li class="string">
+          <%= f.label :personal_status, t("profile.how_ready_you_are") %>
+          <%= f.select :personal_status, @personal_statuses, {:include_blank => true} %>
+        <li class="string">
+          <%= f.label :personal_timing, t("profile.personal_timing_form") %>
+          <%= f.text_field :personal_timing, :placeholder => t("profile.example_availability") %>
+        </ul>
+      
+      <div class="form-actions clear span8 offset2">
+        <%= f.submit t('profile.save_changes'), :class => "btn btn-large btn-block btn-success" %>   </div>
+
+        <% end %> 
+
+
+        </div> 
+     
+
+ 

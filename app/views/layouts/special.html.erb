@@ -1,0 +1,292 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+  <title>Shaipz</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  
+
+  <%= javascript_include_tag "application" %>
+  <%= favicon_link_tag "favicon.png", :type => "image/png" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<div class= "navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      
+        <% if user_signed_in? %>
+
+          <ul class="nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                
+                <%= "#{current_user.has_name? ? current_user.name : current_user.name_placeholder}" %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><%= link_to(t("menu.profile"), user_path(current_user)) %></li>
+                <li><%= link_to(t("menu.shaipz"), shaipz_path) %></li>
+              </ul>
+            </li>
+
+            <li><%= link_to t("project.create"), new_project_path, :title => t("project.create_shortcut") %></li>
+            <li><%= link_to t("project.join"), stream_path, :title => t("project.join_shortcut") %></li>
+            <li><%= link_to t("profile.invite_friends"), new_friend_invitations_path %></li>
+          </ul>
+
+          <ul class="nav pull-right text-center">
+            <li><%= link_to t('footer.how_it_works'), how_it_works_path %></li>            
+            <li class="dropdown">
+              <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                <%= t("current_language") %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><%= link_to t("english"), url_for(:locale => 'en') %></li>
+                <li><%= link_to t("french"), url_for(:locale => 'fr') %></li>
+              </ul>
+            </li>
+            <li><%= link_to(t("menu.sign_out"), destroy_user_session_path, :method => :delete) %></li>
+          </ul>
+        
+        <% else %>
+
+          <ul class="nav pull-right text-center">
+            <li><%= link_to t('footer.how_it_works'), how_it_works_path %></li>            
+            <li class="dropdown">
+              <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
+                <%= t("current_language") %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><%= link_to t("english"), url_for(:locale => 'en') %></li>
+                <li><%= link_to t("french"), url_for(:locale => 'fr') %></li>
+              </ul>
+            </li>
+            <!-- Button to trigger modal -->
+          <li><%= link_to t("home.sign_in"),  new_user_session_path %></li>
+          <li class="active"><a href="#Signup" data-toggle="modal"><%= t("home.sign_up") %></a></li>
+          </ul>
+            
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Signup-->
+<div id="Signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="myModalLabel">Sign up for Shaipz</h3>
+  </div>
+  <div class="modal-body">
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=268091083289955";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <section>
+
+    <%= form_for("user", :url => user_registration_path) do |f| %>
+      
+      <center>
+        <p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
+        <p><i><b><%= t("home.or_fill_in_form") %></b></i></p>
+      </center>
+    
+    
+      <ul class="fields">
+        <li class="string">
+          <%= f.label :email %>
+          <%= f.email_field :email, :placeholder => t("example_email") %>
+        </li>
+        <li class="string">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </li>    
+        <li class="checkbox">
+          <%= f.check_box :cohousing %>
+          <%= f.label :cohousing,  t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
+        </li>
+        <li class="string">
+          <%= f.label :favorite_areas, t("profile.favorite_areas_form") %>
+          <%= f.text_field :favorite_areas, :placeholder => "1030, 1050, 2040, 7850, 3000" %>
+        </li>
+        <li class="string">
+          <%= f.label :minimum_space, t("profile.minimum_space_form") %>
+          <%= f.text_field :minimum_space, :placeholder => "70" %>
+        </li>
+        <li class="string">
+          <%= f.label :maximum_budget, t("profile.maximum_budget_form") %>
+          <%= f.text_field :maximum_budget, :placeholder => "150000" %>
+        </li>
+      </ul>
+      
+     
+      <div class="form-actions">
+        <%= f.submit t('home.sign_up'), :class => "btn btn-large btn-block btn-info" %>
+      </div>
+     
+   
+    <% end %>
+  
+    </section>
+  </div>
+</div>
+
+
+<!-- what's this exactly? -->
+  <script type="text/javascript">var _kiq = _kiq || [];</script>
+  <script type="text/javascript" src="//s3.amazonaws.com/ki.js/40459/7Nz.js" async="true"></script>
+  <script type="text/javascript" charset="utf-8">
+  _kiq.push(['identify', 'dev@shaipz.com']);
+  </script>
+
+  <div id="fb-root"></div>
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '268091083289955',
+        channelUrl : 'http://shaipz.com',
+        status     : true,
+        cookie     : true,
+        xfbml      : true
+      });
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/all.js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document));
+  </script>
+  
+
+
+
+
+
+
+  <section class="contenu">
+
+<!-- Header with background -->
+<div class="row-fluid">
+  <div class="span12">      
+    <div id="signin">
+
+      <div id="flash-home" class="span8 offset2 text-center">
+        <% if notice %>
+          <div class="alert alert-success"><%= notice %></div>
+          <button type="button" class="close" data-dismiss="alert">&times;  </button>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-error"><%= alert %></div>
+          <button type="button" class="close" data-dismiss="alert">&times;  </button>
+        <% end %>
+      </div>
+
+      <div class="row-fluid">
+        <div class="span8 offset2">
+          <div id="tagline" class="text-center"><p>A smart way to buy your home</p></div> 
+        </div>
+      </div>
+       
+      <!-- DEBUT FORM HERO-UNIT -->
+        <div class="hero-unit signinbloc span3 offset6">
+
+           <%= yield %>
+
+        </div>
+        
+        </div> <!-- end hero-unit -->
+      </div> <!-- end row-fluid -->
+
+    </div> <!-- end signin --> <!-- END FORM -->
+  </div> <!-- end span12 -->
+</div> <!-- end whole form, tagline and background -->
+
+
+
+
+
+
+<!-- footer -->
+
+  <div class="row-fluid inner-footer signin">
+    <div class="container text-center">
+    
+    <div class="span1 offset4">
+      <h4><%= link_to "Shaipz", root_path %></h4>
+    </div>
+
+    <!-- <div class="span1">
+      <h4><%= link_to "about", about_path %></h4>
+    </div> -->
+
+    <div class="span1">
+      <h4><%= link_to "faq", how_it_works_path %></h4>
+    </div>
+
+    <div class="span1">
+      <h4><%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf"), :target => "_blank" %></h4>
+    </div>
+
+    <div class="span1 social-links-footer">
+      <div class="row-fluid">
+        <div class="span4">
+      <a class="btn btn-link" href="http://facebook.com/shaipz"><i class="icon-facebook icon-large"></i></a>
+    </div>
+
+    <div class="span4">
+      <a class="btn btn-link" href="http://twitter.com/shaipzapp"><i class="icon-twitter icon-large pull-left"></i></a>
+    </div>
+
+    <div class="span4">
+      <a class="btn btn-link" href="mailto:hello@shaipz.com"><i class="icon-envelope-alt icon-large pull-right"></i></a>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+ <!-- end of footer -->
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-31837662-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  
+  <script type="text/javascript">
+  var uvOptions = {};
+  (function() {
+    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/e8DiBj6ne6tKQHWMDn0J5A.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+  })();
+</script>
+</body>
+</html>
+
+

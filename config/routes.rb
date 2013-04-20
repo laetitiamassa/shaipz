@@ -1,4 +1,10 @@
 Shaipz::Application.routes.draw do
+  get "pricing/show"
+
+  get "legal/show"
+
+  get "about/show"
+
   devise_for :admins, :controllers => { :sessions => 'admin/sessions' }
   devise_for :users, :controllers => { :registrations => 'users/registrations', :sessions => 'users/sessions', :confirmations => 'users/confirmations', :omniauth_callbacks => 'users/omniauth_callbacks' }
 
@@ -31,6 +37,9 @@ Shaipz::Application.routes.draw do
   resource :how_it_works
 
   match '/howitworks' => 'how_it_works#show'
+  match '/legal' => 'legal#show'
+  match '/about' => 'about#show'
+  match '/pricing' => 'pricing#show'
 
   root :to => 'home#index'
 end

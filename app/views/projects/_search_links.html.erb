@@ -1,31 +1,54 @@
 <% if @user.id == current_user.id %>
 	
-	<div id="research-links">
 	
-	<h3><%= t("search_settings.ideal") %></h3>
-		<% if @url_immo.user_can_have_a_house? %>
-			<p><%= t("search_settings.criteria_with_house", :surface => @url_immo.searched_space,
-								:price => number_to_currency(@url_immo.searched_budget,
-																		:delimiter =>'.',
-																		:strip_insignificant_zeros => true,
-																		:unit => "€",
-																		:format => "%n %u")) %></p>
-		<% else %>
-      <p><%= t("search_settings.criteria", :surface => @url_immo.searched_space,
-								:price => number_to_currency(@url_immo.searched_budget,
-																		:delimiter =>'.',
-																		:strip_insignificant_zeros => true,
-																		:unit => "€",
-																		:format => "%n %u"))  %></p>
-		<% end %>
-			<ul>
-				<% @urls.each_with_index do |url, index| %>
-      		<li>
-						<span class="label-in"><%= t("search_settings.link_to_building",
-																		:type => t("search_settings.types_buildings.#{@building_types[index]}")) %></span>
-                                  <p><%= link_to content_tag(:span, t("search_settings.find_one_on_immoweb"), :class => "search-link"), url, :target => "_blank" %></p>
-     			</li>
-				<% end %>
-			</ul>
+	<div class="row-fluid">
+	<div class="span10 offset1 hero-unit search_link_intro">
+		<h2><%= t("search_settings.ideal") %></h2>
+	<% if @url_immo.user_can_have_a_house? %>
+
+	<p class="lead"><%= t("search_settings.criteria_with_house", 
+			:surface => @url_immo.searched_space,
+			:price => number_to_currency(@url_immo.searched_budget,
+			:delimiter =>'.',
+			:strip_insignificant_zeros => true,
+			:unit => "€",
+			:format => "%n %u")) %></p>
+		
+	<% else %>
+    
+    <p class="lead"><%= t("search_settings.criteria", 
+      		:surface => @url_immo.searched_space,
+			:price => number_to_currency(@url_immo.searched_budget,
+			:delimiter =>'.',
+			:strip_insignificant_zeros => true,
+			:unit => "€",
+			:format => "%n %u"))  %></p>
+		
+	<% end %>
 	</div>
+	</div> <!-- end of intro -->
+
+			
+	<% @urls.each_with_index do |url, index| %>
+	<div class="row-fluid">
+      		
+      	<% if @building_types[index] == "rental_complex" %>
+      		<div class="hero-unit search_link span4 offset1 text-right">
+      			<p><i class="icon-building icon-4x pull-left icon-muted"></i>
+      			<%= t("search_settings.link_to_building",
+					:type => t("search_settings.types_buildings.#{@building_types[index]}")) %></p>
+                 <p><%= link_to content_tag(:span, t("search_settings.find_one_on_immoweb"), :class => "btn btn-block btn-success"), url, :target => "_blank" %></p>
+            </div> 
+      	
+      	<% else %>
+      		<div class="hero-unit search_link span4 offset2 text-right">
+      			<p><i class="icon-home icon-4x pull-left icon-muted"></i>
+      			<%= t("search_settings.link_to_building",
+					:type => t("search_settings.types_buildings.#{@building_types[index]}")) %></p>
+                <p><%= link_to content_tag(:span, t("search_settings.find_one_on_immoweb"), :class => "btn btn-block btn-success"), url, :target => "_blank" %></p>   
+            </div>
+        <% end %>
+     			
+	<% end %>
+			
 <% end %>

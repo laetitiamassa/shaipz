@@ -1,0 +1,29 @@
+<div class="container container-fluid-profile">
+  
+  	<div class="howitworks-header page-header">
+    
+    	<div class="row-fluid">
+      
+      		<div class="span9 project-name">
+        		<h1><%= t("stream.all_projects") %></h1>
+        
+      		</div>
+      
+      		<div class="span3 text-right edit-project"> 
+      			<%= link_to content_tag(:span, t("stream.start_project")), new_project_path, :class => "btn btn-large btn-success" %>
+      		</div> 
+    	</div> 
+  	</div> <!-- end of header -->
+
+	<% @projects.each do |project| %>
+  		<%= render :partial => "_shared/project", :locals => { :project => project } %>
+	<% end %>
+
+	<div class="span6 offset3 text-center">
+		<h4><%= t("project.cannot_find") %></h4>
+		<%= link_to t("project.create_your_own"), new_project_path, :class => "btn btn-block btn-large btn-success" %>
+	</div>
+
+
+</div>
+

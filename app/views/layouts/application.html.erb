@@ -5,19 +5,25 @@
 <head>
   <title>Shaipz</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+ 
+
   <%= javascript_include_tag "application" %>
   <%= favicon_link_tag "favicon.png", :type => "image/png" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
-<div class= "navbar navbar-fixed-top navbar-inverse">
+<div class= "navbar navbar-fixed-top">
   <div class="navbar-inner">
+
     <div class="container">
+
       
         <% if user_signed_in? %>
 
           <ul class="nav">
+            <li class="logo-navbar"><%= link_to image_tag("shaipz_logo.png", :size => "100x50"), root_path %></li>
             <li class="dropdown">
               <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
                 
@@ -35,7 +41,7 @@
             <li><%= link_to t("profile.invite_friends"), new_friend_invitations_path %></li>
           </ul>
 
-          <ul class="nav pull-right">
+          <ul class="nav pull-right text-center">
             <li><%= link_to t('footer.how_it_works'), how_it_works_path %></li>            
             <li class="dropdown">
               <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
@@ -51,8 +57,10 @@
           </ul>
         
         <% else %>
-
-          <ul class="nav pull-right">
+          <ul class="nav pull-left">
+            <li class="logo-navbar"><%= link_to image_tag("shaipz_logo.png", :size => "100x50"), root_path %></li>
+          </ul>
+          <ul class="nav pull-right text-center">
             <li><%= link_to t('footer.how_it_works'), how_it_works_path %></li>            
             <li class="dropdown">
               <a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/page.html">
@@ -64,8 +72,9 @@
                 <li><%= link_to t("french"), url_for(:locale => 'fr') %></li>
               </ul>
             </li>
-            <li><%= link_to t("home.sign_in"), new_user_session_path %></li>
-            <li><%= link_to t("home.sign_up"), root_path %></li>
+            <!-- Button to trigger modal -->
+          <li><%= link_to t("home.sign_in"),  new_user_session_path %></li>
+          <li class="active"><a href="#Signup" data-toggle="modal"><%= t("home.sign_up") %></a></li>
           </ul>
             
           </div>
@@ -74,6 +83,81 @@
     </div>
   </div>
 
+<!-- Modal Signup-->
+<div id="Signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h3 id="myModalLabel"><%= t("home.sign_up_for_shaipz") %></h3>
+  </div>
+  <div class="modal-body">
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=268091083289955";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <section>
+
+    <%= form_for("user", :url => user_registration_path) do |f| %>
+      
+      <center>
+        <p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
+        <p><i><b><%= t("home.or_fill_in_form") %></b></i></p>
+      </center>
+    
+      <div class="row-fluid">
+        <div class="span6">
+      <ul class="fields">
+        <li class="string">
+          <%= f.label :email %>
+          <%= f.email_field :email, :placeholder => t("example_email") %>
+        </li>
+        <li class="string">
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+        </li>    
+        <li class="checkbox">
+          <%= f.check_box :cohousing %>
+          <%= f.label :cohousing,  t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
+        </li>
+      </ul>
+      </div>
+     <div class="span6">
+      <ul class="fields">
+        <li class="string">
+          <%= f.label :favorite_areas, t("profile.favorite_areas_form") %>
+          <%= f.text_field :favorite_areas, :placeholder => "1030, 1050, 2040, 7850, 3000" %>
+        </li>
+        <li class="string">
+          <%= f.label :minimum_space, t("profile.minimum_space_form") %>
+          <%= f.text_field :minimum_space, :placeholder => "70" %>
+        </li>
+        <li class="string">
+          <%= f.label :maximum_budget, t("profile.maximum_budget_form") %>
+          <%= f.text_field :maximum_budget, :placeholder => "150000" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+      
+     
+      <div class="form-actions">
+        <%= f.submit t('home.sign_up'), :class => "btn btn-large btn-block btn-info" %>
+      </div>
+     
+   
+    <% end %>
+  
+    </section>
+  </div>
+</div>
+
+
+<!-- what's this exactly? -->
 	<script type="text/javascript">var _kiq = _kiq || [];</script>
 	<script type="text/javascript" src="//s3.amazonaws.com/ki.js/40459/7Nz.js" async="true"></script>
 	<script type="text/javascript" charset="utf-8">
@@ -81,7 +165,8 @@
 	</script>
 
 	<div id="fb-root"></div>
-	<script>
+
+  <script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
 	      appId      : '268091083289955',
@@ -102,57 +187,78 @@
 	   }(document));
 	</script>
   
-
   <header>
-    <div class="wrap">
-      <h1 class="logo">
-        <%= link_to image_tag("shaipz_logo.png", :size => "150x75"), root_url %>
-      </h1>
 
       <section id="flash">
+        <div class="span8 offset2 text-center">
+        
         <% if notice %>
-          <div class="message notice"><%= notice %></div>
+          <div class="alert alert-success"><%= notice %>
+          <button type="button" class="close" data-dismiss="alert">&times;</button></div>
         <% end %>
 
         <% if alert %>
-          <div class="message alert"><%= alert %></div>
+          <div class="alert alert-error"><%= alert %>
+          <button type="button" class="close" data-dismiss="alert">&times;</button></div>
         <% end %>
-      
+
+        </div>
       </section>
-        
-    </div>
   </header>
 
-  <section id="content">
+  <section class="contenu">
     <%= yield %>
     <%= yield :report %>
   </section>
+  
 
-  <footer>
-    <div class="wrap">
-      <h1 class="logo"><%= link_to image_tag("shaipz_logo.png", :size => "100x50"), root_url %></h1>
-      <p class="browser"><%= t("footer.browser_support") %></p>
-      <nav>
-        <ul>
-					<li>
-            <%= link_to t('footer.how_it_works'), how_it_works_path %>
-          </li>
-					<li>
-            <%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf"), :target => "_blank" %>
-          </li>
-					<li>
-            <%= link_to image_tag("facebook-logo.png"), "http://facebook.com/shaipz", :target => "_blank" %>
-          </li>
-					<li>
-            <%= link_to image_tag("twitter-logo.png"), "http://twitter.com/shaipzapp", :target => "_blank" %>
-          </li>
-					<li>
-            <%= link_to image_tag("contact-logo.png"), "mailto:hello@shaipz.com", :target => "_blank" %>
-          </li>
-        </ul>
-      </nav>
+<!-- footer -->
+
+  <div class="row-fluid inner-footer">
+    <div class="container text-center">
+    
+    <div class="span1 offset4">
+      <h4><%= link_to "Shaipz", root_path %></h4>
     </div>
-  </footer>
+
+    <!-- <div class="span1">
+      <h4><%= link_to "about", about_path %></h4>
+    </div> -->
+
+    <div class="span1">
+      <h4><%= link_to "faq", how_it_works_path %></h4>
+    </div>
+
+    <div class="span1">
+      <h4><%= link_to t("footer.terms_of_use"), asset_path("ShaipzTerms-v20120706.pdf"), :target => "_blank" %></h4>
+    </div>
+
+    <div class="span1 social-links-footer">
+      <div class="row-fluid">
+        <div class="span4">
+        <a class="btn btn-link" href="http://facebook.com/shaipz"><i class="icon-facebook icon-large"></i></a>
+        </div>
+
+        <div class="span4">
+        <a class="btn btn-link" href="http://twitter.com/shaipzapp"><i class="icon-twitter icon-large pull-left"></i></a>
+        </div>
+
+        <div class="span4">
+        <a class="btn btn-link" href="mailto:hello@shaipz.com"><i class="icon-envelope-alt icon-large pull-right"></i></a>
+        </div>
+    </div>
+  </div>
+    
+    <div class=" span12 text-center">
+    <h5> <i><a href="http://linkedin.com/in/laetitiamassa" ><%= t("home.created_by") %></a></i></h5></div>
+</div>
+    
+
+
+
+  </div>
+ <!-- end of footer -->
+
 
 	<script type="text/javascript">
     var _gaq = _gaq || [];

@@ -1,113 +1,108 @@
-<div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=268091083289955";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
 
-
-
-<section id="sign-up" class="clear">
-
-
-  <div id="shaipz-info">
-    <div id="youtube">
-      <iframe width="400" height="205" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
-      <p class="description"><%= t("home.whats_shaipz") %></p>
-      <p class="how-it-works"><%= link_to t('footer.how_it_works'), how_it_works_path %></p>
-	</div>
+<!-- Header with background -->
+<div class="row-fluid">
+  <div class="span12">      
+    <div id="join">
+      
+      <div class="row-fluid">
+        <div class="span8 offset2">
+          <div id="tagline" class="text-center"><p><%= t("home.baseline") %></p>
+            <a href="#Signup" data-toggle="modal"><button class="span4 offset4 btn btn-large btn-block btn-info" type="button" id="call-join"><p class="lead"><%= t("home.join_now") %></p></button></a>
+            <!-- Button to trigger modal -->
+            <a href="#DemoVideo" role="button" data-toggle="modal" id="watch"><p class="span6 offset3"><%= t("home.or_watch_video") %></p></a>
+            <!-- Modal -->
+            <div id="DemoVideo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div id="youtube">
+                <iframe width="600" height="300" src="http://www.youtube.com/embed/f4zwYhjYuiQ" showinfo="0" autohide="1" frameborder="0" allowfullscreen color2="#1b8e8a"></iframe>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>   
+    </div>
   </div>
+</div>
 
-  <%= form_for("user", :url => user_registration_path) do |f| %>
+<!-- advantages -->
+<div class="container home">
+<div id="advantages">
+<div class="row-fluid">
+  <div class="span4">
+    <div class="text-center money"><i class="icon-money icon-2x"> </i></div>
+     <h2 class="text-center"><%= t("home.better_price") %></h2>
+    <p class="text-center"><%= t("home.better_price_tagline") %></p>
+  </div>
+  <div class="span4">
+    <div class="text-center"><i class="icon-group icon-2x">  </i></div>
+    <h2 class="text-center"><%= t("home.chosen_neighbours") %></h2>
+    <p class="text-center"><%= t("home.chosen_neighbours_tagline") %></p>
+  </div>
+  <div class="span4">
+    <div class="text-center"><i class="icon-legal icon-2x">  </i></div>
+    <h2 class="text-center"><%= t("home.chosen_terms") %></h2>
+    <p class="text-center"><%= t("home.chosen_terms_tagline") %></p>
+  </div>
+</div>
+</div>
 
-    <div id="facebook_signup">
-      <br>
-      <br>
-      <center><%= image_tag("shaipz_logo.png", :size => "240x81" ) %>
-      <h2><i><%= t("home.baseline") %></i></h2>
-      <br>
-      <div class="facebook-button">
-	    <center><p><%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %></p>
-	    <div id="email_signup_button">
-	      <p><%= t("home.or_email_signup") %> <u>via email</u></p></center>
-	       <br>
-           <br>
-           <br>
-           <br>
-	    </div>
-	  </div>
-	</div>
+<!-- quotations -->
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-interval="10" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-interval="10" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-interval="10" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item">
+      <blockquote>
+        <img src="assets/beatricedelvaux.jpg" class="img-rounded image-eloge">
+        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+        <p class="eloge"><%= t("home.quote_beatricedelvaux") %></p>
+        <small>Béatrice Delvaux, <cite title="Source Title"><%= t("home.position_beatricedelvaux") %></cite></small>
+      </blockquote>
+    </div>
+    <div class="item">
+      <blockquote>
+        <img src="assets/andreduval.png" class="img-rounded image-eloge">
+        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+        <p class="eloge"><%= t("home.quote_andreduval") %></p>
+        <small>André Duval, <cite title="Source Title"><%= t("home.position_andreduval") %></cite></small>
+      </blockquote>
+    </div>
+    <div class="item">
+      <blockquote>
+        <img src="assets/melaniemaquinay.jpg" class="img-rounded image-eloge">
+        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+        <p class="eloge"><%= t("home.quote_melaniemaquinay") %></p>
+        <small>Mélanie Maquinay, <cite title="Source Title"><%= t("home.position_melaniemaquinay") %></cite></small>
+      </blockquote>
+    </div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> 
+</div>
 
-    <div id="email_signup">
-      <div class="facebook-button">
-	    <center>
-        <p>
-          <%= link_to  image_tag("connect_using_facebook_xlarge.png"), user_omniauth_authorize_path(:facebook) %>
-        </p>
-        <p>
-          <i><b><%= t("home.or_fill_in_form") %></b></i>
-        </p>
-      </center>
-	  </div>
+<!-- HOW IT WORKS - awaiting illustrations
 
-	  <ul class="fields">
-        <li class="string">
-          <%= f.label :email %>
-          <%= f.email_field :email, :placeholder => t("example_email") %>
-        </li>
-        <li class="string">
-          <%= f.label :password %>
-          <%= f.password_field :password %>
-        </li>
-        <li class="checkbox">
-          <%= f.check_box :cohousing %>
-          <%= f.label :cohousing,  t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
-        </li>
-      </ul>
-      <ul class="fields">
-        <li class="string">
-          <%= f.label :favorite_areas, t("profile.favorite_areas_form") %>
-          <%= f.text_field :favorite_areas, :placeholder => "1030, 1050, 2040, 7850, 3000" %>
-        </li>
-        <li class="string">
-          <%= f.label :minimum_space, t("profile.minimum_space_form") %>
-          <%= f.text_field :minimum_space, :placeholder => "70" %>
-        </li>
-        <li class="string">
-          <%= f.label :maximum_budget, t("profile.maximum_budget_form") %>
-          <%= f.text_field :maximum_budget, :placeholder => "150000" %>
-        </li>
-      </ul>
-
-      <div class="form-actions clear">
-        <small>It's free !</small><span class="green-button"><%= f.submit t('home.sign_up') %></span>
+<div class="row-fluid home-how">
+  <div class="span12">
+    <h1 class="text-center">How it works</h1>
+    <p class="text-center">You can either</p>
+    
+    <div class="row-fluid">
+      <div class="span4 offset2">
+        <h2 class="text-center">Create a project</h2>
+        <p class="text-center">bla bla bl aoaipr foazuhfpma znfpaozdf poazfoazhfpoazhefoa   zhfpaozhfzofpazfaze flazqi flisudhpuh pzaejflaz jdfnlqisufzfl iazfliqzufqzufhpz ufpziufbphib hlzifblqs</p>
+      </div>
+      <div class="span4">
+        <h2 class="text-center">Join a project</h2>
+        <p class="text-center">bla bla bl aoaipr foazuhfpma znfpaozdf poazfoazhfpoazhefoa   zhfpaozhfzofpazfaze flazqi flisudhpuh pzaejflaz jdfnlqisufzfl iazfliqzufqzufhpz ufpziufbphib hlzifblqs</p>
       </div>
     </div>
+  </div>
+</div>  -->
 
-  <script type="text/javascript">
-      $(document).ready (function(){
-        $("#email_signup").hide();
-        $("#email_signup_button").click(function(){
-          $("#email_signup").toggle("active");
-          $("#facebook_signup").hide();
-        });
-      });
-    </script>
-
-  <% end %>
- 
-  
-</section>
-
-<div id = "follow-like">
-  <div class="fb-like" data-href="https://www.facebook.com/Shaipz" data-send="false" data-width="450" data-show-faces="false"></div>
-  <a href="https://twitter.com/shaipzapp" class="twitter-follow-button" data-show-count="false">Follow @shaipzapp</a>
-  <script>
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-  </script>
 </div>
- 
+

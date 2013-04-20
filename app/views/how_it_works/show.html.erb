@@ -1,161 +1,210 @@
-<section id='how-it-works'>
-    
-    <h1><%= t("how.how") %></h1>
-    
-	  <section id="why-shaipz">
-	  <h2><i><%= t("how.baseline") %></i></h2>
-	  
-		<div id="discovery-icon-more" class="why-box place">              
-		  <div class="video"><%= link_to image_tag("discovery_all_icon.png", :size => "220x220") %></div>
-		  <h3><strong><%= t("Discovery") %></h3>
-		</div>
-		
-		<div class="why-box neighbours">
-		  <div class="video"><%= link_to image_tag("commitment_icon.png", :size => "220x220") %></div>
-		  <h3><strong><%= t("Commitment") %></h3>
-		</div>
-	    
-	    <div class="why-box terms-of-living">
-	      <div class="video"><%= link_to image_tag("paperwork_icon.png", :size => "220x220") %></div>
-	      <h3><strong><%= t("Paperwork") %></h3>
-	    </div>
-	    
-	    <div class="why-box terms-of-living">
-	      <div class="video"><%= link_to image_tag("success_icon.png", :size => "220x220") %></div>
-	      <h3><strong><%= t("Happiness") %></h3>
-	    </div>
-	  </section>
-
-	<div id="FAQ">
-		<h1 style="text-align: left"><%= t("FAQ.what") %></h1>
-		<p><%= t("FAQ.what-intro") %> <span id="FAQ-what-more" class="FAQ-more"><%= t("FAQ.more") %></span></p>
-		<div id="FAQ-what-further" class="FAQ-further"><p><%= t("FAQ.what-content1") %> <%= t("FAQ.what-content-connect") %> <%= t("FAQ.what-content2") %> <%= t("FAQ.what-content-collaborate") %> <%= t("FAQ.what-content3") %></p></div>
-
-		
-		<h1 style="text-align: left"><%= t("FAQ.how") %></h1>
-		<p><%= t("FAQ.how-intro") %> <span id="FAQ-how-more" class="FAQ-more"><%= t("FAQ.more") %></span></p>
-		<div id="FAQ-how-further" class="FAQ-further">
-			<p><%= t("FAQ.how-content1") %></p>
-			<p><%= t("FAQ.how-content2") %></p>
-			<p><%= t("FAQ.how-content3") %></p>
-			<p><span id="FAQ-timeline-more" class="FAQ-more"><%= t("FAQ.how-timeline") %></span></p>
-	    </div>
-
-       
-		<section id='how-it-works'>	
-		<div id="FAQ-timeline-further" class="timeline">  	
-            <!-- timeline details-->
-			
-			<div id="building-discovery">
-			<h3><%= t("timeline.building-discovery") %></h3>
-			<p><%= t("timeline.building-discovery-content") %></p>
-			</div>
-			
-			<div id="people-discovery">
-			<h3><%= t("timeline.people-discovery") %></h3>
-			<p><%= t("timeline.people-discovery-content") %></p>
-			</div>
-			
-			<div id="interest-confirmation">
-			<h3><%= t("timeline.interest-confirmation") %></h3>
-			<p><%= t("timeline.interest-confirmation-content") %></p>
-			</div>
-			
-			<div id="feasibility-stamp">
-			<h3><%= t("timeline.feasibility-stamp") %></h3>
-			<p><%= t("timeline.feasibility-stamp-content") %></p>
-			</div>
-			
-			<div id="internal-agreement">
-			<h3><%= t("timeline.internal-agreement") %></h3>
-			<p><%= t("timeline.internal-agreement-content") %></p> 
-			</div>
-			
-			<div id="global-offer-making">
-			<h3><%= t("timeline.global-offer-making") %></h3>
-			<p><%= t("timeline.global-offer-making-content") %></p>  
-			</div>
-			
-			<div id="global-offer-acceptance">
-			<h3><%= t("timeline.global-offer-acceptance") %></h3>
-			<p><%= t("timeline.global-offer-acceptance-content") %></p>
-			</div>
-			
-			<div id="sales-agreement">
-			<h3><%= t("timeline.sales-agreement") %></h3>
-			<p><%= t("timeline.sales-agreement-content") %></p>
-			</div>
-			
-			<div id="challenges-fixing">
-			<h3><%= t("timeline.challenges-fixing") %></h3>
-			<p><%= t("timeline.challenges-fixing-content") %></p> 
-			</div>
-			
-			<div id="notarial-deed">
-			<h3><%= t("timeline.notarial-deed") %></h3>
-			<p><%= t("timeline.notarial-deed-content") %></p>
-			</div>
-			
-			<div id="move-in">
-			<h3><%= t("timeline.move-in") %></h3>
-			<p><%= t("timeline.move-in-content1") %><br><%= t("timeline.move-in-content2") %></p> 
-			</div>
-		
-		</div>
-
-	    <h1 style="text-align: left"><%= t("FAQ.affordable") %></h1>
-	    <p><%= t("FAQ.affordable-intro") %> <span id="FAQ-affordable-more" class="FAQ-more"><%= t("FAQ.more") %></span></p>
-	    <div id="FAQ-affordable-further" class="FAQ-further">
-		    <p><%= t("FAQ.affordable-content1") %></p>
-		    <p><%= t("FAQ.affordable-content2") %></p>
-		</div>
 
 
+<div class="container">
 
+<!-- page title -->
+  <div class="howitworks-header page-header">
+    <h1><%= t("FAQ.faq_extended") %></h1>
+  </div>
 
-
-
-	
-
-			
-        <p><%= link_to t("how.join"), stream_path %> <%= t("how.or") %> <%= link_to t("how.create_call"), new_project_path %></p>			
-			
-			
-		<h1><%= t("how.questions") %></h1>
-
-		<p><%= t("how.ask_questions") %></p>
-		<p><%= t("how.shy") %> <b><%= t("how.email") %></b> <%= t("how.email_at") %> <%= link_to "hello@Shaipz.com", "mailto:hello@Shaipz.com" %></p>
-		<p><%= t("how.also") %></p>
-		<p><b><%= t("how.twitter") %> </b> <%= link_to "http://twitter.com/shaipzapp", "http://twitter.com/shaipzapp" %></p>
-		<p><b><%= t("how.facebook") %> </b> <%= link_to "http://facebook.com/shaipz", "http://facebook.com/shaipz" %></p>	
-			
-		</section>
-
-	
-    
-    <script type="text/javascript">
+<!-- content -->
+  <script type="text/javascript">
       $(document).ready (function(){
-        $("#FAQ-what-further").hide();
-        $("#FAQ-how-further").hide();
-        $("#FAQ-affordable-further").hide();
-        $("#FAQ-timeline-further").hide();
-	        $("#FAQ-what-more").one("click",function(){
-	          $("#FAQ-what-further").slideDown("active");
+        $("#answer-what").hide();
+        $("#answer-for-whom").hide();
+        $("#answer-how").hide();
+        $("#answer-doityourself").hide();
+        $("#answer-howmanyprojects").hide();
+        $("#answer-agency").hide();
+        $("#answer-howsave").hide();
+        $("#answer-legal").hide();
+        $("#answer-bank").hide();
+        $("#answer-howsteps").hide();
+        $("#answer-howmuch").hide();
+
+	        $("#question-what").one("click",function(){
+	          $("#answer-what").slideDown("active");
+	        }); 
+
+	        $("#question-for-whom").one("click",function(){
+	          $("#answer-for-whom").slideDown("active");
+	        }); 
+
+	        $("#question-how").one("click",function(){
+	          $("#answer-how").slideDown("active");
+	        }); 
+
+	        $("#question-doityourself").one("click",function(){
+	          $("#answer-doityourself").slideDown("active");
+	        }); 
+
+	        $("#question-howmanyprojects").one("click",function(){
+	          $("#answer-howmanyprojects").slideDown("active");
+	        });  
+
+	        $("#question-agency").one("click",function(){
+	          $("#answer-agency").slideDown("active");
 	        });
-	        $("#FAQ-how-more").one("click",function(){
-	          $("#FAQ-how-further").slideDown("active");
+
+	        $("#question-howsave").one("click",function(){
+	          $("#answer-howsave").slideDown("active");
+	        }); 
+
+	        $("#question-legal").one("click",function(){
+	          $("#answer-legal").slideDown("active");
 	        });
-	        $("#FAQ-affordable-more").one("click",function(){
-	          $("#FAQ-affordable-further").toggle("active");
+
+	        $("#question-bank").one("click",function(){
+	          $("#answer-bank").slideDown("active");
 	        });
-	        $("#discovery-icon-more").one("click",function(){
-	          $("#FAQ-timeline-further").toggle("active");
+
+	        $("#question-howsteps").one("click",function(){
+	          $("#answer-howsteps").slideDown("active");
 	        });
-	        $("#FAQ-timeline-more").one("click",function(){
-	          $("#FAQ-timeline-further").toggle("active");
+
+	        $("#question-howmuch").one("click",function(){
+	          $("#answer-howmuch").slideDown("active");
 	        });
-	        
       });
     </script>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      
+      <div class="other-questions span4">
+	    <p id="other-questions-title"><%= t("how.questions") %></p>
+	    <p class="lead"><%= t("how.ask_questions") %></p>
+	    <p>via twitter: <a href="http://twitter.com/shaipzapp">@shaipzapp</a></p>
+	    <p>via email: <a href="mailto:hello@shaipz.com">hello@shaipz.com</a></p>
+	    <p>via facebook: <a href="http://facebook.com/shaipz">facebook.com/shaipz</a></p>
+	  </div>
 
-</section>
+<!-- QUESTIONS REPONSES -->
+	  <div class="faq span8">
+
+		  <div class="question" id="question-what">
+		  	<h3><%= t("FAQ.question-what") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-what">
+		  	<p><%= t("FAQ.answer-what") %></p>
+		  </div>
+	  
+
+		  <div class="question" id="question-for-whom">
+		  	<h3><%= t("FAQ.question-for-whom") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-for-whom">
+		  	<p><%= t("FAQ.answer-for-whom") %></p>
+		  </div>
+
+
+		  <div class="question" id="question-how">
+		  	  <h3><%= t("FAQ.question-how") %></h3>
+		    </div>
+
+		  <div class="answer" id="answer-how">
+		  	  <p><%= t("FAQ.answer-how") %></p>
+		  </div>
+
+
+		  <div class="question" id="question-doityourself">
+		  	<h3><%= t("FAQ.question-doityourself") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-doityourself">
+		  	<p><%= t("FAQ.answer-doityourself") %></p>
+		  </div>
+
+
+
+		  <div class="question" id="question-howmanyprojects">
+		  	<h3><%= t("FAQ.question-howmanyprojects") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-howmanyprojects">
+		  	<p><%= t("FAQ.answer-howmanyprojects") %></p>
+		  </div>
+
+
+
+		  <div class="question" id="question-agency">
+		  	<h3><%= t("FAQ.question-agency") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-agency">
+		  	<p><%= t("FAQ.answer-agency") %></p>
+		  </div>
+
+
+
+		  <div class="question" id="question-howsave">
+		  	<h3><%= t("FAQ.question-howsave") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-howsave">
+		  	<p><%= t("FAQ.answer-howsave") %></p>
+		  </div>
+
+
+		  <div class="question" id="question-legal">
+		  	<h3><%= t("FAQ.question-legal") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-legal">
+		  	<p><%= t("FAQ.answer-legal") %></p>
+		  </div>
+
+
+		  <div class="question" id="question-bank">
+		  	<h3><%= t("FAQ.question-bank") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-bank">
+		  	<p><%= t("FAQ.answer-bank") %></p>
+		  </div>
+
+
+		  <div class="question" id="question-howsteps">
+		  	<h3><%= t("FAQ.question-howsteps") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-howsteps">
+		  	<p><%= t("FAQ.answer-howsteps") %></p>
+		  </div>
+
+
+
+		  <div class="question" id="question-howmuch">
+		  	<h3><%= t("FAQ.question-howmuch") %></h3>
+		  </div>
+
+		  <div class="answer" id="answer-howmuch">
+		  	<p><%= t("FAQ.answer-howmuch") %><%= link_to t("generals.here"), "mailto:hello@shaipz.com" %>.</p>
+		  </div>
+
+
+
+
+
+		    <!-- <div class="answer" id="answer-howsteps">
+		  	  <p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
+		    
+		      <div class="question" id="question-howdetailedsteps">
+		  	    <h4>In details how does all this happen?</h4>
+		      </div>
+
+		      <div class="answer" id="answer-howdetailedsteps">
+		  	    <p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
+		      </div>
+		    </div>
+		  </div> -->
+
+	
+    </div>
+  </div>
+</div>
+
+
+</diV>
+

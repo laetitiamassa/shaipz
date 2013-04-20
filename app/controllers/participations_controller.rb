@@ -27,4 +27,11 @@ class ParticipationsController < ApplicationController
     project = Project.find(params[:participation][:project_id])
     redirect_to(new_project_url, :alert => t("participation.project_disabled")) if project.disabled?
   end
+
+  def show
+  end
+
+  def edit
+  end
+  
 end

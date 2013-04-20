@@ -1,0 +1,94 @@
+
+<div class="container">
+
+<!-- page title -->
+  <div class="howitworks-header page-header">
+    <h1><%= t("About us") %></h1>
+  </div>
+
+<!-- content -->
+  <script type="text/javascript">
+      $(document).ready (function(){
+        $("#about-story-content").hide();
+        $("#about-team-content").hide();
+        $("#about-press-content").hide();
+	        $("#about-shaipz").click(function(){
+	          $("#about-shaipz-content").slideDown("active");
+	          $("#about-story-content").hide();
+              $("#about-team-content").hide();
+              $("#about-press-content").hide();
+	        });  
+	        $("#about-story").click(function(){
+	          $("#about-story-content").slideDown("active");
+	          $("#about-shaipz-content").hide();
+              $("#about-team-content").hide();
+              $("#about-press-content").hide();
+	        });
+	        $("#about-team").click(function(){
+	          $("#about-team-content").slideDown("active");
+	          $("#about-shaipz-content").hide();
+              $("#about-story-content").hide();
+              $("#about-press-content").hide();
+	        });  
+	        $("#about-press").click(function(){
+	          $("#about-press-content").slideDown("active");
+	          $("#about-shaipz-content").hide();
+              $("#about-team-content").hide();
+              $("#about-story-content").hide();
+	        });      
+      });
+    </script>
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <!-- left side -->
+      <div class="other-questions span4">
+	    <p id="other-questions-title">Other questions?</p>
+	    <p class="lead">We'd love to hear from you!</p>
+	    <p>via twitter: @shaipzapp</p>
+	    <p>via email: hello@shaipz.com</p>
+	    <p>via facebook: facebook.com/shaipz</p>
+	  </div>
+      
+      <!-- right side -->
+	  <div class="faq span8">
+        <div class="row-fluid">
+		  	<ul class="nav nav-pills text-center lead span10 offset1">
+	          <li><a href="#" id="about-shaipz">Shaipz</a></li>
+	          <li><a href="#" id="about-story">story</a></li>
+	          <li><a href="#" id="about-team">team</a></li>
+	          <li><a href="#" id="about-press">press</a></li>
+	        </ul>
+        </div>
+
+		<div class="about-content">
+			<div id="about-shaipz-content">
+				<p>Shaipz is a bla bla bla </p>
+				<i>sans lequel bla bla bla </i>
+			</div>
+  
+            <div id="about-story-content">
+            	Story
+            </div>
+            
+            <div id="about-team-content">
+            	team
+            </div>
+            
+            <div id="about-press-content">
+            	press
+            </div>
+
+		</div>
+			
+
+		  
+    </div>
+  </div>
+</div>
+
+
+</diV>
+
+
+</div>

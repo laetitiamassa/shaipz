@@ -1,5 +1,5 @@
 <%= form_for [@reportable, @report] do |f| %>
-  <h2><%= t('report.reason') %></h2>
+  
   <ul class="fields">
     <li class="text">
       <%= f.text_area :content, :placeholder => t("example_report"), :rows => 8 %>
@@ -7,6 +7,6 @@
   </ul>
 
 	<div class="form-actions clear">
-    <span class="button"> <%= f.submit t('report.submit') %></span>
+    <%= f.submit t('report.submit'), :class => "btn btn-large btn-info btn-block" %>
   </div>
 <% end %>

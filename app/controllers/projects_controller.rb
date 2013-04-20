@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
     @url_immo = SearchUrlGenerator.new("immoweb", @user)
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
+    
   end
 
   def create
@@ -36,6 +37,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @owner = @project.owner
     @participants = @project.owner_and_participants
+    
   end
 
   def edit

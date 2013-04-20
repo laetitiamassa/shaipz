@@ -1,6 +1,23 @@
-<section id="report">
-  <%= render :partial => "_shared/profile", :locals => {:user => @user} %>
-	<div id="report-wrap">
+<div class="container container-fluid-profile">
+  
+  <div class="howitworks-header page-header">
+    
+    <div class="row-fluid">
+      
+      <div class="span12 project-name">
+        <h1><%= t('report.reason') %></h1> 
+      </div>
+      
+    </div> 
+  </div> <!-- end of header -->
+
+
+  
+	<div class="row-fluid">
+		<div class="span6 offset3 report-box">
 		<%= render "form" %>
 	</div>
-</section>
+</div>
+
+
+</div>

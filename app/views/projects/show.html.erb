@@ -1,0 +1,341 @@
+<div class="container container-fluid-profile">
+  
+  <div class="howitworks-header page-header">
+    
+    <div class="row-fluid">
+      
+      <div class="span9 project-name">
+        <h1><%= @project.name %>
+        <% if @project.cohousing? %>
+        <%= image_tag ("cohousing.png"), {:title => t("project.logo_cohousing")} %>
+        <% end %></h1>
+      </div>
+      
+      <div class="span3 text-right edit-project">    
+        <% if @user.owner_of_project?(@project) %>
+          <%= link_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %>
+          <!-- - if @project.has_user_as_owner?(@user) -->
+          <br><%= link_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')}" %>
+        <% elsif @project.has_participant?(@user) %>
+          <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')}", :class => 'btn btn-large btn-danger' %>
+        <% else %>
+          <%= form_for "participation", :url => participations_path do |f| %>
+            <%= f.hidden_field :project_id, :value => @project.id %>
+            <% if current_user.authenticated_with_facebook?(session) %>
+              <ul class="fields">
+                <li class="checkbox">
+                  <%= f.check_box :share_on_facebook, { :checked => true } %>
+                  <%= f.label :share_on_facebook, t("participation.share_on_facebook") %>
+            <% else %>
+              <%= f.hidden_field :share_on_facebook, :value => "0" %>
+            <% end %>
+            <%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="row-fluid">
+    <div class="hero-unit project span12">
+      <%= image_tag @project.picture.url(:medium) %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="span2 offset10 report-profile">
+      <p class="text-right"><%= link_to t("profile.report"), new_project_report_path(@project) %></p>
+    </div>
+  </div>
+
+  <div class="row-fluid">
+    <div class=" span12">
+
+<div class="tabbable">
+  <ul class="nav nav-tabs text-center lead">
+    <li class="active">
+      <a href="#pane1" data-toggle="tab"><i class="icon-building"></i><%= t("project.tab_building") %></a>
+    </li>
+    <li>
+      <a href="#pane2" data-toggle="tab"><i class="icon-calendar"></i><%= t("project.tab_events") %></a>
+    </li>
+    <li>
+      <a href="#pane3" data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+
+  <div id="pane1" class="tab-pane active">
+    <div class="row-fluid building">
+      <div class="span8">
+        
+        <div class="row-fluid">
+        <div class="span6 offset3">
+        <p class="lead text-center"><%= t("project.details_of_project") %></p>
+        </div>
+        <div class="span3 text-right">
+          <% if @user.owner_of_project?(@project) %>
+              <%= link_to t("project.edit"), edit_project_path(@project), :class => "btn btn-block" %>
+              <% end %>
+            </div>
+      </div>
+        <div class="hero-unit project first-details">
+          
+          <div class="row-fluid">
+            <div class="span8 price">
+              <i class="icon-map-marker"></i><%= @project.address_for_user(@user) %>
+            </div>
+            <div class="span4 text-right price"><i><b>
+              <%= number_to_currency(@project.price_per_shaipz, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %></b></i>
+            </div>
+          </div>
+        
+          <div class="row-fluid project-details-under">
+            <div class="span1 offset9">
+              <p><i class="icon-user"></i><%= @project.maximum_shaipz %></p>
+            </div>
+            <div class="span2 text-right">
+              <i class="icon-home"></i><%= @project.space_per_shaipz %> m2
+            </div>
+          </div>
+        </div> <!-- hero-unit -->
+<div class="row-fluid">
+  <div class="span6 offset3">
+        <p class="lead text-center"><%= t("project.details_of_origin") %></p>
+        </div>
+        <div class="span3 text-right">
+          <%= link_to(t("project.original_ad"), @project.source_link, :class => "btn btn-block", :target => "_blank") if @project.has_source_link? %></div>
+      </div>
+        <div class="hero-unit project text-center">
+          <%= t("project.description_shaipz", :total_amount => number_to_currency(@project.total_amount, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"), :total_space => @project.total_space) %>
+        </div>
+      </div> <!-- end span8 -->
+      <div class="span4">
+        <p class="lead text-center inner-title"><%= t("project.leader_thought") %></p>
+        <div class="row-fluid">
+          <div class="hero-unit participants-list span12">    
+            <div class="span10 text-right">
+              <p class="lead"><b><%= link_to(@owner.name? ? @owner.name : @owner.name_placeholder, user_path(@owner)) %></b></p>
+            </div>
+            <div class="span2 event-participant">
+              <%= link_to(image_tag(@owner.picture.url(:thumb), :class => 'img-circle'), user_path(@owner)) %>
+            </div>
+
+            
+                <p><i class="icon-quote-left icon-muted icon-4x"></i><%= @project.event_description %></p>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div> 
+    
+  </div> <!-- pane1 -->
+
+
+    <div id="pane2" class="tab-pane">
+      <div class="row-fluid">
+        
+        <div class="span8">
+          
+          <div clas="row-fluid">
+            <div class="span6 offset3">
+              <p class="lead text-center"><%= t("project.progression") %></p>
+            </div>
+            <div class="span3 text-right">
+              <% if @user.owner_of_project?(@project) %>
+              <%= link_to t("project.edit"), edit_project_path(@project), :class => "btn btn-block" %>
+              <% end %>
+            </div>
+          </div>
+          
+
+            <div class="span12">
+
+          <p><%= t("project.statuses.#{@project.project_status}") if @project.has_project_status? %></p>
+
+          <% if @project.project_status == "building_discovery" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-warning" style="width: 10%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "people_discovery" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-warning" style="width: 20%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "interest_confirmation" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-warning" style="width: 40%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "feasibility_stamp" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 50%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "internal_agreement" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 70%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "global_offer_making" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 75%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "global_offer_acceptance" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 80%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "sales_agreement" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 85%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "challenges_fixing" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-success" style="width: 95%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "notarial_deed" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-succes" style="width: 100%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "move_in" %>
+                <div class="progress">
+                <div class="bar bar-success" style="width: 100%"></div>
+                </div>
+          <% end %>
+
+        <p class="lead text-center"><%= t("project.your_next_event") %></p>
+        
+        <div class="hero-unit next-event text-center">
+          <div class="row-fluid">
+            <div class="span1">
+              <i class="icon-bell-alt icon-4x pull-right"></i>
+            </div>
+            <div class="span10">
+              <h2><%= @project.event_type %></h2>
+              <h4><%= @project.event_date %></h4>
+            </div>
+          </div>
+        </div>
+
+        
+        <p class="lead text-center"><%= t("project.additional_info") %></p>
+        <div class="hero-unit details-event">
+          <p><%= @project.event_description %></p>
+        </div>
+      </div>
+      </div>
+
+      
+      <div class="span4">
+        <p class="lead text-center inner-title"><%=t("project.participants_availabilities") %></p>
+        <% @participants.each do |p| %>
+        <div class="row-fluid">
+          <div class="hero-unit participants-list span12">    
+            <div class="span10 text-right">
+              <p><i><b><%= p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder %></b></i></p>
+            </div>
+            <div class="span2 event-participant text-center">
+              <%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-circle'), user_path(p)) %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+    
+    
+    <div id="pane3" class="tab-pane">
+      <div class="row-fluid">
+        <div class="span6">
+        <p class="lead text-center"><%= t("project.discover_participants") %></p>
+
+        <% if @project.has_participant_or_owner?(@user) %>
+
+        <p class="text-center"><button type="button" class="btn btn-info" disabled><%= "##{@project.priority_order_for_participant(@user)}" %><%= t("  ") %><%= t("project.in_project") %></button></p>
+        <% end %>
+      
+        <% @participants.each do |p| %>
+        <div class="row-fluid">
+          <div class="hero-unit participants-list span12">
+        
+            <div class="span2 profile-participant text-center">
+              <%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-rounded'), user_path(p)) %>
+            </div>
+            <div class="span10">
+              <p><b><%= link_to p.has_name? ? p.name : p.name_placeholder, user_path(p) %></b><br>
+              <i class="participants-status"><%= t("statuses.#{p.personal_status}") if p.has_personal_status? %></i></p>
+            </div>
+          </div>
+        </div>
+        <ul class="nav nav-list">
+          <li class="divider"></li>
+        </ul>
+        <% end %>
+      </div>
+      
+      <div class="span6 text-center">
+        <p class="lead inner-title"><%= t("project.discuss") %></p>
+        <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %>
+        </div>
+      </div>
+    </div>
+  </div>  
+  </div><!-- /.tab-content -->
+</div><!-- /.tabbable -->
+
+</div> <!-- container -->
+</div>
+</div>      
+
+ 
+
+
+
+
+
+
+<!--
+
+
+
+-#    %section#participants
+-#      %h3= t("project.participants")
+-#      - if @project.has_participant_or_owner?(@user)
+-#        .position
+-#          %span= "##{@project.priority_order_for_participant(@user)}"
+-#          = t("project.in_project")
+-#      - else
+-#        #participation
+-#          = form_for "participation", :url => participations_path do |f|
+-#            = f.hidden_field :project_id, :value => @project.id
+-#            - if current_user.authenticated_with_facebook?(session)
+-#              %ul.fields
+-#                %li.checkbox
+-#                  = f.check_box :share_on_facebook, { :checked => true }
+-#                  = f.label :share_on_facebook, t("participation.share_on_facebook")
+-#            - else
+-#              = f.hidden_field :share_on_facebook, :value => "0"
+
+-#            .join-action
+-#              = f.submit t("project.join_project"), :class => 'btn btn-info'
+
+
+

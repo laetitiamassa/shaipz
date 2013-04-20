@@ -1,0 +1,170 @@
+<div class="container container-fluid-profile">
+ 
+  <div class="howitworks-header page-header">
+
+    <div class="row-fluid">
+     
+      <div class="span9 project-name">
+        <h1><%= t("project.edit_project") %></h1>
+      </div>
+     
+      <div class="span3 text-right edit-project">
+           <div class="btn"><i class="icon-info-sign icon"></i><%= link_to " help", "mailto:hello@Shaipz.com" %></div>
+      </div>
+
+    </div>
+
+  </div> <!-- end of header -->
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    <%= form_for @project, :html => { :multipart => true } do |f| %>
+
+
+<!-- EVENTS -->
+  <legend><h2><i class="icon-calendar icon-large pull-left icon-muted"></i><%= t("project.happenings") %></h2></legend>
+
+  
+ 
+  <div class="row-fluid">
+  <!-- project status -->
+  <div class="control-group">                         
+    <div class="control-label"><%= f.label :project_status, t("project.how_far_is_the_project") %></div>
+    <%= f.select :project_status, @project_statuses %>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <!-- next event type -->
+  <div class="control-group">                         
+    <div class="control-label"><%= f.label :event_type, t("project.event_type") %></div>
+    <%= f.select :event_type, @event_types %>
+  </div>
+</div>
+
+  <!-- next event date -->
+  <div class="control-group">                         
+    <div class="control-label"><%= f.label :event_date, t("project.event_date") %></div>
+    <div class="date"><%= f.datetime_select :event_date, :order => [:day,:month,:year] %></div>
+  </div>
+
+  <!-- next event description -->
+  <div class="control-group">
+    <div class="control-label"><%= f.label :event_description, t("project.event_description") %></div>
+    <div class="controls event_description"><%= f.text_area :event_description, :placeholder => t("project.example_text"), :rows => 5 %></div>
+  </div>
+
+     
+      <!-- PLACE -->
+   
+      <legend><h2><i class="icon-building icon-large pull-left icon-muted"></i><%= t("project.place") %></h2></legend> 
+     
+      
+      <div class="row-fluid">
+        <div class="span4">
+          <%= image_tag @project.picture.url(:thumbcreate) %>
+          <%= f.file_field :picture %>
+          <h6><%= t("warning.check_filename") %></h6>
+        </div>
+
+      <ul class="fields">
+        <div class="span4">
+          <li class="string">
+            <%= f.label :total_amount, t("project.how_much") %>
+            <%= f.text_field :total_amount, :placeholder => "570000" %>
+          <li class="string">
+            <%= f.label :total_space, t("project.how_big") %>
+            <%= f.text_field :total_space, :placeholder => "435" %>
+        </div>
+        
+        <li class="string span4">
+          <%= f.label :source_link, t("project.source_link") %>
+          <%= f.text_field :source_link, :placeholder => "http://..." %>
+        </li>
+      </ul>
+      </div>
+
+
+<div class="row-fluid">
+ 
+<!-- adresse -->
+  <div class="span3">
+  <!-- district -->
+
+  <div class="control-group">
+    <div class="control-label"><%= f.label :zipcode, t("project.zipcode") %></div>
+    <div class="controls"><%= f.text_field :zipcode, :placeholder => t("example_zipcode"), :value => nil %></div>
+  </div>
+</div>
+
+ <div class="span3">
+  <!-- city -->
+  <div class="control-group">
+    <div class="control-label"><%= f.label :city, t("project.city") %></div>
+    <div class="controls"><%= f.text_field :city, :placeholder => t("example_city") %></div>
+  </div>
+</div>
+
+   <div class="span3">
+  <!-- full adress -->                
+  <div class="control-group">
+    <div class="control-label"><%= f.label :address, t("project.address_form") %></div>
+    <div class="controls"><%= f.text_field :address, :placeholder => t("example_address") %></div>
+  </div>
+  </div>                            
+
+  <div class="span3">
+  <!-- hide full adress to non-participants -->
+  <div class="control-group">
+    <div class="controls">
+      <label class="checkbox"><%= f.check_box :hide_street_from_non_participants %>
+        <input type="checkbox"><%= f.label :hide_street_from_non_participants, t("project.hide_street_from_non_participants") %>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+      <!-- PEOPLE -->
+  <legend><h2><i class="icon-group icon-large pull-left icon-muted"></i><%= t("project.people") %></h2></legend>
+
+  <div class="row-fluid">
+    <div class="span3">
+  <!-- project title -->
+  <div class="control-group">
+    <div class="control-label"><%= f.label :name, t("project.what_name") %></div>
+    <div class="controls"><%= f.text_field :name, :placeholder => t("example_projectname") %></div>
+  </div>
+  </div>
+
+  <div class="span3">
+  <!-- number of flats -->
+  <div class="control-group">
+    <div class="control-label"><%= f.label :maximum_shaipz, t("project.how_many") %></div>
+    <div class="controls"><%= f.text_field :maximum_shaipz, :placeholder => "4" %></div>
+  </div>
+</div>
+
+
+        
+
+      
+      <div class="form-actions clear span8 offset2">
+        <%= f.submit t('project.update_project'), :class => "btn btn-large btn-block btn-success" %>
+      </div>
+
+  <% end %>
+
+</div>
+</div>

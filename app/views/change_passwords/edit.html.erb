@@ -1,5 +1,12 @@
-<section>
-  <h2><%= t("profile.change_your_password") %></h2>
+<div class="row-fluid">
+        <div class="hero-unit passwordeditbloc span5 offset3">
+
+    <center>
+          <h2><%= t("profile.change_your_password") %></h2>
+        </center>
+
+
+
   <%= form_for(@user, :url => change_password_path, :html => { :multipart => true }) do |f| %>
     <ul class="fields">
       <li class="string">
@@ -11,9 +18,17 @@
         <%= f.password_field :password %>
       </li>
     </ul>
-    <div class="form-actions clear">
-      <span class="button"><%= f.submit t('profile.save_changes') %></span>
-    </div>
-  <% end %>
-</section>
+    
+        <div class="form-actions">
+          <%= f.submit t('profile.save_changes'), :class => "btn btn-large btn-block btn-info" %>
+        </div>
+
+        <% end %>
+
+        
+        
+        </div> <!-- end hero-unit -->
+      </div> <!-- end row-fluid -->
+
+
 

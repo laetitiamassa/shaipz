@@ -1,0 +1,163 @@
+
+-
+-  #project-wrap
+-    %h2
+-      = t("project.define_new_project")
+-      %span.how= link_to(t("help"), "mailto:hello@Shaipz.com")
+-    %span= t("project.baseline") 
+-    
+-    = render 'search_links'
+-
+-  #project-wrap
+-    
+-    #whats_your_project
+-      = form_for @project, :html => { :multipart => true } do |f|
+-        
+-        .place
+-          %h3= t("project.place")
+-        
+-          .whats_original_ad
+-            %h2= t("project.whats_original_ad")
+-          
+-          .source
+-            %ul.fields
+-              %li.string
+-                = f.label :source_link, t("project.source_link")
+-                = f.text_field :source_link, :placeholder => "http://..."
+-            
+-        .whats_details
+-          %h2= t("project.whats_details")
+-          %span= t("project.details_baseline")
+-               
+-          .picture
+-            = image_tag @project.picture.url(:thumbcreate)
+-            = f.file_field :picture
+-          %p.warning= t("warning.check_filename")
+-
+-          .how_much
+-            %ul.fields
+-              %li.string
+-                = f.label :total_amount, t("project.how_much")
+-                = f.text_field :total_amount, :placeholder => "570000"
+-        
+-          .how_big
+-            %ul.fields
+-              %li.string
+-                = f.label :total_space, t("project.how_big")
+-                = f.text_field :total_space, :placeholder => "435"
+-        
+-          .zipcode_and_city
+-            %ul.fields   
+-              %li.string.two-fields
+-                .field
+-                  = f.label :zipcode, t("project.zipcode")
+-                  = f.text_field :zipcode, :placeholder => t("example_zipcode"), :value => nil
+-                .field
+-                  = f.label :city, t("project.city")
+-                  = f.text_field :city, :placeholder => t("example_city")
+-        
+-          .street
+-            %ul.fields  
+-              %li.string
+-                = f.label :address, t("project.address_form")
+-                = f.text_field :address, :placeholder => t("example_address")
+-            
+-          .hide_street
+-            %ul.fields
+-              %li.checkbox
+-                = f.check_box :hide_street_from_non_participants
+-                = f.label :hide_street_from_non_participants, t("project.hide_street_from_non_participants")
+-         
+-        .people
+-          %h3= t("project.people")
+-        
+-          .whats_project
+-            %h2= t("project.whats_project")
+-            %span= t("project.project_baseline") 
+-              
+-          .name
+-            %ul.fields
+-              %li.string
+-                = f.label :name, t("project.what_name")
+-                = f.text_field :name, :placeholder => t("example_projectname")
+-        
+-          .how_many
+-            %ul.fields  
+-              %li.string
+-                = f.label :maximum_shaipz, t("project.how_many")
+-                = f.text_field :maximum_shaipz, :placeholder => "4"
+-        
+-          .cohousing
+-            %ul.fields
+-              %li.checkbox
+-                = f.check_box :cohousing
+-                = image_tag ("cohousing.png"), :size => "30x30", :title => t("project.cohousing")
+-        
+-        .happenings
+-          %h3= t("project.happenings")
+-        
+-          .whats_next
+-            %h2= t("project.define_next")
+-            %span.click_next= t("project.next_baseline")
+-      
+-          .next_box
+-            .project_status
+-              %ul.fields
+-                %li.string
+-                  %strong= f.label :project_status, t("project.how_far_is_the_project")
+-                  = f.select :project_status, @project_statuses
+-        
+-            .event_type
+-              %ul.fields
+-                %li.text
+-                  = f.label :event_type, t("project.event_type")
+-                  = f.select :event_type, @event_types
+-                
+-            .event_date
+-              %ul.fields
+-                %li.text
+-                  = f.label :event_date, t("project.event_date")
+-                  = f.datetime_select :event_date, :order => [:day,:month,:year]
+-        
+-            %ul.fields
+-              %li.text
+-                = f.label :event_description, t("project.event_description")
+-                = f.text_area :event_description, :placeholder => t("project.example_text"), :rows => 5
+-              - if current_user.authenticated_with_facebook?(session)
+-                %li.checkbox
+-                  = f.check_box :share_on_facebook
+-                  = f.label :share_on_facebook, t("project.share_on_facebook")
+-              - else
+-                = f.hidden_field :share_on_facebook, :value => '0'
+-            
+-        .form-actions.clear
+-          %span.green-button= f.submit t('project.create_project')
+-        
+-         
+-  / :javascript
+-  /   $(document).ready (function(){
+-  /     $("#project-wrap .whats_details").hide();
+-  /     $("#project-wrap .people").hide();
+-  /     $("#project-wrap .happenings").hide();
+-  /     $("#project-wrap .form-actions.clear").hide();
+-  /       $("#project-wrap .place .source").one("click",function(){
+-  /         $("#project-wrap .whats_details").toggle("active");
+-  /      });
+-  /       $("#project-wrap .how_big").one("click",function(){
+-  /         $("#project-wrap .people").toggle("active");
+-  /      }); 
+-  /       $("#project-wrap .people .how_many").one("click",function(){
+-  /       $("#project-wrap .happenings").toggle("active");
+-  /       $("#project-wrap .form-actions.clear").toggle("active");
+-  /      });
+-  /   });
+-  
+-  / :javascript
+-  /  $(document).ready (function(){
+-  /    $("#project-wrap #find_on_immoweb").hide();
+-  /      $("#project-wrap #nothing_in_mind").one("click",function(){
+-  /        $("#project-wrap #find_on_immoweb").toggle("active");
+-  /      });
+-  /    });
+
+

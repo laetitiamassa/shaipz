@@ -15,6 +15,7 @@ gem 'newrelic_rpm'
 gem 'nokogiri'
 gem 'acts_as_commentable_with_threading'
 gem 'bootstrap_forms'
+gem "font-awesome-rails"
 
 group :assets do
   gem 'sass-rails',     '~> 3.2.6'
