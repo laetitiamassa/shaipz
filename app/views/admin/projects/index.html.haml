@@ -10,7 +10,6 @@
       %th ID
       %th Name
       %th Owner
-      %th Discount
       %th Actions
   %tbody
     - @projects.each do |project|
@@ -18,7 +17,6 @@
         %td= project.id
         %td= project.name
         %td= project.owner_name
-        %td= project.discount
         %td
           = link_to edit_admin_project_path(project), :class => 'btn btn-small' do
             %i.icon-pencil
