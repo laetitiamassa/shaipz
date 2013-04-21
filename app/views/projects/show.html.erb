@@ -39,6 +39,11 @@
   
   <div class="row-fluid">
     <div class="hero-unit project span12">
+      <div class="snippet-project">
+                    <% if @project.has_average_district_price? %>
+                        <div class="discount"><i class="icon-bookmark icon-4x"></i><div class="percentage">-<%= number_to_percentage(@project.discount, :precision => 0) %></div></div>
+                    <% end %>
+                
       <%= image_tag @project.picture.url(:medium) %>
     </div>
   </div>
