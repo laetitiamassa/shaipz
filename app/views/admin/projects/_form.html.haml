@@ -33,6 +33,13 @@
         %span.add-on m2
 
   .control-group
+    = f.label :average_district_price, t("prix moyen dans la commune"), :class => 'control-label'
+    .controls
+      .input-append
+        = f.text_field :average_district_price, :placeholder => "2500", :class => 'span2'
+        %span.add-on €/m2
+
+  .control-group
     = f.label :maximum_shaipz, :class => 'control-label'
     .controls= f.text_field :maximum_shaipz, :class => 'span2'
 

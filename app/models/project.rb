@@ -21,9 +21,9 @@ class Project < ActiveRecord::Base
     :content_type => { :content_type => /image/ },
     :size => { :less_than => 2.megabytes }
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :owner_id, :as => :admin
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price, :owner_id, :as => :admin 
 
   default_scope :order => "updated_at DESC"
   scope :active, where(:disabled_at => nil)
@@ -58,6 +58,18 @@ class Project < ActiveRecord::Base
 
   def space_per_shaipz
     total_space/maximum_shaipz
+  end
+
+  def average_price
+    total_amount/total_space
+  end
+
+  def has_average_district_price?
+    average_district_price.present?
+  end
+
+  def discount
+    (average_district_price - average_price)*100/average_district_price
   end
 
   def owner_name
@@ -121,7 +133,7 @@ class Project < ActiveRecord::Base
   end
 
   def full_address
-    "#{address} #{zipcode} #{city}"
+    "#{zipcode} #{city} #{address}"
   end
 
   def short_address

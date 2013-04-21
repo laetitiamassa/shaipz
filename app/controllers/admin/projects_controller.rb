@@ -36,9 +36,9 @@ class Admin::ProjectsController < Admin::BaseController
   def update
     @project = Project.find(params[:id])
     if @project.update_attributes(params[:project], :as => :admin)
-      if @project.has_participants?
-        NotificationMailer.update_project(current_user, @project).deliver
-      end
+    #  if @project.has_participants?
+    #    NotificationMailer.update_project(current_user, @project).deliver
+    #  end
 
       flash[:success] = t("project.update_success")
       redirect_to admin_projects_path

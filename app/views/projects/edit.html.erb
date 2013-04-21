@@ -82,10 +82,14 @@
         <div class="span4">
           <li class="string">
             <%= f.label :total_amount, t("project.how_much") %>
-            <%= f.text_field :total_amount, :placeholder => "570000" %>
+            <div class="input-append"><%= f.text_field :total_amount, :placeholder => "570000" %><span class="add-on">€</span></div>
           <li class="string">
             <%= f.label :total_space, t("project.how_big") %>
-            <%= f.text_field :total_space, :placeholder => "435" %>
+            <div class="input-append"><%= f.text_field :total_space, :placeholder => "435" %><span class="add-on">m2</span></div>
+          <li class="string">
+            <i><%= f.label :average_district_price, t("prix moyen dans la commune") %></i>
+            <div class="input-append"><%= f.text_field :average_district_price, :placeholder => "2500" %>
+  <span class="add-on">€ /m2</span></div>
         </div>
         
         <li class="string span4">

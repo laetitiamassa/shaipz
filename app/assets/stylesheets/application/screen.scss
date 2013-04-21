@@ -454,7 +454,7 @@ select {
 /* Projects Streams */
 
 .disabled {
-          opacity: .4;
+  opacity: .4;
         }
 
 .stream-title {
@@ -496,6 +496,56 @@ select {
   margin-top: -2px;
   }
 }
+
+.snippet .discount {
+  z-index: 2;
+  position: absolute;
+  top: 4px;
+  left: 0px;
+
+  .icon-bookmark {
+  color: #0088cc;
+  }
+}
+.snippet .discount .percentage {
+  z-index:3;
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  color: white;
+  }
+
+
+.snippet {
+  z-index: 1;
+  position: relative;
+}
+
+.snippet-project {
+  z-index: 1;
+  position: relative;
+}
+
+.snippet-project .discount {
+  z-index: 2;
+  position: absolute;
+  top: -5px;
+  left: 20px;
+
+  .icon-bookmark {
+  color: #0088cc;
+  }
+}
+.snippet-project .discount .percentage {
+  z-index:3;
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  color: white;
+  }
+
+
+/* Invite Friends */
 
 .invite-text {
   textarea {

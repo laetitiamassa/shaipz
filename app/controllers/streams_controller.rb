@@ -10,8 +10,4 @@ class StreamsController < ApplicationController
     
   end
 
-  def show_all
-  	@projects = Project.active.all
-    
-  end
 end

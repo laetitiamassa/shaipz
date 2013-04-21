@@ -16,6 +16,7 @@
   	</div> <!-- end of header -->
 
 	<% @projects.each do |project| %>
+     
   		<%= render :partial => "_shared/project", :locals => { :project => project } %>
 	<% end %>
 
