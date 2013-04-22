@@ -4,10 +4,15 @@ class StreamsController < ApplicationController
 
   def show
     @user = current_user
-    if (@projects = Project.active.where(:zipcode => current_user.zipcodes)).blank?
+
+    if (@projects = Project.active.where(:zipcode => current_user.zipcodes)).any?
+      @has_projects_in_district = true
+    else
       @projects = Project.active.all
-    end
-    
+      @has_projects_in_district = false
+    end   
   end
+
+
 
 end

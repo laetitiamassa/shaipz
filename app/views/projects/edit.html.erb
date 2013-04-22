@@ -15,20 +15,7 @@
     </div>
 
   </div> <!-- end of header -->
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-
+        
     <%= form_for @project, :html => { :multipart => true } do |f| %>
 
 
@@ -87,7 +74,7 @@
             <%= f.label :total_space, t("project.how_big") %>
             <div class="input-append"><%= f.text_field :total_space, :placeholder => "435" %><span class="add-on">m2</span></div>
           <li class="string">
-            <i><%= f.label :average_district_price, t("prix moyen dans la commune") %></i>
+            <i><%= f.label :average_district_price, t("project.average_district_price") %></i>
             <div class="input-append"><%= f.text_field :average_district_price, :placeholder => "2500" %>
   <span class="add-on">€ /m2</span></div>
         </div>

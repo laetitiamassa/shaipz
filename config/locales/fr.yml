@@ -114,7 +114,8 @@ fr:
   stream:
     start_project: "Créer un projet"
     all_projects: "Projets ouverts"
-    original_ad: "Annonce web"
+    original_ad: "annonce web"
+    view_all_districts: "voir toutes les communes"
   event:
     next: "Prochain événement"
     types:
@@ -162,6 +163,7 @@ fr:
     example_adress: "Rue Elisabeth, 4"
     how_much: "Combien ça coûte ? (globalement)"
     how_big: "Quelle est la superficie ? (globale)"
+    average_district_price: "Prix moyen dans cette commune"
     hide_street_from_non_participants: "Cacher l'adresse exacte"
     source_link: "Insérez l'url de l'annonce d'origine"
     cohousing: "Est-ce un projet d'habitat groupé ?"

@@ -111,6 +111,7 @@ en:
     start_project: "Create a project"
     all_projects: "Open projects"
     original_ad: "Original ad"
+    view_all_districts: "view in every districts"
   event:
     next: "Next event"
     types:
@@ -158,6 +159,7 @@ en:
     example_adress: "Princess Street, 4"
     how_much: "How much does it cost? (globally)"
     how_big: "How big is it? (globally)"
+    average_district_price: "Average price in this district"
     hide_street_from_non_participants: "Hide to non-participants"
     source_link: "Insert the url of the original ad"
     cohousing: "Is it a cohousing project?"

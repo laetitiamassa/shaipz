@@ -15,6 +15,15 @@
     	</div> 
   	</div> <!-- end of header -->
 
+    <!-- view all projects when user has projects in his/her districts-->
+
+  <% if @has_projects_in_district %>
+    <button class="btn btn-link span3 offset9">
+      <%= link_to t("stream.view_all_districts"), projects_path %>
+    </button>
+  <% end %>
+
+
 	<% @projects.each do |project| %>
      
   		<%= render :partial => "_shared/project", :locals => { :project => project } %>

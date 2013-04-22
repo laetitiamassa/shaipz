@@ -2,6 +2,11 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :require_owner, :only => [:edit, :update]
 
+  def index
+    @projects = Project.active
+    render 'streams/show'
+  end
+
   def new
     @user = current_user
     @project_statuses = Project.project_statuses
