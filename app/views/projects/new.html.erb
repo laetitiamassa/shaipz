@@ -19,16 +19,6 @@
   <%= t("project.baseline") %>
  
   <%= render 'search_links' %>
-
-
-
-
-
-
-
-
-
-
  
     <%= form_for @project, :html => { :multipart => true } do |f| %>
 
@@ -189,6 +179,17 @@
     <div class="control-label"><%= f.label :event_description, t("project.event_description") %></div>
     <div class="controls event_description"><%= f.text_area :event_description, :placeholder => t("project.example_text"), :rows => 5 %></div>
   </div>
+
+  <!-- leader's thought -->
+  <legend><h2><i class="icon-quote-left icon-large pull-left icon-muted"></i><%= t("project.your_thoughts") %></h2></legend>
+  <p class="lead"><%= t("project.express_yourself") %></p>
+  
+
+  <div class="control-group">
+    <div class="control-label"><%= f.label :leader_thought, t("project.leader_thought_label") %></div>
+    <div class="controls event_description"><%= f.text_area :leader_thought, :placeholder => t("project.example_leader_thought"), :rows => 5 %></div>
+  </div>
+
 
   <!-- boost your project with facebook -->
 

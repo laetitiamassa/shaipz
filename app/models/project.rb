@@ -14,16 +14,16 @@ class Project < ActiveRecord::Base
   has_many :reports, :as => :reportable
   has_attached_file :picture, { :styles => { :medium => "930x259#", :thumb => "300x150#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
-  validates :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :event_description, :owner, :presence => true
+  validates :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :leader_thought, :owner, :presence => true
   validates_numericality_of :total_amount, :maximum_shaipz, :total_space
   validates :zipcode, :length => { :is => 4 }
   validates_attachment :picture,
     :content_type => { :content_type => /image/ },
     :size => { :less_than => 2.megabytes }
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price, :leader_thought
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price, :owner_id, :as => :admin 
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price, :leader_thought, :owner_id, :as => :admin 
 
   default_scope :order => "updated_at DESC"
   scope :active, where(:disabled_at => nil)

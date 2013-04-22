@@ -117,6 +117,7 @@
           <%= t("project.description_shaipz", :total_amount => number_to_currency(@project.total_amount, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"), :total_space => @project.total_space) %>
         </div>
       </div> <!-- end span8 -->
+      <!-- leader's thought -->
       <div class="span4">
         <p class="lead text-center inner-title"><%= t("project.leader_thought") %></p>
         <div class="row-fluid">
@@ -129,9 +130,7 @@
             </div>
 
             
-                <p><i class="icon-quote-left icon-muted icon-4x"></i><%= @project.event_description %></p>
-            
-            
+                <p><i class="icon-quote-left icon-muted icon-4x"></i><%= @project.leader_thought %></p>      
           </div>
         </div>
       </div>

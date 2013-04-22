@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421100901) do
+ActiveRecord::Schema.define(:version => 20130422111343) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20130421100901) do
     t.boolean  "hide_street_from_non_participants", :default => false
     t.datetime "disabled_at"
     t.integer  "average_district_price"
+    t.text     "leader_thought"
   end
 
   create_table "reports", :force => true do |t|

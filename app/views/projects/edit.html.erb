@@ -51,7 +51,6 @@
     <div class="control-label"><%= f.label :event_description, t("project.event_description") %></div>
     <div class="controls event_description"><%= f.text_area :event_description, :placeholder => t("project.example_text"), :rows => 5 %></div>
   </div>
-
      
       <!-- PLACE -->
    
@@ -146,6 +145,13 @@
     <div class="controls"><%= f.text_field :maximum_shaipz, :placeholder => "4" %></div>
   </div>
 </div>
+
+<!-- leader's thought -->
+  <legend><h2><i class="icon-quote-left icon-large pull-left icon-muted"></i><%= t("project.your_thoughts") %></h2></legend>
+  <div class="control-group">
+    <div class="control-label"><%= f.label :leader_thought, t("project.what_your_thoughts") %></div>
+    <div class="controls event_description"><%= f.text_area :leader_thought, :placeholder => t("project.example_leader_thought"), :rows => 5 %></div>
+  </div>
 
 
         
