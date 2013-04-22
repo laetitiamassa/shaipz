@@ -14,7 +14,7 @@ class Project < ActiveRecord::Base
   has_many :reports, :as => :reportable
   has_attached_file :picture, { :styles => { :medium => "930x259#", :thumb => "300x150#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
-  validates :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :leader_thought, :owner, :presence => true
+  validates :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :owner, :presence => true
   validates_numericality_of :total_amount, :maximum_shaipz, :total_space
   validates :zipcode, :length => { :is => 4 }
   validates_attachment :picture,
