@@ -64,6 +64,10 @@
           <h6><%= t("warning.check_filename") %></h6>
         </div>
 
+
+
+
+
       <ul class="fields">
         <div class="span4">
           <li class="string">
@@ -92,9 +96,18 @@
   <div class="span3">
   <!-- district -->
 
-  <div class="control-group">
-    <div class="control-label"><%= f.label :zipcode, t("project.zipcode") %></div>
-    <div class="controls"><%= f.text_field :zipcode, :placeholder => t("example_zipcode"), :value => nil %></div>
+<!-- <div class="control-group error">
+  <label class="control-label" for="inputError">Input with error</label>
+  <div class="controls">
+    <input type="text" id="inputError">
+    <span class="help-inline">Please correct the error</span>
+  </div>
+</div> -->
+
+
+  <div class="control-group error">
+    <div class="control-label" for="inputError"><%= f.label :zipcode, t("project.zipcode") %></div>
+    <div class="controls" id="inputError"><%= f.text_field :zipcode, :placeholder => t("example_zipcode"), :value => nil %></div>
   </div>
 </div>
 
