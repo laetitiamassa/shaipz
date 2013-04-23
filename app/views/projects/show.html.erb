@@ -10,8 +10,9 @@
         <%= image_tag ("cohousing.png"), {:title => t("project.logo_cohousing")} %>
         <% end %></h1>
       </div>
-      
-      <div class="span3 text-right edit-project">    
+
+ 
+<div class="span3 text-right edit-project">    
         <% if @user.owner_of_project?(@project) %>
           <%= link_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %>
           <!-- - if @project.has_user_as_owner?(@user) -->
@@ -36,6 +37,9 @@
 
     </div>
   </div>
+
+
+
   
   <div class="row-fluid">
     <div class="hero-unit project span12">
@@ -298,9 +302,30 @@
       </div>
       
       <div class="span6 text-center">
-        <p class="lead inner-title"><%= t("project.discuss") %></p>
-        <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %>
-        </div>
+        <p class="lead inner-title"><%= t("project.discuss") %>
+        <br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p> <!-- Button to trigger modal -->
+        <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %></div>
+
+
+ 
+<!-- Modal -->
+<div id="HowtoGetNotified" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><%= t("project.how_to_get_notified") %></h3>
+  </div>
+  <div class="modal-body">
+    <ol class="text-left">
+      <li><%= t("project.go_to_bottom") %> <br> <%= t("project.click_on_subscribe") %><br><div class="text-center"><%= image_tag("disqusNotificationGotobottom.png") %></div></li>
+      <li><%= t("project.insert_email") %> <%= image_tag("disqusNotificationInsertemail.png") %></li>
+      <li><%= t("project.confirm_email") %> <%= image_tag("disqusNotificationConfirmemail.png") %></li>
+    </ol>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true"><%= t("project.ok_thanks") %></button>
+    
+  </div>
+</div>
       </div>
     </div>
   </div>  

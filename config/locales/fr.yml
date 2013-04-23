@@ -224,6 +224,12 @@ fr:
       notarial_deed: "L'acte authentique a été signé !"
       move_in : "Nous emménageons ! :-D"
     personal_timing: "Je peux venir "
+    how_to_get_notified: "Comment recevoir des notifications ?"
+    go_to_bottom: "Rendez-vous au bas des commentaires"
+    click_on_subscribe: 'et cliquez sur "subscribe via email"'
+    insert_email: "Insérez votre adresse email"
+    confirm_email: "Une fois que vous voyez le subscribe virer au vert, vous recevrez un email pour confirmer votre adresse: cliquez sur le lien dans l'email, et vous voilà paré pour recevoir tous les futurs commentaires de cette conversation !"
+    ok_thanks: "Ok, merci !"
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."
     create_error: "Vous ne pouvez pas participer à ce projet."

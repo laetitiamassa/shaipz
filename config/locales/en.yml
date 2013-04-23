@@ -220,6 +220,12 @@ en:
       notarial_deed: "The notarial deed has been executed!"
       move_in : "We are happily moving in! :-D"
     personal_timing: "I can come "
+    how_to_get_notified: "How to get instant notifications?"
+    go_to_bottom: "Go to the bottom of the comment pane"
+    click_on_subscribe: 'and click on "subscribe via email"'
+    insert_email: "Insert your email adress"
+    confirm_email: "Once you see the subscribe turning into green, you will receive an email for confirmation: click on the link in the email, and you're good to go!"
+    ok_thanks: "Ok, thanks!"
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."
