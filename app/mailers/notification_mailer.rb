@@ -6,7 +6,7 @@ class NotificationMailer < ActionMailer::Base
     @user = user
     mail(
       :to => user.email,
-      :subject => t("notification.mail.welcome_user.subject", :name => @user.name)
+      :subject => t("notification.mail.welcome_user.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder)
     )
   end
 
@@ -15,7 +15,7 @@ class NotificationMailer < ActionMailer::Base
     @project = project
     mail(
       :bcc => @project.owner_and_participants.map(&:email),
-      :subject => t("notification.mail.new_participant.subject", :name => @user.name, :project => @project.name)
+      :subject => t("notification.mail.new_participant.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :project => @project.name)
     )
   end
   
@@ -44,7 +44,7 @@ class NotificationMailer < ActionMailer::Base
     @project = project
     mail(
       :bcc => @project.owner_and_participants.map(&:email),
-      :subject => t("notification.mail.leave_participant.subject", :name => @user.name, :project => @project.name)
+      :subject => t("notification.mail.leave_participant.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :project => @project.name)
     )
   end
 
@@ -53,7 +53,7 @@ class NotificationMailer < ActionMailer::Base
     @project = project
     mail(
       :bcc => @project.participants_emails,
-      :subject => t("notification.mail.update_project.subject", :name => @user.name, :project => @project.name)
+      :subject => t("notification.mail.update_project.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :project => @project.name)
     )
   end
 
@@ -62,7 +62,7 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     mail(
       :bcc => @project.participants_emails,
-      :subject => t("notification.mail.destroy_project.subject", :name => @user.name, :project => @project.name)
+      :subject => t("notification.mail.destroy_project.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :project => @project.name)
     )
   end
 
@@ -71,7 +71,17 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     mail(
       :bcc => users_concerned.map(&:email),
-      :subject => t("notification.mail.create_project.subject", :name => @user.name)
+      :subject => t("notification.mail.create_project.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder)
     )
   end
+
+  def create_project_in_my_district(user, project, users_concerned)
+    @project = project
+    @user    = user
+    mail(
+      :bcc => users_concerned.map(&:email),
+      :subject => t("notification.mail.create_project_in_my_district.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder)
+    )
+  end
+
 end

@@ -297,7 +297,10 @@ en:
         drop_email: "drop us an email at hello@shaipz.com"
         FAQ: "You can also check out the FAQ page"
         warm_salutation: "See you soon on Shaipz"
-        
+      create_project_in_my_district:
+        subject: "%{name} has created a new project in one of your favorite areas!"
+        content: "%{project}, a brand new project you might be interested in, was just born on Shaipz!"
+        join: "Discover this new project and join it"
   shaipz:
     i_am_in: "Projects I'm in"
   facebook:

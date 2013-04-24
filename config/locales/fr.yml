@@ -301,6 +301,10 @@ fr:
         drop_email: "nous laisser un email à hello@shaipz.com"
         FAQ: "Vous pouvez aussi vous rendre sur la FAQ"
         warm_salutation: "A très vite sur Shaipz"
+      create_project_in_my_district:
+        subject: "%{name} a créé un nouveau projet dans l'une de vos communes préférées !"
+        content: "%{project}, un nouveau projet qui pourrait vous intéresser, vient de naître sur Shaipz !"
+        join: "Découvrez ce nouveau projet et rejoignez-le"
   shaipz:
     i_am_in: "Mes projets"
   facebook:
