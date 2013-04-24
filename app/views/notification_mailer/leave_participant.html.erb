@@ -1,7 +1,7 @@
 <h2><%= t("notification.mail.salutation") %></h2>
 
 <p>
-	<%= t("notification.mail.leave_participant.subject", :name => @user.name, :project => @project.name) %>
+	<%= t("notification.mail.leave_participant.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :project => @project.name) %>
 </p>
 
 <p>

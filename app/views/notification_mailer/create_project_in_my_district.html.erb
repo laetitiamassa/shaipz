@@ -1,0 +1,8 @@
+<h2><%= t("notification.mail.salutation") %></h2>
+
+<p><%=t("notification.mail.create_project_in_my_district.content", :name => @user.has_name? ? @user.name : @user.name_placeholder, :project => @project.name)%></p>
+
+<p><%= t("notification.mail.create_project_in_my_district.join")%> <%= link_to t("notification.mail.here") , project_url(@project) %>.
+
+<p><%= t("notification.mail.signature") %></p>
+<p class="signature"><%= t("notification.mail.team") %></p>

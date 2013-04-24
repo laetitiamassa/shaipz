@@ -1,6 +1,6 @@
 <h2><%= t("notification.mail.salutation") %></h2>
 
-<p><%= t("notification.mail.update_project.subject", :name => @user.name, :project => @project.name) %></p>
+<p><%= t("notification.mail.update_project.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :project => @project.name) %></p>
 <p>
   <%= t("notification.mail.update_project.content") %> <%= link_to t("notification.mail.here"), project_url(@project) %>.
 </p>
