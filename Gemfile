@@ -16,6 +16,7 @@ gem 'nokogiri'
 gem 'acts_as_commentable_with_threading'
 gem 'bootstrap_forms'
 gem "font-awesome-rails"
+gem 'mailjet'
 
 group :assets do
   gem 'sass-rails',     '~> 3.2.6'

@@ -92,6 +92,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailjet (0.0.3)
+      activesupport (>= 3.1.0)
     mime-types (1.21)
     multi_json (1.7.1)
     multipart-post (1.2.0)
@@ -195,6 +197,7 @@ DEPENDENCIES
   font-awesome-rails
   haml (~> 4.0.0)
   jquery-rails (~> 2.2.1)
+  mailjet
   newrelic_rpm
   nokogiri
   omniauth-facebook (~> 1.4.1)
