@@ -16,9 +16,9 @@
         <% if @user.owner_of_project?(@project) %>
           <%= link_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %>
           <!-- - if @project.has_user_as_owner?(@user) -->
-          <br><%= link_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')}" %>
+          <br><%= link_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})" %>
         <% elsif @project.has_participant?(@user) %>
-          <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')}", :class => 'btn btn-large btn-danger' %>
+          <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})", :class => 'btn btn-large btn-danger' %>
         <% else %>
           <%= form_for "participation", :url => participations_path do |f| %>
             <%= f.hidden_field :project_id, :value => @project.id %>
@@ -45,9 +45,9 @@
     <div class="hero-unit project span12">
       <div class="snippet-project">
         <% if @project.has_average_district_price? %>
-          <div class="discount"><i class="icon-bookmark icon-4x"></i>
+          <a class="reduction" rel="tooltip" data-placement="left" data-original-title="<%= t("stream.economy") %>" ><div class="discount"><i class="icon-bookmark icon-4x"></i>
             <div class="percentage">-<%= number_to_percentage(@project.discount, :precision => 0) %></div>
-          </div>
+          </div></a>
         <% end %>
         <%= image_tag @project.picture.url(:medium) %>
       </div>
@@ -337,8 +337,12 @@
 </div>      
 
  
-
-
+<script>
+$(function ()
+{ $(".reduction").tooltip();
+    html: true;
+});
+</script>
 
 
 

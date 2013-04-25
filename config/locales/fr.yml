@@ -116,6 +116,7 @@ fr:
     all_projects: "Projets ouverts"
     original_ad: "annonce web"
     view_all_districts: "voir toutes les communes"
+    economy: "Votre économie d'échelle sur le prix moyen du marché"
   event:
     next: "Prochain événement"
     types:

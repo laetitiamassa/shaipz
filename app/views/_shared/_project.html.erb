@@ -13,7 +13,7 @@
                 
     			<div class="snippet">
                     <% if project.has_average_district_price? %>
-                        <div class="discount"><i class="icon-bookmark icon-4x"></i><div class="percentage">-<%= number_to_percentage(project.discount, :precision => 0) %></div></div>
+                        <a class="reduction" rel="tooltip" data-html="true" data-placement="left" data-original-title="<%= t("stream.economy") %>" ><div class="discount"><i class="icon-bookmark icon-4x"></i><div class="percentage">-<%= number_to_percentage(project.discount, :precision => 0) %></div></div></a>
                     <% end %>
                         <%= link_to image_tag(project.picture.url(:thumb)), project_url(project) %>
                 </div>
@@ -67,5 +67,10 @@
     </li>
 </ul>
 
-
+  <script>
+$(function ()
+{ $(".reduction").tooltip();
+    html: true;
+});
+</script>
 
