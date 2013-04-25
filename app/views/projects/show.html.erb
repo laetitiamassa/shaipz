@@ -115,7 +115,7 @@
         <p class="lead text-center"><%= t("project.details_of_origin") %></p>
         </div>
         <div class="span3 text-right">
-          <%= link_to(t("project.original_ad"), @project.source_link, :class => "btn btn-block", :target => "_blank") if @project.has_source_link? %></div>
+          <%= link_to(t("project.original_ad"), @project.source_link, :class => "btn btn-warning btn-block", :target => "_blank") if @project.has_source_link? %></div>
       </div>
         <div class="hero-unit project text-center">
           <%= t("project.description_shaipz", :total_amount => number_to_currency(@project.total_amount, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"), :total_space => @project.total_space) %>
