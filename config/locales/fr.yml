@@ -460,3 +460,39 @@ fr:
     affordable-content1: "Le principe de Shaipz est l'achat immobilier sur le marché de gros (ensemble de plusieurs appartements), et non sur le marché immobilier à la pièce (un seul appartement). Acheter un appartement à l'unité plutôt que d'acheter un immeuble divisé ou divisible en plusieurs appartements, ça coûte proportionnellement plus cher au mètre carré."
     affordable-content2: "Pas convaincus ? Faites une petite expérience : rendez-vous sur un site d'annonces immobilières, et faites successivement 2 recherches. La première recherche est dans la commune de votre choix, un appartement de minimum 70m2. Notez le prix et la surface. Ensuite faites une recherche avec le même code postal, mais cette fois-ci, recherchez un immeuble de 210m2. Notez le prix et la surface. Enfin, pour l'appart sélectionné comme pour l'immeuble, divisez le prix par la surface, et comparez les deux résultats. CQFD n'est-ce pas ?"
 
+  activerecord:
+    errors:
+      title: "Oups, vous y êtes presque..."
+      models:
+        user:
+          attributes:
+            email:
+              blank: " : indiquez votre email"
+              invalid: " : vérifiez l'adresse email introduite"
+            password:
+              blank: " : choisissez votre mot de passe"
+            minimum_space: 
+              blank: " : insérez votre surface minimale"
+              not_a_number: " : n'insérez que des chiffres"
+            maximum_budget:
+              blank: " : insérez votre budget maximum"
+              not_a_number: " : n'insérez que des chiffres"
+            favorite_areas:
+              blank: ": indiquez vos 5 communes préférées"
+              invalid: " : n'insérez que des codes postaux de 4 chiffres"
+        project:
+          attributes:
+            name:
+              blank: " : donnez un nom à votre projet"
+            total_amount:
+              blank: " : indiquez le prix de vente de l'immeuble"
+              not_a_number: " : n'insérez que des chiffres"
+            total_space:
+              blank: " : indiquez la surface totale de l'immeuble"
+              not_a_number: " : n'insérez que des chiffres"
+            maximum_shaipz:
+              blank: " : indiquez le nombre de lots existants ou que vous envisagez"
+              not_a_number: " : n'insérez que des chiffres"
+            zipcode:
+              blank: " : indiquez la commune où se situe l'immeuble"
+              wrong_length: " : insérez un code postal de 4 chiffres"

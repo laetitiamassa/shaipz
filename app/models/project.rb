@@ -1,6 +1,5 @@
 class Project < ActiveRecord::Base
-
-  acts_as_commentable
+  opinio_subjectum
 
   PROJECT_STATUSES = ["building_discovery", "people_discovery", "interest_confirmation", "feasibility_stamp", "internal_agreement",
                       "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]

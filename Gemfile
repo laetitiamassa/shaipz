@@ -13,7 +13,7 @@ gem 'jquery-rails',      '~> 2.2.1'
 gem 'paperclip',         '~> 3.4.1'
 gem 'newrelic_rpm'
 gem 'nokogiri'
-gem 'acts_as_commentable_with_threading'
+gem "opinio"
 gem 'bootstrap_forms'
 gem "font-awesome-rails"
 gem 'mailjet'
@@ -31,3 +31,5 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 group :production do
   gem 'aws-sdk', '~> 1.8.5'
 end
+
+gem "kaminari"

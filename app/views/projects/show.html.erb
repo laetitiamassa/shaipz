@@ -64,19 +64,19 @@
 
 <div class="tabbable">
   <ul class="nav nav-tabs text-center lead">
-    <li class="active">
+    <li>
       <a href="#pane1" data-toggle="tab"><i class="icon-building"></i><%= t("project.tab_building") %></a>
     </li>
     <li>
       <a href="#pane2" data-toggle="tab"><i class="icon-calendar"></i><%= t("project.tab_events") %></a>
     </li>
-    <li>
+    <li class="active">
       <a href="#pane3" data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
     </li>
   </ul>
   <div class="tab-content">
 
-  <div id="pane1" class="tab-pane active">
+  <div id="pane1" class="tab-pane">
     <div class="row-fluid building">
       <div class="span8">
         
@@ -272,7 +272,7 @@
   </div>
     
     
-    <div id="pane3" class="tab-pane">
+    <div id="pane3" class="tab-pane active">
       <div class="row-fluid">
         <div class="span6">
         <p class="lead text-center"><%= t("project.discover_participants") %></p>
@@ -304,6 +304,7 @@
       <div class="span6 text-center">
         <p class="lead inner-title"><%= t("project.discuss") %>
         <br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p> <!-- Button to trigger modal -->
+
         <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %></div>
 
 

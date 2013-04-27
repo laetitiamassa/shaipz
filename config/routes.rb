@@ -1,4 +1,6 @@
 Shaipz::Application.routes.draw do
+  opinio_model
+
   get "pricing/show"
 
   get "legal/show"
@@ -25,6 +27,7 @@ Shaipz::Application.routes.draw do
   end
 
   resources :projects do
+    opinio
     resources :reports
   end
 

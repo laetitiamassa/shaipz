@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
       @urls = @url_immo.generate_urls
       @building_types = @url_immo.building_types
 
-      flash[:alert] = t("project.create_error")
+      #flash[:alert] = t("project.create_error")
       render :new
     end
   end
@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
       @user = current_user
       @project_statuses = Project.project_statuses
       @event_types = Project.event_types
-      flash[:alert] = t("project.update_error")
+      #flash[:alert] = t("project.update_error")
       render :edit
     end
   end

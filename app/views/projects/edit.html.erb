@@ -1,3 +1,19 @@
+<header>
+  <section id="flash">
+    <div class="span8 offset2">
+      <% if @project.errors.any? %>
+        <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h3><%= t("activerecord.errors.title") %></h3>
+        <% @project.errors.full_messages.each do |msg| %>
+          <i><%= msg %></i> | 
+          <% end %>
+        <% end %>
+        </div>
+    </div>
+  </section>
+</header>
+
 <div class="container container-fluid-profile">
  
   <div class="howitworks-header page-header">

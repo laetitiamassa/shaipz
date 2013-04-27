@@ -454,3 +454,40 @@ en:
     affordable-intro: "Buying a single candy bar is more expensive than buying the whole paquet of candy bars"
     affordable-content1: "Shaipz enable people looking for a flat to go for the wholesale real estate market (appartments-block buildings and multi-family homes for sale), and not for the retail real estate market (one signle appartment for sale). Buying an appartement for sale as a unit instead of buying, with others, a divided or divisible appartment-block building, costs proportionally more on a price/m2 basis."
     affordable-content2: "Not convinced? Make a little experiment: on the one hand search for a flat, and on the other hand for an appartments-block building in the same neighbourhood. Divide the price by the space in each case. Note the difference. Whicht one is proportionnally the cheapest?"
+
+  activerecord:
+    errors:
+      title: "Oops, you're almost there..."
+      models:
+        user:
+          attributes:
+            email:
+              blank: ": indicate your email"
+              invalid: ": verify the given email"
+            password:
+              blank: ": choose your password"
+            minimum_space: 
+              blank: ": indicate your minimum space"
+              not_a_number: ": you can only insert numbers"
+            maximum_budget:
+              blank: ": insert your maximum budget"
+              not_a_number: ": you can only insert numbers"
+            favorite_areas:
+              blank: ": insert your 5 prefered districts"
+              invalid: ": you can only insert numbers"
+        project:
+          attributes:
+            name:
+              blank: " : give a name to your project"
+            total_amount:
+              blank: " : indicate the sale price of the building"
+              not_a_number: " : you can only insert numbers"
+            total_space:
+              blank: " : indicate the space of the building"
+              not_a_number: " : you can only insert numbers"
+            maximum_shaipz:
+              blank: " : indicate the existing or contemplated number of flats"
+              not_a_number: " : you can only insert numbers"
+            zipcode:
+              blank: " : indicate the district where the building is located"
+              wrong_length: " : you must insert a 4 digit zipcode"
