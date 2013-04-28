@@ -3,7 +3,7 @@
 
 <!-- page title -->
   <div class="howitworks-header page-header">
-    <h1><%= t("About us") %></h1>
+    <h1><%= t("about.header") %></h1>
   </div>
 
 <!-- content -->
@@ -43,16 +43,38 @@
     <div class="row-fluid">
       <!-- left side -->
       <div class="other-questions span4">
-	    <p id="other-questions-title">Other questions?</p>
-	    <p class="lead">We'd love to hear from you!</p>
-	    <p>via twitter: @shaipzapp</p>
-	    <p>via email: hello@shaipz.com</p>
-	    <p>via facebook: facebook.com/shaipz</p>
+
+	    <p id="other-questions-title"><%= t("how.questions") %></p>
+	    <p class="lead"><%= t("how.ask_questions") %></p>
+	    <p>via twitter: <%= link_to "@shaipzapp", "http://twitter.com/shaipzapp", :target => "_blank" %> 
+	    <p>via email: <%= link_to "hello@shaipz.com", "mailto:hello@shaipz.com", :target => "_blank" %>	
+	    <p>via facebook: <%= link_to "facebook.com/shaipz", "http://facebook.com/shaipz", :target => "_blank" %>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+	    
+	    <p id="other-questions-title"><%= t("about.they_talk") %></p>
+	    <p><%= link_to "Les Lumières du Soir ont leur lauréate", "http://www.lesoir.be/106105/article/economie/2012-10-24/lumi%C3%A8res-du-soir-ont-leur-%C2%AB-laur%C3%A9ate-%C2%BB", :target => "_blank" %> 
+	    <p><%= link_to "Achetez un bien tous ensemble grâce à Shaipz", "http://www.lesoir.be/115360/article/economie/immo/2012-11-07/acheter-un-bien-tous-ensemble-gr%C3%A2ce-%C3%A0-shaipz", :target => "_blank" %>
+	    <p><%= link_to "Qui sera la prochaine Zuckerberg (en plus sexy)?", "http://knowmovenjoy.wordpress.com/tag/startup/", :target => "_blank" %>
+	    <p><%= link_to "Shaipz, entre site de rencontre et d'immobilier", "http://www.alterechos.be/index.php?as%5Bex_ids%5D=&p=search&c=a&d=l&lpn=0&as%5Basearch%5D=shaipz&as%5Bmode%5D=title_head_body&as%5Bfm%5D=4&as%5Bfy%5D=2012&as%5Btm%5D=4&as%5Bty%5D=2013&Rechercher=Rechercher", :target => "_blank" %></p>
+	
 	  </div>
+
+
       
-      <!-- right side -->
-	  <div class="faq span8">
+      
+	
+
+<!-- EXTENDED VERSION OF ABOUT PAGE RIGHT SIDE
+	<div class="faq span8">
         <div class="row-fluid">
+
 		  	<ul class="nav nav-pills text-center lead span10 offset1">
 	          <li><a href="#" id="about-shaipz">Shaipz</a></li>
 	          <li><a href="#" id="about-story">story</a></li>
@@ -73,11 +95,134 @@
             
             <div id="about-team-content">
             	team
-            </div>
+            </div> 
             
-            <div id="about-press-content">
-            	press
+            <div id="about-press-content"> -->
+
+    
+	<!-- right side -->
+	  <div class="faq span8">
+        <div class="row-fluid">
+		  	<ul class="nav nav-pills text-center lead span8 offset2">
+	          <li><a href="#" id="about-shaipz"><%= t("about.shaipz.tab") %></a></li>
+	          <li><a href="#" id="about-press"><%= t("about.press.tab") %></a></li>
+	        </ul>
+        </div>
+           
+		<div class="about-content">
+			<div id="about-shaipz-content">
+				<h3>Shaipz</h3>
+				
+				<p><%= t("about.shaipz.content1") %></p>
+
+				<p><%= t("about.shaipz.content2") %>
+					
+				<ul>
+					<li><%= t("about.shaipz.content3") %></li>
+					<li><%= t("about.shaipz.content4") %></li>
+					<li><%= t("about.shaipz.content5") %></li>
+					<li><%= t("about.shaipz.content6") %></li>
+				</ul> </p>
+
+				<br>
+				<ul class="nav nav-list">
+  					<li class="divider"></li>
+				</ul>
+
+				<h3>Vision</h3>
+
+				<p class="lead"><i><%= t("about.shaipz.vision_title1") %></i></p>
+				<p><%= t("about.shaipz.vision_content1") %> <i><%= t("about.shaipz.vision_content2") %></i><%= t("about.shaipz.vision_content3") %>
+				<p> <%= t("about.shaipz.vision_content4") %>  </p>
+				<p> <%= t("about.shaipz.vision_content5") %> </p>
+				<br>
+
+				<p class="lead"><%= t("about.shaipz.vision_title2") %></p>
+				<p><%= t("about.shaipz.vision_content6") %>
+					<br> <%= t("about.shaipz.vision_content7") %>
+					<br> <%= t("about.shaipz.vision_content8") %>
+				</p>
+				<p> <%= t("about.shaipz.vision_content9") %>
+					<br><%= t("about.shaipz.vision_content10") %></p>
+				<p> <%= t("about.shaipz.vision_content11") %>
+				</p>
+				<br>
+
+				<p class="lead"><%= t("about.shaipz.vision_title3") %></p>
+				<p> <%= t("about.shaipz.vision_content12") %>
+					<br><%= t("about.shaipz.vision_content13") %>
+					<br><%= t("about.shaipz.vision_content14") %>
+				</p>
+				<p><%= t("about.shaipz.vision_content15") %></p>
+				<p><%= t("about.shaipz.vision_content16") %></p>
+
+
+
+
+
+				<!-- <ul class="nav nav-list">
+  					<li class="divider"></li>
+				</ul>
+
+				<h3>Genèse</h3>
+				<p>sans lequel bla bla bla </p> -->
+
+			</div>
+
+			<div id="about-press-content">
+            
+				<!-- Begin MailChimp Signup Form -->
+				<div id="mc_embed_signup">
+				<form action="http://facebook.us4.list-manage.com/subscribe/post?u=72883b765aeb3ec6b84ce8313&amp;id=c142212695" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				
+				<h3><%= t("about.press.journalist") %></h3>
+				<!-- <p><i>Votre press kit Shaipz vous attend</i> ici.</p> -->
+				<p class="lead"><%= t("about.press.subscribe_call") %></p>
+				
+				<div class="mc-field-group">
+					<label for="mce-EMAIL" class="span12">Email  <span class="asterisk">*</span></label>
+					<input type="email" value="" name="EMAIL" class="required email input-xlarge" id="mce-EMAIL">
+				</div>
+				
+				<div class="row-fluid">
+					<div class="mc-field-group span6">
+						<label for="mce-FNAME"><%= t("about.press.first_name") %>  <span class="asterisk">*</span></label>
+						<input type="text" value="" name="FNAME" class="required input-xlarge" id="mce-FNAME">
+					</div>
+					
+					<div class="mc-field-group span6">
+						<label for="mce-LNAME"><%= t("about.press.last_name") %> <span class="asterisk">*</span></label>
+						<input type="text" value="" name="LNAME" class="required input-xlarge" id="mce-LNAME">
+					</div>
+				</div>
+				
+				<div class="row-fluid">
+					<div class="mc-field-group span6">
+						<label for="mce-MMERGE3"><%= t("about.press.title") %>  <span class="asterisk">*</span></label>
+						<input type="text" value="" name="MMERGE3" class="required input-xlarge" id="mce-MMERGE3">
+					</div>
+					
+					<div class="mc-field-group span6">
+						<label for="mce-MMERGE4"><%= t("about.press.organisation") %>  <span class="asterisk">*</span></label>
+						<input type="text" value="" name="MMERGE4" class="required input-xlarge" id="mce-MMERGE4">
+					</div>
+				</div>
+				
+				
+				<div id="mce-responses" class="clear">
+					<div class="response" id="mce-error-response" style="display:none"></div>
+					<div class="response" id="mce-success-response" style="display:none"></div>
+				</div>	
+
+				<div class="clear"><input type="submit" value="<%= t("about.press.subscribe_button") %>" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info btn-large btn-block"></div>
+				
+				</form>
+				</div>
+
+				<!--End mc_embed_signup-->
             </div>
+        </div>
+    </div>
 
 		</div>
 			
