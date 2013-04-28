@@ -503,7 +503,7 @@ fr:
     shaipz:
       tab: "A propos de Shaipz"
       content1: "Shaipz est une application web qui permet aux aspirants propriétaires, d'une part d'accéder à la propriété de manière financièrement plus abordable, et d'autre part de choisir à l'avance leurs voisins et leur type d'habitat, cela tout en acquérant leur bien de manière individuelle sur le plan juridique."
-      content2: "Concrètement, Shaipz met à la disposition de ses utilisateurs divers outils le permettant de"
+      content2: "Concrètement, Shaipz met à la disposition de ses utilisateurs divers outils leur permettant de"
       content3: "trouver un immeuble susceptible de se prêter à l'achat immobilier groupé"
       content4: "se connecter à d'autres personnes souhaitant acheter le même type d'appartement"
       content5: "collaborer avec ces personnes pour que chacune d'entre elles achète un des appartements de l'immeuble"
@@ -522,11 +522,11 @@ fr:
       vision_content10: "Oui, sauf que le prix d'achat d'un premier appartement (rien de bien extravagant : un petit une chambre de 60m2) est devenu de plus en plus impayable pour les primo-acquéreurs.  Et de fait, le prix moyen au mètre carré de ce type d'appartement est généralement le plus élevé (oui, plus c'est petit, plus c'est cher)."
       vision_content11: "Ici à Shaipz, nous pensons que, de la même manière que la colocation est une idée brillante pour louer un appartement décent dans un quartier qui nous plaît, l'achat collaboratif est la meilleure solution pour accéder à la propriété de son appartement."
       vision_title3: "La collaboration, c'est le pouvoir"
-      vision_content12: "Pour revenir à l'exemple du petit appartement de 60m2, qui coûte proportionnellement plus cher qu'un appartement plus grand."
+      vision_content12: "Revenons à l'exemple du petit appartement de 60m2, qui coûte proportionnellement plus cher qu'un appartement plus grand."
       vision_content13: "Pourquoi plus cher ? En raison du marché : le segment de l'appartement de 60m2 est celui qui rencontre la plus forte demande de la part de candidats acquéreurs."
       vision_content14: "Cette concurrence accrue entre acheteurs donne davantage de pouvoir au vendeur, ce qui contribue grandement à l'envol des prix."
-      vision_content15: "Ici à Shaipz, nous pensons qu'au lieu d'être concurrents sur ce même appartement, les candidats acquéreurs devraient devenir partenaires, et collaborer afin de sortir de ce segment très coûteux du marché, pour se diriger, ensemble, vers l'immeuble tout entier comportant ces appartements si prisés."
-      vision_content16: "Bref, la collaboration permet aux candidats acquéreurs de se rendre sur un segment de marché où l'acheteur a plus de pouvoir."
+      vision_content15: "Ici à Shaipz, nous pensons qu'au lieu d'être concurrents sur ce même appartement, les candidats acquéreurs devraient devenir partenaires : collaborer afin de sortir de ce segment très coûteux du marché, pour se diriger, ensemble, vers l'immeuble tout entier comportant ces appartements si prisés."
+      vision_content16: "Ainsi, la collaboration permet aux candidats acquéreurs de se rendre sur un segment de marché où l'acheteur a plus de pouvoir."
     press:
       tab: "Presse"
       journalist: "Vous êtes journaliste ?"
