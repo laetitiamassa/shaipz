@@ -1,0 +1,67 @@
+<p><%= t("project.statuses.#{@project.project_status}") if @project.has_project_status? %></p>
+
+          <% if @project.project_status == "building_discovery" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-warning" style="width: 10%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "people_discovery" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-warning" style="width: 20%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "interest_confirmation" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-warning" style="width: 40%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "feasibility_stamp" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 50%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "internal_agreement" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 70%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "global_offer_making" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 75%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "global_offer_acceptance" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 80%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "sales_agreement" %>
+                <div class="progress progress-striped active">
+                <div class="bar" style="width: 85%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "challenges_fixing" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-success" style="width: 95%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "notarial_deed" %>
+                <div class="progress progress-striped active">
+                <div class="bar bar-succes" style="width: 100%"></div>
+                </div>
+          <% end %>
+
+          <% if @project.project_status == "move_in" %>
+                <div class="progress">
+                <div class="bar bar-success" style="width: 100%"></div>
+                </div>
+          <% end %>
