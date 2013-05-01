@@ -7,20 +7,96 @@
     <h1><%= t("FAQ.faq_extended") %></h1>
   </div>
 
-<!-- content -->
+<!-- tabs -->
+<% if user_signed_in? %>
+	
+	<script type="text/javascript">
+		$(document).ready (function(){
+      $(".checklist-inner-content").hide();
+      $(".question").hide();
+      $(".answer").hide();
+				$("#checklist-building").click(function(){
+	        $("#checklist-building-content").slideDown("active");   
+	      });
+
+	      $("#checklist-people").click(function(){
+	        $("#checklist-people-content").slideDown("active");  
+	      });
+
+	      $("#faq-all").click(function(){
+	        $(".question").slideDown("active");
+		      $("#checklist-content").hide();
+		      $("#bestpractices-content").hide();
+		        
+	      });
+
+	      $("#checklist").click(function(){
+	        $("#checklist-content").slideDown("active");
+		      $(".question").hide();
+		      $(".answer").hide();
+		      $("#bestpractices-content").hide();
+		        
+	        });
+
+	      $("#question-what").one("click",function(){
+	          $("#answer-what").slideDown("active");
+	        }); 
+
+	        $("#question-for-whom").one("click",function(){
+	          $("#answer-for-whom").slideDown("active");
+	        }); 
+
+	        $("#question-how").one("click",function(){
+	          $("#answer-how").slideDown("active");
+	        }); 
+
+	        $("#question-doityourself").one("click",function(){
+	          $("#answer-doityourself").slideDown("active");
+	        }); 
+
+	        $("#question-howmanyprojects").one("click",function(){
+	          $("#answer-howmanyprojects").slideDown("active");
+	        });  
+
+	        $("#question-agency").one("click",function(){
+	          $("#answer-agency").slideDown("active");
+	        });
+
+	        $("#question-howsave").one("click",function(){
+	          $("#answer-howsave").slideDown("active");
+	        }); 
+
+	        $("#question-legal").one("click",function(){
+	          $("#answer-legal").slideDown("active");
+	        });
+
+	        $("#question-bank").one("click",function(){
+	          $("#answer-bank").slideDown("active");
+	        });
+
+	        $("#question-howsteps").one("click",function(){
+	          $("#answer-howsteps").slideDown("active");
+	        });
+
+	        $("#question-howmuch").one("click",function(){
+	          $("#answer-howmuch").slideDown("active");
+	        });
+
+
+
+
+	    });
+
+  </script>
+
+  <% else %>
+
   <script type="text/javascript">
       $(document).ready (function(){
-        $("#answer-what").hide();
-        $("#answer-for-whom").hide();
-        $("#answer-how").hide();
-        $("#answer-doityourself").hide();
-        $("#answer-howmanyprojects").hide();
-        $("#answer-agency").hide();
-        $("#answer-howsave").hide();
-        $("#answer-legal").hide();
-        $("#answer-bank").hide();
-        $("#answer-howsteps").hide();
-        $("#answer-howmuch").hide();
+        $(".answer").hide();
+        $(".checklist-item").hide();
+        $("#bestpractices-content").hide();
+        
 
 	        $("#question-what").one("click",function(){
 	          $("#answer-what").slideDown("active");
@@ -65,12 +141,38 @@
 	        $("#question-howmuch").one("click",function(){
 	          $("#answer-howmuch").slideDown("active");
 	        });
+
+	        $("#bestpractices").click(function(){
+	          $("#bestpractices-content").slideDown("active");
+	          $(".question").hide();
+		      $("#checklist-content").hide();
+		        
+	        });
+
+	        $("#checklist-building").click(function(){
+	          $("#checklist-building-content").slideDown("active");
+		        
+	        });
+
+	        $("#checklist-people").click(function(){
+	          $("#checklist-people-content").slideDown("active");
+		        
+	        });
       });
     </script>
-  <div class="container-fluid">
-    <div class="row-fluid">
+
+    <% end %>
+
+
+<!-- content -->
+
+
+
+	
+<div class="container-fluid">
+  <div class="row-fluid">
       
-      <div class="other-questions span4">
+    <div class="other-questions span4">
 	    <p id="other-questions-title"><%= t("how.questions") %></p>
 	    <p class="lead"><%= t("how.ask_questions") %></p>
 	    <p>via twitter: <a href="http://twitter.com/shaipzapp">@shaipzapp</a></p>
@@ -79,7 +181,97 @@
 	  </div>
 
 <!-- QUESTIONS REPONSES -->
-	  <div class="faq span8">
+	  
+
+<div class="faq span8">
+
+<% if user_signed_in? %>
+	<div class="row-fluid">
+		<ul class="nav nav-pills text-center lead span6 offset3">
+		  <li><a href="#" id="faq-all"><%= "faq" %></a></li>
+	    <li><a href="#" id="checklist"><%= t("FAQ.checklist_tab") %></a></li>
+	    			<!--      <li><a href="#" id="bestpractices"><%= t("best practices") %></a></li> -->
+	  </ul>
+  </div>
+       
+	<div id="checklist-content">
+
+	  <div class="hero-unit checklist">
+	    <h1 class="header text-right"><i><%= t("FAQ.first_visit") %></i></h1>
+	    
+	    <div class="hero-unit checklist-item">
+	      
+	      <div id="checklist-building">
+	      	<h2><i class="icon-building icon-large pull-left" ></i><%= t("FAQ.building") %></h2>
+	      </div>
+				
+				<div class="checklist-inner-content" id="checklist-building-content">
+					<p><%= t("FAQ.building_content1") %></p>
+					
+					<p>
+						<ul>
+							<li><%= t("FAQ.building_content2") %><b><%= t("FAQ.building_content3") %></b><%= t("FAQ.building_content4") %></li>
+							
+							<li><%= t("FAQ.building_content5") %></li>
+							
+							<li><%= t("FAQ.building_content6") %><b><%= t("FAQ.building_content7") %></b><%= t("FAQ.building_content8") %></li>
+							
+							<li><%= t("FAQ.building_content9") %><b><%= t("FAQ.building_content10") %></b><%= t("FAQ.building_content11") %></li>
+							
+							<li><%= t("FAQ.building_content12") %> <b><%= t("FAQ.building_content13") %></b></li>
+							
+							<li><%= t("FAQ.building_content14") %><b><%= t("FAQ.building_content15") %></b><%= t("FAQ.building_content16") %></li>
+							
+							<li><%= t("FAQ.building_content17") %><b><%= t("FAQ.building_content18") %></b><%= t("FAQ.building_content19") %></li>
+							
+							<li><%= t("FAQ.building_content20") %><b><%= t("FAQ.building_content21") %></b><%= t("FAQ.building_content22") %></li>
+							
+							<li><%= t("FAQ.building_content23") %><b><%= t("FAQ.building_content24") %></b></li>
+							
+							<li><%= t("FAQ.building_content25") %><b><%= t("FAQ.building_content26") %></b><%= t("FAQ.building_content27") %></li>
+							
+							<li><%= t("FAQ.building_content28") %><b><%= t("FAQ.building_content29") %></b><%= t("FAQ.building_content30") %></li>
+							
+						</ul>
+					</p>
+					<br>
+				</div> <!-- end of inner-content -->
+			</div> <!-- end of checklist item for building -->
+
+			<div class="hero-unit checklist-item"> <!-- new item people -->
+	      <div id="checklist-people">
+	      	<h2><i class="icon-group icon-large pull-left"></i><%= t("FAQ.people") %></h2>
+	      </div>
+				
+				<div class="checklist-inner-content" id="checklist-people-content">
+					<p><%= t("FAQ.people_content1") %><b><%= t("FAQ.people_content2") %></b><%= t("FAQ.people_content3") %></p>
+					
+					<p>
+						<ul>
+							<li><b><%= t("FAQ.people_content4") %></b><%= t("FAQ.people_content5") %><b><%= t("FAQ.people_content6") %></b> ?</li>
+							
+							<li><%= t("FAQ.people_content7") %><b><%= t("FAQ.people_content8") %></b><%= t("FAQ.people_content9") %></li>
+							
+							<li><%= t("FAQ.people_content10") %><b><%= t("FAQ.people_content11") %></b><%= t("FAQ.people_content12") %></li>
+							
+							<li><%= t("FAQ.people_content13") %><b><%= t("FAQ.people_content14") %></b><%= t("FAQ.people_content15") %></li>
+							
+							<li><b><%= t("FAQ.people_content16") %></b><%= t("FAQ.people_content17") %></li>
+							
+							<li><b><%= t("FAQ.people_content18") %></b><%= t("FAQ.people_content19") %></li>
+							
+							<li><%= t("FAQ.people_content20") %><b><%= t("FAQ.people_content21") %></b>) ?</li>
+						</ul>
+					</p>
+				</div> <!-- end of inner-content -->
+			</div> <!-- end of checklist item for people -->
+
+		</div> <!-- end of id checklist content -->
+
+	</div> <!-- end of right part of FAQ page for memo -->
+	    
+	    <!--    <div id="bestpractices-content"> blo blo</div> -->
+<% end %>
 
 		  <div class="question" id="question-what">
 		  	<h3><%= t("FAQ.question-what") %></h3>

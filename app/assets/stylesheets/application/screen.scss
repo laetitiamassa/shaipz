@@ -267,6 +267,29 @@ blockquote {
   min-height: 587px;
 }
 
+/* FAQ USERS */
+
+.checklist {
+  padding: 5px;
+  
+  color: #005580;
+  i {
+    opacity: 0.6;
+  }
+}
+
+.checklist-item {
+  padding: 10px;
+  background-color: #fafafa; 
+  margin: 10px 0px;
+  h2 {
+  cursor: pointer;
+  }
+  b {
+  color: #005580;
+  }
+}
+
 
 /* About Page */
 

@@ -18,6 +18,7 @@ gem 'bootstrap_forms'
 gem "font-awesome-rails"
 gem 'mailjet'
 
+
 group :assets do
   gem 'sass-rails',     '~> 3.2.6'
   gem 'bootstrap-sass', '~> 2.3.1.0'
