@@ -39,6 +39,10 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def suggested
+    owner_id == 301
+  end
+
   def disabled?
     disabled_at.present?
   end

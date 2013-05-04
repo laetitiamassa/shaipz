@@ -84,4 +84,13 @@ class NotificationMailer < ActionMailer::Base
     )
   end
 
+  def suggest_project_to_lead(user, project, users_concerned)
+    @project = project
+    @user    = user
+    mail(
+      :bcc => users_concerned.map(&:email),
+      :subject => t("notification.mail.suggest_project_to_lead.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder) 
+    )
+  end
+
 end

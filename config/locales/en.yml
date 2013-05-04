@@ -115,6 +115,9 @@ en:
     original_ad: "Original ad"
     view_all_districts: "view in every districts"
     economy: "Your economies of scale on the average market price"
+    suggested_project: "suggested project"
+    suggested_project_explain_title: "We suggest you this project"
+    suggested_project_explain_content: "This project might be interesting for you. Once you lead it, you can customize it as you want, manage it and invite people to join you!"
   event:
     next: "Next event"
     types:
@@ -187,10 +190,12 @@ en:
     example_leader_thought: "This building would be perfect for a workshop and a climbing wall! Yes, I looove climbing!"
     what_your_thoughts: "What do you think of the ongoing project?"
     join: "Join"
+    lead: "Lead"
     join_shortcut: "Click here to discover and join open projects"
     create: "Create"
     create_shortcut: "Click here to start your own project"
     join_project: "Join the project"
+    lead_project: "Lead the project"
     in_project: "in project"
     create_success: "Congratulations! Your project has been created!"
     create_error: "We cannot create your project, please verify the fields."
@@ -229,6 +234,15 @@ en:
     insert_email: "Insert your email adress"
     confirm_email: "Once you see the subscribe turning into green, you will receive an email for confirmation: click on the link in the email, and you're good to go!"
     ok_thanks: "Ok, thanks!"
+    lead_how: "How to lead this project?"
+    lead_step_one: "Have a look"
+    lead_step_one_bis: " at the original ad"
+    lead_step_two: "Click"
+    lead_step_two_bis: " on 'lead the project' to receive edition rights"
+    lead_step_three: "Edit" 
+    lead_step_three_bis: " your project"
+    lead_step_four: "Share" 
+    lead_step_four_bis: " it in your network and invite people to join"
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."
@@ -310,6 +324,13 @@ en:
         subject: "%{name} has created a new project in one of your favorite areas!"
         content: "%{name} has created %{project}, a brand new project you might be interested in!"
         join: "Discover this new project and join it"
+      suggest_project_to_lead:
+        subject: "A new building, a new project for you on Shaipz"
+        content1: "Un new building is for sale in one of your favorite districts."
+        content2: "It seems so interesting that we couldn't resist creating a project for you!"
+        content3: "All you need to do now is discovering it and, if you find it a good opportunity for you, you can lead the project."
+        lead: "Discover the building and lead this project"
+  
   shaipz:
     i_am_in: "Projects I'm in"
   facebook:

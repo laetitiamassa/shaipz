@@ -11,7 +11,8 @@ class ProjectCreator
     if project.save
       NotificationMailer.after_creation(owner, project).deliver
       NotificationMailer.create_project(owner, project, users_interested_in_cohousing).deliver if project.cohousing
-      NotificationMailer.create_project_in_my_district(owner, project, users_in_district).deliver
+      NotificationMailer.create_project_in_my_district(owner, project, users_in_district).deliver unless project.suggested
+      NotificationMailer.suggest_project_to_lead(owner, project, users_in_district).deliver if project.suggested
       facebook_service.post_project_on_wall(project) if facebook_service && project.share_on_facebook
       true
     else

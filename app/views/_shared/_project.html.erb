@@ -22,7 +22,11 @@
     		<div class="span5">
     			<h3 class="stream-title"><%= link_to truncate(project.name, :length => 30), project_path(project) %>
     			<%= image_tag "cohousing.png", :title => t("project.logo_cohousing") if project.cohousing %></h3>
+                <% if project.suggested %>
+                <a class="suggested" rel="popover" data-html="true" data-placement="left" data-original-title="<%= t("stream.suggested_project_explain_title") %>" data-content="<%= t("stream.suggested_project_explain_content") %>" ><i><%= t("stream.suggested_project") %></i></a> <!-- add link to suggested project explanation -->
+                <% else %>
     			by <%= link_to truncate(project.owner_name, :length => 15), user_path(project.owner) %>
+                <% end %>
     			<div class="row-fluid stream-details">
     				<div class="span4">
     					<p><i class="icon-map-marker icon-2x"></i>
@@ -33,8 +37,10 @@
     					<%= project.maximum_shaipz %></p>
     				</div>
     				<div class="span5">
+                        <% if !project.suggested %>
     					<p><i class="icon-time icon-2x pull-left"></i>
-    					<%= truncate(project.event, :length => 15) %></p>
+    					<%= truncate(project.event, :length => 14) %></p>
+                        <% end %>
     				</div>
     			</div>
     		</div>
@@ -56,7 +62,11 @@
 								<%= f.hidden_field :share_on_facebook, :value => "0" %>
 								<% end %>
 
+                            <% if project.suggested %>
+                            <%= f.submit t("project.lead"), :class => 'btn btn-block btn-large btn-success' %>
+                            <% else %>
 							<%= f.submit t("project.join"), :class => 'btn btn-block btn-large btn-info' %>
+                            <% end %>
 							<% end %>
 						<% end %>
 					</div> 
@@ -70,6 +80,11 @@
   <script>
 $(function ()
 { $(".reduction").tooltip();
+    html: true;
+});
+
+$(function ()
+{ $(".suggested").popover();
     html: true;
 });
 </script>

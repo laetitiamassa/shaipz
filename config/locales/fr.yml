@@ -119,6 +119,9 @@ fr:
     original_ad: "annonce web"
     view_all_districts: "voir toutes les communes"
     economy: "Votre économie d'échelle sur le prix moyen du marché"
+    suggested_project: "projet suggéré"
+    suggested_project_explain_title: "Nous vous suggérons ce projet"
+    suggested_project_explain_content: "Ce projet pourrait être intéressant pour vous. Dès que vous aurez cliqué sur 'mener', vous pourrez modifier ce projet à souhait, le gérer et inviter de nouvelles personnes à vous y rejoindre !"
   event:
     next: "Prochain événement"
     types:
@@ -191,10 +194,12 @@ fr:
     example_leader_thought: "Cet immeuble est parfait pour un atelier commun au rez-de-chaussée et, pourquoi pas, un mur d'escalade sur la façade arrière !"
     what_your_thoughts: "Que pensez-vous de l'évolution de ce projet ?"
     join: "Joindre"
+    lead: "Mener"
     join_shortcut: "Découvrez et rejoignez des projets ouverts"
     create: "Créer"
     create_shortcut: "Créez votre projet"
     join_project: "Joindre le projet"
+    lead_project: "Mener le projet"
     in_project: "du projet"
     create_success: "Félicitations! Votre projet a été créé!"
     create_error: "Nous ne parvenons pas à créer votre projet, vérifiez votre formulaire."
@@ -233,6 +238,15 @@ fr:
     insert_email: "Insérez votre adresse email"
     confirm_email: "Une fois que vous voyez le subscribe virer au vert, vous recevrez un email pour confirmer votre adresse: cliquez sur le lien dans l'email, et vous voilà paré pour recevoir tous les futurs commentaires de cette conversation !"
     ok_thanks: "Ok, merci !"
+    lead_how: "Comment mener ce projet ?"
+    lead_step_one: "Consultez"
+    lead_step_one_bis: " l'annonce d'origine"
+    lead_step_two: "Cliquez"
+    lead_step_two_bis: " sur 'mener le projet' pour recevoir des droits de modification"
+    lead_step_three: "Modifiez" 
+    lead_step_three_bis: " votre projet"
+    lead_step_four: "Partagez" 
+    lead_step_four_bis: "-le dans vos réseaux et invitez de nouvelles personnes à vous y rejoindre"
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."
     create_error: "Vous ne pouvez pas participer à ce projet."
@@ -254,7 +268,7 @@ fr:
     example_report: "J'ai constaté que..."
   notification:
     mail:
-      here: "ici"
+      here: " ici"
       salutation: "Salut,"
       congratulation: "Félicitations !"
       signature: "Belle journée!"
@@ -314,6 +328,12 @@ fr:
         subject: "%{name} a créé un nouveau projet dans l'une de vos communes préférées !"
         content: "%{name} a créé %{project}, un nouveau projet qui pourrait vous intéresser !"
         join: "Découvrez ce projet et rejoignez-le"
+      suggest_project_to_lead:
+        subject: "Un nouvel immeuble, un nouveau projet pour vous sur Shaipz"
+        content1: "Un nouvel immeuble est à vendre dans une de vos communes préférées."
+        content2: "Il semble si intéressant, que nous n'avons pas résisté à créer un projet pour vous !"
+        content3: "Il ne vous reste plus qu'à le découvrir, et à le mener si vous aussi vous trouvez que c'est une belle opportunité."
+        lead: "Découvrez l'immeuble et menez ce projet"
   shaipz:
     i_am_in: "Mes projets"
   facebook:

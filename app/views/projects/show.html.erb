@@ -30,7 +30,11 @@
             <% else %>
               <%= f.hidden_field :share_on_facebook, :value => "0" %>
             <% end %>
+            <% if @project.suggested %>
+            <%= f.submit t("project.lead_project"), :class => 'btn btn-block btn-large btn-success' %>
+            <% else %>
             <%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
@@ -64,19 +68,37 @@
 
 <div class="tabbable">
   <ul class="nav nav-tabs text-center lead">
+    <% if @project.suggested %>
+    <li class="active">
+    <% else %>
     <li>
+      <% end %>
       <a href="#pane1" data-toggle="tab"><i class="icon-building"></i><%= t("project.tab_building") %></a>
     </li>
-    <li>
+    <% if @project.suggested %>
+    <li class="disabled">
+      <a data-toggle="tab"><i class="icon-calendar"></i><%= t("project.tab_events") %></a>
+    <% else %>
+    <li>  
       <a href="#pane2" data-toggle="tab"><i class="icon-calendar"></i><%= t("project.tab_events") %></a>
+      <% end %>
     </li>
+    <% if @project.suggested %>
+    <li class="disabled">
+      <a data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
+    <% else %>
     <li class="active">
       <a href="#pane3" data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
+      <% end %>
     </li>
   </ul>
   <div class="tab-content">
 
+    <% if @project.suggested %>
+    <div id="pane1" class="tab-pane active">
+    <% else %>
   <div id="pane1" class="tab-pane">
+    <% end %>
     <div class="row-fluid building">
       <div class="span8">
         
@@ -123,18 +145,32 @@
       </div> <!-- end span8 -->
       <!-- leader's thought -->
       <div class="span4">
+        <% if @project.suggested %>
+        <p class="lead text-center inner-title"><%= t("project.lead_how") %></p>
+        <% else %>
         <p class="lead text-center inner-title"><%= t("project.leader_thought") %></p>
+        <% end %>
         <div class="row-fluid">
-          <div class="hero-unit participants-list span12">    
+          <div class="hero-unit participants-list span12"> 
+          <% if @project.suggested %>
+            <ol>
+              <i class="icon-info-sign pull-left icon-muted icon-4x"></i>
+              <li><b><%= t("project.lead_step_one") %></b><%= t("project.lead_step_one_bis") %></li>
+              <li><b><%= t("project.lead_step_two") %></b><%= t("project.lead_step_two_bis") %></li>
+              <li><b><%= t("project.lead_step_three") %></b><%= t("project.lead_step_three_bis") %></li>
+              <li><b><%= t("project.lead_step_four") %></b><%= t("project.lead_step_four_bis") %></li>
+            </ol>
+          
+          <% else %>   
             <div class="span10 text-right">
               <p class="lead"><b><%= link_to(@owner.name? ? @owner.name : @owner.name_placeholder, user_path(@owner)) %></b></p>
             </div>
             <div class="span2 event-participant">
-              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="left"  data-content="<%= t("statuses.#{@owner.personal_status}") if @owner.has_personal_status? %>" data-original-title="<%= @owner.has_name? ? @owner.name : @owner.name_placeholder %>" ><%= link_to(image_tag(@owner.picture.url(:thumb), :class => 'img-circle'), user_path(@owner)) %></div>
+              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="left"  data-content="<%= t("statuses.#{@owner.personal_status}") if @owner.has_personal_status? %>" data-original-title="<%= @owner.has_name? ? @owner.name : @owner.name_placeholder %>" ><%= link_to(image_tag(@owner.picture.url(:thumb), :class => 'img-circle'), user_path(@owner)) %>
+              </div>
             </div>
-
-            
-                <p><i class="icon-quote-left icon-muted icon-4x"></i><%= @project.leader_thought %></p>      
+                <p><i class="icon-quote-left icon-muted icon-4x"></i><%= @project.leader_thought %></p>
+                <% end %>      
           </div>
         </div>
       </div>
@@ -205,8 +241,11 @@
     </div>
   </div>
     
-    
+    <% if @project.suggested %>
+    <div id="pane3" class="tab-pane">
+    <% else %>
     <div id="pane3" class="tab-pane active">
+      <% end %>
       <div class="row-fluid">
         <div class="span6">
         <p class="lead text-center"><%= t("project.discover_participants") %></p>
