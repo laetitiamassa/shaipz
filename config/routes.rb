@@ -4,6 +4,7 @@ Shaipz::Application.routes.draw do
   get "pricing/show"
 
   get "legal/show"
+  get "legal/pack"
 
   get "about/show"
 
