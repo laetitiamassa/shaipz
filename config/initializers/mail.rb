@@ -1,9 +1,10 @@
 ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.sendgrid.net',
+  :address        => 'in.mailjet.com',
   :port           => '587',
+  :enable_starttls_auto => true,
   :authentication => :plain,
-  :user_name      => ENV['SENDGRID_USERNAME'],
-  :password       => ENV['SENDGRID_PASSWORD'],
+  :user_name      => apikey,
+  :password       => apisecret,
   :domain         => 'heroku.com'
 }
 ActionMailer::Base.delivery_method = :smtp

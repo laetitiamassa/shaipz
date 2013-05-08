@@ -18,7 +18,7 @@
           <!-- - if @project.has_user_as_owner?(@user) -->
           <br><%= link_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})" %>
         <% elsif @project.has_participant?(@user) %>
-          <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})", :class => 'btn btn-large btn-danger' %>
+          <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})", :class => 'btn' %>
         <% else %>
           <%= form_for "participation", :url => participations_path do |f| %>
             <%= f.hidden_field :project_id, :value => @project.id %>
