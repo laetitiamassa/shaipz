@@ -3,8 +3,8 @@ ActionMailer::Base.smtp_settings = {
   :port           => '587',
   :enable_starttls_auto => true,
   :authentication => :plain,
-  :user_name      => apikey,
-  :password       => apisecret,
+  :user_name      => ENV['apikey'],
+  :password       => ENV['apisecret'],
   :domain         => 'heroku.com'
 }
 ActionMailer::Base.delivery_method = :smtp
