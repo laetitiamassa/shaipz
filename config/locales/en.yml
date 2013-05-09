@@ -243,6 +243,11 @@ en:
     lead_step_three_bis: " your project"
     lead_step_four: "Share" 
     lead_step_four_bis: " it in your network and invite people to join"
+    get_a_visit: "Get a visit"
+    see_original_ad: "See the original ad"
+    book_a_visit: "Book a visit"
+    check_below_leader_steps: "Check below how you can become the leader of this project, in just a few steps"
+    check_below_tabs: "Click on the tabs below to discover more about each aspect of the project"
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."

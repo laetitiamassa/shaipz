@@ -247,6 +247,11 @@ fr:
     lead_step_three_bis: " votre projet"
     lead_step_four: "Partagez" 
     lead_step_four_bis: "-le dans vos réseaux et invitez de nouvelles personnes à vous y rejoindre"
+    get_a_visit: "Obtenir une visite"
+    see_original_ad: "Voir l'annonce originale"
+    book_a_visit: "Programmez une visite"
+    check_below_leader_steps: "Découvrez ci-dessous comment devenir le porteur de ce projet, en quelques étapes seulement"
+    check_below_tabs: "Cliquez sur les onglets pour en savoir plus sur le projet"
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."
     create_error: "Vous ne pouvez pas participer à ce projet."
