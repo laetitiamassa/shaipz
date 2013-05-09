@@ -254,7 +254,7 @@ en:
     destroy_success: "You successfully left the project."
     destroy: "Leave the project"
     destroy_confirmation: "Are your sure you want to leave and loose your priority on the project?"
-    share_on_facebook: "Boost the project with facebook"
+    share_on_facebook: "Boost it with facebook"
     project_disabled: "The project is not active anymore, but you can create a new one."
   footer:
     terms_of_use: "terms"

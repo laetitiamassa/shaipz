@@ -43,8 +43,8 @@
             <%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %>
             <% end %>
             <% if current_user.authenticated_with_facebook?(session) %>
-              <ul class="fields">
-                <li class="checkbox">
+              <ul class="fields fb">
+                <li class="checkbox fb">
                   <%= f.check_box :share_on_facebook, { :checked => true } %>
                   <%= f.label :share_on_facebook, t("participation.share_on_facebook") %>
             <% else %>
@@ -76,7 +76,6 @@
  
  
   <div class="row-fluid">
-
         <div class="span2 offset10 report-profile">
           <p class="text-right"><%= link_to t("profile.report"), new_project_report_path(@project) %></p>
         </div>

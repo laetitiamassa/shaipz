@@ -258,7 +258,7 @@ fr:
     destroy_success: "Vous avez bien quitté ce projet."
     destroy: "Quitter le projet"
     destroy_confirmation: "Etes-vous sûr(e) de vouloir quitter le projet et y perdre ainsi votre priorité ?"
-    share_on_facebook: "Boostez le projet avec facebook"
+    share_on_facebook: "Boostez avec facebook"
     project_disabled: "Le projet n'est plus actif, mais vous pouvez un créer un nouveau."
 
   footer:
