@@ -1,6 +1,6 @@
 class NotificationMailer < ActionMailer::Base
   layout 'mail'
-  default from: "Shaipz <no-reply@shaipz.com>"
+  default from: "Shaipz <hello@shaipz.com>"
 
   def welcome_user(user) #when a new user is successfully registered
     @user = user
