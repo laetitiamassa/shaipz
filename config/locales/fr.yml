@@ -252,13 +252,14 @@ fr:
     book_a_visit: "Programmez une visite"
     check_below_leader_steps: "Découvrez ci-dessous comment devenir le porteur de ce projet, en quelques étapes seulement"
     check_below_tabs: "Cliquez sur les onglets pour en savoir plus sur le projet"
+    maintain_tabs: "Vous pouvez maintenir chaque onglet du projet à jour, en éditant régulièrement le projet"
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."
     create_error: "Vous ne pouvez pas participer à ce projet."
     destroy_success: "Vous avez bien quitté ce projet."
     destroy: "Quitter le projet"
     destroy_confirmation: "Etes-vous sûr(e) de vouloir quitter le projet et y perdre ainsi votre priorité ?"
-    share_on_facebook: "Boostez avec facebook"
+    share_on_facebook: "Boostez le projet avec facebook"
     project_disabled: "Le projet n'est plus actif, mais vous pouvez un créer un nouveau."
 
   footer:

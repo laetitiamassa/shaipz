@@ -248,13 +248,14 @@ en:
     book_a_visit: "Book a visit"
     check_below_leader_steps: "Check below how you can become the leader of this project, in just a few steps"
     check_below_tabs: "Click on the tabs below to discover more about each aspect of the project"
+    maintain_tabs: "You can maintain your project up to date, by editing the tabs hereunder"
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."
     destroy_success: "You successfully left the project."
     destroy: "Leave the project"
     destroy_confirmation: "Are your sure you want to leave and loose your priority on the project?"
-    share_on_facebook: "Boost it with facebook"
+    share_on_facebook: "Boost the project with facebook"
     project_disabled: "The project is not active anymore, but you can create a new one."
   footer:
     terms_of_use: "terms"

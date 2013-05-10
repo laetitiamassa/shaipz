@@ -2,22 +2,16 @@
   
   <div class="howitworks-header page-header">
     
-      <div class="project-name">
-        <h1><%= @project.name %>
+    <div class="project-name">
+      <h1><%= @project.name %>
         <% if @project.cohousing? %>
         <%= image_tag ("cohousing.png"), {:title => t("project.logo_cohousing")} %>
-        <% end %></h1>
-      </div>
+        <% end %>
+      </h1>
     </div>
+  </div>
 
- 
-
-
-
-
-  
-  
-    <div class="hero-unit project ">
+  <div class="hero-unit project ">
       <div class="snippet-project">
         <% if @project.has_average_district_price? %>
           <a class="reduction" rel="tooltip" data-placement="left" data-original-title="<%= t("stream.economy") %>" ><div class="discount"><i class="icon-bookmark icon-4x"></i>
@@ -25,37 +19,55 @@
           </div></a>
         <% end %>
         <%= image_tag @project.picture.url(:medium) %>
-      </div>
-      <div class="row-fluid edit-project">
-        
-  <div class="span3 offset3">    
+  </div>
+  
+  <div class="row-fluid edit-project">
+   
+  
+
+
+      
         <% if @user.owner_of_project?(@project) %>
-          <%= button_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %>
+          <div class="span3 offset3"><%= button_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %></div>
+
          
         <% elsif @project.has_participant?(@user) %>
-          <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})", :class => 'btn btn-large btn-block' %>
+        <div class="span3 offset3">
+          <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})", :class => 'btn btn-large btn-block' %></div>
         <% else %>
+         <div class="span4 offset2 ">
           <%= form_for "participation", :url => participations_path do |f| %>
             <%= f.hidden_field :project_id, :value => @project.id %>
-            <% if @project.suggested %>
-            <%= f.submit t("project.lead_project"), :class => 'btn btn-block btn-large btn-success' %>
-            <% else %>
-            <%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %>
+              <div class="span3">
+              <% if current_user.authenticated_with_facebook?(session) %>
+                
+                  <ul class="fields fb">
+                    <li class="checkbox fb facebook_boost" rel="tooltip" data-placement="top" data-original-title="<%= t("participation.share_on_facebook") %>"><i class="icon-facebook"></i>
+                      <%= f.check_box :share_on_facebook, { :checked => true } %>
+                      <% f.label :share_on_facebook %>
+                    </li>
+                  </ul>
+              <% else %>
+                <%= f.hidden_field :share_on_facebook, :value => "0" %>
+              <% end %>
+            </div>
+
+              
+              <div class="span8 with-facebook">
+              <% if @project.suggested %>
+                <%= f.submit t("project.lead_project"), :class => 'btn btn-block btn-large btn-success' %>
+              <% else %>
+                <%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %>
+              <% end %> 
+            </div>
+                        
             <% end %>
-            <% if current_user.authenticated_with_facebook?(session) %>
-              <ul class="fields fb">
-                <li class="checkbox fb">
-                  <%= f.check_box :share_on_facebook, { :checked => true } %>
-                  <%= f.label :share_on_facebook, t("participation.share_on_facebook") %>
-            <% else %>
-              <%= f.hidden_field :share_on_facebook, :value => "0" %>
-            <% end %>
-            
-          <% end %>
+          </div>
         <% end %>
-      </div>
+     
 
       <div class="span3">
+     
         <% if @user.owner_of_project?(@project) %>
           <%= button_to(t("project.book_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
         <% elsif @project.has_participant?(@user) %>
@@ -63,15 +75,15 @@
           <% else %>
           <%= link_to(t("project.see_original_ad"), @project.source_link, :class => "btn btn-block btn-large", :target => "_blank") if @project.has_source_link? %>
           <% end %>
-        </div>
+      </div>
 
- <% if @user.owner_of_project?(@project) %>
+      <% if @user.owner_of_project?(@project) %>
         <div class="span2 offset1 text-right">
         <%= button_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})" %>
-      </div>
-       <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
+  </div>
 
  
  
@@ -90,6 +102,8 @@
     <div class=" span12">
          <% if @project.suggested %>
          <p class="text-center"><%= t("project.check_below_leader_steps") %></p>
+         <% elsif @user.owner_of_project?(@project) %>
+         <p class="text-center"><%= t("project.maintain_tabs") %></p>
          <% else %>
       <p class="text-center"><%= t("project.check_below_tabs") %></p>
       <% end %>
@@ -346,6 +360,10 @@
 <script>
 $(function ()
 { $(".reduction").tooltip();
+    html: true;
+});
+$(function ()
+{ $(".facebook_boost").tooltip();
     html: true;
 });
 </script>
