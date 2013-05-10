@@ -31,6 +31,8 @@ fr:
     password: "mot de passe"
     sign_in: "Se connecter"
     forgot_your_password: "Mot de passe oublié?"
+    activate_account: "Activez votre compte"
+    resend_confirmation: "Recevez à nouveau l'email de confirmation"
   home:
     join_now: "Rejoindre Shaipz"
     or_watch_video: "ou découvrir Shaipz en vidéo"

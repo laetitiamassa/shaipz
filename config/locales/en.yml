@@ -27,6 +27,8 @@ en:
     password: "password"
     sign_in: "Log in"
     forgot_your_password: "Forgot your password?"
+    activate_account: "Activate your account"
+    resend_confirmation: "Receive the confirmation email"
   home:
     join_now: "join now"
     or_watch_video: "or discover Shaipz in video"

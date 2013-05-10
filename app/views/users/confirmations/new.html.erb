@@ -13,7 +13,7 @@
         <div class="hero-unit passwordbloc span4 offset4">
 
     <center>
-          <h2><%= t("sign_in.forgot_your_password") %></h2>
+          <h2><%= t("sign_in.activate_account") %></h2>
         </center>
 
 
@@ -27,7 +27,7 @@
     </ul>
     
         <div class="form-actions">
-          <%= f.submit "Resend confirmation instructions", :class => "btn btn-large btn-block btn-info" %>
+          <%= f.submit t("sign_in.resend_confirmation"), :class => "btn btn-large btn-block btn-info" %>
         </div>
 
         <% end %>
@@ -45,21 +45,3 @@
 
 
 
-<section class="auth-form" class="clear">
-  <h2>Resend confirmation instructions</h2>
-
-  <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
-    <ul class="fields">
-      <li class="string">
-        <%= f.label :email %>
-        <%= f.email_field :email %>
-      </li>
-    </ul>
-
-    <div class="form-actions">
-      <span class="button"><%= f.submit "Resend confirmation instructions" %></span>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
-</section>
