@@ -3,114 +3,296 @@
 
 <!-- page title -->
   <div class="howitworks-header page-header">
-    <h1><%= t("Terms of use") %></h1>
+    <h1><%= t("Legal Pack") %></h1>
   </div>
 
 <!-- content -->
 
-  <script type="text/javascript">
-      $(document).ready (function(){
-        $("#answer-what").hide();
-        $("#answer-how").hide();
-        $("#answer-howsave").hide();
-        $("#answer-howlegal").hide();
-        $("#answer-pricing").hide();
-        $("#answer-howsteps").hide();
-        $("#answer-howdetailedsteps").hide();
-	        $("#question-what").one("click",function(){
-	          $("#answer-what").slideDown("active");
-	        });  
-	        $("#question-how").one("click",function(){
-	          $("#answer-how").slideDown("active");
-	        }); 
-	        $("#question-howsave").one("click",function(){
-	          $("#answer-howsave").slideDown("active");
-	        }); 
-	        $("#question-howlegal").one("click",function(){
-	          $("#answer-howlegal").slideDown("active");
-	        }); 
-	        $("#question-pricing").one("click",function(){
-	          $("#answer-pricing").slideDown("active");
-	        });   
-	        $("#question-howsteps").one("click",function(){
-	          $("#answer-howsteps").slideDown("active");
-	        });
-	        $("#question-howdetailedsteps").one("click",function(){
-	          $("#answer-howdetailedsteps").slideDown("active");
-	        }); 
-      });
-    </script>
   <div class="container-fluid">
     <div class="row-fluid">
       
-      <div class="other-questions span4">
-	    <p id="other-questions-title">Other questions?</p>
-	    <p class="lead">We'd love to hear from you!</p>
-	    <p>via twitter: @shaipzapp</p>
-	    <p>via email: hello@shaipz.com</p>
-	    <p>via facebook: facebook.com/shaipz</p>
-	  </div>
+      <div class="other-questions span3">
+     		<div class="shield"><%= image_tag("shield.png", :size => "300x300") %>
+        	<div class="legal-price text-center"><h1>99<small>€</small></h1><small>/participation</small></div>
+        </div>
+        <button class="btn btn-block btn-large btn-success" href="#activate" data-toggle="modal"><%= t("legal.activate_my_pack") %></button>
+        <button class="btn btn-block btn-link" href="#legal-how" data-toggle="modal"><%= t("legal.how") %></button>
+			</div>
 
-	  <div class="faq span8">
+	  <div class="faq span9">
 	  	  
 		  <div class="question" id="question-what">
-		  	<h3>What is Shaipz ?</h3>
-		  </div>
+		  	<h2><%= t("legal.grouped_but_individual") %></h2>
+        <h4><%= t("legal.benefits_but_security") %></h4>
+        <p><%= t("legal.solution") %></p>
+        <div class="btn" href="#activate" data-toggle="modal"><%= t("legal.activate_your_pack") %></div>
+        <div class="row-fluid">
+          <div class="span9">
+            <div class="row-fluid compare-table">
+              <div class="span6">
+        <table class="table table-striped table-hover">
+          <caption></caption>
+            <thead>
+              <tr>
+                <th><small><%= t("legal.advantages") %></small></tr>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b><%= t("legal.economies") %></b></td>
+              </tr>
+              <tr>
+                <td><%= t("legal.neighbours") %></td>
+              </tr>
+              <tr>
+                <td><b><%= t("legal.not_joint") %></b></td>
+              </tr>
+              <tr>
+                <td><%= t("legal.negociation_sale") %></td>
+              </tr>
+              <tr>
+                <td><%= t("legal.negociation_bank") %></td>
+              </tr>
+              <tr>
+                <td><%= t("legal.common_rules") %></td>
+              </tr>
+              <tr>
+                <td><%= t("legal.expenses") %></td>
+              </tr>
+              
+              <tr>
+                <td><%= t("legal.friendliness") %></td>
+              </tr>
+              
+              <tr>
+                <td><b><%= t("legal.protection") %></b></td>
+              </tr>
+              
+              <tr>
+                <td><b><%= t("legal.freedom") %></b></td>
+              </tr>
+            </tbody>
+          </table>
+        </div> <!-- span7 -->
+          <div class="span3">
+          <table class="table table-striped table-bordered table-hover">
+          <caption></caption>
+            <thead>
+              <tr>
+              
+                <th><div class="text-center"><%= t("legal.individual") %></th>
+              
+              </tr>
+            </thead>
+            <tbody>
 
-		  <div class="answer" id="answer-what">
-		  	<p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
-		  </div>
-	  
-		  <div class="question" id="question-how">
-		  	<h3>How does it work?</h3>
-		  </div>
-
-		  <div class="answer" id="answer-how">
-		  	<p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
-
-		  	<div class="question" id="question-howsteps">
-		  	  <h4>What are those main steps?</h4>
-		    </div>
-
-		    <div class="answer" id="answer-howsteps">
-		  	  <p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
-		    
-		      <div class="question" id="question-howdetailedsteps">
-		  	    <h4>In details how does all this happen?</h4>
-		      </div>
-
-		      <div class="answer" id="answer-howdetailedsteps">
-		  	    <p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
-		      </div>
-		    </div>
-		  </div>
-
-		  <div class="question" id="question-howsave">
-		  	<h3>How does Shaipz help me save money?</h3>
-		  </div>
-
-	  <div class="answer" id="answer-howsave">
-	  	<p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
-	  </div>
-
-	  <div class="question" id="question-howlegal">
-	  	<h3>How does it work, legally?</h3>
-	  </div>
-
-	  <div class="answer" id="answer-howlegal">
-	  	<p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
-	  </div>
-
-	  <div class="question" id="question-pricing">
-	  	<h3>How much it costs?</h3>
-	  </div>
-
-	  <div class="answer" id="answer-pricing">
-	  	<p>Shaipz is a web application which allows you to find people who want, just as you, buy their flat through group buying, and to collaborate with them in order to make it happen.</p>
-	  </div>
+	  <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+              <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+              <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+              <tr class="info">
+                <td><div class="text-center"><i class="icon-minus icon-large"></i></td>
+              </tr>
+              <tr class="info">
+                <td><div class="text-center"><i class="icon-minus icon-large"></i></td>
+              </tr>
+              
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div> <!-- span3 -->
+          <div class="span3">
+        <table class="table table-striped table-bordered table-hover">
+          <caption></caption>
+            <thead>
+              <tr>
+                <th><div class="text-center"><%= t("legal.grouped") %></th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+              <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+              <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+               <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+              
+              <tr class="error">
+                <td><div class="text-center"><i class="icon-remove icon-large"></i></td>
+              </tr>
+            </tbody>
+          </table>
+        </div> <!-- span2 -->
+      </div>
     </div>
+        
+        <div class="span3">
+          <table class="table table-striped table-bordered table-hover">
+          <caption></caption>
+            <thead>
+              <tr>
+                
+                <th><div class="text-center"><%= image_tag("shaipz_logo.png") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+               <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+              
+              <tr class="success">
+                <td><div class="text-center"><i class="icon-ok icon-large"></i></td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="btn btn-block btn-success" href="#activate" data-toggle="modal"><%= t("legal.activate_my_pack") %></button>
+        <button class="btn btn-block btn-link" href="#legal-how" data-toggle="modal"><%= t("legal.how") %></button>
+        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+	  
+	  <!-- Modal -->
+	  <div id="activate" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><i class="icon-shield icon-large pull-left"> </i><%= t("legal.thanks_for_interest") %></h3>
+  </div>
+  <div class="modal-body">
+    <% if user_signed_in? %>
+      <p class="lead">   <%= t("legal.pack_coming_soon") %></p>
+      <p><%= t("legal.modal_activate_content1") %> 
+        <b><%= t("legal.modal_activate_content2") %></b> 
+        <%= t("legal.modal_activate_content3") %></p>
+      <p><%= t("legal.modal_activate_content4") %>
+        <b><%= t("legal.modal_activate_content5") %></b>
+        <%= t("legal.modal_activate_content6") %></p>
+      <p><%= t("legal.see_you") %></p>
+      <p><i><%= t("legal.shaipz_team") %></i></p>
+    <% else %>
+      <p class="text-center"><%= t("legal.connect_to_activate") %></p>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <% if user_signed_in? %>
+      <button class="btn" data-dismiss="modal" aria-hidden="true"><%= t("legal.ok_thanks") %></button>
+      <a class="btn btn-info" href="mailto:hello@shaipz.com"><%= t("legal.other_questions") %></a>
+    <% else %>
+    <div class="row-fluid">
+      <div class="span3 offset6">
+      <%= link_to t("legal.sign_up"), new_user_registration_path(current_user), :class => "btn btn-success btn-block" %>
+     </div>
+<div class="span3">
+      <%= link_to t("legal.sign_in"), new_user_session_path, :class => "btn btn-info btn-block" %>
+     </div>
+  </div>
+    <% end %>
   </div>
 </div>
+<div id="legal-how" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><i class="icon-shield icon-large pull-left"> </i><%= t("legal.in_three_steps") %></h3>
+  </div>
+  <div class="modal-body">
+    
+      <p><i class="icon-unlock-alt icon-3x icon-muted"></i> 
+        1. 
+        <b><%= t("legal.modal_how_content1") %></b>
+         <%= t("legal.modal_how_content2") %>
+        <br><small><%= t("legal.modal_how_content3") %></small></p>
+      <p><i class="icon-unlock icon-3x icon-muted"></i> 
+        2. 
+        <b><%= t("legal.modal_how_content4") %></b>
+         <%= t("legal.modal_how_content5") %> 
+         <br><small><%= t("legal.modal_how_content6") %></small></p>
+      <p><i class="icon-copy icon-3x icon-muted"></i>
+       3. 
+       <b><%= t("legal.modal_how_content7") %></b>
+        <%= t("legal.modal_how_content8") %> 
+        <b><%= t("legal.modal_how_content9") %></b> 
+        <%= t("legal.modal_how_content10") %>
+        <b><%= t("legal.modal_how_content11") %></b>
+        <%= t("legal.modal_how_content12") %>
+        <br><small><%= t("legal.modal_how_content13") %></small></p>
+<p><%= t("legal.see_you") %></p>
+    <p><i><%= t("legal.shaipz_team") %></i></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true"><%= t("legal.ok_thanks") %></button>
+    <a class="btn btn-info" href="mailto:hello@shaipz.com"><%= t("legal.other_questions") %></a>
+   </div>
+ </div>
+ 
 
 
 </diV>

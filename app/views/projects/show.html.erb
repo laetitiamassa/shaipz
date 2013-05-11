@@ -381,30 +381,6 @@ $(function ()
 
 
 
-<!--
-
-
-
--#    %section#participants
--#      %h3= t("project.participants")
--#      - if @project.has_participant_or_owner?(@user)
--#        .position
--#          %span= "##{@project.priority_order_for_participant(@user)}"
--#          = t("project.in_project")
--#      - else
--#        #participation
--#          = form_for "participation", :url => participations_path do |f|
--#            = f.hidden_field :project_id, :value => @project.id
--#            - if current_user.authenticated_with_facebook?(session)
--#              %ul.fields
--#                %li.checkbox
--#                  = f.check_box :share_on_facebook, { :checked => true }
--#                  = f.label :share_on_facebook, t("participation.share_on_facebook")
--#            - else
--#              = f.hidden_field :share_on_facebook, :value => "0"
-
--#            .join-action
--#              = f.submit t("project.join_project"), :class => 'btn btn-info'
 
 
 

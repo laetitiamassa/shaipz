@@ -5,7 +5,7 @@
 <head>
   <title>Shaipz</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
- 
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css" rel="stylesheet">
 
   <%= javascript_include_tag "application" %>
   <%= favicon_link_tag "favicon.png", :type => "image/png" %>
@@ -217,13 +217,18 @@
   <div class="row-fluid inner-footer">
     <div class="container text-center">
     
-    <div class="span2 offset3 text-right">
-      <h4><%= link_to t("about.footer"), about_path %></h4>
+    <div class="span3 offset3">
+      <div class="row-fluid">
+        <div class="span6 text-right">
+          <h4><%= link_to t("about.footer"), about_path %></h4>
+        </div>
+
+        <div class="span6 text-right">
+          <h4><b><%= link_to "Legal Pack", legal_path %></b></h4>
+        </div>
+      </div>
     </div>
 
-    <!-- <div class="span1">
-      <h4><%= link_to "about", about_path %></h4>
-    </div> -->
 
     <div class="span1">
       <h4><%= link_to "faq", how_it_works_path %></h4>
@@ -240,7 +245,7 @@
         </div>
 
         <div class="span4">
-        <a class="btn btn-link" href="http://twitter.com/shaipzapp"><i class="icon-twitter icon-large pull-left"></i></a>
+        <a class="btn btn-link" href="http://twitter.com/shaipz"><i class="icon-twitter icon-large pull-left"></i></a>
         </div>
 
         <div class="span4">
