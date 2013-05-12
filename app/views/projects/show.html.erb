@@ -246,10 +246,10 @@
         
         <div class="hero-unit next-event text-center">
           <div class="row-fluid">
-            <div class="span1">
+            <div class="span2">
               <i class="icon-bell-alt icon-4x pull-right"></i>
             </div>
-            <div class="span10">
+            <div class="span9">
               <h2><%= @project.event_type %></h2>
               <h4><%= @project.event_date %></h4>
             </div>
@@ -283,13 +283,54 @@
     </div>
   </div>
     
+
+  <!-- PARTICIPANTS -->
+
     <% if @project.suggested %>
     <div id="pane3" class="tab-pane">
     <% else %>
     <div id="pane3" class="tab-pane active">
-      <% end %>
+    <% end %>
       <div class="row-fluid">
-        <div class="span6">
+        
+      
+      <div class="span9">
+        <p class="lead inner-title text-center"><%= t("project.discuss") %>  
+              
+              <%= render_comments_form @project %>
+              <%= render_comments @project %>
+          
+        <div class="text-center"><button class="btn btn-small disabled" id="view-disqus"><%= t("comment.retrieve_disqus") %></button></div>
+        <div id="disqus_module" class="text-center">
+        <!-- DISQUS module -->
+        <br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p> <!-- Button to trigger modal -->
+
+
+        <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %></div>
+
+          <!-- Modal -->
+          <div id="HowtoGetNotified" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel"><%= t("project.how_to_get_notified") %></h3>
+            </div>
+            <div class="modal-body">
+              <ol class="text-left">
+                <li><%= t("project.go_to_bottom") %> <br> <%= t("project.click_on_subscribe") %><br><div class="text-center"><%= image_tag("disqusNotificationGotobottom.png") %></div></li>
+                <li><%= t("project.insert_email") %> <%= image_tag("disqusNotificationInsertemail.png") %></li>
+                <li><%= t("project.confirm_email") %> <%= image_tag("disqusNotificationConfirmemail.png") %></li>
+              </ol>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true"><%= t("project.ok_thanks") %></button>
+              
+            </div>
+          </div> <!-- get notified modal end -->
+        </div>
+
+      </div> <!-- span join conversation end -->
+
+<div class="span3">
         <p class="lead text-center"><%= t("project.discover_participants") %></p>
 
         <% if @project.has_participant_or_owner?(@user) %>
@@ -301,13 +342,12 @@
         <div class="row-fluid">
           <div class="hero-unit participants-list span12">
         
-            <div class="span2 profile-participant text-center">
+            <div class="span3 profile-participant text-center">
               
-           
-                        <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="right"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-rounded'), user_path(p)) %></div>
+              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="right"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-rounded'), user_path(p)) %></div>
                  
             </div>
-            <div class="span10">
+            <div class="span9">
               <p><b><%= link_to p.has_name? ? p.name : p.name_placeholder, user_path(p) %></b><br>
               <!-- no need since it is in popover <i class="participants-status"><%= t("statuses.#{p.personal_status}") if p.has_personal_status? %></i></p> -->
             </div>
@@ -319,34 +359,7 @@
         </ul>
         <% end %>
       </div>
-      
-      <div class="span6 text-center">
-        <p class="lead inner-title"><%= t("project.discuss") %>
-        <br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p> <!-- Button to trigger modal -->
 
-        <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %></div>
-
-
- 
-<!-- Modal -->
-<div id="HowtoGetNotified" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel"><%= t("project.how_to_get_notified") %></h3>
-  </div>
-  <div class="modal-body">
-    <ol class="text-left">
-      <li><%= t("project.go_to_bottom") %> <br> <%= t("project.click_on_subscribe") %><br><div class="text-center"><%= image_tag("disqusNotificationGotobottom.png") %></div></li>
-      <li><%= t("project.insert_email") %> <%= image_tag("disqusNotificationInsertemail.png") %></li>
-      <li><%= t("project.confirm_email") %> <%= image_tag("disqusNotificationConfirmemail.png") %></li>
-    </ol>
-  </div>
-  <div class="modal-footer">
-    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true"><%= t("project.ok_thanks") %></button>
-    
-  </div>
-</div>
-      </div>
     </div>
   </div>  
   </div><!-- /.tab-content -->
@@ -373,6 +386,16 @@ $(function ()
 { $(".p-status").popover();
     html: true;
 });
+</script>
+
+<script type="text/javascript">
+    $(document).ready (function(){
+      $("#disqus_module").hide();
+        $("#view-disqus").click(function(){
+          $("#disqus_module").slideDown("active");   
+        });
+      });
+
 </script>
 
 
