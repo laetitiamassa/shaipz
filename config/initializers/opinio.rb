@@ -13,6 +13,7 @@ Opinio.setup do |config|
   
   # Here you can change the method called to check who is the current user
   # config.current_user_method = :current_user
+  config.participant = :project_participant
 
   # Strip html tags on save comment
   config.strip_html_tags_on_save = true

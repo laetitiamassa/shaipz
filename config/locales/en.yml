@@ -308,6 +308,10 @@ en:
         subject: "%{name} has created a new project in one of your favorite areas!"
         content: "%{name} has created %{project}, a brand new project you might be interested in!"
         join: "Discover this new project and join it"
+      new_comment:
+        subject: "A new comment for you in '%{project}'!"
+        content: "A new comment has just enriched your conversation in '%{project}'!"
+        call: "Discover it, and pursue the conversation"
   shaipz:
     i_am_in: "Projects I'm in"
   facebook:

@@ -9,7 +9,9 @@ class Opinio::CommentsController < ApplicationController
   def create
     @comment = resource.comments.build(params[:comment])
     @comment.owner = send(Opinio.current_user_method)
+    @project = resource
     if @comment.save
+      NotificationMailer.new_comment(@project.participants, @project).deliver
       flash_area = :notice
       message = t('opinio.messages.comment_sent')
     else
@@ -24,12 +26,11 @@ class Opinio::CommentsController < ApplicationController
         redirect_to(opinio_after_create_path(resource))
       end
     end
+
   end
 
   def destroy
     @comment = Opinio.project.constantize.find(params[:id])
-
-    
 
     if can_destroy_opinio?(@comment)
       @comment.destroy
@@ -39,8 +40,6 @@ class Opinio::CommentsController < ApplicationController
       logger.warn "user #{send(Opinio.current_user_method)} tried to remove a comment from another user #{@comment.owner.id}"
       render :text => "unauthorized", :status => 401 and return
     end
-
-    
 
     respond_to do |format|
       format.js

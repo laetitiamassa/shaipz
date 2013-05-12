@@ -107,6 +107,10 @@ class Project < ActiveRecord::Base
     participants.map(&:email)
   end
 
+  def all_participants_emails
+    owner_and_participants.map(&:email) 
+  end
+
   def has_participant_or_owner?(participant)
     owner_and_participants.include?(participant)
   end

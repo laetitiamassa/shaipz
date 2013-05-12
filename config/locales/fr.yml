@@ -312,6 +312,10 @@ fr:
         subject: "%{name} a créé un nouveau projet dans l'une de vos communes préférées !"
         content: "%{name} a créé %{project}, un nouveau projet qui pourrait vous intéresser !"
         join: "Découvrez ce projet et rejoignez-le"
+      new_comment:
+        subject: "Un nouveau commentaire pour vous dans '%{project}' !"
+        content: "Un nouveau commentaire est venu enrichir votre conversation dans '%{project}' !"
+        call: "Découvrez-le, et poursuivez la conversation"
   shaipz:
     i_am_in: "Mes projets"
   facebook:

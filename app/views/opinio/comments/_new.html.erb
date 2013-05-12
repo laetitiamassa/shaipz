@@ -1,12 +1,21 @@
 <div id="new_comment">
   <% if send(Opinio.current_user_method) %>
-    <%= t('opinio.messages.add_comment') %>
+    
     <%= form_for Comment.new, :remote => false do |f| %>
-      <%= f.text_area :body, :type => "text", "data-provide" =>"typehead" %>
+    <div class="row-fluid">
+      <div class="span1">
+      <%= link_to(image_tag(@user.picture.url(:thumb), :class => 'img-rounded'), user_path(@user)) %>
+    </div>
+      <div class="span11">
+      <%= f.text_area :body, :type => "text", "data-provide" => "typeahead", :placeholder => "What's on your mind, #{@user.name_or_placeholder}?" %>
       
       <%= hidden_field_tag :commentable_id, commentable.id %>
       <%= hidden_field_tag :commentable_type, commentable.class.base_class.name.to_s %>
-      <%= f.submit t('opinio.actions.add'), :class => 'btn' %>
+    </div>
+      <div class="span2 offset9">
+      <%= f.submit 'Say it!', :class => 'btn btn-block' %>
+    </div>
+  </div>
     <% end %>
   <% else %>
     <p>
