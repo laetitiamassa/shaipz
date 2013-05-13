@@ -93,13 +93,4 @@ class NotificationMailer < ActionMailer::Base
     )
   end
 
-  def new_comment(user, project) #when a participant adds a comment to the project
-    @project = project
-    @user = user
-    mail(
-      :to => @project.all_participants_emails,
-      :subject => t("notification.mail.new_comment.subject", :name => @user.name, :project => @project.name)
-    )
-  end
-
 end

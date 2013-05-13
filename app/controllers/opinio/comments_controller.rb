@@ -9,14 +9,12 @@ class Opinio::CommentsController < ApplicationController
   def create
     @comment = resource.comments.build(params[:comment])
     @comment.owner = send(Opinio.current_user_method)
-    @project = resource
     if @comment.save
-      NotificationMailer.new_comment(@project.participants, @project).deliver
       flash_area = :notice
-      message = t('comment.sending_success')
+      message = t('opinio.messages.comment_sent')
     else
       flash_area = :error
-      message = t('comment.sending_error')
+      message = t('opinio.messages.comment_sending_error')
     end
 
     respond_to do |format|
