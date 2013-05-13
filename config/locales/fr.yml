@@ -342,10 +342,6 @@ fr:
         content2: "Il semble si intéressant, que nous n'avons pas résisté à créer un projet pour vous !"
         content3: "Il ne vous reste plus qu'à le découvrir, et à le mener si vous aussi vous trouvez que c'est une belle opportunité."
         lead: "Découvrez l'immeuble et menez ce projet"
-      new_comment:
-        subject: "Un nouveau commentaire pour vous dans '%{project}' !"
-        content: "Un nouveau commentaire est venu enrichir votre conversation dans '%{project}' !"
-        call: "Découvrez-le, et poursuivez la conversation"
   shaipz:
     i_am_in: "Mes projets"
   facebook:
@@ -691,10 +687,3 @@ fr:
       modal_how_content12: ", tout au long de votre projet."
       modal_how_content13: "Dès que le projet est crédité d'un nombre de packs égal au nombre de participations au projet, chaque élément du pack est mis à disposition de chaque participant au fur et à mesure de l'avancement du projet, afin de protéger non seulement chacun de vous individuellement, mais également l'ensemble du groupe."
       more: "en savoir plus..."
-  comment:
-    placeholder: "A quoi songez-vous, %{name} ?"
-    submit: "Dites-le"
-    retrieve_disqus: "Retrouver mon ancienne discussion Disqus"
-    sending_success: "Votre commentaire a bien été ajouté à la conversation !"
-    sending_error: "Oups, votre commentaire n'a pas pu être ajouté à la conversation. Vérifiez le formulaire."
-

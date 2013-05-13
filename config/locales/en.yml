@@ -338,10 +338,7 @@ en:
         content2: "It seems so interesting that we couldn't resist creating a project for you!"
         content3: "All you need to do now is discovering it and, if you find it a good opportunity for you, you can lead the project."
         lead: "Discover the building and lead this project"
-      new_comment:
-        subject: "A new comment for you in '%{project}'!"
-        content: "A new comment has just enriched your conversation in '%{project}'!"
-        call: "Discover it, and pursue the conversation"  
+  
   shaipz:
     i_am_in: "Projects I'm in"
   facebook:
@@ -687,9 +684,3 @@ en:
       modal_how_content12: ", throughout your project."
       modal_how_content13: "Once the project is credited with a number of Packs equal to the number of participations to the project, each element of the Legal Pack is made ​​available to each participant as and when the project progresses, not only in each participant's interest, but also in the interest of the group as a whole."
       more: "more..."
-  comment:
-    placeholder: "What's on your mind, %{name}?"
-    submit: "Say it"
-    retrieve_disqus: "Retrieve my former Disqus thread"
-    sending_success: "Your comment has been successfully added to the conversation!"
-    sending_error: "Oops, your comment can't be added to the conversation. Please verify your new comment field."
