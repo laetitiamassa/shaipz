@@ -28,7 +28,7 @@
 
       
         <% if @user.owner_of_project?(@project) %>
-          <div class="span3 offset3"><%= button_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %></div>
+          <div class="span3 offset3"><%= link_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %></div>
 
          
         <% elsif @project.has_participant?(@user) %>
@@ -69,9 +69,9 @@
       <div class="span3">
      
         <% if @user.owner_of_project?(@project) %>
-          <%= button_to(t("project.book_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
+          <%= link_to(t("project.book_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
         <% elsif @project.has_participant?(@user) %>
-          <%= button_to(t("project.get_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
+          <%= link_to(t("project.get_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
           <% else %>
           <%= link_to(t("project.see_original_ad"), @project.source_link, :class => "btn btn-block btn-large", :target => "_blank") if @project.has_source_link? %>
           <% end %>

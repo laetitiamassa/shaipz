@@ -594,8 +594,8 @@ select {
 .snippet .discount {
   z-index: 2;
   position: absolute;
-  top: 4px;
-  left: 0px;
+  top: -6px;
+  left: 5px;
 
   .icon-bookmark {
   color: #0088cc;
@@ -604,8 +604,8 @@ select {
 .snippet .discount .percentage {
   z-index:3;
   position: absolute;
-  top: 5px;
-  left: 20px;
+  top: 10px;
+  left: 5px;
   color: white;
   }
 
@@ -623,7 +623,7 @@ select {
 .snippet-project .discount {
   z-index: 2;
   position: absolute;
-  top: -5px;
+  top: -8px;
   left: 20px;
 
   .icon-bookmark {
