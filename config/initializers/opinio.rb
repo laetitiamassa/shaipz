@@ -7,6 +7,7 @@ Opinio.setup do |config|
 
   # This is the owner class of the comment (opinio model)
   # config.owner_class_name = "User"
+  
 
   # Change this if you do not want to allow replies on your comments
   # config.accept_replies = true

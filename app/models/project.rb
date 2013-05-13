@@ -40,7 +40,7 @@ class Project < ActiveRecord::Base
   end
 
   def suggested
-    owner_id == 301
+    owner_id == 27
   end
 
   def disabled?
@@ -109,6 +109,10 @@ class Project < ActiveRecord::Base
 
   def participants_emails
     participants.map(&:email)
+  end
+
+  def all_participants_emails
+    owner_and_participants.map(&:email)
   end
 
   def has_participant_or_owner?(participant)
