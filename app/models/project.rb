@@ -40,7 +40,7 @@ class Project < ActiveRecord::Base
   end
 
   def suggested
-    owner_id == 27
+    owner_id == 301
   end
 
   def disabled?
