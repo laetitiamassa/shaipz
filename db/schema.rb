@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426211146) do
+ActiveRecord::Schema.define(:version => 20130501094826) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(:version => 20130426211146) do
     t.datetime "updated_at",                          :null => false
     t.boolean  "share_on_facebook", :default => true
     t.datetime "left_at"
+    t.string   "prefered_part"
+    t.string   "prefered_timing"
+    t.string   "ability"
   end
 
   create_table "projects", :force => true do |t|
