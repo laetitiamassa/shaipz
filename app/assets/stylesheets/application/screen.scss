@@ -42,8 +42,9 @@ nav-bar-inner .container {
 }
 
 .logo-navbar {
-  position: relative;
-  margin: -6px 0px -11px -10px;
+  position: absolute;
+  top: -6px;
+  left: -150px;
 }
 
 .inner-footer {
@@ -639,29 +640,6 @@ textarea {
 }
 
 
-/* legal Pack */
-
-.compare-table {
-  margin-top: 30px;
-}
-
-.shield {
-  z-index: 1;
-}
-
-.legal-price {
-  z-index: 2;
-  position: relative;
-  margin: -155px 0 60px;
-  h1 {
-  font-size: 5em;
-  }
-  
-}
- 
-.icon-shield {
-  color: #90dcf3;
-}
 
 
 /* Regular design */  
