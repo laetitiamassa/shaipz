@@ -1,12 +1,13 @@
 <% reply = defined?(reply) ? reply : false %>
 <div id="comment_<%= comment.id %>">
 	<div class="row-fluid hero-unit comment">
-		<div class="span1">
-			<%= link_to(image_tag((comment.owner).picture.url(:thumb), :class => 'img-rounded'), user_path(comment.owner)) %>
-		</div>
+		
 		<div class="span11">
-			<small><%= link_to comment.owner.name_or_placeholder %></small>
+			<small><%= link_to comment.owner.name_or_placeholder, user_path(comment.owner) %></small>
 			<%= simple_format(comment.body) %>
+    </div>
+    <div class="span1">
+      <%= link_to(image_tag(comment.owner.picture.url(:thumb), :class => 'img-rounded'), user_path(comment.owner)) %>
     </div>
   </div>
 
