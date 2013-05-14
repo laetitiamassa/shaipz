@@ -4,7 +4,7 @@ class Opinio::CommentsController < ApplicationController
 
   def index
     @comments = resource.comments.page(params[:page])
-    @comment.owner = send(Opinio.current_user_method)
+ 
   end
 
   def create
