@@ -294,16 +294,9 @@
       <div class="row-fluid">
         
       
-      <div class="span9">
+      <div class="span8">
         <p class="lead inner-title text-center"><%= t("project.discuss") %>  
-      
-               
-             <%= render_comments_form @project %>
-              <%= render_comments @project %>
-          
-        <div class="text-center"><button class="btn btn-small disabled" id="view-disqus"><%= t("comment.retrieve_disqus") %></button></div>
-       <div id="disqus_module" class="text-center">
-
+              
               
         <!-- DISQUS module -->
         <br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p> <!-- Button to trigger modal -->
@@ -327,13 +320,13 @@
             <div class="modal-footer">
               <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true"><%= t("project.ok_thanks") %></button>
               
-            </div>
+            
           </div> <!-- get notified modal end -->
         </div>
 
       </div> <!-- span join conversation end -->
 
-<div class="span3">
+<div class="span4">
         <p class="lead text-center"><%= t("project.discover_participants") %></p>
 
         <% if @project.has_participant_or_owner?(@user) %>
