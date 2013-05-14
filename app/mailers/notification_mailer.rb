@@ -97,7 +97,7 @@ class NotificationMailer < ActionMailer::Base
     @project = project
     @user = user
     mail(
-      :to => @project.all_participants_emails,
+      :bcc => @project.all_participants_emails,
       :subject => t("notification.mail.new_comment.subject", :name => @user.name, :project => @project.name)
     )
   end
