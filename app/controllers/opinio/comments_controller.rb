@@ -4,7 +4,7 @@ class Opinio::CommentsController < ApplicationController
 
   def index
     @comments = resource.comments.page(params[:page])
-
+ 
   end
 
   def create
@@ -31,6 +31,8 @@ class Opinio::CommentsController < ApplicationController
 
   def destroy
     @comment = Opinio.project.constantize.find(params[:id])
+
+    
 
     if can_destroy_opinio?(@comment)
       @comment.destroy
