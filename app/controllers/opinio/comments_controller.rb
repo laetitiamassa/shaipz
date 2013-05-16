@@ -30,7 +30,9 @@ class Opinio::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Opinio.model_name.constantize.find(params[:id])
+    @comment = Opinio.project.constantize.find(params[:id])
+
+    
 
     if can_destroy_opinio?(@comment)
       @comment.destroy
