@@ -296,11 +296,10 @@
       
       <div class="span9">
         <p class="lead inner-title text-center"><%= t("project.discuss") %>  
-              <%= render_comments_form @project %>
-              <%= render_comments @project %>
+              
               
         <!-- DISQUS module -->
-       <br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p> <!-- Button to trigger modal -->
+       <div class="text-center"><br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p></div> <!-- Button to trigger modal -->
 
 
         <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %></div>
