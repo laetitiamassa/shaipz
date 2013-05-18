@@ -1,22 +1,19 @@
 <% reply = defined?(reply) ? reply : false %>
 <div id="comment_<%= comment.id %>">
 	<div class="row-fluid hero-unit comment">
-		
-		<div class="span12">
-			<small><%= link_to comment.user.name, user_path(comment.owner) %></small>
+		<div class="span1">
+      <%= link_to(image_tag(comment.owner.picture.url(:thumb), :class => 'img-rounded'), user_path(comment.owner)) %>
+    </div>
+		<div class="span11">
+			<small><%= link_to comment.owner.name_or_placeholder, user_path(comment.owner) %></small>
 			<%= simple_format(comment.body) %>
     </div>
-    <!-- <div class="span1">
-      <%= link_to(image_tag(@user.picture.url(:thumb), :class => 'img-rounded'), user_path(comment.owner)) %>
-    </div> -->
   </div>
-
-  <%#= link_to t('opinio.actions.delete'), comment_path(comment), :method => :delete, :remote => true %>
-  <%# this enables only 1 level of replies %>
-  <!-- <% if Opinio.accept_replies && !reply %>
-    <span><%= link_to t('opinio.actions.reply'), reply_comment_path(comment), :remote => true %></span>
-    <ul id="comment_<%= comment.id %>_replies" class="replies">
-      <%= render :partial => "opinio/comments/comment", :collection => comment.comments, :locals => {:reply => true} %>
-    </ul>
+</div>
+  
+  <!-- <% if comment.owner == send(Opinio.current_user_method) %>
+  <div class="text-right"><small><%= link_to image_tag('comment.delete'), comment_path(comment), :method => :delete, :remote => true %></small></div>
   <% end %> -->
+  
+  
 

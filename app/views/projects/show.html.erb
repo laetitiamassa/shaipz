@@ -294,15 +294,16 @@
       <div class="row-fluid">
         
       
-      <div class="span8">
+      <div class="span9">
         <p class="lead inner-title text-center"><%= t("project.discuss") %>  
-              
+               <%= render_comments_form @project %>
+               <%= render_comments @project %>
               
         <!-- DISQUS module -->
-        <br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p> <!-- Button to trigger modal -->
+      <!--  <br><a href="#HowtoGetNotified" role="button" class="btn btn-warning" data-toggle="modal"><i class="icon-envelope pull-left"></i><%= t("project.how_to_get_notified") %></a></p> <!-- Button to trigger modal -->
 
 
-        <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %></div>
+      <!--  <div id:"disqus_thread"><%= render :partial => "_shared/disqus", :locals => { :title => @project.name } %></div>
 
           <!-- Modal -->
           <div id="HowtoGetNotified" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -326,7 +327,7 @@
 
       </div> <!-- span join conversation end -->
 
-<div class="span4">
+<div class="span3">
         <p class="lead text-center"><%= t("project.discover_participants") %></p>
 
         <% if @project.has_participant_or_owner?(@user) %>

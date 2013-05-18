@@ -30,7 +30,7 @@ en:
     activate_account: "Activate your account"
     resend_confirmation: "Receive the confirmation email"
   home:
-    join_now: "join now"
+    join_now: "Join Shaipz now"
     or_watch_video: "or discover Shaipz in video"
     group_buying_pro: "Benefits of groupbuying"
     better_price: "A better price"
@@ -62,6 +62,7 @@ en:
     baseline: "A smart way to buy your home"
     ready_soon: "We’ll be ready to launch very soon!"
     how_it_works: "Discover what Shaipz is all about!"
+    what_they_say: "What they say"
   profile:
     you: "You"
     your_ideal_home: "Your ideal home"
@@ -380,7 +381,7 @@ en:
     check_filename: "Please check that there are no accents in the file name."
   how:
     whats_shaipz: "What is Shaipz?"
-    how: "How it works?"
+    how: "How it works"
     place: "Step 1 – the Place"
     place_baseline: "think BIG!"
     instead: "Instead of looking for your apartement,"
@@ -693,3 +694,4 @@ en:
     retrieve_disqus: "Retrieve my former Disqus thread"
     sending_success: "Your comment has been successfully added to the conversation!"
     sending_error: "Oops, your comment can't be added to the conversation. Please verify your new comment field."
+    delete: "delete"

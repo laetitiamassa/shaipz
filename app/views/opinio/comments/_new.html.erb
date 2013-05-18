@@ -3,7 +3,7 @@
     <%= form_for Comment.new, :remote => false do |f| %>
     <div class="row-fluid hero-unit comment">
       <div class="span1">
-        <%= link_to(image_tag(@user.picture.url(:thumb), :class => 'img-rounded'), user_path(@user)) %>
+        <%= link_to(image_tag(send(Opinio.current_user_method).picture.url(:thumb), :class => 'img-rounded'), user_path(send(Opinio.current_user_method))) %>
       </div>
       <div class="span11 new_comment">
         <%= f.text_area :body, :type => "text", "data-provide" =>"typeahead", :placeholder => t("comment.placeholder", :name => @user.name_or_placeholder ) %>

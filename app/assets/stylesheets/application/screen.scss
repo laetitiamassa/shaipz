@@ -6,6 +6,8 @@ $baseFontFamily: 'FontAwesome';
 
 @import url(http://fonts.googleapis.com/css?family=Amaranth);
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Over+the+Rainbow);
+@import url(http://fonts.googleapis.com/css?family=Nothing+You+Could+Do);
 
 /* fix duplicate icons */
 
@@ -123,13 +125,37 @@ nav-bar-inner .container {
 
 #tagline {
   color: #a2a4a4;
-  font-size: 4.5em;
-  font-family: 'Lato', sans-serif;
+  font-size: 4em;
+  font-family: 'Nothing You Could Do', cursive;
   font-weight: 100;
   letter-spacing: 2px;
   text-shadow: 0px 0px 30px white;
   line-height: 55px;
   }
+
+.title {
+  font-family: 'Nothing You Could Do', cursive;
+  margin: 20px 0;
+  color: #a2a4a4;
+}
+
+.next-title {
+  margin-top: 20px;
+}
+
+
+.how-three-steps { 
+  margin: 15px 0 0px;
+
+  .icon-chevron-right {
+  padding-top: 50px;
+  color: #90dcf3;
+  opacity: 0.2;
+  }
+  i {
+  color: #a2a4a4;
+  }
+}
 
 .image-eloge {
   float: left;
@@ -143,6 +169,14 @@ nav-bar-inner .container {
   position: relative;
 }
 
+.quotations {
+  margin: 15px 0 25px;
+}
+
+.last-more {
+  margin-bottom: 25px;
+}
+
 blockquote {
   border-left: none;
 }
@@ -153,10 +187,8 @@ blockquote {
 
 
 #advantages {
-  margin: 0px 0px 30px 0px;
+  margin: 0 0 15px;
   font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  letter-spacing: 0px;
   i {
   color: #90dcf3;
   }
@@ -166,7 +198,7 @@ blockquote {
   z-index: -2;
   font-size: 14em;
   position: absolute;
-  top: 660px;
+  top: 680px;
   color: #90dcf3;
   opacity: 0.2;
 }

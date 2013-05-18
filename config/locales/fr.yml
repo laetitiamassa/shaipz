@@ -34,7 +34,7 @@ fr:
     activate_account: "Activez votre compte"
     resend_confirmation: "Recevez à nouveau l'email de confirmation"
   home:
-    join_now: "Rejoindre Shaipz"
+    join_now: "Rejoindre  Shaipz"
     or_watch_video: "ou découvrir Shaipz en vidéo"
     group_buying_pro: "Avantages de l'achat groupé"
     better_price: "Meilleur prix"
@@ -66,6 +66,7 @@ fr:
     baseline: "Votre appart? Achetez-le malin!"
     ready_soon: "Nous serons bientôt prêts pour le lancement!"
     how_it_works: "Découvrez le concept Shaipz!"
+    what_they_say: "Ce qu'ils en disent"
   profile:
     you: "Vous"
     your_ideal_home: "Votre idéal immobilier"
@@ -385,7 +386,7 @@ fr:
     check_filename: "Vérifiez qu'il n'y ait pas d'accent dans votre fichier."
   how:
     whats_shaipz: "C'est quoi, Shaipz?"
-    how: "Comment ça marche ?"
+    how: "Comment ça marche"
     place: "Etape 1 – la situation"
     place_baseline: "Pensez GRAND!"
     instead: "Au lieu de chercher uniquement votre appartement,"
@@ -697,4 +698,5 @@ fr:
     retrieve_disqus: "Retrouver mon ancienne discussion Disqus"
     sending_success: "Votre commentaire a bien été ajouté à la conversation !"
     sending_error: "Oups, votre commentaire n'a pas pu être ajouté à la conversation. Vérifiez le formulaire."
+    delete: "supprimer"
 
