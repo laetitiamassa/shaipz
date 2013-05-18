@@ -29,11 +29,6 @@ class Opinio::CommentsController < ApplicationController
     end
   end
 
-  def show
-    comment = Opinio.model_name.constantize.find(params[:id])
-    comment.owner = send(Opinio.current_user_method)
-  end
-
   def destroy
     @comment = Opinio.model_name.constantize.find(params[:id])
 
