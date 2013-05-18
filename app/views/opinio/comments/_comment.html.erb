@@ -4,16 +4,24 @@
 		<div class="span1">
       <%= link_to(image_tag(comment.owner.picture.url(:thumb), :class => 'img-rounded'), user_path(comment.owner)) %>
     </div>
-		<div class="span11">
-			<small><%= link_to comment.owner.name_or_placeholder, user_path(comment.owner) %></small>
+    <div class="span11">
+      <div class="row-fluid">
+    		<div class="span11">
+    			<small><%= link_to comment.owner.name_or_placeholder, user_path(comment.owner) %></small>
+        </div>
+        <div class="span1">
+          <% if comment.owner == send(Opinio.current_user_method) %>
+            <div class="text-right"><small><b><%= link_to "x", comment_path(comment), :method => "delete", :remote => true %></b></small></div>
+          <% end %> 
+        </div>
+      </div>
 			<%= simple_format(comment.body) %>
     </div>
+   
   </div>
 </div>
   
-  <!-- <% if comment.owner == send(Opinio.current_user_method) %>
-  <div class="text-right"><small><%= link_to image_tag('comment.delete'), comment_path(comment), :method => :delete, :remote => true %></small></div>
-  <% end %> -->
+  
   
   
 

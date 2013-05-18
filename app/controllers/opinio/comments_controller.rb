@@ -29,12 +29,24 @@ class Opinio::CommentsController < ApplicationController
     end
   end
 
+  def show
+    comment = Opinio.model_name.constantize.find(params[:id])
+    comment.owner = send(Opinio.current_user_method)
+  end
+
   def destroy
     @comment = Opinio.model_name.constantize.find(params[:id])
 
-    
 
-  
+    if can_destroy_opinio?(@comment)
+      @comment.destroy
+      set_flash(:notice, t('comment.delete_success'))
+    else
+      flash[:error]  = I18n.translate('opinio.comment.not_permitted', :default => "Not permitted")
+      logger.warn "user #{send(Opinio.current_user_method).id} tried to remove a comment from another user #{@comment.owner.id}"
+      render :text => "unauthorized", :status => 401 and return
+    end
+
     
 
     respond_to do |format|
@@ -42,11 +54,6 @@ class Opinio::CommentsController < ApplicationController
       format.html { redirect_to( opinio_after_destroy_path(@comment) ) }
     end
 
-    def can_destroy_opinio?
-      comment_destroy_conditions do |comment|
-        comment.owner == current_user
-      end
-    end
 
   end
   

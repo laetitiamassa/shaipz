@@ -695,3 +695,4 @@ en:
     sending_success: "Your comment has been successfully added to the conversation!"
     sending_error: "Oops, your comment can't be added to the conversation. Please verify your new comment field."
     delete: "delete"
+    delete_success: "You comment has been successfully deleted"

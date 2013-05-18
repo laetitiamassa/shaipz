@@ -6,7 +6,7 @@
         <%= link_to(image_tag(send(Opinio.current_user_method).picture.url(:thumb), :class => 'img-rounded'), user_path(send(Opinio.current_user_method))) %>
       </div>
       <div class="span11 new_comment">
-        <%= f.text_area :body, :type => "text", "data-provide" =>"typeahead", :placeholder => t("comment.placeholder", :name => @user.name_or_placeholder ) %>
+        <%= f.text_area :body, :type => "text", "data-provide" =>"typeahead", :placeholder => t("comment.placeholder", :name => send(Opinio.current_user_method).name_or_placeholder ) %>
       
         <%= hidden_field_tag :commentable_id, commentable.id %>
         <%= hidden_field_tag :commentable_type, commentable.class.base_class.name.to_s %>
