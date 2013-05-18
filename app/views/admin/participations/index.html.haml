@@ -27,7 +27,7 @@
         %td
           %span.label{ :class => ('label-success' if participation.share_on_facebook) }
             = participation.share_on_facebook
-        %td= l(participation.left_at, :format => :long) if participation.left?
+        %td= l(participation.left_at, :format => :short) if participation.left?
         %td
           = link_to edit_admin_participation_path(participation), :class => 'btn btn-small' do
             %i.icon-pencil
