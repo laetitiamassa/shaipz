@@ -147,10 +147,12 @@ fr:
     personal_timing: "Disponibilités : "
     personal_timing_form: "Quels sont vos 3 meilleurs moments de disponibilités pour une visite ou une réunion ?" 
     default_personal_timing: "à tout moment"
-    you_in_project: "Vous dans vos projets"
+    you_in_project: "Vous, dans vos projets"
     you_in_project_baseline: "Dans un projet, qu'est-ce qui vous va le mieux ?"
     what_you_best_at: "Quel est votre meilleur atout ?"
     what_your_role: "Quel rôle préférez-vous endosser dans un projet ?"
+    purpose: "Optique d'achat"
+
   skills:
     legal: "le juridique"
     numbers: "les comptes"
@@ -161,6 +163,14 @@ fr:
   roles:
     leader: "meneur de projet"
     joiner: "participant au projet"
+  rationales:
+    home: "ma résidence"
+    investment: "un investissement"
+    office: "mon bureau"
+    workshop: "mon atelier"
+    store: "mon commerce"
+    second_home: "ma seconde résidence"
+    other: "autre"
   statuses:
     not_buying: "Je n'achète pas pour l'instant."
     looking_for_opportunity: "Je n'achète pas pour l'instant, sauf si c'est une opportunité unique"
@@ -318,6 +328,7 @@ fr:
     check_below_leader_steps: "Découvrez ci-dessous comment devenir le porteur de ce projet, en quelques étapes seulement"
     check_below_tabs: "Cliquez sur les onglets pour en savoir plus sur le projet"
     maintain_tabs: "Vous pouvez maintenir chaque onglet du projet à jour, en éditant régulièrement le projet"
+    of: "de "
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."
     create_error: "Vous ne pouvez pas participer à ce projet."

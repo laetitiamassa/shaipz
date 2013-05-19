@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @building_types = @url_immo.building_types
     @skills = User.skills
     @roles = User.roles
+    @rationales = User.rationales
     
   end
 
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
     @personal_statuses = User.personal_statuses
     @skills = User.skills
     @roles = User.roles
+    @rationales = User.rationales
 
 
   end
@@ -36,6 +38,7 @@ class UsersController < ApplicationController
       @personal_statuses = User.personal_statuses
       @skills = User.skills
       @roles = User.roles
+      @rationales = User.rationales
      
       #flash[:alert] = t("profile.update_errors")
       render :edit

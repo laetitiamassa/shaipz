@@ -81,10 +81,15 @@
           <%= f.check_box :hide_budget %>
           <%= f.label :hide_budget, t("profile.hide_budget") %>
       </div>
-        <li class="cohousing-profile checkbox">
-          <%= f.check_box :cohousing %>
-          <%= f.label  :cohousing, t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
-        </ul>
+        <div class="row-fluid">
+          <li class="string span6">
+            <%= f.label :rationale, t("profile.purpose") %>
+            <%= f.select :rationale, @rationales, {:include_blank => true} %>
+          <li class="checkbox span6">
+            <%= f.check_box :cohousing %>
+            <%= f.label  :cohousing, t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
+        </div>
+      </ul>
       
 
 <legend><h2><i class="icon-calendar icon-large pull-left icon-muted"></i><%= t("profile.your_personal_realestate_timing") %></h2></legend>

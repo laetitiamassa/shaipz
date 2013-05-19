@@ -257,8 +257,15 @@
               <div class="span10 text-right">
                 <p>
                   <i><b><%= t("project.at_least") %> <%= p.minimum_space %> m2</b></i><br>
+                  
+                  <% if p.has_rationale? %>
+                    <small><i><%= t("rationales.#{p.rationale}") %></i></small>
+                    <% if !p.hide_budget || p == current_user %>
+                     <small><%= t("project.of") %></small>
+                    <% end %>
+                  <% end %>
                   <% if !p.hide_budget || p == current_user %>
-                    <small>max <%= p.maximum_budget %> €</small>
+                    <small>max. <%= p.maximum_budget %> €</small>
                   <% end %>
                 </p>
               </div>
@@ -274,7 +281,7 @@
           
         </div> <!-- end span4 -->
       </div> <!-- end row-fluid of pane 1 -->
-    
+
   </div> <!-- pane1 -->
 
 <!-- EVENT TAB -->

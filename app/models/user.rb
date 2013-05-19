@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying", "bought"]
   SKILLS = ["negotiation", "legal", "numbers", "organisation", "construction", "other"]
   ROLES = ["leader", "joiner"]
+  RATIONALES = ["home", "investment", "office", "workshop", "store", "second_home", "other"]
 
   has_many :projects, :foreign_key => "owner_id"
   has_many :reports, :as => :reportable
@@ -26,7 +27,7 @@ class User < ActiveRecord::Base
     :size => { :less_than => 2.megabytes }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget, :personal_timing, :skill, :role
+  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget, :personal_timing, :skill, :role, :rationale
 
   def authenticated_with_facebook?(session)
     !(session[:fb_access_token].nil?)
@@ -80,6 +81,16 @@ class User < ActiveRecord::Base
 
   def has_role?
     role.present?
+  end
+
+  def self.rationales
+    RATIONALES.map do |rationale|
+      [I18n.t("rationales.#{rationale}"), rationale]
+    end
+  end
+
+  def has_rationale?
+    rationale.present?
   end
 
   def has_picture?

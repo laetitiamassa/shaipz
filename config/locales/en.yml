@@ -145,10 +145,12 @@ en:
     personal_timing: "Availabilities: "
     personal_timing_form: "What are your 3 best moments for a visit or a meeting?" 
     default_personal_timing: "anytime"
-    you_in_project: "You in your projects"
+    you_in_project: "You, in your projects"
     you_in_project_baseline: "In a project, what are you more comfortable with?"
     what_you_best_at: "What do you feel best at?"
     what_your_role: "Which role would you prefer to endorse in a project?"
+    purpose: "Purpose of purchase"
+
   statuses:
     not_buying: "I'm not buying yet"
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity"
@@ -166,6 +168,14 @@ en:
   roles:
     leader: "project's leader"
     joiner: "project's participant"
+  rationales:
+    home: "my home"
+    investment: "an investment"
+    office: "my office"
+    workshop: "my workshop"
+    store: "my store"
+    second_home: "my second home"
+    other: "other"
   menu:
     home: "Home"
     profile: "My profile"
@@ -316,6 +326,7 @@ en:
     check_below_leader_steps: "Check below how you can become the leader of this project, in just a few steps"
     check_below_tabs: "Click on the tabs below to discover more about each aspect of the project"
     maintain_tabs: "You can maintain your project up to date, by editing the tabs hereunder"
+    of: "of "
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130518223944) do
+ActiveRecord::Schema.define(:version => 20130519113400) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20130518223944) do
     t.string   "personal_timing"
     t.string   "skill"
     t.string   "role"
+    t.string   "rationale"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
