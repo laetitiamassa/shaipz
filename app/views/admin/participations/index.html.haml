@@ -23,7 +23,7 @@
         %td= participation.id
         %td= link_to participation.participant_name_with_id, edit_admin_user_path(participation.participant) if participation.participant
         %td= link_to participation.project_name_with_id, edit_admin_project_path(participation.project)
-        %td= l(participation.created_at, :format => :long)
+        %td= l(participation.created_at, :format => :short)
         %td
           %span.label{ :class => ('label-success' if participation.share_on_facebook) }
             = participation.share_on_facebook

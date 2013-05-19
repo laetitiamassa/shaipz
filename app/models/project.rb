@@ -95,6 +95,14 @@ class Project < ActiveRecord::Base
     participants.any?
   end
 
+  def has_leader_thought?
+    leader_thought.present?
+  end
+
+  def has_event_description?
+    event_description.present?
+  end
+
   def has_enough_participants?
     owner_and_participants.count == maximum_shaipz.count
   end

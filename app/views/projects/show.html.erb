@@ -31,9 +31,16 @@
           <div class="span3 offset3"><%= link_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %></div>
 
          
+
+    
+        
+
         <% elsif @project.has_participant?(@user) %>
+            
+
         <div class="span3 offset3">
-          <%= button_to t("participation.destroy"), participation_path(@project), :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})", :class => 'btn btn-large btn-block' %></div>
+          <button type="button" class="btn btn-large btn-block btn-info" disabled><%= "##{@project.priority_order_for_participant(@user)}" %><%= t("  ") %><%= t("project.in_project") %></button>
+          </div>
         <% else %>
          <div class="span4 offset2 ">
           <%= form_for "participation", :url => participations_path do |f| %>
@@ -77,7 +84,7 @@
           <% end %>
       </div>
 
-      <% if @user.owner_of_project?(@project) %>
+      <% if @project.has_participant_or_owner?(@user) %>
         <div class="span2 offset1 text-right">
         <%= button_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})" %>
         </div>
@@ -108,6 +115,7 @@
       <p class="text-center"><%= t("project.check_below_tabs") %></p>
       <% end %>
 
+<!-- TABS -->
 <div class="tabbable">
   <ul class="nav nav-tabs text-center lead">
     <% if @project.suggested %>
@@ -134,7 +142,12 @@
       <% end %>
     </li>
   </ul>
+
+<!-- TABS CONTENT -->
   <div class="tab-content">
+
+<!-- BUILDING TAB -->
+<!-- LEFT SIDE -->
 
     <% if @project.suggested %>
     <div id="pane1" class="tab-pane active">
@@ -185,12 +198,16 @@
           <%= t("project.description_shaipz", :total_amount => number_to_currency(@project.total_amount, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u"), :total_space => @project.total_space) %>
         </div>
       </div> <!-- end span8 -->
+
+<!-- RIGHT SIDE -->
       <!-- leader's thought -->
       <div class="span4">
         <% if @project.suggested %>
         <p class="lead text-center inner-title"><%= t("project.lead_how") %></p>
-        <% else %>
+        <% elsif @project.has_leader_thought? %>
         <p class="lead text-center inner-title"><%= t("project.leader_thought") %></p>
+        <% else %>
+        <p class="lead text-center inner-title"><%= t("project.lead_by") %></p>
         <% end %>
         <div class="row-fluid">
           <div class="hero-unit participants-list span12"> 
@@ -203,7 +220,7 @@
               <li><b><%= t("project.lead_step_four") %></b><%= t("project.lead_step_four_bis") %></li>
             </ol>
           
-          <% else %>   
+          <% elsif @project.has_leader_thought? %>   
             <div class="span10 text-right">
               <p class="lead"><b><%= link_to(@owner.name? ? @owner.name : @owner.name_placeholder, user_path(@owner)) %></b></p>
             </div>
@@ -212,18 +229,48 @@
               </div>
             </div>
                 <p><i class="icon-quote-left icon-muted icon-4x"></i><%= @project.leader_thought %></p>
-                <% end %>      
+          <% else %>
+            <div class="span10 text-right">
+              <p class="lead"><b><%= link_to(@owner.name? ? @owner.name : @owner.name_placeholder, user_path(@owner)) %></b></p>
+            </div>
+            <div class="span2 event-participant">
+              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="left"  data-content="<%= t("statuses.#{@owner.personal_status}") if @owner.has_personal_status? %>" data-original-title="<%= @owner.has_name? ? @owner.name : @owner.name_placeholder %>" ><%= link_to(image_tag(@owner.picture.url(:thumb), :class => 'img-circle'), user_path(@owner)) %>
+              </div>
+            </div>
+          <% end %>      
           </div>
+          </div>
+          
+        <p class="lead text-center inner-title"><%=t("project.participants_preferences") %></p>
+        <% @participants.each do |p| %>
+        <div class="row-fluid">
+          <div class="hero-unit participants-list span12">    
+            <div class="span10 text-right">
+              <p>
+                <i><b><%= t("project.at_least") %> <%= p.minimum_space %> m2</b></i><br>
+                <% if !p.hide_budget || p == current_user %>
+                <small>max <%= p.maximum_budget %> €</small>
+                <% end %>
+              </p>
+            </div>
+            <div class="span2 event-participant text-center">
+              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="left"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-circle'), user_path(p)) %></div>
+            </div>
+          </div>
+      
+        <% end %>
+          
         </div>
       </div>
     </div> 
-    
+    </div>
   </div> <!-- pane1 -->
 
-
+<!-- EVENT TAB -->
     <div id="pane2" class="tab-pane">
       <div class="row-fluid">
-        
+
+<!-- EVENT LEFT SIDE -->     
         <div class="span8">
           
           <div clas="row-fluid">
@@ -256,15 +303,16 @@
           </div>
         </div>
 
-        
+        <% if @project.has_event_description? %>
         <p class="lead text-center"><%= t("project.additional_info") %></p>
         <div class="hero-unit details-event">
           <p><%= @project.event_description %></p>
         </div>
+        <% end %>
       </div>
       </div>
 
-      
+<!-- EVENT RIGHT SIDE -->      
       <div class="span4">
         <p class="lead text-center inner-title"><%=t("project.participants_availabilities") %></p>
         <% @participants.each do |p| %>
@@ -284,7 +332,7 @@
   </div>
     
 
-  <!-- PARTICIPANTS -->
+  <!-- PARTICIPANTS TAB -->
 
     <% if @project.suggested %>
     <div id="pane3" class="tab-pane">
@@ -293,7 +341,7 @@
     <% end %>
       <div class="row-fluid">
         
-      
+<!-- PARTICIPANTS LEFT SIDE --> 
       <div class="span9">
         <p class="lead inner-title text-center"><%= t("project.discuss") %>  
               <%= render_comments_form @project %>
@@ -329,33 +377,30 @@
 
       </div> <!-- span join conversation end -->
 
+<!-- PARTICIPANTS RIGHT SIDE -->
 <div class="span3">
         <p class="lead text-center"><%= t("project.discover_participants") %></p>
 
-        <% if @project.has_participant_or_owner?(@user) %>
-
-        <p class="text-center"><button type="button" class="btn btn-info" disabled><%= "##{@project.priority_order_for_participant(@user)}" %><%= t("  ") %><%= t("project.in_project") %></button></p>
-        <% end %>
+        
       
         <% @participants.each do |p| %>
         <div class="row-fluid">
           <div class="hero-unit participants-list span12">
         
             <div class="span3 profile-participant text-center">
-              
-              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="right"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-rounded'), user_path(p)) %></div>
-                 
+              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="right"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-rounded'), user_path(p)) %>
+              </div> 
             </div>
             <div class="span9">
               <p><b><%= link_to p.has_name? ? p.name : p.name_placeholder, user_path(p) %></b><br>
-              <!-- no need since it is in popover <i class="participants-status"><%= t("statuses.#{p.personal_status}") if p.has_personal_status? %></i></p> -->
+              <% if p.has_skill? %>
+              <i class="participants-status"><%= t("project.skill_i_master") %><%= t("skills.#{p.skill}") %></i></p>
+              <% end %>
             </div>
           </div>
         </div>
 
-        <ul class="nav nav-list">
-          <li class="divider"></li>
-        </ul>
+       
         <% end %>
       </div>
 

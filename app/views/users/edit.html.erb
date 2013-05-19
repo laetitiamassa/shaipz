@@ -97,7 +97,20 @@
           <%= f.text_field :personal_timing, :placeholder => t("profile.example_availability") %>
         </ul>
       
-      <div class="form-actions clear span8 offset2">
+      
+<legend><h2><i class="icon-group icon-large pull-left icon-muted"></i><%= t("profile.you_in_project") %></h2></legend>
+<p class="lead"><%= t("profile.you_in_project_baseline") %></p>
+<ul>
+          <li class="string">
+          <%= f.label :skill, t("profile.what_you_best_at") %>
+          <%= f.select :skill, @skills, {:include_blank => true} %>
+          <li class="string">
+          <%= f.label :role, t("profile.what_your_role") %>
+          <%= f.select :role, @roles, {:include_blank => true} %>
+
+</ul>
+
+<div class="form-actions clear span8 offset2">
         <%= f.submit t('profile.save_changes'), :class => "btn btn-large btn-block btn-success" %>   </div>
 
         <% end %> 

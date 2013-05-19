@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     @url_immo = SearchUrlGenerator.new("immoweb", @user)
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
+    @skills = User.skills
+    @roles = User.roles
     
   end
 
@@ -18,6 +20,8 @@ class UsersController < ApplicationController
     @urls = @url_immo.generate_urls
     @building_types = @url_immo.building_types
     @personal_statuses = User.personal_statuses
+    @skills = User.skills
+    @roles = User.roles
 
 
   end
@@ -30,7 +34,9 @@ class UsersController < ApplicationController
     else  
       
       @personal_statuses = User.personal_statuses
-      
+      @skills = User.skills
+      @roles = User.roles
+     
       #flash[:alert] = t("profile.update_errors")
       render :edit
     end

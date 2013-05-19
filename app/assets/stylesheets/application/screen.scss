@@ -384,19 +384,21 @@ blockquote {
 
 .participants-list {
   padding: 0px;
-  margin-bottom: -5px;
+  margin-bottom: 5px;
   background-color: #fafafa;
-
+  line-height: 25px;
 
   .profile-participant {
   padding: 8px 2px 0px 5px;
   }
 
-  .participants-status {
-  font-size: 0.8em;
+.participants-status {
+  font-size: 0.9em;
   }
-
 }
+
+ 
+
 
 .next-event {
   padding: 10px;

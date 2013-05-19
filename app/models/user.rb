@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   require 'csv'
 
   PERSONAL_STATUSES = ["not_buying", "looking_for_opportunity", "ready_but_bank", "ready_with_bank", "buying", "bought"]
+  SKILLS = ["negotiation", "legal", "numbers", "organisation", "construction", "other"]
+  ROLES = ["leader", "joiner"]
 
   has_many :projects, :foreign_key => "owner_id"
   has_many :reports, :as => :reportable
@@ -24,7 +26,7 @@ class User < ActiveRecord::Base
     :size => { :less_than => 2.megabytes }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget, :personal_timing
+  attr_accessible :email, :password, :remember_me, :cohousing, :favorite_areas, :minimum_space, :maximum_budget, :picture, :name, :personal_status, :hide_budget, :personal_timing, :skill, :role
 
   def authenticated_with_facebook?(session)
     !(session[:fb_access_token].nil?)
@@ -60,6 +62,26 @@ class User < ActiveRecord::Base
     facebook_user
   end
 
+  def self.skills 
+    SKILLS.map do |skill|
+      [I18n.t("skills.#{skill}"), skill]
+    end
+  end
+
+  def has_skill?
+    skill.present?
+  end
+
+  def self.roles
+    ROLES.map do |role|
+      [I18n.t("roles.#{role}"), role]
+    end
+  end
+
+  def has_role?
+    role.present?
+  end
+
   def has_picture?
     picture.present?
   end
@@ -89,6 +111,17 @@ class User < ActiveRecord::Base
       [I18n.t("statuses.#{status}"), status]
     end
   end
+
+  def self.roles 
+    ROLES.map do |role|
+      [I18n.t("roles.#{role}"), role]
+    end
+  end
+
+  def has_role?
+    role.present?
+  end
+
 
   def owner_of_project?(project)
     projects.include?(project)

@@ -2,6 +2,52 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  datetime:
+    distance_in_words:
+      half_a_minute: "half a minute"
+      less_than_x_seconds:
+        one:   "less than 1 second"
+        other: "less than %{count} seconds"
+      x_seconds:
+        one:   "1 second"
+        other: "%{count} seconds"
+      less_than_x_minutes:
+        one:   "less than a minute"
+        other: "less than %{count} minutes"
+      x_minutes:
+        one:   "1 minute"
+        other: "%{count} minutes"
+      about_x_hours:
+        one:   "about 1 hour"
+        other: "about %{count} hours"
+      x_days:
+        one:   "1 day"
+        other: "%{count} days"
+      about_x_months:
+        one:   "about 1 month"
+        other: "about %{count} months"
+      x_months:
+        one:   "1 month"
+        other: "%{count} months"
+      about_x_years:
+        one:   "about 1 year"
+        other: "about %{count} years"
+      over_x_years:
+        one:   "over 1 year"
+        other: "over %{count} years"
+      almost_x_years:
+        one:   "almost 1 year"
+        other: "almost %{count} years"
+    prompts:
+      year:   "Year"
+      month:  "Month"
+      day:    "Day"
+      hour:   "Hour"
+      minute: "Minute"
+      second: "Seconds"
+
+
+
   current_language: "en"
   english: "english"
   french: "french"
@@ -99,6 +145,10 @@ en:
     personal_timing: "Availabilities: "
     personal_timing_form: "What are your 3 best moments for a visit or a meeting?" 
     default_personal_timing: "anytime"
+    you_in_project: "You in your projects"
+    you_in_project_baseline: "In a project, what are you more comfortable with?"
+    what_you_best_at: "What do you feel best at?"
+    what_your_role: "Which role would you prefer to endorse in a project?"
   statuses:
     not_buying: "I'm not buying yet"
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity"
@@ -106,6 +156,16 @@ en:
     ready_with_bank: "I'm ready to buy and I've already seen the bank"
     buying: "I'm over ready to buy now (bank and tour of market: done!)"
     bought: "I'm now a happy owner!"
+  skills:
+    legal: "legal"
+    numbers: "numbers"
+    organisation: "organisation & people"
+    negotiation: "negotiation"
+    construction: "home improvement work"
+    other: "other"
+  roles:
+    leader: "project's leader"
+    joiner: "project's participant"
   menu:
     home: "Home"
     profile: "My profile"
@@ -135,11 +195,14 @@ en:
     details_of_project: "Details of the project"
     details_of_origin: "Original details"
     leader_thought: "The leader's thought"
+    lead_by: "This project is led by"
     progression: "Progression of the project"
     your_next_event: "Your next event"
     additional_info: "Additional information"
     participants_availabilities: "Participants' availabilities"
-    discover_participants: "Discover the participants"
+    participants_preferences: "Participants' preferences"
+    at_least: "at least"
+    discover_participants: "The participants"
     discuss: "Join the conversation"
     cannot_find: "Can't find what you want here?"
     want_more: "Want more?"
@@ -158,7 +221,7 @@ en:
     people: "The people"
     whats_project: "What project do you want to create?"
     project_baseline: "Choose an appealing title, the number of units and whether it is a cohousing project"
-    happenings: "The happenings"
+    happenings: "The next event"
     copy_and_paste_relevant_details: "(Then you can copy and paste the relevant details into the form below)"
     create_project: "Create your project"
     for_cohousing: "Cohousing"
@@ -231,6 +294,7 @@ en:
       notarial_deed: "The notarial deed has been executed!"
       move_in : "We are happily moving in! :-D"
     personal_timing: "I can come "
+    skill_i_master: "I deal with "
     how_to_get_notified: "How to get instant notifications?"
     go_to_bottom: "Go to the bottom of the comment pane"
     click_on_subscribe: 'and click on "subscribe via email"'

@@ -5,6 +5,50 @@ fr:
   time:
     formats:
       short: "%d/%m à %H:%M -"
+  datetime:
+    distance_in_words:
+      half_a_minute: "30 secondes"
+      less_than_x_seconds:
+        one:   "moins d'une seconde"
+        other: "moins de %{count} secondes"
+      x_seconds:
+        one:   "1 seconde"
+        other: "%{count} secondes"
+      less_than_x_minutes:
+        one:   "moins d'un minute"
+        other: "moins de %{count} minutes"
+      x_minutes:
+        one:   "1 minute"
+        other: "%{count} minutes"
+      about_x_hours:
+        one:   "il y a une heure"
+        other: "il y a %{count} heures"
+      x_days:
+        one:   "1 jour"
+        other: "%{count} jours"
+      about_x_months:
+        one:   "il y a 1 mois"
+        other: "il y a %{count} mois"
+      x_months:
+        one:   "1 mois"
+        other: "%{count} mois"
+      about_x_years:
+        one:   "il y a 1 an"
+        other: "il y a %{count} ans"
+      over_x_years:
+        one:   "plus d'1 an"
+        other: "plus de %{count} ans"
+      almost_x_years:
+        one:   "presque 1 an"
+        other: "presque %{count} ans"
+    prompts:
+      year:   "Année"
+      month:  "Mois"
+      day:    "Jour"
+      hour:   "Heure"
+      minute: "Minute"
+      second: "Seconde"
+
 
   current_language: "fr"
   english: "anglais"
@@ -103,6 +147,20 @@ fr:
     personal_timing: "Disponibilités : "
     personal_timing_form: "Quels sont vos 3 meilleurs moments de disponibilités pour une visite ou une réunion ?" 
     default_personal_timing: "à tout moment"
+    you_in_project: "Vous dans vos projets"
+    you_in_project_baseline: "Dans un projet, qu'est-ce qui vous va le mieux ?"
+    what_you_best_at: "Quel est votre meilleur atout ?"
+    what_your_role: "Quel rôle préférez-vous endosser dans un projet ?"
+  skills:
+    legal: "le juridique"
+    numbers: "les comptes"
+    organisation: "l'organisation"
+    negotiation: "la négociation"
+    construction: "les travaux"
+    other: "j'ai d'autres atouts"
+  roles:
+    leader: "meneur de projet"
+    joiner: "participant au projet"
   statuses:
     not_buying: "Je n'achète pas pour l'instant."
     looking_for_opportunity: "Je n'achète pas pour l'instant, sauf si c'est une opportunité unique"
@@ -139,11 +197,14 @@ fr:
     details_of_project: "Détails du projet"
     details_of_origin: "Détails d'origine"
     leader_thought: "Ce qu'en pense le leader"
+    lead_by: "Ce projet est mené par"
     progression: "Progression du projet"
     your_next_event: "Votre prochain événement"
     additional_info: "Informations complémentaires"
     participants_availabilities: "Disponibilités des participants"
-    discover_participants: "Découvrez les participants"
+    participants_preferences: "Préférences des participants"
+    at_least: "au moins"
+    discover_participants: "Les participants"
     discuss: "Rejoignez la conversation"
     cannot_find: "Vous ne trouvez pas votre bonheur ici ?"
     want_more: "Vous en voulez plus ?"
@@ -162,7 +223,7 @@ fr:
     people: "Les personnes"
     whats_project: "Quel est le projet que vous souhaitez créer ?"
     project_baseline: "Choisissez un titre attirant, le nombre d'unités et s'il s'agit ou non d'un habitat groupé"
-    happenings: "Les événements"
+    happenings: "Le prochain événement"
     copy_and_paste_relevant_details: "(Ensuite, il vous suffit de copier et coller les informations pertinentes dans le formulaire ci-dessous)"
     create_project: "Créez votre projet"
     for_cohousing: "Habitat groupé"
@@ -235,6 +296,7 @@ fr:
       notarial_deed: "L'acte authentique a été signé !"
       move_in : "Nous emménageons ! :-D"
     personal_timing: "Je peux venir "
+    skill_i_master: "Je gère "
     how_to_get_notified: "Comment recevoir des notifications ?"
     go_to_bottom: "Rendez-vous au bas des commentaires"
     click_on_subscribe: 'et cliquez sur "subscribe via email"'
