@@ -28,6 +28,14 @@ class ProjectCreator
     User.all.select{ |user| user.zipcodes.include?(project.zipcode) if user.id != owner.id } 
   end 
 
+  #def leaders_in_district
+   # users_in_district.where(:role = "leader")
+  #end
+
+  #def has_leaders_in_district?
+   # leaders_in_district.any?
+  #end
+
   def has_users_in_district?
     users_in_district.any?
   end

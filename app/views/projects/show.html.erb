@@ -249,6 +249,7 @@
             </div>
           </div>
           
+          <% unless @project.suggested %>
           <p class="lead text-center inner-title"><%=t("project.participants_preferences") %></p>
           <% @participants.each do |p| %>
           <div class="row-fluid">
@@ -268,6 +269,7 @@
               </div>
             </div>
           </div>
+          <% end %>
           <% end %>
           
         </div> <!-- end span4 -->
