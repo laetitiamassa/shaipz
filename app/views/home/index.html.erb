@@ -76,7 +76,72 @@
 </div>
 
 
-<!-- how it works in three steps -->
+
+
+<!-- quotations -->
+<div class="quotations">
+      <div class="row-fluid title">
+        <div class="span3 next-title">
+          <ul class="nav nav-list">
+            <li class="divider"></li>
+          </ul>
+        </div>
+        <div class="span6">
+          <h1 class="text-center"><%= t("home.what_they_say") %></h1>
+        </div>
+        <div class="span3 next-title">
+          <ul class="nav nav-list">
+            <li class="divider next-title"></li>
+          </ul>
+        </div>
+      </div>
+ 
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-interval="10" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-interval="10" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-interval="10" data-slide-to="2"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item">
+      <blockquote>
+        <img src="assets/beatricedelvaux.jpg" class="img-rounded image-eloge">
+        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+        <p class="eloge"><%= t("home.quote_beatricedelvaux") %></p>
+        <small>Béatrice Delvaux, <cite title="Source Title"><%= t("home.position_beatricedelvaux") %></cite></small>
+      </blockquote>
+    </div>
+    <div class="item">
+      <blockquote>
+        <img src="assets/andreduval.png" class="img-rounded image-eloge">
+        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+        <p class="eloge"><%= t("home.quote_andreduval") %></p>
+        <small>André Duval, <cite title="Source Title"><%= t("home.position_andreduval") %></cite></small>
+      </blockquote>
+    </div>
+    <div class="item">
+      <blockquote>
+        <img src="assets/melaniemaquinay.jpg" class="img-rounded image-eloge">
+        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
+        <p class="eloge"><%= t("home.quote_melaniemaquinay") %></p>
+        <small>Mélanie Maquinay, <cite title="Source Title"><%= t("home.position_melaniemaquinay") %></cite></small>
+      </blockquote>
+    </div>
+  </div>
+  <div class="row-fluid">
+  <div class="span4 offset4 last-more"><%= link_to t("legal.more"), about_path, :class =>"btn btn-block btn-link" %></div>
+</div>
+
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> 
+
+
+</div>
+</div> <!-- end quotations -->
+
+  <!-- how it works in three steps -->
 
   
     <div class="how-three-steps">
@@ -142,87 +207,11 @@
 </div>
 </div>
 
-<!-- quotations -->
-<div class="quotations">
-  <div class="row-fluid title">
-        <div class="span3 next-title">
-          <ul class="nav nav-list">
-            <li class="divider"></li>
-          </ul>
-        </div>
-        <div class="span6">
-          <h1 class="text-center"><%= t("home.what_they_say") %></h1>
-        </div>
-        <div class="span3 next-title">
-          <ul class="nav nav-list">
-            <li class="divider next-title"></li>
-          </ul>
-        </div>
-      </div>
- 
-<div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-interval="10" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-interval="10" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-interval="10" data-slide-to="2"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item">
-      <blockquote>
-        <img src="assets/beatricedelvaux.jpg" class="img-rounded image-eloge">
-        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
-        <p class="eloge"><%= t("home.quote_beatricedelvaux") %></p>
-        <small>Béatrice Delvaux, <cite title="Source Title"><%= t("home.position_beatricedelvaux") %></cite></small>
-      </blockquote>
-    </div>
-    <div class="item">
-      <blockquote>
-        <img src="assets/andreduval.png" class="img-rounded image-eloge">
-        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
-        <p class="eloge"><%= t("home.quote_andreduval") %></p>
-        <small>André Duval, <cite title="Source Title"><%= t("home.position_andreduval") %></cite></small>
-      </blockquote>
-    </div>
-    <div class="item">
-      <blockquote>
-        <img src="assets/melaniemaquinay.jpg" class="img-rounded image-eloge">
-        <i class="icon-quote-left icon-4x pull-left icon-muted"></i>
-        <p class="eloge"><%= t("home.quote_melaniemaquinay") %></p>
-        <small>Mélanie Maquinay, <cite title="Source Title"><%= t("home.position_melaniemaquinay") %></cite></small>
-      </blockquote>
-    </div>
-  </div>
-  <div class="span4 offset4 last-more"><%= link_to t("legal.more"), about_path, :class =>"btn btn-block btn-link" %></div>
-
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a> 
 
 
 </div>
-</div>
-</div>
 
-<!-- HOW IT WORKS - awaiting illustrations
 
-<div class="row-fluid home-how">
-  <div class="span12">
-    <h1 class="text-center">How it works</h1>
-    <p class="text-center">You can either</p>
-    
-    <div class="row-fluid">
-      <div class="span4 offset2">
-        <h2 class="text-center">Create a project</h2>
-        <p class="text-center">bla bla bl aoaipr foazuhfpma znfpaozdf poazfoazhfpoazhefoa   zhfpaozhfzofpazfaze flazqi flisudhpuh pzaejflaz jdfnlqisufzfl iazfliqzufqzufhpz ufpziufbphib hlzifblqs</p>
-      </div>
-      <div class="span4">
-        <h2 class="text-center">Join a project</h2>
-        <p class="text-center">bla bla bl aoaipr foazuhfpma znfpaozdf poazfoazhfpoazhefoa   zhfpaozhfzofpazfaze flazqi flisudhpuh pzaejflaz jdfnlqisufzfl iazfliqzufqzufhpz ufpziufbphib hlzifblqs</p>
-      </div>
-    </div>
-  </div>
-</div>  -->
 
 </div>
 

@@ -24,7 +24,7 @@
  
   	<p class="lead"><%= t("friend_invitation.title") %></p>
 		<p><%= t("friend_invitation.subtitle") %> <%= link_to t("share"), "https://www.facebook.com/dialog/feed?app_id=#{FACEBOOK_APP_ID}&link=http://shaipz.com&name=Shaipz,%20collaborative%20home%20buying&caption=Shaipz.com&description=" + t("friend_invitation.description_facebook") + "&redirect_uri=" + user_url(current_user) +
-          "&picture=http://shaipz.com/assets/shaipz_logo.jpeg" %> <%= t("friend_invitation.subtitle_middle") %> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://shaipz.com" data-text="I've just joined #Shaipz, a new way to get my dream home and neighbours! Join Shaipz for free now" data-via="shaipzapp" data-lang="en" data-count="none"> Tweet </a> <%= t("friend_invitation.subtitle_end") %> </p>
+          "&picture=http://shaipz.com/assets/shaipz_logo.jpeg" %> <%= t("friend_invitation.subtitle_middle") %> <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://shaipz.com" data-text="I've just joined #Shaipz, a new way to get my dream home and neighbours! Join Shaipz for free now" data-via="shaipz" data-lang="en" data-count="none"> Tweet </a> <%= t("friend_invitation.subtitle_end") %> </p>
 
 	<%= form_tag("/friend_invitations", :method => "post") do %>
 			
