@@ -157,8 +157,23 @@ nav-bar-inner .container {
   opacity: 0.2;
   }
   i {
-  color: #a2a4a4;
+    cursor: pointer;
   }
+  p {
+    font-family: 'Ubuntu', sans-serif;
+  }
+}
+
+
+
+.colored {
+    color: #90dcf3
+}
+
+
+
+.end-page {
+  margin-bottom: 45px;
 }
 
 .image-eloge {
@@ -188,6 +203,7 @@ blockquote {
 .carousel-inner {
   height: 125px;
 }
+
 
 
 #advantages {

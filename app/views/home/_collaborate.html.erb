@@ -1,0 +1,59 @@
+<div id="collaborate" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><i class="icon-group icon-large pull-left colored"> </i><%= t("home.collaborate_header") %></h3>
+  </div>
+  
+  <div class="modal-body">
+    
+    <p class="lead"><i class="icon-comments icon-large pull-left icon-muted"></i><%= t("home.collaborate_content1") %></p>
+    
+    <p><%= t("home.collaborate_content2") %></p>
+    
+    <p><%= t("home.collaborate_content3") %></p>
+
+    <div class="text-center"><%= image_tag("comment-demo.png") %></div>
+    
+    <br>
+    <ul class="nav nav-list">
+      <li class="divider"></li>
+    </ul>
+
+    <p class="lead"><i class="icon-road icon-large pull-left icon-muted"></i><%= t("home.collaborate_content4") %></p> 
+    
+    <p><%= t("home.collaborate_content5") %> 
+
+    <br><%= t("home.collaborate_content6") %></p>
+    
+    <p><%= t("home.collaborate_content7") %></p>
+
+    <div class="row-fluid">
+      <div class="hero-unit search_link span10 offset1 text-right">
+        <p class="text-center"><%= t("project.statuses.global_offer_acceptance") %></p>
+        <div class="progress progress-striped active">
+          <div class="bar" style="width: 80%"></div>
+        </div>
+      </div> 
+    </div>
+
+    <br>
+    <ul class="nav nav-list">
+      <li class="divider"></li>
+    </ul>
+
+    <p class="lead"><i class="icon-shield icon-large pull-left icon-muted"></i><%= t("home.collaborate_content8") %></p>
+
+    <p><%= t("home.collaborate_content9") %></p>
+    
+    <p><%= t("home.collaborate_content10") %></p>
+
+    <p><%= t("home.collaborate_content11") %><%= link_to "Legal Pack", legal_path %><%= t("home.collaborate_content12") %></p>
+  
+
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn" href="#explore" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><%= t("home.explore") %><i class="icon-chevron-left pull-left"></i></button>
+    <a class="btn btn-info" href="#enjoy" data-toggle="modal" data-dismiss="modal" aria-hidden="true"><%= t("home.enjoy") %><i class="icon-chevron-right pull-right"></i></a>
+   </div>
+ </div>
