@@ -9,7 +9,7 @@ class ProjectCreator
 
   def create
     if project.save
-      NotificationMailer.after_creation(owner, project).deliver
+      NotificationMailer.after_creation(owner, project).deliver unless project.suggested
       NotificationMailer.create_project(owner, project, users_interested_in_cohousing).deliver if project.cohousing
       NotificationMailer.create_project_in_my_district(owner, project, users_in_district).deliver if has_users_in_district? unless project.suggested
       NotificationMailer.suggest_project_to_lead(owner, project, users_in_district).deliver if has_users_in_district? && project.suggested
