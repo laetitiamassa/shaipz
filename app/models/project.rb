@@ -75,12 +75,8 @@ class Project < ActiveRecord::Base
     (average_district_price - average_price)*100/average_district_price
   end
 
-  def owner.has_name?
-    owner.name.present?
-  end
-
   def owner_name
-    owner.has_name? ? owner.name : owner.name_placeholder
+    owner.name.present? ? owner.name : owner.name_placeholder
   end
 
   def has_picture?
