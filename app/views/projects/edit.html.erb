@@ -121,9 +121,9 @@
 </div> -->
 
 
-  <div class="control-group error">
-    <div class="control-label" for="inputError"><%= f.label :zipcode, t("project.zipcode") %></div>
-    <div class="controls" id="inputError"><%= f.text_field :zipcode, :placeholder => t("example_zipcode"), :value => nil %></div>
+  <div class="control-group">
+    <%= f.label :zipcode, t("project.zipcode") %>
+    <%= f.text_field :zipcode, :placeholder => t("example_zipcode") %>
   </div>
 </div>
 
