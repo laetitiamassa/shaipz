@@ -62,15 +62,16 @@
               
               <div class="span8 with-facebook">
               <% if @project.suggested %>
-                <%= f.submit t("project.lead_project"), :class => 'btn btn-block btn-large btn-success' %>
+                <div class="wait"><%= f.submit t("project.lead_project"), :class => 'btn btn-block btn-large btn-success' %></div>
               <% else %>
-                <%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %>
+                <div class="wait"><%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %></div>
               <% end %> 
             </div>
                         
             <% end %>
           </div>
         <% end %>
+        
      
 
       <div class="span3">
@@ -447,6 +448,7 @@ $(function ()
 $(function ()
 { $(".p-status").popover();
     html: true;
+
 });
 </script>
 
@@ -459,6 +461,23 @@ $(function ()
       });
 
 </script>
+
+<script type="text/javascript">
+    $(document).ready (function(){
+      
+        $(".wait").click(function(){
+          $("#Spinner").modal("show");   
+        });
+      });
+
+</script>
+
+<div id="Spinner" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="text-center">
+    <i class="icon-spinner icon-spin icon-4x"></i>
+    <h1><%= t("wait") %></h1>
+  </div>
+</div>
 
 
 

@@ -63,9 +63,9 @@
 								<% end %>
 
                             <% if project.suggested %>
-                            <%= f.submit t("project.lead"), :class => 'btn btn-block btn-large btn-success' %>
+                            <div class="wait"><%= f.submit t("project.lead"), :class => 'btn btn-block btn-large btn-success' %></div>
                             <% else %>
-							<%= f.submit t("project.join"), :class => 'btn btn-block btn-large btn-info' %>
+							<div class="wait"><%= f.submit t("project.join"), :class => 'btn btn-block btn-large btn-info' %></div>
                             <% end %>
 							<% end %>
 						<% end %>
@@ -88,4 +88,22 @@ $(function ()
     html: true;
 });
 </script>
+
+<script type="text/javascript">
+    $(document).ready (function(){
+      
+        $(".wait").click(function(){
+          $("#Spinner").modal("show");   
+        });
+      });
+
+</script>
+
+
+<div id="Spinner" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="text-center">
+    <i class="icon-spinner icon-spin icon-4x"></i>
+    <h1><%= t("wait") %></h1>
+  </div>
+</div>
 

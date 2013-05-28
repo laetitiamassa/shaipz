@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130519113400) do
+ActiveRecord::Schema.define(:version => 20130525175205) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(:version => 20130519113400) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
 
+  create_table "campaigns", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "video_file_name"
+    t.string   "video_content_type"
+    t.integer  "video_file_size"
+    t.datetime "video_updated_at"
+  end
+
   create_table "comments", :force => true do |t|
     t.integer  "owner_id",         :null => false
     t.integer  "commentable_id",   :null => false
@@ -37,6 +48,12 @@ ActiveRecord::Schema.define(:version => 20130519113400) do
     t.datetime "updated_at",       :null => false
   end
 
+  create_table "leads", :force => true do |t|
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "participations", :force => true do |t|
     t.integer  "participant_id",                      :null => false
     t.integer  "project_id",                          :null => false
@@ -44,9 +61,6 @@ ActiveRecord::Schema.define(:version => 20130519113400) do
     t.datetime "updated_at",                          :null => false
     t.boolean  "share_on_facebook", :default => true
     t.datetime "left_at"
-    t.string   "prefered_part"
-    t.string   "prefered_timing"
-    t.string   "ability"
   end
 
   create_table "projects", :force => true do |t|

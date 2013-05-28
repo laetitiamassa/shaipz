@@ -59,6 +59,7 @@ en:
   example_zipcode: "1000"
   example_city: "Brussels"
   example_text: "Describe briefly the next event"
+  wait: "almost there..."
   generals:
     hello: "Hello"
     goodbye: "Good bye"
