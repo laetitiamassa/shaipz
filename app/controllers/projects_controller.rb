@@ -42,6 +42,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @owner = @project.owner
     @participants = @project.owner_and_participants
+  
     
   end
 

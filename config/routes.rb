@@ -19,7 +19,7 @@ Shaipz::Application.routes.draw do
     resources :users
     resources :participations
 
-    root :to => 'projects#index'
+    root :to => 'users#index'
   end
 
   resources :users do
