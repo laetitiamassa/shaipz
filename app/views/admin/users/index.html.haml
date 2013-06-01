@@ -6,7 +6,10 @@
   registered users, among which
   %span
     %b= @user_active.count
-  are active
+  are active (which represents
+  %span
+    %b= @user_active.count / @users.count
+  percents)
 
 .btn-group 
   = link_to "Export to CSV", admin_users_path(:format => :csv), :class => 'btn btn-info'
