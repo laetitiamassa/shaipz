@@ -5,7 +5,7 @@
     %b= @users.count 
   registered users, among which
   %span
-    %b= @users.ongoing.count
+    %b= @users.remembered?.count
   are active
 
 .btn-group 
