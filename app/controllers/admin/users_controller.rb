@@ -5,6 +5,7 @@ class Admin::UsersController < Admin::BaseController
       format.html
       format.csv { send_data @users.to_csv }
     end
+    @active = User.active
   end
 
   def edit
