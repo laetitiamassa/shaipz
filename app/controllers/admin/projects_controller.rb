@@ -1,6 +1,8 @@
 class Admin::ProjectsController < Admin::BaseController
   def index
     @projects = Project.all
+    @project_active = Project.active
+    @name = Project.name
   end
 
   def new

@@ -3,7 +3,10 @@
   There has been  
   %span
     %b= @projects.count 
-  projects created so far
+  projects created so far, among which
+  %span
+    %b= @project_active.count
+  are currently active
 
 .btn-group
   = link_to "Create a new project", new_admin_project_path, :class => 'btn btn-info'
