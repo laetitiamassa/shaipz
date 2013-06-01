@@ -1,0 +1,20 @@
+<div class="howitworks-header page-header">
+    
+    <div class="project-name">
+      <h1><%= @project.name %>
+        <% if @project.cohousing? %>
+        <%= image_tag ("cohousing.png"), {:title => t("project.logo_cohousing")} %>
+        <% end %>
+      </h1>
+    </div>
+  </div>
+
+  <div class="hero-unit project ">
+      <div class="snippet-project">
+        <% if @project.has_average_district_price? %>
+          <a class="reduction" rel="tooltip" data-placement="left" data-original-title="<%= t("stream.economy") %>" ><div class="discount"><i class="icon-bookmark icon-4x"></i>
+            <div class="percentage">-<%= number_to_percentage(@project.discount, :precision => 0) %></div>
+          </div></a>
+        <% end %>
+        <%= image_tag @project.picture.url(:medium) %>
+  </div>

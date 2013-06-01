@@ -1,0 +1,64 @@
+<!-- EVENT TAB -->
+    <div id="pane2" class="tab-pane">
+      <div class="row-fluid">
+
+<!-- EVENT LEFT SIDE -->     
+        <div class="span8">
+          
+          <div clas="row-fluid">
+            <div class="span6 offset3">
+              <p class="lead text-center"><%= t("project.progression") %></p>
+            </div>
+            <div class="span3 text-right">
+              <% if @user.owner_of_project?(@project) %>
+              <%= link_to t("project.edit"), edit_project_path(@project), :class => "btn btn-block" %>
+              <% end %>
+            </div>
+          </div>
+          
+
+            <div class="span12">
+
+          <%= render 'project-status' %>
+
+        <p class="lead text-center"><%= t("project.your_next_event") %></p>
+        
+        <div class="hero-unit next-event text-center">
+          <div class="row-fluid">
+            <div class="span2">
+              <i class="icon-bell-alt icon-4x pull-right"></i>
+            </div>
+            <div class="span9">
+              <h2><%= @project.event_type %></h2>
+              <h4><%= @project.event_date %></h4>
+            </div>
+          </div>
+        </div>
+
+        <% if @project.has_event_description? %>
+        <p class="lead text-center"><%= t("project.additional_info") %></p>
+        <div class="hero-unit details-event">
+          <p><%= @project.event_description %></p>
+        </div>
+        <% end %>
+      </div>
+      </div>
+
+<!-- EVENT RIGHT SIDE -->      
+      <div class="span4">
+        <p class="lead text-center inner-title"><%=t("project.participants_availabilities") %></p>
+        <% @participants.each do |p| %>
+        <div class="row-fluid">
+          <div class="hero-unit participants-list span12">    
+            <div class="span10 text-right">
+              <p><i><b><%= p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder %></b></i></p>
+            </div>
+            <div class="span2 event-participant text-center">
+              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="left"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-circle'), user_path(p)) %></div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

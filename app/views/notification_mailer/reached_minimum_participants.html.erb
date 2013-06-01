@@ -1,0 +1,19 @@
+<h2><%= t("notification.mail.reached_minimum_participants.headline") %></h2>
+
+<p><%= t("notification.mail.reached_minimum_participants.content1", :name => @user.has_name? ? @user.name : @user.name_placeholder) %>  "<%= link_to @project.name, project_url(@project) %>".<br>
+	<%= t("notification.mail.reached_minimum_participants.content2") %> <b><%= t("notification.mail.reached_minimum_participants.content3") %></b>!</p>
+
+<p><%= t("notification.mail.reached_minimum_participants.content4") %> <%= link_to t("notification.mail.reached_minimum_participants.content4bis"), @project.source_link %>, <%= t("notification.mail.reached_minimum_participants.content5") %></p>
+
+<p><%= t("notification.mail.reached_minimum_participants.content6") %> <b><%= t("notification.mail.reached_minimum_participants.content7") %></b>, <%= t("notification.mail.reached_minimum_participants.content8") %></p>
+
+<h3><%= t("notification.mail.reached_minimum_participants.content9") %></h3>
+<p><%= t("notification.mail.reached_minimum_participants.content10") %> <b><%= link_to "checklist", how_it_works_url %></b> <%= t("notification.mail.reached_minimum_participants.content11") %></p>
+
+<h2><%= t("notification.mail.reached_minimum_participants.content12") %></h2>
+<p><%= t("notification.mail.reached_minimum_participants.content13") %><br>
+<%= t("notification.mail.reached_minimum_participants.content14") %> <%= link_to "Legal Pack", legal_url %> <%= t("notification.mail.reached_minimum_participants.content15") %></p>
+
+
+<p><%= t("notification.mail.signature")%></p>
+<p class="signature"><%= t("notification.mail.team")%></p>

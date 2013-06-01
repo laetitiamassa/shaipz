@@ -29,6 +29,15 @@ class NotificationMailer < ActionMailer::Base
     )
   end
 
+  def reached_minimum_participants(user,project) #when minimum count of participants is reached
+    @user    = user
+    @project = project
+    mail(
+      :bcc => @project.owner_and_participants.map(&:email),
+      :subject => t("notification.mail.reached_minimum_participants.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :project => @project.name)
+    )
+  end
+
   def after_creation(user,project) #after having created a new project
     @user    = user
     @project = project
