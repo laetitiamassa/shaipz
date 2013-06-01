@@ -1,11 +1,11 @@
 class Admin::UsersController < Admin::BaseController
   def index
     @users = User.order('created_at DESC')
+    @user_active = User.where("current_sign_in_at < ?", 30.days.ago)
     respond_to do |format|
       format.html
       format.csv { send_data @users.to_csv }
     end
-    @user_active = User.where("current_sign_in_at < ?", 30.days.ago)
   end
 
   def edit
