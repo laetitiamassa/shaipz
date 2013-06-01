@@ -163,7 +163,7 @@ class User < ActiveRecord::Base
   end
 
   def active
-    current_sign_in_at < Date.now-30.days
+    where (:current_sign_in_at < Date.now-30.days)
   end
 
   def signed_in_before?
