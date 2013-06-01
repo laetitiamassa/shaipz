@@ -5,7 +5,7 @@ class Admin::UsersController < Admin::BaseController
       format.html
       format.csv { send_data @users.to_csv }
     end
-    @user_active = User.where("current_sign_in_at < ?", 30.days.ago)
+    @user_active_count = User.where("current_sign_in_at < ?", 30.days.ago).count
   end
 
   def edit
