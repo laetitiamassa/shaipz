@@ -3,7 +3,10 @@
   There are currently
   %span
     %b= @users.count 
-  registered users 
+  registered users, among which
+  %span
+    %b= @users.active.count
+  are active
 
 .btn-group
   = link_to "Export to CSV", admin_users_path(:format => :csv), :class => 'btn btn-info'
