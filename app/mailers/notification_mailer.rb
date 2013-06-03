@@ -89,7 +89,7 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     mail(
       :bcc => users_concerned.map(&:email),
-      :subject => t("notification.mail.create_project_in_my_district.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder) 
+      :subject => t("notification.mail.create_project_in_my_district.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :zipcode => @project.zipcode, :city => @project.city) 
     )
   end
 
@@ -98,7 +98,7 @@ class NotificationMailer < ActionMailer::Base
     @user    = user
     mail(
       :bcc => users_concerned.map(&:email),
-      :subject => t("notification.mail.suggest_project_to_lead.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder) 
+      :subject => t("notification.mail.suggest_project_to_lead.subject", :name => @user.has_name? ? @user.name : @user.name_placeholder, :zipcode => @project.zipcode, :city => @project.city) 
     )
   end
 
