@@ -85,87 +85,6 @@
 
 <!-- Modal Signup-->
 <div id="Signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-<!-- SHAIPZ IN MY COUNTRY mailing list -->
-
-<!-- Js IN & OUT of Belgium -->
-
-<script type="text/javascript">
-  $(document).ready (function(){
-      $("#in").hide();
-      $("#out").hide();
-        $("#inbelgium").click(function(){
-          $("#in").slideDown("active");
-          $("#inout").hide();
-        });
-        $("#outbelgium").click(function(){
-          $("#out").slideDown("active");
-          $("#inout").hide();
-        });
-      });
-
-</script>
-
-<!-- in or out belgium -->
-
-<section id="inout">
-
-  <div class="modal-header">
-    <h3 id="myModalLabel"><%= t("home.sign_up_for_shaipz") %></h3>
-  </div>
-
-  <div class="modal-body">
-    <button class="btn btn-large btn-block btn-info" id="inbelgium"><i class="icon-globe icon-large"></i> Je cherche un appart en Belgique </button>
-    <br>
-    <button class="btn btn-large btn-block" id="outbelgium"><i class="icon-globe icon-large"></i> Je cherche un appart hors de Belgique </button>
-  </div>
-
-</section>
-
-<!-- out of belgium -->
-
-    <section id="out">
-      <div class="modal-header">
-        <h3 id="myModalLabel">Shaipz dans votre pays</h3>
-      </div>
-      <div class="modal-body">
-        <!-- Begin MailChimp Signup Form -->
-        <div id="mc_embed_signup">
-          <form action="http://facebook.us4.list-manage1.com/subscribe/post?u=72883b765aeb3ec6b84ce8313&amp;id=74a56a439a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          
-          <h4 class="text-center">Shaipz est actuellement disponible en Belgique.</h4>
-          <p class="text-center">Mais nous vous notifierons dès que Shaipz sera disponible dans votre pays : </p>
-          <div class="indicates-required text-right"><small><span class="asterisk">*</span> champs requis</small></div>
-      
-          <div class="mc-field-group">
-            <label for="mce-COUNTRY"><b>Votre pays  </b><span class="asterisk">*</span>
-            </label>
-            <input type="text" value="" name="COUNTRY" class="required input-xlarge" id="mce-COUNTRY">
-          </div>
-          <div class="mc-field-group">
-            <label for="mce-EMAIL"><b>Votre adresse email  </b><span class="asterisk">*</span>
-          </label>
-            <input type="email" value="" name="EMAIL" class="required email input-xlarge" id="mce-EMAIL">
-          </div>
-      </div>
-      <div class="modal-footer">
-            <div id="mce-responses" class="clear">
-              <div class="response" id="mce-error-response" style="display:none"></div>
-              <div class="response" id="mce-success-response" style="display:none"></div>
-            </div> 
-
-            <div class="clear">
-              <input type="submit" value="Notifiez-moi !" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info btn-large">
-            </div>
-          </form>
-          </div>
-
-<!--End mc_embed_signup-->
-      </div>
-    </section>
-
-<!-- in belgium -->
-<div id="in">
   <div class="modal-header">
     <h3 id="myModalLabel"><%= t("home.sign_up_for_shaipz") %></h3>
   </div>
@@ -239,8 +158,90 @@
   
     </section>
   </div>
-</div> <!-- in -->
-</div>
+ <!-- in -->
+
+
+<!-- SHAIPZ IN MY COUNTRY mailing list -->
+
+<!-- Js IN & OUT of Belgium -->
+
+<!-- <script type="text/javascript">
+  $(document).ready (function(){
+      $("#in").hide();
+      $("#out").hide();
+        $("#inbelgium").click(function(){
+          $("#in").slideDown("active");
+          $("#inout").hide();
+        });
+        $("#outbelgium").click(function(){
+          $("#out").slideDown("active");
+          $("#inout").hide();
+        });
+      });
+
+</script> -->
+
+<!-- in or out belgium 
+
+<section id="inout">
+
+  <div class="modal-header">
+    <h3 id="myModalLabel"><%= t("home.sign_up_for_shaipz") %></h3>
+  </div>
+
+  <div class="modal-body">
+    <button class="btn btn-large btn-block btn-info" id="inbelgium"><i class="icon-globe icon-large"></i> Je cherche un appart en Belgique </button>
+    <br>
+    <button class="btn btn-large btn-block" id="outbelgium"><i class="icon-globe icon-large"></i> Je cherche un appart hors de Belgique </button>
+  </div>
+
+</section> -->
+
+<!-- out of belgium 
+
+    <section id="out">
+      <div class="modal-header">
+        <h3 id="myModalLabel">Shaipz dans votre pays</h3>
+      </div>
+      <div class="modal-body">
+        <!-- Begin MailChimp Signup Form -->
+   <!--     <div id="mc_embed_signup">
+          <form action="http://facebook.us4.list-manage1.com/subscribe/post?u=72883b765aeb3ec6b84ce8313&amp;id=74a56a439a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          
+          <h4 class="text-center">Shaipz est actuellement disponible en Belgique.</h4>
+          <p class="text-center">Mais nous vous notifierons dès que Shaipz sera disponible dans votre pays : </p>
+          <div class="indicates-required text-right"><small><span class="asterisk">*</span> champs requis</small></div>
+      
+          <div class="mc-field-group">
+            <label for="mce-COUNTRY"><b>Votre pays  </b><span class="asterisk">*</span>
+            </label>
+            <input type="text" value="" name="COUNTRY" class="required input-xlarge" id="mce-COUNTRY">
+          </div>
+          <div class="mc-field-group">
+            <label for="mce-EMAIL"><b>Votre adresse email  </b><span class="asterisk">*</span>
+          </label>
+            <input type="email" value="" name="EMAIL" class="required email input-xlarge" id="mce-EMAIL">
+          </div>
+      </div>
+      <div class="modal-footer">
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div> 
+
+            <div class="clear">
+              <input type="submit" value="Notifiez-moi !" name="subscribe" id="mc-embedded-subscribe" class="btn btn-info btn-large">
+            </div>
+          </form>
+          </div>
+
+<!--End mc_embed_signup-->
+    </div>
+    </section> 
+
+<!-- in belgium -->
+
+  
 
 
 
