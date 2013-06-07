@@ -1,21 +1,24 @@
 <% reply = defined?(reply) ? reply : false %>
 <div id="comment_<%= comment.id %>">
-	<div class="row-fluid hero-unit comment">
-		<div class="span1">
+	<div class="row-fluid">
+		<div class="span2 text-right">
+
       <%= link_to(image_tag(comment.owner.picture.url(:thumb), :class => 'img-rounded'), user_path(comment.owner)) %>
+          <br><small><%= link_to truncate(comment.owner.name_or_placeholder, :length => 11), user_path(comment.owner) %></small>
     </div>
-    <div class="span11">
+    <div class="span10 bubble">
       <div class="row-fluid">
-    		<div class="span11">
-    			<small><%= link_to comment.owner.name_or_placeholder, user_path(comment.owner) %></small>
+        <div class="span11">
+          <%= simple_format(comment.body) %>
         </div>
+    		
         <div class="span1">
           <% if comment.owner == send(Opinio.current_user_method) %>
-            <div class="text-right"><small><b><%= link_to "x", comment_path(comment), :method => "delete", :remote => true %></b></small></div>
+          <div class="text-right"><small><b><%= link_to "x", comment_path(comment), :method => "delete", :remote => true %></b></small></div>
           <% end %> 
         </div>
       </div>
-			<%= simple_format(comment.body) %>
+			
     </div>
    
   </div>

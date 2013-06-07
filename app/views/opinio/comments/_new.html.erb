@@ -1,11 +1,11 @@
 <div id="new_comment">
   <% if send(Opinio.current_user_method) %>
     <%= form_for Comment.new, :remote => false do |f| %>
-    <div class="row-fluid hero-unit comment">
+    <div class="row-fluid">
       <div class="span1">
         <%= link_to(image_tag(send(Opinio.current_user_method).picture.url(:thumb), :class => 'img-rounded'), user_path(send(Opinio.current_user_method))) %>
       </div>
-      <div class="span11 new_comment">
+      <div class="span11 bubble new_comment">
         <%= f.text_area :body, :type => "text", "data-provide" =>"typeahead", :placeholder => t("comment.placeholder", :name => send(Opinio.current_user_method).name_or_placeholder ) %>
       
         <%= hidden_field_tag :commentable_id, commentable.id %>

@@ -578,10 +578,18 @@ select {
   }
 
 .new_comment textarea {
-  width: 620px;
+  width: 610px;
   height: 37px;
   margin-bottom: 4px;
   }
+
+ .new_comment .bubble {
+   background: #eee;
+ }
+
+ .new_comment .bubble:after{
+  border-color: transparent #eee;
+ }
 
 .add-comment {
   position: relative;
@@ -591,7 +599,47 @@ select {
 }
 
 
+.bubble 
+{
+margin: 5px 0 5px 2px;
+position: relative;
+width: 650px;
+min-height: 75px;
+padding: 7px;
+background: #eee;
+border: #eee solid 3px;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 10px;
+}
 
+.bubble:after 
+{
+content: "";
+position: absolute;
+top: 17px;
+left: -7px;
+border-style: solid;
+border-width: 7px 7px 7px 0;
+border-color: transparent #eee;
+display: block;
+width: 0;
+z-index: 1;
+}
+
+.bubble:before 
+{
+content: "";
+position: absolute;
+top: 15px;
+left: -12px;
+border-style: solid;
+border-width: 9px 9px 9px 0;
+border-color: transparent #eee;
+display: block;
+width: 0;
+z-index: 0;
+}
 
 
 /* User Profile Edit */
