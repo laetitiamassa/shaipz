@@ -402,6 +402,9 @@ fr:
     check_below_tabs: "Cliquez sur les onglets pour en savoir plus sur le projet"
     maintain_tabs: "Vous pouvez maintenir chaque onglet du projet à jour, en éditant régulièrement le projet"
     of: "de "
+    missing_rationale: "ajoutez votre but"
+    missing_personal_timing: "ajoutez vos disponibilités"
+    missing_skill: "ajoutez votre atout"
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."
     create_error: "Vous ne pouvez pas participer à ce projet."

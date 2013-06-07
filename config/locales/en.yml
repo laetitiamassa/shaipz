@@ -400,6 +400,9 @@ en:
     check_below_tabs: "Click on the tabs below to discover more about each aspect of the project"
     maintain_tabs: "You can maintain your project up to date, by editing the tabs hereunder"
     of: "of "
+    missing_rationale: "add your purpose"
+    missing_personal_timing: "add your availabilities"
+    missing_skill: "What are you best at?"
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."

@@ -650,6 +650,18 @@ z-index: 0;
 
 }
 
+.missing {
+  color: red;
+  a {
+  color: red;
+  }
+}
+
+.change { 
+  a {
+  color: #0088cc;
+  }
+}
 
 
 /* Projects Streams */

@@ -51,7 +51,16 @@
         <div class="row-fluid">
           <div class="hero-unit participants-list span12">    
             <div class="span10 text-right">
-              <p><i><b><%= p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder %></b></i></p>
+              <% if p == current_user && !p.has_personal_timing? %>
+                <p><i class="missing"><i class="icon-edit"></i> <%= link_to t("project.missing_personal_timing"), edit_user_path(p) %></i></p>
+              
+              <% elsif p == current_user && p.has_personal_timing? %>
+                <p>
+                <span> <%= link_to image_tag("edit-icon.png", :size => "16x16"), edit_user_path(p) %></span> <i><%= p.personal_timing %></i></p>
+                    
+              <% else %>
+                <p><i><%= p.has_personal_timing? ? p.personal_timing : p.personal_timing_placeholder %></i></p>
+              <% end %>
             </div>
             <div class="span2 event-participant text-center">
               <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="left"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-circle'), user_path(p)) %></div>

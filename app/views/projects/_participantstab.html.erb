@@ -59,7 +59,16 @@
             <div class="span9">
               <p><b><%= link_to p.has_name? ? p.name : p.name_placeholder, user_path(p) %></b><br>
               <% if p.has_skill? %>
-              <i class="participants-status"><%= t("project.skill_i_master") %><%= t("skills.#{p.skill}") %></i></p>
+                <i class="participants-status"><%= t("project.skill_i_master") %><%= t("skills.#{p.skill}") %></i>
+                <% if p == current_user %>
+                  <span class="pull-right"><%= link_to image_tag("edit-icon.png", :size => "16x16"), edit_user_path(p) %></span>
+                <% end %>
+              </p>
+              <% else %>
+                <% if p == current_user %>
+                <i class="participants-status missing"><i class="icon-edit"></i> <%= link_to t("project.missing_skill"), edit_user_path(p) %></i>
+                <% end %>
+                </p>
               <% end %>
             </div>
           </div>
