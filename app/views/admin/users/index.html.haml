@@ -1,15 +1,31 @@
 .page-header
   %h1 Users
-  There are currently
-  %span3
-    %h2= @users.count 
-  registered users, among which
-  %span3
-    %h2= @user_active.count
-  are active
-  %span3
-    %h2= @user_buying.count
-  are over ready to buy now
+ 
+  .row-fluid
+    .span2 
+      .hero-unit.text-center 
+        %h2= @users.count 
+        registered users
+    .span2
+      .hero-unit.text-center
+        %h2= @user_active.count
+        active users
+    .span2 
+      .hero-unit.text-center 
+        %h2= @user_ready_but_bank.count
+        haven't seen their bank yet
+    .span2 
+      .hero-unit.text-center 
+        %h2= @user_ready_with_bank.count
+        have seen their bank already
+    .span2 
+      .hero-unit.text-center 
+        %h2= @user_buying.count
+        are over ready to buy now
+    .span2 
+      .hero-unit.text-center 
+        %h2= @user_hiding_budget.count
+        hide their budget
 
 .btn-group 
   = link_to "Export to CSV", admin_users_path(:format => :csv), :class => 'btn btn-info'
