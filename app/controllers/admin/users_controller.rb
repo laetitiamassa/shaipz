@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   def index
     @users = User.order('created_at DESC')
     @user_active = User.where("current_sign_in_at < ?", 31.days.ago)
-    @user_buying = User.where("personal_status" == "buying")
+    @user_buying = User.where(:personal_status => "buying")
     respond_to do |format|
       format.html
       format.csv { send_data @users.to_csv }
