@@ -12,16 +12,8 @@
         active users
     .span2 
       .hero-unit.text-center 
-        %h2= @user_ready_but_bank.count
-        haven't seen their bank yet
-    .span2 
-      .hero-unit.text-center 
-        %h2= @user_ready_with_bank.count
-        have seen their bank already
-    .span2 
-      .hero-unit.text-center 
-        %h2= @user_buying.count
-        are over ready to buy now
+        %h2= @user_ready.count
+        feel ready
     .span2 
       .hero-unit.text-center 
         %h2= @user_hiding_budget.count

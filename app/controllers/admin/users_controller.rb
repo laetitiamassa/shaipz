@@ -5,6 +5,7 @@ class Admin::UsersController < Admin::BaseController
     @user_buying = User.where(:personal_status => "buying")
     @user_ready_but_bank = User.where(:personal_status => "ready_but_bank")
     @user_ready_with_bank = User.where(:personal_status => "ready_with_bank")
+    @user_ready = User.where(:personal_statuses => "ready_but_bank" or "ready_with_bank" or "buying")
     @user_hiding_budget = User.where(:hide_budget => true)
     respond_to do |format|
       format.html
