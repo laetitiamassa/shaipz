@@ -93,37 +93,38 @@
 <!-- TABS -->
 <div class="tabbable">
   <ul class="nav nav-tabs text-center lead">
-    <% if @project.suggested %>
-    <li class="active">
-    <% else %>
-    <li>
-      <% end %>
+    
+  
+    <li> 
       <a href="#pane1" data-toggle="tab"><i class="icon-building"></i><%= t("project.tab_building") %></a>
     </li>
+
     <% if @project.suggested %>
     <li class="disabled">
       <a data-toggle="tab"><i class="icon-calendar"></i><%= t("project.tab_events") %></a>
     <% else %>
     <li>  
-      <a href="#pane2" data-toggle="tab"><i class="icon-calendar"></i><%= t("project.tab_events") %></a>
+      <a href="#pane2" data-toggle="tab"><i class="icon-time"></i><%= t("project.tab_events") %></a>
       <% end %>
     </li>
+
     <% if @project.suggested %>
     <li class="disabled">
       <a data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
     <% else %>
-    <li class="active">
+    <li>
       <a href="#pane3" data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
       <% end %>
     </li>
-    <!-- <% if @project.suggested %>
-    <li>
-      <a data-toggle="tab"><i class="icon-user"></i><%= t("project.you") %></a>
-    <% else %>
+
+   
     <li class="active">
       <a href="#pane4" data-toggle="tab"><i class="icon-user"></i><%= t("project.you") %></a>
-      <% end %>
-    </li> -->
+    </li>
+
+    <!--<li>
+      <a href="#pane5" data-toggle="tab"><i class="icon-shield"></i> <%= t("project.shield") %></a> 
+    </li>-->
   </ul>
 
 <!-- TABS CONTENT -->
@@ -135,8 +136,10 @@
     
     <%= render "participantstab" %> 
 
-    <!-- <%= render "youtab" %>
+    <%= render "youtab" %>
 
+    <!-- <%= render "shieldtab" %> -->
+ 
   </div><!-- /.tab-content -->
 </div><!-- /.tabbable -->
 

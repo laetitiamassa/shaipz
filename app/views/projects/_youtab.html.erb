@@ -1,29 +1,265 @@
 <!-- YOU TAB -->
+<div id="pane4" class="tab-pane active">
+
+
+<div class="row-fluid"> 
+  <h2 class="text-center what">Now what?</h2>
+
+<!-- ONE SIDE -->
+
 <% if @project.suggested %>
-    <div id="pane4" class="tab-pane">
-    <% else %>
-    <div id="pane4" class="tab-pane"> <!-- when back, this will be active class -->
-    <% end %> 
-   
-      <div class="row-fluid">
 
-<!-- LEFT SIDE -->     
-        <div class="span8 offset3">
-        	ok, ce projet vous plaît.
-        	Que faire alors ?
-        	<ul class="icons-ul">
-  <li><i class="icon-li icon-ok"></i>vérifier s'il vous plaît VRAIMENT</li>
-  <li><i class="icon-li icon-ok"></i>il vous plaît vraiment ? Alors cliquez sur "rejoindre" !</li>
-  <li><i class="icon-li icon-ok"></i>complétez votre profil - et vérifiez que vous avez une adresse email que vous consultez régulièrement</li>
-  <li><i class="icon-li icon-ok"></i>lancez ou participez à la conversation autour de ce projet, pour le faire avancer</li>
-  <li><i class="icon-li icon-ok"></i>il y a suffisamment de participants au projet ? Réunissez-vous !</li>
-  <li><i class="icon-li icon-ok"></i>&hellip;and many more with custom CSS</li>
-</ul>
-        	
-        </div>
-<!-- RIGHT SIDE -->
-		 <div class="span8">
-        </div>
-
-    </div>
+  <h4>If you are interested in leading this brand new project, click on  "lead the project", and follow these few tips:</h4>
+  
+  <div class="row-fluid">
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-eye-open icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-phone icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-pencil icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-bullhorn icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-rocket icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-envelope icon-light"></i>
+</span>
+<div class="row-fluid text-center">
+<div class="span2">
+LOOK<br>
+at the original ad<br>
+and the building tab
 </div>
+<div class="span2">
+CALL<br>
+the seller<br>
+for a visit
+</div>
+<div class="span2">
+EDIT<br>
+the project to fit your tastes
+</div>
+<div class="span2">
+SHARE<br>
+the project among your networks
+</div>
+<div class="span2">
+LEAD<br>
+participants through meetings
+</div>
+<div class="span2">
+CHECK<br>
+your emails. Often.<br>
+More often.
+</div>
+</div>
+</div>
+
+<% else %>
+
+  <% if @user.owner_of_project?(@project) %>
+
+  <h4>Congrats for your brand new project, <%= @user.name %>! Here are a few tips to make it happen:</h4>
+
+    <div class="row-fluid">
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-user icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-phone icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-pencil icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-time icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-comments-alt icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-bullhorn icon-light"></i>
+</span>
+<div class="row-fluid text-center">
+<div class="span2">
+COMPLETE<br>
+your profile
+to inform participants
+</div>
+<div class="span2">
+CALL<br>
+the seller<br>
+for a visit
+</div>
+<div class="span2">
+EDIT<br>
+the project to fit your tastes
+</div>
+<div class="span2">
+ORGANIZE<br>
+the next meeting or the next visit
+</div>
+<div class="span2">
+DISCUSS<br>
+with the other participants
+</div>
+<div class="span2">
+SHARE<br>
+the project among your network
+</div>
+
+</div>
+</div>
+         
+
+  <% elsif @project.has_participant?(@user) %>
+
+  <h4>Congrats for joining this awesome project, <%= @user.name %>! Here are a few tips to make it happen:</h4>
+
+<div class="row-fluid">
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-user icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-eye-open icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-time icon-light"></i>
+</span>
+
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-comments-alt icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-bullhorn icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-envelope icon-light"></i>
+</span>
+<div class="row-fluid text-center">
+<div class="span2">
+COMPLETE<br>
+your profile to inform participants
+</div>
+<div class="span2">
+LOOK<br>
+at the original ad<br>
+but also at each tab
+</div>
+<div class="span2">
+GET READY<br>
+for the next meeting or the next visit
+</div>
+<div class="span2">
+DISCUSS<br>
+with the other participants
+</div>
+<div class="span2">
+SHARE<br>
+the project among your network
+</div>
+<div class="span2">
+CHECK<br>
+your emails. Often.<br>
+More often.
+</div>
+</div>
+</div>
+
+         
+
+  <% else %>
+
+    <h4>If you are interested in getting a piece of this great project, click on "join the project" and follow these few tips:</h4>
+
+    <div class="row-fluid text-center">
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-eye-open icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-time icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-user icon-light"></i>
+</span>
+
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-comments-alt icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-bullhorn icon-light"></i>
+</span>
+<span class="icon-stack icon-3x span2">
+  <i class="icon-circle icon-stack-base"></i>
+  <i class="icon-envelope icon-light"></i>
+</span>
+<div class="row-fluid text-center">
+<div class="span2">
+LOOK<br>
+at the original ad<br>
+but also at each tab
+</div>
+<div class="span2">
+GET READY<br>
+for the next meeting or the next visit
+</div>
+<div class="span2">
+COMPLETE<br>
+your profile to inform participants
+</div>
+<div class="span2">
+DISCUSS<br>
+with the other participants
+</div>
+<div class="span2">
+SHARE<br>
+the project among your network
+</div>
+<div class="span2">
+CHECK<br>
+your emails. Often.<br>
+More often.
+</div>
+</div>
+</div>
+    
+
+  <% end %>
+
+<% end %>
+</div>
+<br>
+<br>
+</div>
+
+
+

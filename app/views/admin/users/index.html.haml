@@ -2,11 +2,14 @@
   %h1 Users
   There are currently
   %span
-    %b= @users.count 
+    %h2= @users.count 
   registered users, among which
   %span
-    %b= @user_active.count
+    %h2= @user_active.count
   are active
+  %p
+    %h2= @user_buying.count
+  are over ready to buy now
 
 .btn-group 
   = link_to "Export to CSV", admin_users_path(:format => :csv), :class => 'btn btn-info'
