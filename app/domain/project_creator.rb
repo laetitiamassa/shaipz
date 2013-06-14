@@ -12,7 +12,7 @@ class ProjectCreator
       NotificationMailer.after_creation(owner, project).deliver unless project.suggested
       NotificationMailer.create_project(owner, project, users_interested_in_cohousing).deliver if project.cohousing
       NotificationMailer.create_project_in_my_district(owner, project, users_in_district).deliver if has_users_in_district? unless project.suggested
-      NotificationMailer.suggest_project_to_lead(owner, project, users_in_district).deliver if has_users_in_district? && project.suggested
+      NotificationMailer.suggest_project_to_lead(owner, project, leaders_in_district).deliver if has_leaders_in_district? && project.suggested
       facebook_service.post_project_on_wall(project) if facebook_service && project.share_on_facebook
       true
     else
@@ -28,13 +28,13 @@ class ProjectCreator
     User.all.select{ |user| user.zipcodes.include?(project.zipcode) if user.id != owner.id } 
   end 
 
-  #def leaders_in_district
-   # users_in_district.where(:role = "leader")
-  #end
+  def leaders_in_district
+   User.where(:role => "leader") if users_in_district
+  end
 
-  #def has_leaders_in_district?
-   # leaders_in_district.any?
-  #end
+  def has_leaders_in_district?
+   leaders_in_district.any?
+  end
 
   def has_users_in_district?
     users_in_district.any?

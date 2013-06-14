@@ -162,9 +162,6 @@ class User < ActiveRecord::Base
     current_sign_in_at.present?
   end
 
-  def active
-    current_sign_in_at < Date.now-30.days
-  end
 
   def signed_in_before?
     last_sign_in_at.present?
