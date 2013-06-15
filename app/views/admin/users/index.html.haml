@@ -3,19 +3,19 @@
  
   .row-fluid
     .span2 
-      .hero-unit.text-center 
+      .hero-unit.low-margin.text-center 
         %h2= @users.count 
         registered users
     .span2
-      .hero-unit.text-center
+      .hero-unit.low-margin.text-center
         %h2= @user_active.count
         active users
     .span2 
-      .hero-unit.text-center 
+      .hero-unit.low-margin.text-center 
         %h2= @user_ready_but_bank.count + @user_ready_with_bank.count + @user_buying.count
         feel ready
     .span2 
-      .hero-unit.text-center 
+      .hero-unit.low-margin.text-center 
         %h2= @user_hiding_budget.count
         hide their budget
 
