@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::BaseController
   def index
     @users = User.order('created_at DESC')
-    @user_active = User.where("current_sign_in_at < ?", 31.days.ago)
+    @user_active = User.where("current_sign_in_at =< ?", 31.days.ago)
     @user_buying = User.where(:personal_status => "buying")
     @user_ready_but_bank = User.where(:personal_status => "ready_but_bank")
     @user_ready_with_bank = User.where(:personal_status => "ready_with_bank")

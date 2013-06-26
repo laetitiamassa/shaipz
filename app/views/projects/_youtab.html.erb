@@ -3,13 +3,12 @@
 
 
 <div class="row-fluid"> 
-  <h2 class="text-center what">Now what?</h2>
 
 <!-- ONE SIDE -->
 
 <% if @project.suggested %>
 
-  <h4>If you are interested in leading this brand new project, click on  "lead the project", and follow these few tips:</h4>
+  <h4><%= t("project.you_tab_intro_lead") %></h4>
   
   <div class="row-fluid">
 <span class="icon-stack icon-3x span2">
@@ -38,31 +37,31 @@
 </span>
 <div class="row-fluid text-center">
 <div class="span2">
-LOOK<br>
-at the original ad<br>
-and the building tab
+<%= t("project.look") %><br>
+<%= t("project.at_original_ad") %><br>
+<%= t("project.and_building_tab") %>
 </div>
 <div class="span2">
-CALL<br>
-the seller<br>
-for a visit
+<%= t("project.call") %><br>
+<%= t("project.the_seller") %><br>
+<%= t("project.for_visit") %>
 </div>
 <div class="span2">
-EDIT<br>
-the project to fit your tastes
+<%= t("project.youtab_edit") %><br>
+<%= t("project.to_your_taste") %>
 </div>
 <div class="span2">
-SHARE<br>
-the project among your networks
+<%= t("project.share") %><br>
+<%= t("project.among_your_network") %>
 </div>
 <div class="span2">
-LEAD<br>
-participants through meetings
+<%= t("project.lead") %><br>
+<%= t("project.through_meetings") %>
 </div>
 <div class="span2">
-CHECK<br>
-your emails. Often.<br>
-More often.
+<%= t("project.check") %><br>
+<%= t("project.mails_often") %><br>
+<%= t("project.more_often") %>
 </div>
 </div>
 </div>
@@ -71,7 +70,8 @@ More often.
 
   <% if @user.owner_of_project?(@project) %>
 
-  <h4>Congrats for your brand new project, <%= @user.name %>! Here are a few tips to make it happen:</h4>
+  <h4><%= t("project.you_tab_intro_owner") %> <%= @user.name_or_placeholder %>! </h4> 
+  <p><%= t("project.you_tab_content") %></p>
 
     <div class="row-fluid">
 <span class="icon-stack icon-3x span2">
@@ -100,30 +100,29 @@ More often.
 </span>
 <div class="row-fluid text-center">
 <div class="span2">
-COMPLETE<br>
-your profile
-to inform participants
+<%= t("project.complete") %><br>
+<%= t("project.your_profile_to_inform") %>
 </div>
 <div class="span2">
-CALL<br>
-the seller<br>
-for a visit
+<%= t("project.call") %><br>
+<%= t("project.the_seller") %><br>
+<%= t("project.for_visit") %>
 </div>
 <div class="span2">
-EDIT<br>
-the project to fit your tastes
+<%= t("project.youtab_edit") %><br>
+<%= t("project.to_your_taste") %>
 </div>
 <div class="span2">
-ORGANIZE<br>
-the next meeting or the next visit
+<%= t("project.organize") %><br>
+<%= t("project.the_next_event") %>
 </div>
 <div class="span2">
-DISCUSS<br>
-with the other participants
+<%= t("project.discuss") %><br>
+<%= t("project.with_others") %>
 </div>
 <div class="span2">
-SHARE<br>
-the project among your network
+<%= t("project.share") %><br>
+<%= t("project.among_your_network") %>
 </div>
 
 </div>
@@ -132,7 +131,8 @@ the project among your network
 
   <% elsif @project.has_participant?(@user) %>
 
-  <h4>Congrats for joining this awesome project, <%= @user.name %>! Here are a few tips to make it happen:</h4>
+  <h4><%= t("project.you_tab_intro_participant") %> <%= @user.name_or_placeholder %>!</h4>
+  <p><%= t("project.you_tab_content") %></p>
 
 <div class="row-fluid">
 <span class="icon-stack icon-3x span2">
@@ -162,30 +162,30 @@ the project among your network
 </span>
 <div class="row-fluid text-center">
 <div class="span2">
-COMPLETE<br>
-your profile to inform participants
+<%= t("project.complete") %><br>
+<%= t("project.your_profile_to_inform") %>
 </div>
 <div class="span2">
-LOOK<br>
-at the original ad<br>
-but also at each tab
+<%= t("project.look") %><br>
+<%= t("project.at_original_ad") %><br>
+<%= t("project.and_building_tab") %>
 </div>
 <div class="span2">
-GET READY<br>
-for the next meeting or the next visit
+<%= t("project.get_ready") %><br>
+<%= t("project.for_next_event") %>
 </div>
 <div class="span2">
-DISCUSS<br>
-with the other participants
+<%= t("project.discuss") %><br>
+<%= t("project.with_others") %>
 </div>
 <div class="span2">
-SHARE<br>
-the project among your network
+<%= t("project.share") %><br>
+<%= t("project.among_your_network") %>
 </div>
 <div class="span2">
-CHECK<br>
-your emails. Often.<br>
-More often.
+<%= t("project.check") %><br>
+<%= t("project.mails_often") %><br>
+<%= t("project.more_often") %>
 </div>
 </div>
 </div>
@@ -194,7 +194,7 @@ More often.
 
   <% else %>
 
-    <h4>If you are interested in getting a piece of this great project, click on "join the project" and follow these few tips:</h4>
+    <h4><%= t("project.you_tab_intro_join") %></h4>
 
     <div class="row-fluid text-center">
 <span class="icon-stack icon-3x span2">
@@ -224,30 +224,30 @@ More often.
 </span>
 <div class="row-fluid text-center">
 <div class="span2">
-LOOK<br>
-at the original ad<br>
-but also at each tab
+<%= t("project.look") %><br>
+<%= t("project.at_original_ad") %><br>
+<%= t("project.and_building_tab") %>
 </div>
 <div class="span2">
-GET READY<br>
-for the next meeting or the next visit
+<%= t("project.get_ready") %><br>
+<%= t("project.for_next_event") %>
 </div>
 <div class="span2">
-COMPLETE<br>
-your profile to inform participants
+<%= t("project.complete") %><br>
+<%= t("project.your_profile_to_inform") %>
 </div>
 <div class="span2">
-DISCUSS<br>
-with the other participants
+<%= t("project.discuss") %><br>
+<%= t("project.with_others") %>
 </div>
 <div class="span2">
-SHARE<br>
-the project among your network
+<%= t("project.share") %><br>
+<%= t("project.among_your_network") %>
 </div>
 <div class="span2">
-CHECK<br>
-your emails. Often.<br>
-More often.
+<%= t("project.check") %><br>
+<%= t("project.mails_often") %><br>
+<%= t("project.more_often") %>
 </div>
 </div>
 </div>

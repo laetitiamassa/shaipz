@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   opinio_subjectum
 
-  PROJECT_STATUSES = ["building_discovery", "people_discovery", "interest_confirmation", "feasibility_stamp", "internal_agreement",
+  PROJECT_STATUSES = ["called_seller", "building_discovery", "people_discovery", "interest_confirmation", "feasibility_stamp", "internal_agreement",
                       "global_offer_making", "global_offer_acceptance","sales_agreement","challenges_fixing", "notarial_deed", "move_in"]
 
   EVENT_TYPES = ["meeting", "visit", "other"]

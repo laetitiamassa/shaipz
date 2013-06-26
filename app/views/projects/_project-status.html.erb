@@ -1,67 +1,436 @@
-<p><%= t("project.statuses.#{@project.project_status}") if @project.has_project_status? %></p>
+<% if @project.has_project_status? %>
+<p><%= t("project.statuses.#{@project.project_status}") %></p>
+
+          <% if @project.project_status == "called_seller" %>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-3x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-phone icon-light"></i>
+                </span>  
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-building icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-group icon-light"></i>
+                </span>  
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
+          <% end %>
 
           <% if @project.project_status == "building_discovery" %>
-                <div class="progress progress-striped active">
-                <div class="bar bar-warning" style="width: 10%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-phone icon-light"></i>
+                </span>  
+                <span class="icon-stack icon-3x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-building icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-group icon-light"></i>
+                </span>  
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span>   
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>
           <% end %>
 
           <% if @project.project_status == "people_discovery" %>
-                <div class="progress progress-striped active">
-                <div class="bar bar-warning" style="width: 20%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-phone icon-light"></i>
+                </span>  
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-building icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-3x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-group icon-light"></i>
+                </span>  
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "interest_confirmation" %>
-                <div class="progress progress-striped active">
-                <div class="bar bar-warning" style="width: 40%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-smile icon-light"></i>
+                </span>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-ok icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-link icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-money icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-thumbs-up icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "feasibility_stamp" %>
-                <div class="progress progress-striped active">
-                <div class="bar" style="width: 50%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-smile icon-light"></i>
+                </span>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-ok icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-link icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-money icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-thumbs-up icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "internal_agreement" %>
-                <div class="progress progress-striped active">
-                <div class="bar" style="width: 70%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-smile icon-light"></i>
+                </span>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-ok icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-link icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-money icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-thumbs-up icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "global_offer_making" %>
-                <div class="progress progress-striped active">
-                <div class="bar" style="width: 75%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-smile icon-light"></i>
+                </span>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-ok icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-link icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-money icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-thumbs-up icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "global_offer_acceptance" %>
-                <div class="progress progress-striped active">
-                <div class="bar" style="width: 80%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-smile icon-light"></i>
+                </span>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-ok icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-link icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-money icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-thumbs-up icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "sales_agreement" %>
-                <div class="progress progress-striped active">
-                <div class="bar" style="width: 85%"></div>
-                </div>
+                <span class="icon-stack icon-large">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-large">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-3x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-exchange icon-light"></i>
+                </span>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-wrench icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-certificate icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "challenges_fixing" %>
-                <div class="progress progress-striped active">
-                <div class="bar bar-success" style="width: 95%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-exchange icon-light"></i>
+                </span>
+                <span class="icon-stack icon-3x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-wrench icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-certificate icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "notarial_deed" %>
-                <div class="progress progress-striped active">
-                <div class="bar bar-succes" style="width: 100%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-exchange icon-light"></i>
+                </span>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-wrench icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-3x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-certificate icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
 
           <% if @project.project_status == "move_in" %>
-                <div class="progress">
-                <div class="bar bar-success" style="width: 100%"></div>
-                </div>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                
+                <span class="icon-stack icon-3x">
+                  <i class="icon-circle icon-stack-base done"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
           <% end %>
+<% else %>
+<p><%= t("project.call_the_seller") %></p>
+          <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-eye-open icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-3x">
+                  <i class="icon-circle icon-stack-base shoulddo"></i>
+                  <%= link_to @project.source_link, :target => "_blank" do %>
+                    <i class="icon-phone icon-light"></i>
+                  <% end %>
+                </span>  
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-building icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base todo"></i>
+                  <i class="icon-group icon-light"></i>
+                </span>  
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-legal icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-file-alt icon-light"></i>
+                </span> 
+                <span class="icon-stack icon-2x">
+                  <i class="icon-circle icon-stack-base"></i>
+                  <i class="icon-home icon-light"></i>
+                </span>  
+<% end %>

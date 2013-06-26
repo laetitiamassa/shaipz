@@ -538,6 +538,21 @@ li .icon-facebook {
   cursor: pointer
 }
 
+
+.done {
+  color: green;
+}
+
+.todo {
+  color: #eee;
+}
+
+.shoulddo {
+  color: red;
+}
+
+
+
 /* Project New */
 
 .search_link {
@@ -833,7 +848,7 @@ textarea {
 
 /* ADMIN */
 
-.low-margin {
+.hero-unit .low-margin {
   margin: 10px 10px;
 }
 

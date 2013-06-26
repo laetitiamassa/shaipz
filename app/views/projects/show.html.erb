@@ -119,7 +119,7 @@
 
    
     <li class="active">
-      <a href="#pane4" data-toggle="tab"><i class="icon-user"></i><%= t("project.you") %></a>
+      <a href="#pane4" data-toggle="tab"><i class="icon-user"></i><%= t("profile.you") %></a>
     </li>
 
     <!--<li>
@@ -162,6 +162,9 @@ $(function ()
     html: true;
 
 });
+jQuery(document).ready(function($) {
+    $('#leave-comment').modal("show")
+});
 </script>
 
 <script type="text/javascript">
@@ -187,6 +190,15 @@ $(function ()
     <h1><%= t("wait") %></h1>
   </div>
 </div>
+
+<!-- <% if @project.has_participant?(@user) %>
+<div id="leave-comment" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="text-center">
+    <i class="icon-comment icon-4x"></i> Leave a comment, <%= @user.name_or_placeholder %> !
+    <br><%= render_comments_form @project %>
+  </div>
+</div>
+<% end %> -->
 
 
 
