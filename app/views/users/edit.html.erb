@@ -89,6 +89,14 @@
             <%= f.check_box :cohousing %>
             <%= f.label  :cohousing, t("profile.cohousing"), {:title => t("profile.definition_cohousing")} %>
         </div>
+        <div class="row-fluid">
+          <li class="string span6">
+            <%= f.label :ideal_project, t("profile.your_ideal_project") %>
+            <%= f.text_area :ideal_project, :placeholder => t("profile.my_ideal_project_example"), :rows => 5 %>
+          <li class="string span6">
+            <%= f.label :ideal_neighbour, t("profile.your_ideal_neighbour") %>
+            <%= f.text_area :ideal_neighbour, :placeholder => t("profile.my_ideal_neighbour_example"), :rows => 5 %>
+        </div>
       </ul>
       
 
@@ -112,6 +120,7 @@
           <li class="string">
           <%= f.label :role, t("profile.what_your_role") %>
           <%= f.select :role, @roles, {:include_blank => true} %>
+          
 
 </ul>
 

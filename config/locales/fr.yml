@@ -225,6 +225,12 @@ fr:
     what_you_best_at: "Quel est votre meilleur atout ?"
     what_your_role: "Quel rôle préférez-vous endosser dans un projet ?"
     purpose: "Optique d'achat"
+    your_ideal_project: "Votre projet idéal"
+    my_ideal_project: "Mon projet idéal"
+    my_ideal_project_example: "Une petite copropriété de trois appartements, avec un grand jardin partagé et, pourquoi pas, une salle de musique commune au rez-de-chaussée ou au sous-sol."
+    your_ideal_neighbour: "Votre voisin idéal"
+    my_ideal_neighbour: "Mon voisin idéal"
+    my_ideal_neighbour_example: "Mon voisin idéal serait surtout drôle, joyeux, poli et... fan de baseball !"
 
   skills:
     legal: "le juridique"

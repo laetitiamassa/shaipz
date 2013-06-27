@@ -223,7 +223,12 @@ en:
     what_you_best_at: "What do you feel best at?"
     what_your_role: "Which role would you prefer to endorse in a project?"
     purpose: "Purpose of purchase"
-
+    your_ideal_project: "Your ideal project"
+    my_ideal_project: "My ideal project"
+    my_ideal_project_example: "A little building of three flats, with a big shared garden and, why not, a shared music room in the basement."
+    your_ideal_neighbour: "Your ideal neighbour"
+    my_ideal_neighbour: "My ideal neighbour"
+    my_ideal_neighbour_example: "My ideal neighbour would be funny, cheerful, polite and fan of baseball."
   statuses:
     not_buying: "I'm not buying yet"
     looking_for_opportunity: "I'm not buying yet, unless it's a terrific opportunity"

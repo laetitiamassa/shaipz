@@ -23,6 +23,14 @@
   					<%= image_tag @user.picture.url(:medium), :class => 'img-rounded' %>
 				</div>
 				<div class="span9">
+					<% if @user.has_ideal_project_or_neighbour? %>
+						<p><%= t("profile.my_ideal_project") %></p>
+						<h4><i class="icon-quote-left pull-left"></i><i> <%= @user.ideal_project %> </i><i class="icon-quote-right"></i></h4>
+
+						<p><%= t("profile.my_ideal_neighbour") %></p>
+						<h4><i class="icon-quote-left pull-left"></i><i> <%= @user.ideal_neighbour %></i> <i class="icon-quote-right"></i></h4>
+
+					<% else %>
 					<div class="row-fluid text-center">
 						<div class="span5">
 							<p><%= t("profile.favorite_areas") %></p>
@@ -40,7 +48,7 @@
 							<h4><%= number_to_currency(@user.maximum_budget, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %></h4>
 							<% end %>
 						</div>
-    				</div>
+    				</div> 
 				</div>
 				
 				<div class="span9">
@@ -85,24 +93,71 @@
                             <h4><%= @user.has_personal_timing? ? @user.personal_timing : @user.personal_timing_placeholder %></h4>
 						</div>
 					</div>
+					<% end %>
 				</div>
     		</div>
 		</div>
 	</div>
-	<% if @user == current_user %>
-	<div class="row-fluid">
-            <div class="span4 offset4">
-            	
-            	<%= link_to t("Create a new project"), new_project_path(@user), :class => "btn btn-block btn-large btn-success" %>
-            	<p class="text-center"><%= link_to "or join an open project", root_path %></p>
-            	
-            </div>
-        </div>
-    <% else %>
+	<% if @user == !current_user %>
+	
 	<div class="row-fluid">
 		<div class="span2 offset10 report-profile">
 			<p class="text-right"><%= link_to t("profile.report"), new_user_report_path(@user) %></p>
 		</div>
 	</div>
     <% end %>
+
+
+
+    <div class="tabbable">
+  <ul class="nav nav-tabs text-center lead">
+    
+  
+    <li class="active"> 
+      <a href="#pane1" data-toggle="tab"><i class="icon-cogs"></i> <%= t("menu.shaipz") %></a>
+    </li>
+
+    <!-- <li>  
+      <a href="#pane2" data-toggle="tab"><i class="icon-time"></i><%= t("project.tab_events") %></a>
+     
+    </li>
+    
+    <li>
+      <a href="#pane3" data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
+      
+    </li> -->
+
+   
+    <!--<li>
+      <a href="#pane4" data-toggle="tab"><i class="icon-user"></i><%= t("menu.profile") %></a>
+    </li>-->
+
+    
+  </ul>
+
+<!-- TABS CONTENT -->
+  <div class="tab-content">
+  	
+  	<div id="pane1" class="tab-pane active">
+	    <% @projects.each do |project| %>
+	    	<%= render :partial => "_shared/project", :locals => { :project => project } %>
+	  	<% end %>
+
+	   <div class="span8 offset2 text-center">
+	    <h4><%= t("project.want_more") %></h4>
+	    <div class="row-fluid">
+	      <div class="span6">
+	        <%= link_to t("project.check_out_new_projects"), stream_path, :class => "btn btn-block btn-large btn-info" %>
+	      </div>
+	      <div class="span6">
+	        <%= link_to t("project.or_create_your_own"), new_project_path, :class => "btn btn-block btn-large btn-success" %>
+	      </div>
+	    </div>
+	  </div> 
+	</div>
+ 
+  </div><!-- /.tab-content -->
+</div><!-- /.tabbable -->
+
+    
 </div>
