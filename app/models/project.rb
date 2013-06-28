@@ -39,6 +39,14 @@ class Project < ActiveRecord::Base
     end
   end
 
+  def coming_event
+    self.event_date >= Date.today
+  end
+
+  def past_event
+    self.event_date <= Date.today
+  end
+
   def suggested
     owner_id == 301
   end

@@ -1,0 +1,207 @@
+<ul class="thumbnails">
+	<% if project.past_event %>
+		<div class="disabled">
+ 	<% end %>	
+  	
+  	<li class="span12">
+    	<div class="thumbnail">
+    	
+    	<% if project.coming_event %>
+    		<div class="row-fluid coming_event">
+    	<% else %>
+    		<div class="row-fluid">
+    	<% end %>
+    		
+    		<div class="span3 text-center event_data">
+    			<h1 class="stream-title"><%= link_to truncate(project.event_type), project_path(project) %></h1>
+    			<p><%= project.event_date %></p>
+    		</div>	
+    		
+    		<% if project.has_event_description? %>
+    		<div class="span5 text-center event_description_data">
+    		<% else %>
+    		<div class="span5 text-center event_data">
+    		<% end %>
+
+
+    			
+    					
+		    	<% if project.has_project_status? %>
+		        <% if project.project_status == "called_seller" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-phone icon-light"></i>
+		                </span>  
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-building icon-light"></i>
+		                </span> 
+		                
+		          <% end %>
+
+		          <% if project.project_status == "building_discovery" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-building icon-light"></i>
+		                </span> 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-group icon-light"></i>
+		                </span>  
+		                
+		          <% end %>
+
+		          <% if project.project_status == "people_discovery" %>
+		                 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-building icon-light"></i>
+		                </span> 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-group icon-light"></i>
+		                </span>  
+		          <% end %>
+
+		          <% if project.project_status == "interest_confirmation" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-smile icon-light"></i>
+		                </span>
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-ok icon-light"></i>
+		                </span> 
+		          <% end %>
+
+		          <% if project.project_status == "feasibility_stamp" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-ok icon-light"></i>
+		                </span> 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-link icon-light"></i>
+		                </span> 
+		          <% end %>
+
+		          <% if project.project_status == "internal_agreement" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-link icon-light"></i>
+		                </span> 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-money icon-light"></i>
+		                </span> 
+		          <% end %>
+
+		          <% if project.project_status == "global_offer_making" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-money icon-light"></i>
+		                </span> 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-thumbs-up icon-light"></i>
+		                </span> 
+		          <% end %>
+
+		          <% if project.project_status == "global_offer_acceptance" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-thumbs-up icon-light"></i>
+		                </span> 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base"></i>
+		                  <i class="icon-file-alt icon-light"></i>
+		                </span> 
+		          <% end %>
+
+		          <% if project.project_status == "sales_agreement" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-exchange icon-light"></i>
+		                </span>
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-wrench icon-light"></i>
+		                </span> 
+		          <% end %>
+
+		          <% if project.project_status == "challenges_fixing" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-wrench icon-light"></i>
+		                </span> 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base todo"></i>
+		                  <i class="icon-certificate icon-light"></i>
+		                </span> 
+		                
+		          <% end %>
+
+		          <% if project.project_status == "notarial_deed" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-certificate icon-light"></i>
+		                </span> 
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base"></i>
+		                  <i class="icon-home icon-light"></i>
+		                </span>  
+		          <% end %>
+
+		          <% if project.project_status == "move_in" %>
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base"></i>
+		                  <i class="icon-file-alt icon-light"></i>
+		                </span> 
+		                
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base done"></i>
+		                  <i class="icon-home icon-light"></i>
+		                </span>  
+		          <% end %>
+		<% else %>
+		          
+		                <span class="icon-stack icon-2x">
+		                  <i class="icon-circle icon-stack-base shoulddo"></i>
+		                  <%= link_to project.source_link, :target => "_blank" do %>
+		                    <i class="icon-phone icon-light"></i>
+		                  <% end %>
+		                </span>  
+                <% end %>
+
+    				<p class="text-left event_description_data"><i><b><%= link_to truncate(project.event_description, :length => 100), project_path(project) %></b></i></p>
+    		</div>
+    		<div class="span4 text-right">
+    			<div class="snippet">
+	    			<div class="mytab">
+	    				<div class="titletab">
+	    			 		<p class="stream-title lead"><%= link_to truncate(project.name, :length => 25), project_path(project) %>
+	        				<% if project.suggested %>
+	                    	<a class="suggested" rel="popover" data-html="true" data-placement="left" data-original-title="<%= t("stream.suggested_project_explain_title") %>" data-content="<%= t("stream.suggested_project_explain_content") %>" ><i><%= t("stream.suggested_project") %></i></a></p> <!-- add link to suggested project explanation -->
+	                    	<% else %>
+	        				<i><small>by <%= link_to truncate(project.owner_name, :length => 12), user_path(project.owner) %></small></i></p>
+	                    	<% end %>
+	                    </div>
+	                </div>
+    				<%= link_to image_tag(project.picture.url(:thumb)), project_url(project) %>
+    			</div>
+	    	</div>
+</div>
+</div>
+</li>
+</ul>

@@ -381,7 +381,30 @@ blockquote {
   margin-top: -20px;
 }
 
+.coming_event {
+  background-color: #E3FCE9;
+}
 
+.event_data {
+  padding-top: 40px;
+}
+
+.event_description_data {
+  margin-top: 15px;
+}
+
+.snippet .mytab {
+  z-index: 2;
+  position: absolute;
+  top: -6px;
+  right: 5px;
+  }
+
+
+.snippet .mytab .titletab {
+  z-index:3;
+  margin-top: 5px;
+  }
 
 
 /* User Profile Edit */
@@ -754,6 +777,10 @@ z-index: 0;
   color: #0088cc;
   }
 }
+
+
+
+
 .snippet .discount .percentage {
   z-index:3;
   position: absolute;
@@ -761,6 +788,8 @@ z-index: 0;
   left: 5px;
   color: white;
   }
+
+
 
 
 .snippet {

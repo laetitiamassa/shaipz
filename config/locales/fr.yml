@@ -231,7 +231,18 @@ fr:
     your_ideal_neighbour: "Votre voisin idéal"
     my_ideal_neighbour: "Mon voisin idéal"
     my_ideal_neighbour_example: "Mon voisin idéal serait surtout drôle, joyeux, poli et... fan de baseball !"
-
+    tab_myevents: "Mes événements"
+    tab_myfellows: "Mes voisins potentiels"
+    tab_myevents_intro1: "Gardez un oeil sur vos prochains événements"
+    tab_myevents_intro2: "les événements futurs sont en vert, les événements passés sont flous"
+    tab_myfellows_intro1: "Gardez trace de toutes les personnes que vous avez rencontrées au fil de vos projets"
+    tab_myfellows_intro2: "passez votre souris par-dessus leur photo, ou cliquez dessus pour voir leur profil"
+    tab_my_projects_intro1: "Voici les projets que vous avez rejoints"
+    tab_my_projects_intro2: "Les projets clos sont flous, et les projets que vous avez quittés sont à nouveau joignable"
+    tab_his_projects_intro1: "Voici tous les projets que"
+    tab_his_projects_intro1bis: "a rejoints"
+    tab_his_projects_intro2: "les projets clos sont flous, et le bouton joindre apparaît lorsque vous pouvez vous y joindre"
+  
   skills:
     legal: "le juridique"
     numbers: "les comptes"
@@ -261,7 +272,7 @@ fr:
     home: "Accueil"
     profile: "Mon profil"
     sign_out: "Déconnexion"
-    shaipz: "Mes Projets"
+    shaipz: "Mes projets"
     create: "Créer mon projet"
   stream:
     start_project: "Créer un projet"

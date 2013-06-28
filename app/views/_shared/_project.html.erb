@@ -53,8 +53,8 @@
     					<%= link_to t("stream.original_ad"), project.source_link, :target => "_blank", :title => t("project.logo_original_ad") if project.has_source_link? %><i class="icon-external-link"></i>
 
 
-    					<% if project.has_participant_or_owner?(@user) %>
-							<button type="button" class="btn btn-block btn-large" disabled><%= "##{project.priority_order_for_participant(@user)}" %><%= t("  ") %><%= t("project.in_project") %></button>
+    					<% if project.has_participant_or_owner?(current_user) %>
+							<button type="button" class="btn btn-block btn-large" disabled><%= "##{project.priority_order_for_participant(current_user)}" %><%= t("  ") %><%= t("project.in_project") %></button>
 						<% else %>
 							<%= form_for "participation", :url => participations_path do |f| %>
 							<%= f.hidden_field :project_id, :value => project.id %>

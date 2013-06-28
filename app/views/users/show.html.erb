@@ -116,17 +116,17 @@
     <li class="active"> 
       <a href="#pane1" data-toggle="tab"><i class="icon-cogs"></i> <%= t("menu.shaipz") %></a>
     </li>
-
-    <!-- <li>  
-      <a href="#pane2" data-toggle="tab"><i class="icon-time"></i><%= t("project.tab_events") %></a>
+<% if current_user == @user %>
+    <li>  
+      <a href="#pane2" data-toggle="tab"><i class="icon-time"></i> <%= t("profile.tab_myevents") %></a>
      
     </li>
     
     <li>
-      <a href="#pane3" data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
+      <a href="#pane3" data-toggle="tab"><i class="icon-group"></i> <%= t("profile.tab_myfellows") %></a>
       
-    </li> -->
-
+    </li>
+<% end %>
    
     <!--<li>
       <a href="#pane4" data-toggle="tab"><i class="icon-user"></i><%= t("menu.profile") %></a>
@@ -139,22 +139,57 @@
   <div class="tab-content">
   	
   	<div id="pane1" class="tab-pane active">
+  		<% if current_user == @user %>
+  			<p><span class="lead"><%= t("profile.tab_my_projects_intro1") %></span>
+			<br><i class="icon-info-sign"></i> <%= t("profile.tab_my_projects_intro2") %></p>
+		<% else %>
+			<p><span class="lead"><%= t("profile.tab_his_projects_intro1") %> <%= @user.name_or_placeholder %> <%= t("profile.tab_his_projects_intro1bis") %></span>
+			<br><i class="icon-info-sign"></i> <%= t("profile.tab_his_projects_intro2") %></p>
+		<% end %>
+
 	    <% @projects.each do |project| %>
 	    	<%= render :partial => "_shared/project", :locals => { :project => project } %>
 	  	<% end %>
 
 	   <div class="span8 offset2 text-center">
-	    <h4><%= t("project.want_more") %></h4>
-	    <div class="row-fluid">
-	      <div class="span6">
-	        <%= link_to t("project.check_out_new_projects"), stream_path, :class => "btn btn-block btn-large btn-info" %>
-	      </div>
-	      <div class="span6">
-	        <%= link_to t("project.or_create_your_own"), new_project_path, :class => "btn btn-block btn-large btn-success" %>
-	      </div>
-	    </div>
-	  </div> 
+	    	<h4><%= t("project.want_more") %></h4>
+	    	<div class="row-fluid">
+	      		<div class="span6">
+	        		<%= link_to t("project.check_out_new_projects"), stream_path, :class => "btn btn-block btn-large btn-info" %>
+	      		</div>
+	      		<div class="span6">
+	        		<%= link_to t("project.or_create_your_own"), new_project_path, :class => "btn btn-block btn-large btn-success" %>
+	      		</div>
+	    	</div>
+	  	</div> 
 	</div>
+
+	<div id="pane2" class="tab-pane">
+		<% if current_user == @user %>
+			<p><span class="lead"><%= t("profile.tab_myevents_intro1") %></span>
+			<br><i class="icon-info-sign"></i> <%= t("profile.tab_myevents_intro2") %></p>
+		<% else %>
+			<p><span class="lead">You can have a look at the next events @user.name_or_placeholder might be going to</span>
+			<br><i class="icon-info-sign"></i> coming events are highlighted in green, and past events are blured</p>
+		<% end %>
+
+	    <% @projects.each do |project| %>
+	    	<%= render :partial => "_shared/myevent", :locals => { :project => project } %>
+	  	<% end %>
+	</div>
+
+	<div id="pane3" class="tab-pane">
+		<% if current_user == @user %>
+			<p><span class="lead"><%= t("profile.tab_myfellows_intro1") %></span>
+			<br><i class="icon-info-sign"></i> <%= t("profile.tab_myfellows_intro2") %></p>
+		<% else %>
+			<p><span class="lead">Discover @user.name_or_placeholder fellows</span>
+			<br><i class="icon-info-sign"></i> hover over pictures to see their name, or click on pictures to go to their profile</p>
+		<% end %>
+	    <% @projects.each do |project| %>
+	    	<%= render :partial => "_shared/myfellow", :locals => { :project => project } %>
+	  	<% end %>
+	  </div>
  
   </div><!-- /.tab-content -->
 </div><!-- /.tabbable -->

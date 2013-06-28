@@ -1,0 +1,45 @@
+<ul class="thumbnails">
+	<% if project.disabled? %>
+		<div class="disabled">
+ 	<% end %>	
+  	<li class="span12">
+    	<div class="thumbnail">
+    	
+    	<div class="row-fluid">
+        	<div class="span8 text-center">
+        		<% project.owner_and_participants.each do |p| %>
+                         
+                            <div class="span2 profile-participant text-center">
+                              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="right"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:medium), :class => 'img-circle'), user_path(p)) %>
+                              </div> 
+                            </div>    
+                <% end %>
+        	</div>	
+    		
+        	<div class="span4 text-right">
+                <div class="snippet">
+                    <div class="mytab">
+                        <div class="titletab">
+                            <p class="stream-title lead"><%= link_to truncate(project.name, :length => 25), project_path(project) %>
+                            <% if project.suggested %>
+                            <a class="suggested" rel="popover" data-html="true" data-placement="left" data-original-title="<%= t("stream.suggested_project_explain_title") %>" data-content="<%= t("stream.suggested_project_explain_content") %>" ><i><%= t("stream.suggested_project") %></i></a></p> <!-- add link to suggested project explanation -->
+                            <% else %>
+                            <i><small>by <%= link_to truncate(project.owner_name, :length => 12), user_path(project.owner) %></small></i></p>
+                            <% end %>
+                        </div>
+                    </div>
+                    <%= link_to image_tag(project.picture.url(:thumb)), project_url(project) %>
+                </div>
+            </div>
+        </div>
+        </div>
+    </li>
+</ul>
+
+<script type="text/javascript">
+    $(function ()
+{ $(".p-status").popover();
+    html: true;
+
+});
+</script>
