@@ -20,7 +20,7 @@ class Project < ActiveRecord::Base
     :content_type => { :content_type => /image/ },
     :size => { :less_than => 2.megabytes }
 
-  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price, :leader_thought
+  attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price, :leader_thought, :owner_id
 
   attr_accessible :name, :picture, :address, :total_amount, :maximum_shaipz, :total_space, :source_link, :disabled_at, :cohousing, :city, :zipcode, :project_status, :share_on_facebook, :event_description, :event_type, :event_date, :hide_street_from_non_participants, :average_district_price, :leader_thought, :owner_id, :as => :admin 
 

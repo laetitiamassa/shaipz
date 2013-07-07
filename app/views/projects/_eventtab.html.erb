@@ -25,13 +25,20 @@
         
         <div class="hero-unit next-event text-center">
           <div class="row-fluid">
-            <div class="span2">
-              <i class="icon-bell-alt icon-4x pull-right"></i>
-            </div>
-            <div class="span9">
-              <h2><%= @project.event_type %></h2>
-              <h4><%= @project.event_date %></h4>
-            </div>
+            <% if @project.coming_event %>
+              <div class="span2">
+
+                <i class="icon-bell-alt icon-4x pull-right"></i>
+              </div>
+              <div class="span9">
+
+                <h2><%= @project.event_type %></h2>
+                <h4><%= @project.event_date.strftime('%A %d/%m - %H:%M') %></h4> 
+              </div>
+            <% else %>
+              <h4><%= t("project.eventtab_missing_next") %></h4>
+              <h2><%= t("project.eventtab_organize_next") %></h2>
+            <% end %>
           </div>
         </div>
 

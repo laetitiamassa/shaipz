@@ -450,6 +450,8 @@ en:
     for_next_event: "for the next meeting or the next visit"
     complete: "COMPLETE"
     your_profile_to_inform: "your profile to inform the participants"
+    eventtab_missing_next: "There is no event coming."
+    eventtab_organize_next: "Organize your next event!"
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."

@@ -12,7 +12,6 @@ gem 'haml',              '~> 4.0.0'
 gem 'jquery-rails',      '~> 2.2.1'
 gem 'paperclip',         '~> 3.4.1'
 gem 'newrelic_rpm'
-gem 'nokogiri'
 gem "opinio"
 gem 'bootstrap_forms'
 gem "font-awesome-rails"

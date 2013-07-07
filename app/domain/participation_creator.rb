@@ -9,7 +9,10 @@ class ParticipationCreator
   end
 
   def create!
-    if participation.save!
+    if @project.suggested
+      @project.owner_id = participant.id
+      @project.update_attributes(owner_id: participant.id)
+    elsif participation.save!
       NotificationMailer.new_participant(participant, participation.project).deliver unless participation.project.has_enough_participants?
       NotificationMailer.after_participation(participant, participation.project).deliver
       NotificationMailer.reached_minimum_participants(participant, participation.project).deliver if participation.project.has_enough_participants?

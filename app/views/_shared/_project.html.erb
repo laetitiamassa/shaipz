@@ -38,8 +38,10 @@
     				</div>
     				<div class="span5">
                         <% if !project.suggested %>
-    					<p><i class="icon-time icon-2x"></i>
-    					<%= truncate(project.event, :length => 14) %></p>
+                            <% if project.coming_event %>
+    					       <p><i class="icon-time icon-2x"></i>
+    					       <%= project.event_date.strftime('%A %d/%m') %></p>
+                            <% end %>
                         <% end %>
     				</div>
     			</div>

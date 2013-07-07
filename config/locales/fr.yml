@@ -453,6 +453,8 @@ fr:
     for_next_event: "pour la prochaine réunion ou visite"
     complete: "COMPLETEZ"
     your_profile_to_inform: "votre profil pour informer chacun"
+    eventtab_missing_next: "Il n'y a pas d'événement au programme."
+    eventtab_organize_next: "Organisez votre prochain événement !"
 
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."

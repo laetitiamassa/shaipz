@@ -198,7 +198,6 @@ DEPENDENCIES
   kaminari
   mailjet
   newrelic_rpm
-  nokogiri
   omniauth-facebook (~> 1.4.1)
   opinio
   paperclip (~> 3.4.1)
