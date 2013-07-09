@@ -8,15 +8,16 @@ gem 'pg',                '~> 0.14.1'
 gem 'devise',            '~> 2.2.3'
 gem 'fb_graph',          '~> 2.6.5'
 gem 'omniauth-facebook', '~> 1.4.1'
-gem 'haml',              '~> 4.0.0'
+gem 'haml',              '~> 4.0.3'
 gem 'jquery-rails',      '~> 2.2.1'
 gem 'paperclip',         '~> 3.4.1'
+gem 'kaminari'
 gem 'newrelic_rpm'
-gem "opinio"
+gem 'opinio'
 gem 'bootstrap_forms'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'mailjet'
-
+gem 'bugsnag'
 
 group :assets do
   gem 'sass-rails',     '~> 3.2.6'
@@ -31,5 +32,3 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 group :production do
   gem 'aws-sdk', '~> 1.8.5'
 end
-
-gem "kaminari"

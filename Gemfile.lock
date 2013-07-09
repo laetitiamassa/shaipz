@@ -38,6 +38,9 @@ GEM
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
     bootstrap_forms (3.0.1)
+    bugsnag (1.3.8)
+      httparty (>= 0.6, < 1.0)
+      multi_json (~> 1.0)
     builder (3.0.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -67,10 +70,13 @@ GEM
       tzinfo
     font-awesome-rails (3.1.1.1)
       railties (>= 3.2, < 5.0)
-    haml (4.0.2)
+    haml (4.0.3)
       tilt
     hashie (2.0.5)
     hike (1.2.2)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     httpclient (2.3.3)
     i18n (0.6.1)
@@ -92,6 +98,7 @@ GEM
       activesupport (>= 3.1.0)
     mime-types (1.23)
     multi_json (1.7.3)
+    multi_xml (0.5.4)
     multipart-post (1.2.0)
     newrelic_rpm (3.6.2.96)
     nokogiri (1.5.9)
@@ -189,11 +196,12 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.1)
   bootstrap-sass (~> 2.3.1.0)
   bootstrap_forms
+  bugsnag
   coffee-rails (~> 3.2.2)
   devise (~> 2.2.3)
   fb_graph (~> 2.6.5)
   font-awesome-rails
-  haml (~> 4.0.0)
+  haml (~> 4.0.3)
   jquery-rails (~> 2.2.1)
   kaminari
   mailjet
