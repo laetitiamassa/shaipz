@@ -12,7 +12,7 @@ class ProjectCreator
       NotificationMailer.after_creation(owner, project).deliver unless project.suggested
       NotificationMailer.create_project(owner, project, users_interested_in_cohousing).deliver if project.cohousing
       NotificationMailer.create_project_in_my_district(owner, project, users_in_district).deliver if has_users_in_district? unless project.suggested
-      NotificationMailer.suggest_project_to_lead(owner, project, leaders_in_district).deliver if has_users_in_district? && project.suggested #I have replaced leaders in district by users in districts, as it doesn't get enough reactions to just send to those who selected leader in their profile 
+      NotificationMailer.suggest_project_to_lead(owner, project, users_in_district).deliver if has_users_in_district? && project.suggested #I have replaced leaders in district by users in districts, as it doesn't get enough reactions to just send to those who selected leader in their profile 
       facebook_service.post_project_on_wall(project) if facebook_service && project.share_on_facebook
       true
     else
