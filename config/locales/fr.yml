@@ -542,7 +542,7 @@ fr:
         content: "%{name} a créé %{project}, un nouveau projet qui pourrait vous intéresser !"
         join: "Découvrez ce projet et rejoignez-le"
       suggest_project_to_lead:
-        subject: "Un nouvel immeuble qui pourrait vous intéresser, à %{zipcode} %{city}"
+        subject: "Shaipz vous suggère un nouveau projet immobilier, à %{zipcode} %{city}"
         content1: "Un nouvel immeuble est à vendre dans l'une de vos communes préférées."
         content2: "Il semble si intéressant, que nous n'avons pas résisté à créer un projet pour vous !"
         content3: "Il ne vous reste plus qu'à le découvrir, et à le mener si vous aussi vous trouvez que c'est une belle opportunité."

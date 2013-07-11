@@ -534,7 +534,7 @@ en:
         content: "%{name} has created %{project}, a brand new project you might be interested in!"
         join: "Discover this new project and join it"
       suggest_project_to_lead:
-        subject: "A new building for a new project in %{zipcode} %{city}"
+        subject: "Shaipz suggests you a brand new real estate project in %{zipcode} %{city}"
         content1: "Un new building is for sale in one of your favorite districts."
         content2: "It seems so interesting that we couldn't resist creating a project for you!"
         content3: "All you need to do now is discovering it and, if you find it a good opportunity for you, you can lead the project."
