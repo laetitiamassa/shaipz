@@ -71,7 +71,7 @@
 
   .control-group
     = f.label :project_status, :class => 'control-label'
-    .controls= f.select :project_status, @project_statuses
+    .controls= f.select :project_status, @project_statuses, :include_blank => true
 
 %fieldset
   %legend Event
