@@ -17,7 +17,7 @@ class Admin::ProjectsController < Admin::BaseController
 
     if ProjectCreator.new(@project).create
       flash[:success] = t("project.create_success")
-      redirect_to admin_projects_path
+      redirect_to admin_root_path
     else
       @project_statuses = Project.project_statuses
       @event_types      = Project.event_types
@@ -43,7 +43,7 @@ class Admin::ProjectsController < Admin::BaseController
     #  end
 
       flash[:success] = t("project.update_success")
-      redirect_to admin_projects_path
+      redirect_to admin_root_path
     else
       @project_statuses = Project.project_statuses
       @event_types      = Project.event_types
