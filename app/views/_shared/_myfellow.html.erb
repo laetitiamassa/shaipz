@@ -1,7 +1,5 @@
 <ul class="thumbnails">
-	<% if project.disabled? %>
-		<div class="disabled">
- 	<% end %>	
+		
   	<li class="span12">
     	<div class="thumbnail">
     	
@@ -28,6 +26,9 @@
                             <% end %>
                         </div>
                     </div>
+                        <% if project.disabled? %>
+                            <div class="disabled">
+                        <% end %>
                     <%= link_to image_tag(project.picture.url(:thumb)), project_url(project) %>
                 </div>
             </div>
