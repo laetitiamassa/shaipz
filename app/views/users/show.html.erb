@@ -117,12 +117,11 @@
       <a href="#pane1" data-toggle="tab"><i class="icon-cogs"></i> <%= t("menu.shaipz") %></a>
     </li>
 <% if current_user == @user %>
-    <!-- should be fixed 
     <li>  
       <a href="#pane2" data-toggle="tab"><i class="icon-time"></i> <%= t("profile.tab_myevents") %></a>
      
     </li>
-    -->
+    
     <li>
       <a href="#pane3" data-toggle="tab"><i class="icon-group"></i> <%= t("profile.tab_myfellows") %></a>
       
@@ -165,7 +164,19 @@
 	  	</div> 
 	</div>
 
-	
+	<div id="pane2" class="tab-pane">
+		<% if current_user == @user %>
+			<p><span class="lead"><%= t("profile.tab_myevents_intro1") %></span>
+			<br><i class="icon-info-sign"></i> <%= t("profile.tab_myevents_intro2") %></p>
+		<% else %>
+			<p><span class="lead">You can have a look at the next events @user.name_or_placeholder might be going to</span>
+			<br><i class="icon-info-sign"></i> coming events are highlighted in green, and past events are blured</p>
+		<% end %>
+
+	    <% @projects.each do |project| %>
+	    	<%= render :partial => "_shared/myevent", :locals => { :project => project } %>
+	  	<% end %>
+	</div>
 
 	<div id="pane3" class="tab-pane">
 		<% if current_user == @user %>
