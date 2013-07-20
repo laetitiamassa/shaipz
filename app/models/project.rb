@@ -40,7 +40,7 @@ class Project < ActiveRecord::Base
   end
 
   def coming_event
-    self.event_date >= Date.today
+    self.event_date > Date.today
   end
 
   def past_event
