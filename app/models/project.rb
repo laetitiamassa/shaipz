@@ -40,11 +40,11 @@ class Project < ActiveRecord::Base
   end
 
   def coming_event
-    event_date >= Date.today
+    event_date && event_date >= Date.today
   end
 
   def past_event
-    event_date <= Date.today
+    !coming_event 
   end
 
   def suggested
