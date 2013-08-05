@@ -1,12 +1,11 @@
 <% if @project.has_project_status? %>
-<p><%= t("project.statuses.#{@project.project_status}") %></p>
 
           <% if @project.project_status == "called_seller" %>
                 <span class="icon-stack icon-2x">
                   <i class="icon-circle icon-stack-base"></i>
                   <i class="icon-eye-open icon-light"></i>
                 </span> 
-                <span class="icon-stack icon-3x">
+                <span class="icon-stack icon-2x">
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-phone icon-light"></i>
                 </span>  
@@ -41,7 +40,7 @@
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-phone icon-light"></i>
                 </span>  
-                <span class="icon-stack icon-3x">
+                <span class="icon-stack icon-2x">
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-building icon-light"></i>
                 </span> 
@@ -76,7 +75,7 @@
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-building icon-light"></i>
                 </span> 
-                <span class="icon-stack icon-3x">
+                <span class="icon-stack icon-2x">
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-group icon-light"></i>
                 </span>  
@@ -337,7 +336,7 @@
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-exchange icon-light"></i>
                 </span>
-                <span class="icon-stack icon-3x">
+                <span class="icon-stack icon-2x">
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-wrench icon-light"></i>
                 </span> 
@@ -372,7 +371,7 @@
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-wrench icon-light"></i>
                 </span> 
-                <span class="icon-stack icon-3x">
+                <span class="icon-stack icon-2x">
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-certificate icon-light"></i>
                 </span> 
@@ -396,19 +395,19 @@
                   <i class="icon-file-alt icon-light"></i>
                 </span> 
                 
-                <span class="icon-stack icon-3x">
+                <span class="icon-stack icon-2x">
                   <i class="icon-circle icon-stack-base done"></i>
                   <i class="icon-home icon-light"></i>
                 </span>  
           <% end %>
 <% else %>
-<p><%= t("project.call_the_seller") %></p>
+
           <span class="icon-stack icon-2x">
                   <i class="icon-circle icon-stack-base"></i>
                   <i class="icon-eye-open icon-light"></i>
                 </span> 
-                <span class="icon-stack icon-3x">
-                  <i class="icon-circle icon-stack-base shoulddo"></i>
+                <span class="icon-stack icon-2x">
+                  <i class="icon-sign-blank icon-stack-base shoulddo"></i>
                   <%= link_to @project.source_link, :target => "_blank" do %>
                     <i class="icon-phone icon-light"></i>
                   <% end %>

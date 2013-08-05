@@ -387,7 +387,7 @@ fr:
     logo_cohousing: "C'est un projet d'habitat groupé"
     logo_full: "Cliquez ici pour ouvrir le projet"
     logo_share_facebook: "Partagez le projet via Facebook"
-    call_the_seller: "Cliquez sur l'icône et contactez le vendeur pour ontenir plus d'info ou une visite !"
+    call_the_seller: "Cliquez sur l'icône et contactez le vendeur pour obtenir plus d'info ou une visite !"
     statuses:
       called_seller: "Le vendeur a été contacté pour plus d'info et une visite"
       building_discovery: "Nous découvrons le bien"
@@ -451,7 +451,7 @@ fr:
     more_often: "Bien plus souvent."
     organize: "ORGANISEZ"
     the_next_event: "la prochaine réunion ou visite"
-    discuss: "DISCUTEZ"
+    discuss: "Parlez avec"
     with_others: "avec les autres participants"
     get_ready: "SOYEZ PRET"
     for_next_event: "pour la prochaine réunion ou visite"

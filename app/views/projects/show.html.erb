@@ -1,151 +1,124 @@
-<div class="container container-fluid-profile">
+<div class="container-fluid-project">
   
-  <%= render "headerandimage" %>
-  
-  <div class="row-fluid edit-project">
-   
-        <% if @user.owner_of_project?(@project) %>
-          <div class="span3 offset3"><%= link_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %></div>
-
-        <% elsif @project.has_participant?(@user) %>
-            
-
-        <div class="span3 offset3">
-          <button type="button" class="btn btn-large btn-block btn-info" disabled>
-            <%= "##{@project.priority_order_for_participant(@user)}" %><%= t("  ") %><%= t("project.in_project") %>
-          </button>
-          </div>
-        <% else %>
-         <div class="span4 offset2 ">
-          <%= form_for "participation", :url => participations_path do |f| %>
-            <%= f.hidden_field :project_id, :value => @project.id %>
-              <div class="span3">
-              <% if current_user.authenticated_with_facebook?(session) %>
-                
-                  <ul class="fields fb">
-                    <li class="checkbox fb facebook_boost" rel="tooltip" data-placement="top" data-original-title="<%= t("participation.share_on_facebook") %>"><i class="icon-facebook"></i>
-                      <%= f.check_box :share_on_facebook, { :checked => true } %>
-                      <% f.label :share_on_facebook %>
-                    </li>
-                  </ul>
-              <% else %>
-                <%= f.hidden_field :share_on_facebook, :value => "0" %>
+  <!-- title -->
+      <div class="howitworks-header page-header">
+        <div class="row-fluid">
+          <div class="span7 project-name">
+            <h1><%= @project.name %>
+              <% if @project.cohousing? %>
+              <%= image_tag ("cohousing.png"), {:title => t("project.logo_cohousing")} %>
               <% end %>
-            </div>
-
-              
-              <div class="span8 with-facebook">
-              <% if @project.suggested %>
-                <div class="wait"><%= f.submit t("project.lead_project"), :class => 'btn btn-block btn-large btn-success' %></div>
-              <% else %>
-                <div class="wait"><%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %></div>
-              <% end %> 
-            </div>
-                        
-            <% end %>
+            
+            <% if @user.owner_of_project?(@project) %>
+          
+  <small>
+    <%= link_to edit_project_path(@project), :target => "_blank" do %>
+      <i class="icon-edit"></i></small>
+    <% end %>
+ 
+  
+  <% end %></h1>
+          
           </div>
-        <% end %>
-        
-     
+          <div class="span5 text-right">
 
-      <div class="span3">
-     
-        <% if @user.owner_of_project?(@project) %>
-          <%= link_to(t("project.book_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
-        <% elsif @project.has_participant?(@user) %>
-          <%= link_to(t("project.get_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
-          <% else %>
-          <%= link_to(t("project.see_original_ad"), @project.source_link, :class => "btn btn-block btn-large", :target => "_blank") if @project.has_source_link? %>
-          <% end %>
+            <%= render "calltoaction" %>
+
+          </div>
+        </div>
+        
+          
+       
       </div>
 
-      <% if @project.has_participant_or_owner?(@user) %>
-        <div class="span2 offset1 text-right">
-        <%= button_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
- 
- 
   <div class="row-fluid">
-    <div class="span2 offset10 report-profile">
-      <p class="text-right"><%= link_to t("profile.report"), new_project_report_path(@project) %></p>
+    <!-- left -->
+    <div class="span4">
+      <%= render "conversation" %>
     </div>
-  </div>
-
-
-
+    
+    <!-- right -->
+    <div class="span8"> 
+      <div class="span12">
+          <!-- building part -->
+          <%= render 'building' %>
+      </div>
       
+      
+        <%= render 'event' %>
+      
+    </div>
 
 
-  <div class="row-fluid">
-    <div class=" span12">
-         <% if @project.suggested %>
-         <p class="text-center"><%= t("project.check_below_leader_steps") %></p>
-         <% elsif @user.owner_of_project?(@project) %>
-         <p class="text-center"><%= t("project.maintain_tabs") %></p>
-         <% else %>
-      <p class="text-center"><%= t("project.check_below_tabs") %></p>
-      <% end %>
+         <!-- <%= render 'project-status' %>
 
-<!-- TABS -->
-<div class="tabbable">
-  <ul class="nav nav-tabs text-center lead">
-    
-  
-    <li> 
-      <a href="#pane1" data-toggle="tab"><i class="icon-building"></i><%= t("project.tab_building") %></a>
-    </li>
+        <p class="lead text-center"><%= t("project.your_next_event") %></p>
+        
+        <div class="hero-unit next-event text-center">
+          <div class="row-fluid">
+            <% if @project.coming_event %>
+              <div class="span2">
 
-    <% if @project.suggested %>
-    <li class="disabled">
-      <a data-toggle="tab"><i class="icon-calendar"></i><%= t("project.tab_events") %></a>
-    <% else %>
-    <li>  
-      <a href="#pane2" data-toggle="tab"><i class="icon-time"></i><%= t("project.tab_events") %></a>
-      <% end %>
-    </li>
+                <i class="icon-bell-alt icon-4x pull-right"></i>
+              </div>
+              <div class="span9">
 
-    <% if @project.suggested %>
-    <li class="disabled">
-      <a data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
-    <% else %>
-    <li>
-      <a href="#pane3" data-toggle="tab"><i class="icon-group"></i><%= t("project.tab_participants") %></a>
-      <% end %>
-    </li>
+                <h2><%= @project.event_type %></h2>
+                <h4><%= @project.event_date.strftime('%A %d/%m - %H:%M') %></h4> 
+              </div>
+            <% else %>
+              <h4><%= t("project.eventtab_missing_next") %></h4>
+              <h2><%= t("project.eventtab_organize_next") %></h2>
+            <% end %>
+          </div>
+        </div>
 
-   
-    <li class="active">
-      <a href="#pane4" data-toggle="tab"><i class="icon-user"></i><%= t("profile.you") %></a>
-    </li>
+        <% if @project.has_event_description? %>
+        <p class="lead text-center"><%= t("project.additional_info") %></p>
+        <div class="hero-unit details-event">
+          <p><%= @project.event_description %></p>
+        </div>
+        <% end %>
+      </div>
+      </div> -->
 
-    <!--<li>
-      <a href="#pane5" data-toggle="tab"><i class="icon-shield"></i> <%= t("project.shield") %></a> 
-    </li>-->
-  </ul>
 
-<!-- TABS CONTENT -->
-  <div class="tab-content">
+    </div>
 
-    <%= render "buildingtab" %>
 
-    <%= render "eventtab" %>
-    
-    <%= render "participantstab" %> 
 
-    <%= render "youtab" %>
 
-    <!-- <%= render "shieldtab" %> -->
+        
+        
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
-  </div><!-- /.tab-content -->
-</div><!-- /.tabbable -->
+  
 
-</div> <!-- container -->
-</div>
-</div>      
 
  
 <script>

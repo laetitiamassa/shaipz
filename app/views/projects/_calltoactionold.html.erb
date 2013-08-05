@@ -1,0 +1,72 @@
+
+  <div class="row-fluid edit-project">
+   
+        <% if @user.owner_of_project?(@project) %>
+          <div class="span3 offset3"><%= link_to t("project.edit_project"), edit_project_path(@project), :class => "btn btn-block btn-large btn-info" %></div>
+
+        
+        <% elsif @project.has_participant?(@user) %>
+            
+
+        <div class="span3 offset3">
+          <button type="button" class="btn btn-large btn-block btn-info" disabled>
+            <%= "##{@project.priority_order_for_participant(@user)}" %><%= t("  ") %><%= t("project.in_project") %>
+          </button>
+          </div>
+        
+
+        <% else %>
+         
+
+         <div class="span4 offset2 ">
+          <%= form_for "participation", :url => participations_path do |f| %>
+            <%= f.hidden_field :project_id, :value => @project.id %>
+              <div class="span3">
+              
+              <% if current_user.authenticated_with_facebook?(session) %>
+                
+                  <ul class="fields fb">
+                    <li class="checkbox fb facebook_boost" rel="tooltip" data-placement="top" data-original-title="<%= t("participation.share_on_facebook") %>"><i class="icon-facebook"></i>
+                      <%= f.check_box :share_on_facebook, { :checked => true } %>
+                      <% f.label :share_on_facebook %>
+                    </li>
+                  </ul>
+              <% else %>
+                <%= f.hidden_field :share_on_facebook, :value => "0" %>
+              <% end %>
+              </div>
+
+              
+              <div class="span8 with-facebook">
+              <% if @project.suggested %>
+                <div class="wait"><%= f.submit t("project.lead_project"), :class => 'btn btn-block btn-large btn-success' %></div>
+              <% else %>
+                <div class="wait"><%= f.submit t("project.join_project"), :class => 'btn btn-block btn-large btn-info' %></div>
+              <% end %> 
+            </div>
+                        
+            <% end %>
+          </div>
+        <% end %>
+        
+     
+
+      <div class="span3">
+     
+        <% if @user.owner_of_project?(@project) %>
+          <%= link_to(t("project.book_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
+        <% elsif @project.has_participant?(@user) %>
+          <%= link_to(t("project.get_a_visit"), @project.source_link, :class => "btn btn-block btn-large btn-success", :target => "_blank") if @project.has_source_link? %>
+          <% else %>
+          <%= link_to(t("project.see_original_ad"), @project.source_link, :class => "btn btn-block btn-large", :target => "_blank") if @project.has_source_link? %>
+          <% end %>
+      </div>
+
+      <% if @project.has_participant_or_owner?(@user) %>
+        <div class="span2 offset1 text-right">
+        <%= button_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  -->

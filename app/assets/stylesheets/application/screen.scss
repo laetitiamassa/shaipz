@@ -24,6 +24,11 @@ $baseFontFamily: 'FontAwesome';
 }
 
 /* Generic */
+
+.navbar-fixed-top .container {
+  width: 90%;
+}
+
 .navbar-inner {
   background: none;
   border: none;
@@ -44,7 +49,7 @@ $baseFontFamily: 'FontAwesome';
 }
   
 nav-bar-inner .container {
-  width: 1020px;
+  width: 90%;
 }
 
 .logo-navbar {
@@ -422,6 +427,13 @@ blockquote {
 
 /* Project Show */
 
+.container-fluid-project {
+  width: 90%;
+  padding: 0% 5%;
+  min-height: 707px;
+  padding-bottom: 20px;
+}
+
 .what {
   color: #a2a4a4;
   font-size: 4em;
@@ -441,6 +453,9 @@ blockquote {
   font-family: 'Cuprum', sans-serif;
 }
 
+.event-date {
+  font-size: 2.5em;
+}
 
 .participants-list {
   padding: 0px;
@@ -457,8 +472,23 @@ blockquote {
   }
 }
 
- 
+.eventpart {
+  margin-left: -10%;
+}
 
+.street_in_project {
+  margin-top: -5%;
+  font-size: 0.7em;
+  line-height: 50%;
+}
+
+.short-spacing {
+  line-height: 70%;
+}
+
+.lower {
+  margin-top: 5px;
+}
 
 .next-event {
   padding: 10px;
@@ -622,13 +652,17 @@ select {
 }
 
 .comment {
-  margin: 2px 0px;
+  margin: 4px 0px;
   padding: 5px 4px 2px 4px;
   }
 
+.no-margin-left {
+  margin-left: 0px;
+}
+
 .new_comment textarea {
-  width: 610px;
-  height: 37px;
+  width: 95%;
+  height: 47px;
   margin-bottom: 4px;
   }
 
@@ -637,7 +671,7 @@ select {
  }
 
  .new_comment .bubble:after{
-  border-color: transparent #eee;
+  border-color: #eee transparent;
  }
 
 .add-comment {
@@ -650,45 +684,32 @@ select {
 
 .bubble 
 {
-margin: 5px 0 5px 2px;
+margin-top: 7px;
 position: relative;
-width: 650px;
-min-height: 75px;
-padding: 7px;
+width: 100%;
+min-height: 25px;
+padding: 4px 2px;
 background: #eee;
 border: #eee solid 3px;
--webkit-border-radius: 15px;
--moz-border-radius: 15px;
-border-radius: 10px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
 }
 
 .bubble:after 
 {
 content: "";
 position: absolute;
-top: 17px;
-left: -7px;
+top: -9px;
+left: 14px;
 border-style: solid;
-border-width: 7px 7px 7px 0;
-border-color: transparent #eee;
+border-width: 0 9px 9px;
+border-color: #eee transparent;
 display: block;
 width: 0;
 z-index: 1;
 }
 
-.bubble:before 
-{
-content: "";
-position: absolute;
-top: 15px;
-left: -12px;
-border-style: solid;
-border-width: 9px 9px 9px 0;
-border-color: transparent #eee;
-display: block;
-width: 0;
-z-index: 0;
-}
 
 /* You TAB */
 

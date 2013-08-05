@@ -1,0 +1,36 @@
+
+
+        <% if @project.has_leader_thought? %>
+        <p> <span class="lead inner-title near-top"><%= t("project.leader_thought") %></span><br>
+        <%= link_to(image_tag(@project.owner.picture.url(:thumb), :class => 'img-rounded'), user_path(@project.owner)) %>
+          <small><%= link_to truncate(@project.owner.name_or_placeholder, :length => 50), user_path(@project.owner) %></small>
+          <div class="bubble">
+        <%= @project.leader_thought %>
+      </div>
+      </p>
+        <% end %>
+
+ 
+
+
+
+      <div class="row-fluid">
+        <div class="span3">
+          <span class="lead inner-title"><%= t("project.discuss") %></span>
+        </div>
+        <div class="span9 lower">
+          <% @project.owner_and_participants.each do |p| %>
+                         
+                            <div class="span1 profile-participant text-center">
+                              <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="top"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-circle'), user_path(p)) %>
+                              </div> 
+                            </div>    
+                <% end %>
+        </div>
+      </div>
+        
+        <%= render_comments @project %>
+        <%= render_comments_form @project %>
+      
+
+    

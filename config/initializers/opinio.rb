@@ -19,7 +19,7 @@ Opinio.setup do |config|
 
   # Comments sort order by created_at (DESC or ASC)
   # Note: you can override that easily within each opinio subjectum
-  config.sort_order = 'DESC'
+  config.sort_order = 'ASC'
 
   # Wether or not the default opinio controller should set the flash
   # when creating/removing comments

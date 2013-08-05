@@ -2,7 +2,7 @@
   <%= paginate comments %>
 </div>
 
-<ul id="comments">
+<ul class="no-margin-left" id="comments">
   <% unless comments.empty? %>
     <%= render :partial => 'opinio/comments/comment', :collection => comments %>
   <% end %>

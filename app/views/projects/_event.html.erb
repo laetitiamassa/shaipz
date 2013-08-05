@@ -1,0 +1,62 @@
+<div class="hero-unit project next-event text-center">
+	<div class="row-fluid">
+        <% if @project.coming_event %>
+            <div class="span2">
+            	<h1><i class="icon-time icon-2x"></i></h1>
+            </div>
+            <div class="span7 text-left">
+              	<p><%= t("project.your_next_event") %>
+              	 <% if @user.owner_of_project?(@project) %>
+          
+  
+    <%= link_to edit_project_path(@project), :target => "_blank" do %>
+      <i class="icon-edit pull-right"></i>
+    <% end %>
+ 
+  
+  <% end %></p>
+                <h2 class="event-date"><%= @project.event_date.strftime('%A %d/%m - %H:%M') %></h2>
+                <h4><%= @project.event_type %></h4> 
+            </div>
+            <div class="span3 text-left">
+            <% if @project.has_event_description? %>
+           		<p><%= @project.event_description %></p>
+        	<% end %>
+            </div>
+        <% else %>
+            <h4><%= t("project.eventtab_missing_next") %>
+            <% if @user.owner_of_project?(@project) %>
+          
+  
+    <%= link_to edit_project_path(@project), :target => "_blank" do %>
+      <i class="icon-edit icon-large pull-right"></i>
+    <% end %>
+ 
+  
+  <% end %>
+</h4>
+            <h2><%= t("project.eventtab_organize_next") %></h2>
+        <% end %>
+    </div>
+
+    <ul class="nav nav-list">
+            <li class="divider"></li>
+          </ul>
+    
+    <div class="row-fluid">
+    	<div class="span2">
+    		<h2><i class="icon-road icon-2x"></i></h2>
+    	</div>
+    	<div class="span7">
+			<%= render 'project-status' %>
+			
+		</div>
+		<div class="span3 text-left">
+            <% if @project.has_project_status? %>
+           		<p><%= t("project.statuses.#{@project.project_status}") %></p>
+           	<% else %>
+           		<p><%= t("project.call_the_seller") %></p>
+        	<% end %>
+            </div>
+	</div>
+</div>
