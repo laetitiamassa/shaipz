@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130627210348) do
+ActiveRecord::Schema.define(:version => 20130805224530) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(:version => 20130627210348) do
   end
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
+
+  create_table "attendances", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "campaigns", :force => true do |t|
     t.string   "title"
@@ -48,8 +53,42 @@ ActiveRecord::Schema.define(:version => 20130627210348) do
     t.datetime "updated_at",       :null => false
   end
 
+  create_table "estates", :force => true do |t|
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "source_link"
+    t.integer  "total_price"
+    t.integer  "total_space"
+    t.integer  "zipcode"
+    t.string   "city"
+    t.string   "street_name"
+    t.integer  "street_number"
+    t.string   "owner_name"
+    t.string   "owner_email"
+    t.integer  "owner_phone"
+    t.string   "publisher"
+    t.text     "description"
+    t.boolean  "divided"
+    t.string   "status"
+  end
+
+  create_table "events", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "groups", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "leads", :force => true do |t|
     t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "memberships", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -136,6 +175,7 @@ ActiveRecord::Schema.define(:version => 20130627210348) do
     t.string   "rationale"
     t.string   "ideal_project"
     t.string   "ideal_neighbour"
+    t.string   "wish"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
