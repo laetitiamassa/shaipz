@@ -925,8 +925,8 @@ fr:
     delete_success: "Votre commentaire a bien été supprimé"
   wish:
     behind_estate: "L'immobilier, "
-    people_behind: "avant tout une affaire de personnes"
-    at_shaipz: "A Shaipz"
+    people_behind: "une affaire de personnes"
+    at_shaipz: "Au sein de Shaipz"
     we_believe: "nous croyons"
     more_than: "que, bien plus que 'la situation, la situation, la situation', "
     what_matters: "le critère le plus important"
@@ -939,6 +939,6 @@ fr:
     how_help: "ce que Shaipz pourrait faire pour davantage vous aider"
     goal: "à atteindre votre but :"
     i_want: "Je souhaite plus de services autour des personnes"
-    best: "Bien à vous,"
+    best: "Merci et bien à vous,"
     founder: "fondatrice"
 
