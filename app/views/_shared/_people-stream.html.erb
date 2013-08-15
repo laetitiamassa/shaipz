@@ -1,6 +1,6 @@
 <div class="hero-unit people-stream project text-center">
 
-	<% if @user.perfect_fellows.any? %>
+	<% if @user.fellows.any? %>
 	<h2><%= @user.fellows.count %> neighbours <i class="icon-group"></i></h2>
 	
 	<h3 class="text-center">It seems like you currently have <%= @user.fellows.count %> potential neighbours on Shaipz</h3>
@@ -13,7 +13,10 @@
 
     and select "request People First"
 
-	
+	<% else %>
+
+	Complete your profile and discover your potential neighbours
+
 	<% end %>
 	
 	
