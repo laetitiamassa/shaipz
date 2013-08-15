@@ -57,8 +57,8 @@
         %td= user.id
         %td= user.name
         %td= user.email
-        %td= user.fellows.count
-        %td= user.perfect_fellows.count
+        %td= @user.fellows.count
+        %td= @user.perfect_fellows.count
         %td
           %span.label.label-info= user.registration_method
         %td= l(user.created_at, :format => :short)
