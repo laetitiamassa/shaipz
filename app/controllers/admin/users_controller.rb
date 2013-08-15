@@ -6,6 +6,8 @@ class Admin::UsersController < Admin::BaseController
     @user_ready_but_bank = User.where(:personal_status => "ready_but_bank")
     @user_ready_with_bank = User.where(:personal_status => "ready_with_bank")
     @user_hiding_budget = User.where(:hide_budget => true)
+    @fellows = User.fellows 
+    @perfect_fellows = User.perfect_fellows
     respond_to do |format|
       format.html
       format.csv { send_data @users.to_csv }
