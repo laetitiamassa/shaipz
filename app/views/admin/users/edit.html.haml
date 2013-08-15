@@ -3,11 +3,10 @@
     Edit
     %small= @user.email
     = image_tag @user.picture.url(:thumb)
-  %h2
-  	= @user.fellows.count
-  	fellows
-    = @user.perfect_fellows.count
-    perfect fellows
+  %h2= @user.fellows.count
+  fellows
+  %h2= @user.perfect_fellows.count
+  perfect fellows
 
 = form_for [:admin, @user], :html => { :multipart => true, :class => 'form-horizontal' } do |f|
   = render :partial => 'form', :locals => { :f => f }
