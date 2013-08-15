@@ -17,6 +17,7 @@ class Admin::UsersController < Admin::BaseController
   def edit
     @user              = User.find(params[:id])
     @personal_statuses = User.personal_statuses
+    @rationales         = User.rationales
   end
 
   def update

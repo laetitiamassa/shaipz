@@ -32,6 +32,10 @@
         %span.add-on m2
 
   .control-group
+    = f.label :rationale, :class => 'control-label'
+    .controls= f.select :rationale, @rationales
+
+  .control-group
     = f.label :cohousing, :class => 'control-label'
     .controls= f.check_box :cohousing
 
