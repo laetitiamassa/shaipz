@@ -3,9 +3,14 @@ class ParticipationsController < ApplicationController
 
   def create
     @participation = current_user.participations.build(params[:participation])
+    @project = Project.find(params[:participation][:project_id])
     facebook_service = FacebookService.new(cookies[:fb_access_token])
     if ParticipationCreator.new(@participation, facebook_service).create!
-      flash[:notice] = t("participation.create_success")
+      if @project.suggested
+        flash[:notice] = t("Great, you run this project now! Click here to get some tips and tricks!")
+      else 
+        flash[:notice] = t("participation.create_success")
+      end
       redirect_to @participation.project
     else
       flash[:alert] = t("participation.create_error")

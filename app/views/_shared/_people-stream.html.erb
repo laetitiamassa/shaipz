@@ -1,24 +1,20 @@
-<div class="hero-unit people-stream project">
-	<h3 class="text-center people-title"><%= t("wish.behind_estate") %> <br><%= t("wish.people_behind") %></h3>
+<div class="hero-unit people-stream project text-center">
+
+	<% if @user.perfect_fellows.any? %>
+	<h2><%= @user.fellows.count %> neighbours <i class="icon-group"></i></h2>
 	
-	<p><b><%= t("wish.at_shaipz") %></b>, <%= link_to t("wish.we_believe"), about_path %> <%= t("wish.more_than") %> <b><%= t("wish.what_matters") %></b> <%= t("wish.when_buying") %><b><%= t("wish.is_people") %></b></p>
+	<h3 class="text-center">It seems like you currently have <%= @user.fellows.count %> potential neighbours on Shaipz</h3>
 
-	<p><b><%= t("wish.you") %></b>
-		<br><%= t("wish.more_people") %>
-	<br><%= t("wish.alternative") %>
-	</p>
+	To see them, complete your profile and subscribe to the People First option.
 
-	<p><%= t("wish.drop") %> <b><%= t("wish.how_help") %></b> <%= t("wish.goal") %>
+	<div class="text-right edit-profile">
+        <%= link_to t("edit my profile and see my neighbours"), edit_user_path(@user), :class => "btn btn-large btn-block btn-info" %>
+    </div>
 
-	<div class='text-center'>
-		<a class="btn btn-info btn-large btn-block" href="mailto:hello@shaipz.com"><%= t("wish.i_want") %></a>
-	</div></p>
+    and select "request People First"
 
-<br>
-	<p><%= t("wish.best") %></p>
-
-<p class="text-right">
-	<img src="assets/ProfilLaetitiaMassa.jpg" class="img-rounded">
-	<br>Laetitia Massa,
-	<br><small><i><%= t("wish.founder") %></i></small></p>
+	
+	<% end %>
+	
+	
 </div>

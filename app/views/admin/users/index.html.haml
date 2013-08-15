@@ -28,6 +28,8 @@
       %th ID
       %th Name
       %th Email
+      %th Fellows
+      %th Perfect fellows
       %th Joined via
       %th Joined shaipz on
       %th Confirmation delay
@@ -55,6 +57,8 @@
         %td= user.id
         %td= user.name
         %td= user.email
+        %td= user.fellows.count
+        %td= user.perfect_fellows.count
         %td
           %span.label.label-info= user.registration_method
         %td= l(user.created_at, :format => :short)

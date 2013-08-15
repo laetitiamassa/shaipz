@@ -183,8 +183,28 @@ class User < ActiveRecord::Base
     write_attribute(:maximum_budget, budget.gsub(/[\.,]/, ""))
   end
 
+  def fellows_in_district
+    User.all.select do |user|
+      user.id != self.id &&
+      (user.zipcodes & self.zipcodes).any?
+    end
+  end
+
+  def fellows_status
+    User.where("users.id != :id AND users.personal_status = :personal_status", { id: self.id, personal_status: self.personal_status })
+  end
+
+  def fellows_purpose
+    User.where("users.id != :id AND users.rationale = :rationale", { id: self.id, rationale: self.rationale } )
+  end
+
   def fellows
-    project.participants
+    fellows_in_district | fellows_status | fellows_purpose
+  end
+
+
+  def perfect_fellows
+    fellows_in_district && fellows_status && fellows_purpose
   end
 
   def zipcodes
