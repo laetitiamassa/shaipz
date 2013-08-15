@@ -202,7 +202,6 @@ class User < ActiveRecord::Base
     fellows_in_district | fellows_status | fellows_purpose
   end
 
-
   def perfect_fellows
     fellows_in_district && fellows_status && fellows_purpose
   end

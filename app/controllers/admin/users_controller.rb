@@ -1,4 +1,8 @@
 class Admin::UsersController < Admin::BaseController
+
+  helper_method :fellows
+  helper_method :perfect_fellows
+
   def index
     @users = User.order('created_at DESC')
     @user_active = User.where("current_sign_in_at < ?", 31.days.ago)
@@ -13,6 +17,7 @@ class Admin::UsersController < Admin::BaseController
       format.csv { send_data @users.to_csv }
     end
   end
+
 
   def edit
     @user              = User.find(params[:id])
