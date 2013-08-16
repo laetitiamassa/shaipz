@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.active
+    @user = current_user
     render 'streams/show'
   end
 
