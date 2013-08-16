@@ -88,8 +88,12 @@ class Project < ActiveRecord::Base
   end
 
   def owner_name
-    if has_owner?
-      owner.has_name? ? owner.name : owner.name_placeholder
+    if has_owner? 
+      if owner.name.present?
+        owner.name
+      else
+        owner.name_placeholder
+      end
     end
   end
 
