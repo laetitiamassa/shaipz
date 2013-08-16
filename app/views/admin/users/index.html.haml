@@ -28,14 +28,6 @@
       %th ID
       %th Name
       %th Email
-      %th Fellows
-      %th Perfect fellows
-      %th Joined via
-      %th Joined shaipz on
-      %th Confirmation delay
-      %th Sign in count
-      %th Current sign in
-      %th Last sign in
       %th Favorite areas
       %th Maximum budget
       %th Hidden budget
@@ -46,6 +38,14 @@
       %th Availabilities
       %th Skill
       %th Role
+      %th Ideal project
+      %th Ideal neighbour
+      %th Joined via
+      %th Joined shaipz on
+      %th Confirmation delay
+      %th Sign in count
+      %th Current sign in
+      %th Last sign in
       %th Remembered at
       %th Password reset
       %th Current sign in IP
@@ -58,6 +58,19 @@
         %td= link_to user.name, edit_admin_user_path(user) 
         %td= user.email
        
+        
+        %td= user.favorite_areas
+        %td= user.maximum_budget
+        %td= user.hide_budget ? :yes : :no
+        %td= user.minimum_space
+        %td= user.rationale
+        %td= user.cohousing ? :yes : :no
+        %td= user.personal_status
+        %td= user.personal_timing
+        %td= user.skill
+        %td= user.role
+        %td= user.ideal_project
+        %td= user.ideal_neighbour
         %td
           %span.label.label-info= user.registration_method
         %td= l(user.created_at, :format => :short)
@@ -66,16 +79,6 @@
           %span.badge= user.sign_in_count
         %td= l(user.current_sign_in_at, :format => :short) if user.signed_in?
         %td= l(user.last_sign_in_at, :format => :short) if user.signed_in_before?
-        %td= user.favorite_areas
-        %td= user.maximum_budget
-        %td= user.hide_budget ? :yes : :no
-        %td= user.minimum_space
-        %th= user.rationale
-        %th= user.cohousing ? :yes : :no
-        %td= user.personal_status
-        %td= user.personal_timing
-        %th= user.skill
-        %th= user.role
         %td= user.remembered? ? l(user.remember_created_at, :format => :short) : :never
         %td= user.has_reset_password? ? :yes : :no
         %td= user.current_sign_in_ip

@@ -63,9 +63,20 @@
       </div>
         
 
-        <legend><h2><i class="icon-home icon-large pull-left icon-muted"></i><%= t("profile.your_ideal_home") %></h2></legend>
+        <legend><h2><i class="icon-home icon-large pull-left icon-muted"></i><%= t("profile.your_ideal_home") %></h2>
+        </legend>
         
+       
+        <div class="checkbox hero-unit next-event">
+         
+          <div class="span11 offset1">
+          <%= f.check_box :hide_budget %>
+          <%= f.label :hide_budget, t("profile.Subscribe to People First Plan, and find the right neigbours") %></div>
+        
+        </div>
+
       
+
       <ul class="fields">
        <div class="row-fluid"> 
         <li class="string span3">

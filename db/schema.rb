@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805224530) do
+ActiveRecord::Schema.define(:version => 20130815144042) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -176,6 +176,7 @@ ActiveRecord::Schema.define(:version => 20130805224530) do
     t.string   "ideal_project"
     t.string   "ideal_neighbour"
     t.string   "wish"
+    t.boolean  "people_plan_request"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
