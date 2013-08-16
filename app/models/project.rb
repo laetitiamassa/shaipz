@@ -84,7 +84,7 @@ class Project < ActiveRecord::Base
   end
 
   def owner_name
-    owner.has_name? ? owner.name : owner.name_placeholder
+    owner && owner.has_name? ? owner.name : owner.name_placeholder
   end
 
   def has_picture?
