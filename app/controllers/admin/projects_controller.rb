@@ -3,7 +3,7 @@ class Admin::ProjectsController < Admin::BaseController
     @projects = Project.all
     @project_active = Project.active
     @name = Project.name
-    @users  = User.all
+    @user  = User.find(params[:id])
   end
 
   def new
