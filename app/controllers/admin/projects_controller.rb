@@ -3,6 +3,7 @@ class Admin::ProjectsController < Admin::BaseController
     @projects = Project.all
     @project_active = Project.active
     @name = Project.name
+    @users  = User.all
   end
 
   def new
