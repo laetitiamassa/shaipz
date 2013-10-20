@@ -16,9 +16,11 @@
     <!-- view all projects when user has projects in his/her districts-->
 
   <% if @has_projects_in_district %>
-    <button class="btn btn-link span3 offset9">
+  <div class="text-right">
+    <button class="btn btn-link">
       <%= link_to t("stream.view_all_districts"), projects_path %>
     </button>
+  </div>
   <% end %>
 
 
@@ -27,7 +29,7 @@
   		<%= render :partial => "_shared/project", :locals => { :project => project } %>
 	<% end %>
 
-	<div class="span6 offset3 text-center">
+	<div class="text-center">
 		<h4><%= t("project.cannot_find") %></h4>
-		<%= link_to t("project.create_your_own"), new_project_path, :class => "btn btn-block btn-large btn-success" %>
+		<%= link_to t("project.create_your_own"), new_project_path, :class => "btn btn-large btn-success" %>
 	</div>
