@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 
   validates :favorite_areas, :minimum_space, :maximum_budget, :presence => true
   validates_numericality_of :minimum_space, :maximum_budget, :greater_than => 0
-  validates :favorite_areas, :format => { :with => /^\d{4}(?:\s?,\s?\d{4}){0,4}$/ }
+  validates :favorite_areas, :format => { :with => /^\d{4}(?:\s?,\s?\d{4}){0,50}$/ }
   validates_attachment :picture,
     :content_type => { :content_type => /image/ },
     :size => { :less_than => 2.megabytes }

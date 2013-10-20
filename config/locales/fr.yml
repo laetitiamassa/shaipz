@@ -200,7 +200,7 @@ fr:
     update_success: "Votre profil est maintenant à jour"
     update_errors: "Oups, il y a un petit souci avec votre profil."
     favorite_areas: "Communes préférées : "
-    favorite_areas_form: "Communes préférées (max 5)"
+    favorite_areas_form: "Communes préférées"
     maximum_budget: "Budget maximum : "
     maximum_budget_form: "Budget maximum (en euros)"
     minimum_space: "Surface minimale : "
@@ -709,7 +709,7 @@ fr:
     what-content3: "avec ces personnes pour réaliser leur(s) achat(s) immobilier(s)."
     how: "Comment fonctionne Shaipz ?"
     how-intro: "Shaipz tourne autour de trois aspects principaux : des personnes, des immeubles et des étapes"
-    how-content1: "Sur Shaipz, chaque utilisateur a un profil immobilier, composé de son nom, son budget, ses 5 communes favorites, sa surface minimum souhaitée, mais aussi son statut personnel d'achat, son ouverture à l'habitat groupé, et bien entendu ses 3 moments idéaux pour visiter des immeubles ou découvrir ses futurs potentiels voisins."
+    how-content1: "Sur Shaipz, chaque utilisateur a un profil immobilier, composé de son nom, son budget, ses communes favorites, sa surface minimum souhaitée, mais aussi son statut personnel d'achat, son ouverture à l'habitat groupé, et bien entendu ses 3 moments idéaux pour visiter des immeubles ou découvrir ses futurs potentiels voisins."
     how-content2: "Outre les utilisateurs, il y a les projets. Composé d'un immeuble divisé ou divisible en appartements, chaque projet est créé ou mené par un utilisateur de Shaipz, comme vous, et ensuite rejoint par d'autres utilisateurs de Shaipz intéressés à acheter un lot parmi les lots disponibles dans l'ensemble immobilier."
     how-content3: "Une fois que les suffisamment de participants composent un projet, une visite de l'ensemble immobilier ou une réunion entre participants a lieu. Si les participants souhaitent concrétiser chacun leur projet immobilier autour de ce projet, ils suivent les étapes clés successives pour aboutir à l'achat, par chacun, de son propre appartement dans l'immeuble."
     how-timeline: "Découvrez les étapes en détail"
@@ -792,7 +792,7 @@ fr:
               blank: " : insérez votre budget maximum"
               not_a_number: " : n'insérez que des chiffres"
             favorite_areas:
-              blank: ": indiquez vos 5 communes préférées"
+              blank: ": indiquez vos communes préférées"
               invalid: " : n'insérez que des codes postaux de 4 chiffres"
         project:
           attributes:

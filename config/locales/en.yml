@@ -194,7 +194,7 @@ en:
     update_success: "Your profile is updated"
     update_errors: "Oops, something went wrong with your profile."
     favorite_areas: "Favorite district(s): "
-    favorite_areas_form: "Favorite district(s) (max 5)"
+    favorite_areas_form: "Favorite district(s)"
     maximum_budget: "Maximum budget: "
     maximum_budget_form: "Maximum budget (in euros)"
     minimum_space: "Minimum space: "
@@ -700,7 +700,7 @@ en:
     what-content3: "with each other in order to achieve their respective real estate goals."
     how: "How does Shaipz work?"
     how-intro: "Shaipz works around three main aspects: the people, the buildings and the events"
-    how-content1: "On Shaipz, each user has a real estate profile, including his/her name, budget, 5 favorite districts, minimum space wanted, as well as his/her buying personal status, his/her openness to cohousing, and of course his/her 3 best moments for a visit or a meeting with potential futur neighbours."
+    how-content1: "On Shaipz, each user has a real estate profile, including his/her name, budget, favorite districts, minimum space wanted, as well as his/her buying personal status, his/her openness to cohousing, and of course his/her 3 best moments for a visit or a meeting with potential futur neighbours."
     how-content2: "Besides the users, there are the projects. Based upon a divided or dividable building, each project is created or lead by a Shaipz user like you, and soon joined by other Shaipz users interested in buying one of the appartements available in the building."
     how-content3: "Once there are enough participants having joined the project, a visit of the building or a meeting between participants takes place. If the participants want to pursue with the building of the project, they follow the key successive steps to achieve the purchase, by each of them, of his/her own appartment in the building."
     how-timeline: "Discover those project steps in details"
@@ -784,7 +784,7 @@ en:
               blank: ": insert your maximum budget"
               not_a_number: ": you can only insert numbers"
             favorite_areas:
-              blank: ": insert your 5 prefered districts"
+              blank: ": insert your prefered districts"
               invalid: ": you can only insert numbers"
         project:
           attributes:
