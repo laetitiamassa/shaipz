@@ -83,7 +83,22 @@
         <li class="checkbox span3">
           <%= f.check_box :hide_budget %>
           <%= f.label :hide_budget, t("profile.hide_budget") %>
-      </div>
+        </div>
+        
+        <div class="row-fluid">
+          <li class="span2">
+            <%= t("profile.extras") %>
+          <li class="checkbox span3">
+            <%= f.check_box :garden %>
+            <%= f.label  :garden, t("profile.garden"), {:title => t("profile.garden")} %>
+          <li class="checkbox span3">
+            <%= f.check_box :garage %>
+            <%= f.label  :garage, t("profile.garage"), {:title => t("profile.garage")} %>
+          <li class="checkbox span3">
+            <%= f.check_box :new %>
+            <%= f.label  :new, t("profile.new"), {:title => t("profile.new")} %>
+        </div>
+
         <div class="row-fluid">
           <li class="string span6">
             <%= f.label :rationale, t("profile.purpose") %>
