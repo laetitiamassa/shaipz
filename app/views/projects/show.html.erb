@@ -9,15 +9,26 @@
               <%= image_tag ("cohousing.png"), {:title => t("project.logo_cohousing")} %>
               <% end %>
             
-            <% if @user.owner_of_project?(@project) %>
+              <% if @user.owner_of_project?(@project) %>
           
-  <small>
-    <%= link_to edit_project_path(@project), :target => "_blank" do %>
-      <i class="icon-edit"></i></small>
-    <% end %>
+                <small>
+                  <%= link_to edit_project_path(@project), :target => "_blank" do %>
+                  <i class="icon-edit"></i>
+                </small>
+              <% end %>
+
+             
  
   
-  <% end %></h1>
+              <% end %>
+              <small>
+             
+                          <%= link_to @project.source_link, :title => t("project.logo_original_ad"), :target => "_blank" do %>
+                            <i class="icon-eye-open"></i>
+                          <% end %>
+                       
+                      </small>
+            </h1>
           
           </div>
           <div class="span5 text-right">

@@ -9,7 +9,7 @@
     	
     	<div class="row-fluid">	
     		
-    		<div class="span4">
+    		<div class="span3">
                 
     			<div class="snippet">
                     <% if project.has_average_district_price? %>
@@ -19,7 +19,7 @@
                 </div>
     		</div>
     		
-    		<div class="span5">
+    		<div class="span6">
     			<h3 class="stream-title"><%= link_to truncate(project.name, :length => 30), project_path(project) %>
     			<%= image_tag "cohousing.png", :title => t("project.logo_cohousing") if project.cohousing %></h3>
                 <% if project.suggested %>
@@ -28,15 +28,18 @@
     			by <%= link_to truncate(project.owner_name, :length => 15), user_path(project.owner) %>
                 <% end %>
     			<div class="row-fluid stream-details">
-    				<div class="span4">
-    					<p><i class="icon-map-marker icon-2x"></i>
-    					<%= project.zipcode %></p>
-    				</div>
     				<div class="span3">
-    					<p><i class="icon-group icon-2x"></i>
-    					<%= project.maximum_shaipz %></p>
+    					<p><i class="icon-map-marker icon-2x"></i>
+    					<%= project.zipcode %>,  <%= project.city %></p>
     				</div>
     				<div class="span5">
+                        <% project.owner_and_participants.each do |p| %>
+    					<i class="icon-user icon-2x"></i>
+    					
+                        <% end %>
+                         <b>for <%= project.maximum_shaipz %></b> <i class="icon-home icon-2x"></i>
+    				</div>
+    				<div class="span4">
                         <% if !project.suggested %>
                             <% if project.coming_event %>
     					       <p><i class="icon-time icon-2x"></i>
