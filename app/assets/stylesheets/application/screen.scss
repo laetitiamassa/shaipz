@@ -753,6 +753,15 @@ z-index: 1;
 
 /* Projects Streams */
 
+.thumbnail {
+  margin: 7px;
+}
+
+.row-stream {
+  margin: 0 auto;
+  width: 90%;
+}
+
 .disabled {
   opacity: .4;
         }
@@ -2774,5 +2783,9 @@ form .fields .field_with_errors input {
 
 form .fields .field_with_errors label {
   color: #d63f00 !important;
+}
+
+form {
+  margin: 0;
 }
 

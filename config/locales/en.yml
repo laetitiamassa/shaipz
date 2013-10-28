@@ -68,6 +68,7 @@ en:
     have_fun: "Have fun!"
     here: "here"
   help: " help"
+  for: "for"
   sign_in:
     email: "email"
     example_email: "myname@myemail.com"

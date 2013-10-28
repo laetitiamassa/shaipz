@@ -74,6 +74,7 @@ fr:
     have_fun: "Faites-vous plaisir!"
     here: "ici"
   help: " aide"
+  for: "pour"
   sign_in:
     email: "email"
     example_email: "moi@monemail.com"

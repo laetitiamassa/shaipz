@@ -11,23 +11,24 @@
       			<%= link_to content_tag(:span, t("stream.start_project")), new_project_path, :class => "btn btn-large btn-success" %>
       		</div> 
     	</div> 
-  	</div> <!-- end of header -->
+</div> <!-- end of header -->
 
     <!-- view all projects when user has projects in his/her districts-->
 
-  <% if @has_projects_in_district %>
-  <div class="text-right">
-    <button class="btn btn-link">
+<% if @has_projects_in_district %>
+  <div class="text-center">
+    <button class="btn">
       <%= link_to t("stream.view_all_districts"), projects_path %>
     </button>
   </div>
-  <% end %>
+<% end %>
 
-
-	<% @projects.each do |project| %>
+<div class="row row-stream">
+<% @projects.each do |project| %>
      
-  		<%= render :partial => "_shared/project", :locals => { :project => project } %>
-	<% end %>
+  		<%= render :partial => "_shared/projectbis", :locals => { :project => project } %>
+<% end %>
+</div>
 
 	<div class="text-center">
 		<h4><%= t("project.cannot_find") %></h4>
