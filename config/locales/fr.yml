@@ -48,6 +48,10 @@ fr:
       hour:   "Heure"
       minute: "Minute"
       second: "Seconde"
+      hours_short: "h"
+      days_short: "j"
+      minutes_short: "min"
+      months_short: "m"
     number:
       human:
         storage_units:
@@ -464,6 +468,9 @@ fr:
     your_profile_to_inform: "votre profil pour informer chacun"
     eventtab_missing_next: "Il n'y a pas d'événement au programme."
     eventtab_organize_next: "Organisez votre prochain événement !"
+    time_until_next_event: "Le prochain événement est dans"
+    suggest_next_event: "Suggérez une réunion ou visite"
+
 
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."

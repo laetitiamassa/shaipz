@@ -47,6 +47,36 @@ class Project < ActiveRecord::Base
     !coming_event 
   end
 
+  def time_left_display
+    if time_left_in_days >= 30
+      time_left_in_months
+    elsif time_left_in_hours >= 72 
+      time_left_in_days
+    elsif ((event_date - Time.now) / 1.hour) < 1
+      time_left_in_minutes
+    else 
+      time_left_in_hours
+    end
+  end
+
+  def time_left_in_minutes
+    ((event_date - Time.now) / 60).round
+  end
+
+  def time_left_in_hours
+    ((event_date - Time.now) / 1.hour).round
+  end
+
+  def time_left_in_days
+    ((event_date - Time.now) / 1.day).round
+  end
+
+  def time_left_in_months
+    ((event_date - Time.now) / 1.month).round
+  end
+
+
+
   def suggested
     owner_id == 301
   end
@@ -168,6 +198,8 @@ class Project < ActiveRecord::Base
   def event
     "#{I18n.l(event_date, :format => :short) if event_date} #{event_type}: #{event_description}"
   end
+
+
 
   def full_address
     "#{zipcode} #{city} #{address}"

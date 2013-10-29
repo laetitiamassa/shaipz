@@ -45,6 +45,10 @@ en:
       hour:   "Hour"
       minute: "Minute"
       second: "Seconds"
+      hours_short: "h"
+      days_short: "d"
+      minutes_short: "min"
+      months_short: "m"
 
 
 
@@ -457,6 +461,9 @@ en:
     your_profile_to_inform: "your profile to inform the participants"
     eventtab_missing_next: "There is no event coming."
     eventtab_organize_next: "Organize your next event!"
+    time_until_next_event: "The next event starts in"
+    suggest_next_event: "Suggest a meeting or a visit"
+
   participation:
     create_success: "Congratulations! Now, you participate to the project."
     create_error: "You can't participate to this project."
