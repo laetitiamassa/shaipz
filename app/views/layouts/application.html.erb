@@ -23,7 +23,7 @@
         <% if user_signed_in? %>
 
           <ul class="nav">
-            <li class="logo-navbar"><%= link_to image_tag("shaipz_logo.png", :size => "100x50"), root_path %></li>
+            <li class="logo-navbar"><%= link_to image_tag("shaipz_logo.png", :size => "200x100"), root_path %></li>
             
             <li><%= link_to(t("#{current_user.has_name? ? current_user.name : current_user.name_placeholder}"), user_path(current_user)) %></li>
             <li><%= link_to t("project.create"), new_project_path, :title => t("project.create_shortcut") %></li>
