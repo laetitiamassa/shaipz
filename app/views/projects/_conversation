@@ -40,7 +40,7 @@
 
     </ul>
 
-     <%= render_comments @project %>
+     
 
 <% unless @project.has_participant_or_owner?(@user) %>
 
@@ -71,7 +71,8 @@
 
 
 <% if @project.has_participant_or_owner?(@user) %> 
-        <%= render_comments_form @project %>
+      <%= render_comments @project %>
+      <%= render_comments_form @project %>
 <% end %>
       
 
