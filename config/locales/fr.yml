@@ -288,8 +288,8 @@ fr:
     shaipz: "Mes projets"
     create: "Créer mon projet"
   stream:
-    start_project: "Créer un projet"
-    all_projects: "Projets ouverts"
+    start_project: "Créer une copropriété"
+    all_projects: "Copropriétés en constitution"
     original_ad: "annonce web"
     view_all_districts: "voir toutes les communes"
     economy: "Votre économie d'échelle sur le prix moyen du marché"
@@ -321,7 +321,7 @@ fr:
     discuss: "Rejoignez la conversation"
     cannot_find: "Vous ne trouvez pas votre bonheur ici ?"
     want_more: "Vous en voulez plus ?"
-    create_your_own: "Alors créez votre propre projet (c'est très facile)"
+    create_your_own: "Alors créez votre propre copropriété (c'est très facile)"
     check_out_new_projects: "Découvrez les nouveaux projets"
     or_create_your_own: "ou créez le vôtre (c'est très facile)"
     define_new_project: "Créez un nouveau projet"
@@ -470,6 +470,7 @@ fr:
     eventtab_organize_next: "Organisez votre prochain événement !"
     time_until_next_event: "Le prochain événement est dans"
     suggest_next_event: "Suggérez une réunion ou visite"
+    join_to_talk: "Joignez le projet pour joindre la conversation !"
 
 
   participation:

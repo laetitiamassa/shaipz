@@ -8,29 +8,71 @@
         <%= @project.leader_thought %>
       </div>
       </p>
+      <ul class="nav nav-list">
+
+        <li class="divider"></li>
+
+    </ul>
+
         <% end %>
 
  
 
 
-
-      <div class="row-fluid">
-        <div class="span3">
+      <div class="row-fluid text-center">
+        <div class="span12">
           <span class="lead inner-title"><%= t("project.discuss") %></span>
         </div>
-        <div class="span9 lower">
+        <div class="lower">
           <% @project.owner_and_participants.each do |p| %>
                          
-                            <div class="span1 profile-participant text-center">
+                            <div class="span2 profile-participant">
                               <div class="p-status" data-trigger="hover" rel="popover" data-html="true" data-placement="top"  data-content="<%= t("statuses.#{p.personal_status}") if p.has_personal_status? %>" data-original-title="<%= p.has_name? ? p.name : p.name_placeholder %>" ><%= link_to(image_tag(p.picture.url(:thumb), :class => 'img-circle'), user_path(p)) %>
                               </div> 
                             </div>    
                 <% end %>
         </div>
       </div>
-        
-        <%= render_comments @project %>
+
+      <ul class="nav nav-list">
+
+        <li class="divider"></li>
+
+    </ul>
+
+     <%= render_comments @project %>
+
+<% unless @project.has_participant_or_owner?(@user) %>
+
+<div class="text-center">
+<p><%= t("project.join_to_talk") %></p>
+
+  <%= form_for "participation", :url => participations_path do |f| %>
+    <%= f.hidden_field :project_id, :value => @project.id %>
+      <% if current_user.authenticated_with_facebook?(session) %>       
+            <ul class="fields fb">
+                <li class="checkbox fb facebook_boost" rel="tooltip" data-placement="top" data-original-title="<%= t("participation.share_on_facebook") %>"><i class="icon-facebook"></i>
+                      <%= f.check_box :share_on_facebook, { :checked => true } %>
+                      <% f.label :share_on_facebook %>
+                </li>
+            </ul>
+      <% else %>
+        <%= f.hidden_field :share_on_facebook, :value => "0" %>       
+      <% end %>
+
+      <% if @project.suggested %>
+          <div class="wait"><%= f.submit t("project.lead_project"), :class => 'btn-large btn-success' %></div>
+      <% else %>
+        <div class="wait"><%= f.submit t("project.join_project"), :class => 'btn btn-large btn-info' %></div>
+      <% end %> 
+  <% end %>
+</div>
+<% end %>
+
+
+<% if @project.has_participant_or_owner?(@user) %> 
         <%= render_comments_form @project %>
+<% end %>
       
 
     

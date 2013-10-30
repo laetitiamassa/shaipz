@@ -758,12 +758,11 @@ z-index: 1;
 /* Projects Streams */
 
 .thumbnail {
-  margin: 7px;
+  margin: 5px 1px;
 }
 
 .row-stream {
   margin: 0 auto;
-  width: 90%;
 }
 
 .disabled {
@@ -867,6 +866,10 @@ z-index: 1;
 
 .suggested {
   cursor: pointer;
+}
+
+.up {
+  margin-top: -5px;
 }
 
 

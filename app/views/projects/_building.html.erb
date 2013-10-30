@@ -14,28 +14,16 @@
           </div>
           </div>
           <div class="span3 text-right">
-            <h3 class="short-spacing"><i class="icon-map-marker"></i><%= @project.zipcode %> <%= @project.city %>
+            
+            
+            <h3><%= number_to_currency(@project.price_per_shaipz, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %><small> /<i class="icon-home"></i></small></h3>
+            
+            <h4 class="up"><%= @project.maximum_shaipz %>  <i class="icon-home"></i> <small><%= t("project.of") %></small> <%= @project.space_per_shaipz %> <small>m2</small></h4>
+  
+            <h5 class="short-spacing up"><i class="icon-map-marker"></i><%= @project.zipcode %> <%= @project.city %>
             <% if @project.has_participant_or_owner?(@user) && !@project.hide_street_from_non_participants? %>
             <br><small><%= @project.address %> </small>
-            <% end %></h3>
-            <h3><%= @project.maximum_shaipz %>  <i class="icon-home"></i> <small><%= t("project.of") %></small> <%= @project.space_per_shaipz %> <small>m2</small></h3>
-            <h2><%= number_to_currency(@project.price_per_shaipz, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %><small> /<i class="icon-home"></i></small></h2>
-            
-             <% if @user.owner_of_project?(@project) %>
-          
-  
-    <%= link_to edit_project_path(@project), :target => "_blank" do %>
-      <i class="icon-edit icon-large"></i>
-    <% end %>
- 
-  
-  <% end %>
-            <span class="icon-stack">
-              <i class="icon-sign-blank icon-stack-base"></i>
-              <%= link_to @project.source_link, :title => t("project.logo_original_ad"), :target => "_blank" do %>
-                <i class="icon-eye-open icon-light"></i>
-              <% end %>
-            </span>
+            <% end %></h5>
            
             
           </div>

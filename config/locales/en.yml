@@ -463,6 +463,7 @@ en:
     eventtab_organize_next: "Organize your next event!"
     time_until_next_event: "The next event starts in"
     suggest_next_event: "Suggest a meeting or a visit"
+    join_to_talk: "Join the project to join the conversation !"
 
   participation:
     create_success: "Congratulations! Now, you participate to the project."

@@ -1,9 +1,9 @@
-<div class="container-fluid-project">
+<div class="container container-fluid-profile">
   
   <!-- title -->
       <div class="howitworks-header page-header">
         <div class="row-fluid">
-          <div class="span7 project-name">
+          <div class="span10 project-name">
             <h1><%= @project.name %>
               <% if @project.cohousing? %>
               <%= image_tag ("cohousing.png"), {:title => t("project.logo_cohousing")} %>
@@ -31,7 +31,7 @@
             </h1>
           
           </div>
-          <div class="span5 text-right">
+          <div class="span2 text-right">
 
             <%= render "calltoaction" %>
 
