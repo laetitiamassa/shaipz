@@ -1,0 +1,21 @@
+<h1>Listing condos</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @condos.each do |condo| %>
+  <tr>
+    <td><%= link_to 'Show', condo %></td>
+    <td><%= link_to 'Edit', edit_condo_path(condo) %></td>
+    <td><%= link_to 'Destroy', condo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Condo', new_condo_path %>

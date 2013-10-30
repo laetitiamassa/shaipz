@@ -1,4 +1,7 @@
 Shaipz::Application.routes.draw do
+  resources :condos
+
+
   opinio_model
 
   get "pricing/show"

@@ -1,0 +1,17 @@
+<%= form_for(@condo) do |f| %>
+  <% if @condo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@condo.errors.count, "error") %> prohibited this condo from being saved:</h2>
+
+      <ul>
+      <% @condo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

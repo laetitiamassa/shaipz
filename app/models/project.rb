@@ -78,7 +78,7 @@ class Project < ActiveRecord::Base
 
 
   def suggested
-    owner_id == 301
+    owner_id == 0
   end
 
   def disabled?
