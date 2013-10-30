@@ -29,12 +29,13 @@
       %th Name
       %th Email
       %th Favorite areas
+      %th Readiness
       %th Maximum budget
-      %th Hidden budget
       %th Minimum space
+      %th New building
+      %th Hidden budget
       %th Purpose
       %th Cohousing
-      %th Readiness
       %th Availabilities
       %th Skill
       %th Role
@@ -57,15 +58,14 @@
         %td= user.id
         %td= link_to user.name, edit_admin_user_path(user) 
         %td= user.email
-       
-        
         %td= user.favorite_areas
+        %td= user.personal_status
         %td= user.maximum_budget
-        %td= user.hide_budget ? :yes : :no
         %td= user.minimum_space
+        %td= user.newly ? :yes : :no
+        %td= user.hide_budget ? :yes : :no
         %td= user.rationale
         %td= user.cohousing ? :yes : :no
-        %td= user.personal_status
         %td= user.personal_timing
         %td= user.skill
         %td= user.role
