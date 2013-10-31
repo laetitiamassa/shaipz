@@ -63,6 +63,10 @@ class User < ActiveRecord::Base
     facebook_user
   end
 
+  def is_admin
+    email = "hello@shaipz.com" || "marcantony23@hotmail.com"
+  end
+
   def has_ideal_project_or_neighbour?
     ideal_project.present? and ideal_neighbour.present?
   end
