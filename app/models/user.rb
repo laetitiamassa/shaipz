@@ -55,9 +55,9 @@ class User < ActiveRecord::Base
       facebook_user.name           = data["name"]
       facebook_user.email          = data["email"]
       facebook_user.password       = SecureRandom.urlsafe_base64
-      facebook_user.favorite_areas = "1000"
+      facebook_user.favorite_areas = "1000, 1050, 1060"
       facebook_user.minimum_space  = '50'
-      facebook_user.maximum_budget = '150000'
+      facebook_user.maximum_budget = '180000'
       facebook_user.confirmed_at   = Time.now
     end
     facebook_user

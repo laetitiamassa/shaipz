@@ -1,4 +1,4 @@
-<div class="container container-fluid-profile">
+<div class="container container-fluid-project condo-title">
   
   <!-- title -->
       <div class="howitworks-header page-header">
@@ -12,7 +12,7 @@
               <% if @user.owner_of_project?(@project) %>
           
                 <small>
-                  <%= link_to edit_project_path(@project), :target => "_blank" do %>
+                  <%= link_to edit_project_path(@project), do %>
                   <i class="icon-edit"></i>
                 </small>
               <% end %>
@@ -23,7 +23,7 @@
               <% end %>
               <small>
              
-                          <%= link_to @project.source_link, :title => t("project.logo_original_ad"), :target => "_blank" do %>
+                          <%= link_to @project.source_link, :title => t("project.logo_original_ad"), do %>
                             <i class="icon-eye-open"></i>
                           <% end %>
                        
@@ -41,7 +41,14 @@
           
        
       </div>
+</div> <!-- end container -->
+<div class="condo-img">
+  
+  <%= image_tag @project.picture.url(:head) %>
+</div>
 
+
+<div class="container container-fluid-profile"> <!-- container again -->
   <div class="row-fluid">
     <!-- left -->
     <div class="span4">

@@ -13,9 +13,8 @@
             <%= image_tag @project.picture.url(:medium) %>
           </div>
           </div>
+
           <div class="span3 text-right">
-            
-            
             <h3><%= number_to_currency(@project.price_per_shaipz, :delimiter =>'.', :strip_insignificant_zeros => true, :unit => "€", :format => "%n %u") %><small> /<i class="icon-home"></i></small></h3>
             
             <h4 class="up"><%= @project.maximum_shaipz %>  <i class="icon-home"></i> <small><%= t("project.of") %></small> <%= @project.space_per_shaipz %> <small>m2</small></h4>

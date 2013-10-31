@@ -11,7 +11,7 @@ class Project < ActiveRecord::Base
   has_many :participations, :dependent => :destroy, :conditions => { :left_at => nil }
   has_many :participants, :through => :participations
   has_many :reports, :as => :reportable
-  has_attached_file :picture, { :styles => { :medium => "930x259#", :thumb => "300x150#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
+  has_attached_file :picture, { :styles => { :head => "1814x489#", :medium => "930x259#", :thumb => "300x150#" }, :default_url => "/assets/project_missing_:style.png" }.merge!(PAPERCLIP_STORAGE_OPTIONS)
 
   validates :name, :total_amount, :maximum_shaipz, :total_space, :zipcode, :source_link, :event_type, :event_date, :owner, :presence => true
   validates_numericality_of :total_amount, :maximum_shaipz, :total_space
