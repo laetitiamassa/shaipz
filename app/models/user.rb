@@ -199,7 +199,7 @@ class User < ActiveRecord::Base
   end
 
   def fellows_status
-    User.where("users.id != :id AND users.personal_status = :personal_status", { id: self.id, personal_status: self.personal_status })
+    User.where("users.id != :id AND users.personal_status = :personal_status", { id: self.id, personal_status: self.personal_status } )
   end
 
   def fellows_purpose
@@ -210,8 +210,12 @@ class User < ActiveRecord::Base
     fellows_in_district | fellows_status | fellows_purpose
   end
 
+  def good_fellows
+    fellows_in_district && fellows_purpose
+  end
+
   def perfect_fellows
-    fellows_in_district && fellows_status && fellows_purpose
+    good_fellows if fellows_in_district
   end
 
   def zipcodes

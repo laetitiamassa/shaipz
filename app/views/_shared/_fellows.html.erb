@@ -13,17 +13,21 @@
 	  			<%= link_to(f.name_or_placeholder, user_path(f)) %><br>
 	  			<%= f.email %>
 	  		</div>
-	  		<div class="span3">
+	  		<div class="span2">
 	  			<%= f.maximum_budget %> EUR<br>
 				<%= f.minimum_space %> m2
 			</div>
-	  		<div class="span3">
+	  		<div class="span2">
 	  			<%= f.personal_status %><br>
 	  			<%= l(f.last_sign_in_at, :format => :short) if f.signed_in_before? %>
 	  		</div>
 	  		<div class="span2">
 	  			<%= f.rationale %><br>
 	  			<%= image_tag ("cohousing.png"), {:title => t("profile.logo_cohousing")} if f.cohousing? %>
+	  		</div>
+
+	  		<div class="span2">
+	  			<%= f.zipcodes if @user.zipcodes %>
 	  		</div>
 	  	</div>
   	</p>
@@ -48,17 +52,21 @@
 	  			<%= link_to(f.name_or_placeholder, user_path(f)) %><br>
 	  			<%= f.email %>
 	  		</div>
-	  		<div class="span3">
+	  		<div class="span2">
 	  			<%= f.maximum_budget %> EUR<br>
 				<%= f.minimum_space %> m2
 			</div>
-	  		<div class="span3">
+	  		<div class="span2">
 	  			<%= f.personal_status %><br>
 	  			<%= l(f.last_sign_in_at, :format => :short) if f.signed_in_before? %>
 	  		</div>
 	  		<div class="span2">
 	  			<%= f.rationale %><br>
 	  			<%= image_tag ("cohousing.png"), {:title => t("profile.logo_cohousing")} if f.cohousing? %>
+	  		</div>
+
+	  		<div class="span2">
+	  			<%= f.zipcodes if @user.zipcodes %>
 	  		</div>
 	  	</div>
   	</p>
