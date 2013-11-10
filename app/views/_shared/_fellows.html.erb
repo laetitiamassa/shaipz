@@ -1,0 +1,66 @@
+<h2> <%= @user.perfect_fellows.count %>
+  voisins hautement potentiels <br>
+	<small>en commun : au moins une des communes <i><b>et</b></i> la readiness <i><b>et</b></i> l'optique d'achat.</small></h2>
+
+  <% @user.perfect_fellows.each do |f| %>
+  	<p>
+  		<div class="row-fluid">
+  			<div class="span1">
+  				<%= link_to(image_tag(f.picture.url(:thumb), :class => 'img-rounded'), user_path(f)) %>
+  			</div>
+	  	
+	  		<div class="span3">
+	  			<%= link_to(f.name_or_placeholder, user_path(f)) %><br>
+	  			<%= f.email %>
+	  		</div>
+	  		<div class="span3">
+	  			<%= f.maximum_budget %> EUR<br>
+				<%= f.minimum_space %> m2
+			</div>
+	  		<div class="span3">
+	  			<%= f.personal_status %><br>
+	  			<%= l(f.last_sign_in_at, :format => :short) if f.signed_in_before? %>
+	  		</div>
+	  		<div class="span2">
+	  			<%= f.rationale %><br>
+	  			<%= image_tag ("cohousing.png"), {:title => t("profile.logo_cohousing")} if f.cohousing? %>
+	  		</div>
+	  	</div>
+  	</p>
+  <% end %>
+
+<ul class="nav nav-list">
+  	<li class="divider"></li>
+</ul>
+
+<h2> <%= @user.fellows.count %>
+  voisins potentiels <br>
+  <small>en commun : soit l'une des communes, soit la readiness, soit l'optique d'achat.</small></h2>
+
+  <% @user.fellows.each do |f| %>
+  	<p>
+  		<div class="row-fluid">
+  			<div class="span1">
+  				<%= link_to(image_tag(f.picture.url(:thumb), :class => 'img-rounded'), user_path(f)) %>
+  			</div>
+	  	
+	  		<div class="span3">
+	  			<%= link_to(f.name_or_placeholder, user_path(f)) %><br>
+	  			<%= f.email %>
+	  		</div>
+	  		<div class="span3">
+	  			<%= f.maximum_budget %> EUR<br>
+				<%= f.minimum_space %> m2
+			</div>
+	  		<div class="span3">
+	  			<%= f.personal_status %><br>
+	  			<%= l(f.last_sign_in_at, :format => :short) if f.signed_in_before? %>
+	  		</div>
+	  		<div class="span2">
+	  			<%= f.rationale %><br>
+	  			<%= image_tag ("cohousing.png"), {:title => t("profile.logo_cohousing")} if f.cohousing? %>
+	  		</div>
+	  	</div>
+  	</p>
+  <% end %>
+  

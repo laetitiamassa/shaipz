@@ -8,10 +8,12 @@
         		<h1><%= t("stream.all_projects") %></h1>
         
       		</div>
-      
+          
+        <% if @user.is_admin %>
       		<div class="span3 text-right edit-project"> 
       			<%= link_to content_tag(:span, t("stream.start_project")), new_project_path, :class => "btn btn-large btn-success" %>
       		</div> 
+        <% end %>
     	</div> 
 </div> <!-- end of header -->
 

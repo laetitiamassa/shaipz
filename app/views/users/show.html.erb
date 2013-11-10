@@ -127,6 +127,14 @@
       
     </li>
 <% end %>
+
+<% if current_user.is_admin %>
+
+	<li>
+      <a href="#pane4" data-toggle="tab"><i class="icon-group"></i> <%= t("potential.matching") %></a>
+    </li>
+
+<% end %>
    
     <!--<li>
       <a href="#pane4" data-toggle="tab"><i class="icon-user"></i><%= t("menu.profile") %></a>
@@ -189,7 +197,11 @@
 	    <% @projects.each do |project| %>
 	    	<%= render :partial => "_shared/myfellow", :locals => { :project => project } %>
 	  	<% end %>
-	  </div>
+	</div>
+
+	<div id="pane4" class="tab-pane">
+		<%= render :partial => "_shared/fellows" %>
+	</div>
  
   </div><!-- /.tab-content -->
 </div><!-- /.tabbable -->

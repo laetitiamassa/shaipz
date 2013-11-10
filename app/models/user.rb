@@ -64,7 +64,11 @@ class User < ActiveRecord::Base
   end
 
   def is_admin
-    email = "hello@shaipz.com" || "marcantony23@hotmail.com"
+    email = "hello@shaipz.com" || "marcantony23@hotmail.com" || "bogus@bug.com"
+  end
+
+  def is_pro
+    email = "stanislas.bareel@hotmail.com" || "stanislas.bareel@yahoo.fr" || "christian.sole@dexia.com"
   end
 
   def has_ideal_project_or_neighbour?
