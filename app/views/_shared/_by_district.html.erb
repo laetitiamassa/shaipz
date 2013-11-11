@@ -17,6 +17,14 @@
   		<% end %>
   	<% end %>
 
+<h4>Irréalistes mais actifs</h4>
+  	
+  		<% @user.fellows_in_district.each do |f| %>
+  		<% if !f.realistic && f.is_active %>
+  			<%= render :partial => "_shared/fellowsinfo", :locals => { :f => f } %>
+  		<% end %>
+  	<% end %>
+
 <h4>Ni réalistes ni actifs</h4>
   	
   	

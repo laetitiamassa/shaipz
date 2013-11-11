@@ -63,6 +63,18 @@ class User < ActiveRecord::Base
     facebook_user
   end
 
+  def realistic_and_active
+    realistic & is_active
+  end
+
+  def realistic_but_inactive
+    realistic & !is_active
+  end
+
+  def unrealistic_and_inactive
+    !realistic & !is_active
+  end
+
   def realistic
     maximum_budget/minimum_space >= 2000
   end
