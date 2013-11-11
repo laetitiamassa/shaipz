@@ -68,8 +68,10 @@ class User < ActiveRecord::Base
   end
 
   def is_active
-    days_in_month = Time.days_in_month(Time.current.month)
-    current_sign_in_at > days_in_month.days.ago
+    if signed_in?
+      days_in_month = Time.days_in_month(Time.current.month)
+      current_sign_in_at > days_in_month.days.ago
+    end
   end
 
   def is_admin
