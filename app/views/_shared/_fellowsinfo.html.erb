@@ -19,7 +19,7 @@
 	  		<div class="span2">
 	  			<%= f.personal_status %><br>
 	  			<%= l(f.last_sign_in_at, :format => :short) if f.signed_in_before? %>
-	  			<% if @user.is_active %>
+	  			<% if f.is_active %>
             		<span class="label label-info">Active user</span>
             	<% end %>
 	  		</div>

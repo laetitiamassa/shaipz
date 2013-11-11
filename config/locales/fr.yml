@@ -4,7 +4,7 @@
 fr:
   time:
     formats:
-      short: "%d/%m à %H:%M -"
+      short: "%d/%m/%y à %H:%M "
   datetime:
     distance_in_words:
       half_a_minute: "30 secondes"

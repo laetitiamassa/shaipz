@@ -68,7 +68,8 @@ class User < ActiveRecord::Base
   end
 
   def is_active
-    User.where("current_sign_in_at < ?", 31.days.ago)
+    days_in_month = Time.days_in_month(Time.current.month)
+    current_sign_in_at > days_in_month.days.ago
   end
 
   def is_admin
