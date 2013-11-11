@@ -5,13 +5,22 @@
 				<h1><%= @user.has_name? ? @user.name : @user.name_placeholder %>
 				<% if @user.cohousing? %>
         		<%= image_tag ("cohousing.png"), {:title => t("profile.logo_cohousing")} %>
-            	<% end %></h1>
+            	<% end %>
+            <% if current_user.is_admin %>
+            	<% if @user.realistic %>
+            		<span class="label label-success">Realistic</span>
+            	<% end %>
+            	<% if @user.is_active %>
+            		<span class="label label-info">Active user</span>
+            	<% end %>
+            <% end %>
+            	</h1>
             </div>
             <div class="span4 text-right edit-profile">
             	<% if @user == current_user %>
             	<%= link_to t("profile.edit"), edit_user_path(@user), :class => "btn btn-large btn-info" %>
             	<% else %>
-            	<%= link_to t("contact me"), "mailto:#{@user.email}", :class => "btn btn-large btn-info" %>
+            	<%= link_to t("profile.contact_me"), "mailto:#{@user.email}", :class => "btn btn-large btn-info" %>
             	<% end %>
             </div>
         </div>

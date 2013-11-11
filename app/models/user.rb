@@ -63,6 +63,14 @@ class User < ActiveRecord::Base
     facebook_user
   end
 
+  def realistic
+    maximum_budget/minimum_space >= 2000
+  end
+
+  def is_active
+    User.where("current_sign_in_at < ?", 31.days.ago)
+  end
+
   def is_admin
     email = "hello@shaipz.com" || "marcantony23@hotmail.com" || "bogus@bug.com"
   end
