@@ -210,12 +210,8 @@ class User < ActiveRecord::Base
     fellows_in_district | fellows_status | fellows_purpose
   end
 
-  def good_fellows
-    fellows_in_district && fellows_purpose
-  end
-
   def perfect_fellows
-    good_fellows if fellows_in_district
+    fellows_status & fellows_in_district & fellows_purpose
   end
 
   def zipcodes
