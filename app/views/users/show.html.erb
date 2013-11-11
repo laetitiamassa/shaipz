@@ -9,6 +9,8 @@
             <% if current_user.is_admin %>
             	<% if @user.realistic %>
             		<span class="label label-success">Realistic</span>
+            	<% else %>
+            		<span class="label label-important">Unrealistic</span>
             	<% end %>
             	<% if @user.is_active %>
             		<span class="label label-info">Active user</span>
