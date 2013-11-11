@@ -1,0 +1,6 @@
+<h2>Adeptes de la commune <%= @user.favorite_areas %><br>
+<small>Pour voir les adeptes d'autres communes, il suffit de modifier votre commune préférée (une commune à la fois)</small></h2>
+
+  <% @user.fellows_in_district.each do |f| %>
+  	<%= render :partial => "_shared/fellowsinfo", :locals => { :f => f } %>
+  <% end %>

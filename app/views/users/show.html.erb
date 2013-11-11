@@ -144,6 +144,11 @@
 	<li>
       <a href="#pane4" data-toggle="tab"><i class="icon-group"></i> <%= t("potential.matching") %></a>
     </li>
+    <% if @user.is_admin %>
+    <li>
+      <a href="#pane5" data-toggle="tab"><i class="icon-map-marker"></i> Adeptes de <%= current_user.favorite_areas %></a>
+    </li>
+    <% end %>
 
 <% end %>
    
@@ -212,6 +217,10 @@
 
 	<div id="pane4" class="tab-pane">
 		<%= render :partial => "_shared/fellows" %>
+	</div>
+
+	<div id="pane5" class="tab-pane">
+		<%= render :partial => "_shared/by_district" %>
 	</div>
  
   </div><!-- /.tab-content -->
