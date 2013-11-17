@@ -81,6 +81,10 @@ class Project < ActiveRecord::Base
     owner_id == 0
   end
 
+  def to_vote_for
+    owner_id == 301
+  end
+
   def disabled?
     disabled_at.present?
   end
