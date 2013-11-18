@@ -1,9 +1,10 @@
 <% reply = defined?(reply) ? reply : false %>
 <div id="comment_<%= comment.id %>">
 	
-
+    <% if comment.owner.present? %>
       <%= link_to(image_tag(comment.owner.picture.url(:thumb), :class => 'img-rounded'), user_path(comment.owner)) %>
           <small><%= link_to truncate(comment.owner.name_or_placeholder, :length => 50), user_path(comment.owner) %></small>
+    <% end %>
     
     <div class="bubble comment">
       <div class="row-fluid">
