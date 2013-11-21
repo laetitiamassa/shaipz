@@ -40,6 +40,7 @@
         	<% project.owner_and_participants.each do %>
     			<i class="icon-user"></i>		
             <% end %> 
+            <br>
             <%= t("for") %> <%= project.maximum_shaipz %></b> <i class="icon-home"></i></p>
         <% if project.has_participant_or_owner?(current_user) %>
 							
