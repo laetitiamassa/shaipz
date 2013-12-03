@@ -157,9 +157,9 @@ class Project < ActiveRecord::Base
 
   def has_enough_participants?
     if self.suggested
-      owner_and_participants.count == 2.maximum_shaipz + 1
+      owner_and_participants.count == maximum_shaipz + 1
     else
-      owner_and_participants.count == 2.maximum_shaipz
+      owner_and_participants.count == maximum_shaipz
     end
   end
 
