@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131030093737) do
+ActiveRecord::Schema.define(:version => 20131207113141) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -134,6 +134,8 @@ ActiveRecord::Schema.define(:version => 20131030093737) do
     t.datetime "disabled_at"
     t.integer  "average_district_price"
     t.text     "leader_thought"
+    t.boolean  "private"
+    t.boolean  "is_private"
   end
 
   create_table "reports", :force => true do |t|

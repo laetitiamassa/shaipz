@@ -465,6 +465,9 @@ en:
     time_until_next_event: "The next event starts in"
     suggest_next_event: "Suggest a meeting or a visit"
     join_to_talk: "Join the project to join the conversation !"
+    project_is_private: "This project is private"
+    request_to_join: "Request to join"
+    is_private: "Private project"
 
   participation:
     create_success: "Congratulations! Now, you participate to the project."

@@ -163,6 +163,19 @@
     </div>
   </div>
 </div>
+<% if current_user.is_admin %>
+  <div class="span5">
+    <!-- private ? -->
+    <div class="control-group">
+      <div class="controls">
+        <label class="checkbox"><%= f.check_box :is_private %>
+          <input type="checkbox"><%= f.label :is_private, t("project.is_private") %>
+        </label>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 
   <!-- EVENTS -->
   <legend><h2><i class="icon-calendar icon-large pull-left icon-muted"></i><%= t("project.happenings") %></h2></legend>

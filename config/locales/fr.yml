@@ -472,7 +472,9 @@ fr:
     time_until_next_event: "Le prochain événement est dans"
     suggest_next_event: "Suggérez une réunion ou visite"
     join_to_talk: "Joignez le projet pour joindre la conversation !"
-
+    project_is_private: "Ce projet est privé"
+    request_to_join: "Demander à le rejoindre"
+    is_private: "Projet privé"
 
   participation:
     create_success: "Félicitations ! Vous êtes maintenant un membre du projet."

@@ -45,6 +45,14 @@
       <%= render_comments @project %>
       <%= render_comments_form @project %>
 
+<% elsif @project.is_private %>
+
+<div class="text-center">
+  <p><%= t("project.join_to_talk") %></p>
+  <i class="icon-lock icon-2x"> <small><%= t("project.project_is_private") %></small></i>
+  <br><i class="icon-envelope"><%= link_to t("project.request_to_join"), "mailto:#{@project.owner.email}", :class => "btn btn-link" %></i>
+</div>
+
 <% else %>
 
   <div class="text-center">

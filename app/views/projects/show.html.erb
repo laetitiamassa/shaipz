@@ -3,11 +3,16 @@
   <!-- title -->
       <div class="howitworks-header page-header">
         <div class="row-fluid">
-          <div class="span10 project-name">
-            <h1><%= @project.name %>
+          <div class="span8 project-name">
+            <h1>
+              <% if @project.is_private %>
+              <i class="icon-lock icon-muted"></i>
+              <% end %>
+              <%= @project.name %>
               <% if @project.cohousing? %>
               <%= image_tag ("cohousing.png"), {:title => t("project.logo_cohousing")} %>
               <% end %>
+              
             
               <% if @user.owner_of_project?(@project) %>
           
@@ -31,7 +36,7 @@
             </h1>
           
           </div>
-          <div class="span2 text-right">
+          <div class="span4 text-right">
 
             <%= render "calltoaction" %>
 

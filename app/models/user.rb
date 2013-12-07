@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
   end
 
   def is_admin
-    email.include?("hello@shaipz.com" || "marcantony23@hotmail.com" || "bogus@bug.com")
+    email.include?("hello@shaipz.com") 
   end
 
   def is_pro
