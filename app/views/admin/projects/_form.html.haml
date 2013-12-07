@@ -97,11 +97,11 @@
     .controls= f.file_field :picture
 
 %fieldset
-  %legend Disable
+  %legend Private project ?
 
   .control-group
-      = f.label :private, :class => 'control-label'
-      .controls= f.check_box :private
+      = f.label :is_private, :class => 'control-label'
+      .controls= f.check_box :is_private
 
 %fieldset
   %legend Disable
