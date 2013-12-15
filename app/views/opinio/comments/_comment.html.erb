@@ -4,6 +4,7 @@
     <% if comment.owner.present? %>
       <%= link_to(image_tag(comment.owner.picture.url(:thumb), :class => 'img-rounded'), user_path(comment.owner)) %>
           <small><%= link_to truncate(comment.owner.name_or_placeholder, :length => 50), user_path(comment.owner) %></small>
+
     <% end %>
     
     <div class="bubble comment">
@@ -18,6 +19,7 @@
           <% end %> 
         </div>
       </div>
+      <div class="text-right"><i><small> il y a <%= time_ago_in_words(comment.created_at) %></small></i></div>
 			
     </div>
    
