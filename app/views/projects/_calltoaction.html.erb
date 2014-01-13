@@ -33,10 +33,12 @@
 <% end %>
 
 <% if @project.has_participant_or_owner?(@user) %>
+
+  <%= render "popupCTA" %>
+     
+  <%= button_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})" %>
        
-        <%= button_to t("participation.destroy"), participation_path(@project), :class => 'btn btn-link', :method => 'delete', :onclick => "return confirm(#{t('project.destroy_confirmation')})" %>
-       
-      <% end %>
+<% end %>
 
 
 

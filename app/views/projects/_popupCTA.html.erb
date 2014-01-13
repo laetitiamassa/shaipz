@@ -1,0 +1,61 @@
+<!-- 
+un popup qui apparaît quand le participant devient participant // 
+  si y a coming event
+  => si owner 
+    => popup rappel prochain event + possibiliter de l'éditer + possibilité de commenter (rappeler)
+  => si participant
+    => popup rappel prochain event + possibilité de commenter
+  si pas coming event
+  => si owner
+    => popup invite à éditer le projet pour ajouter un prochain event
+  => si participant
+    => popup affiche max les 3 derniers comments (if any) + invite à laisser un comment
+-->
+
+<!-- EVENT POPUP -->
+<!-- si le current user n'a pas laissé de comment depuis au moins un jour -->
+<div id="top"> 
+  <a tabindex="-1" href="#" id="metadata-link" data-target="#modal" data-toggle="modal">  </a>
+</div>
+
+<div id="modal" class="modal fade" style="display:none;">
+  <div class="modal-header text-center">Annoncez-vous aux autres participants<a class="close" data-dismiss="modal">x</a></div>
+  <div class="modal-body text-left">       
+     
+<% if @project.coming_event %>
+
+il y a un event
+       
+
+<% else %>
+  Indiquez votre intérêt pour le projet, vos 3 prochaines disponibilités pour une réunion, par exemple.
+  <%= render_comments_form @project %>
+
+<% end %>
+</div>
+</div>
+      
+    
+
+
+
+<script>
+
+    $(document).ready(function() {
+        $('#top').find('a').trigger('click');
+
+    });
+</script>
+
+
+
+
+<!-- COMMENT IN EVENT 
+
+<%= render_comments_form @project %>
+<%= render_comments @project %> -->
+
+<!-- COMMENTS POPUP 
+
+<%= render_comments_form @project %>
+<%= render_comments @project %> -->
